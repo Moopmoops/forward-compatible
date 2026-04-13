@@ -4,192 +4,162 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forward Compatible</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    background: #0a0e17;
-    color: #e2e8f0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-    line-height: 1.7;
+    background: #0f0f0f;
+    color: #d4d4d4;
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.8;
+    font-size: 18px;
 }
-a { color: #22d3ee; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: #7eb8c9; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: #b4dce8; }
 
 .hero {
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 24px;
-    background: radial-gradient(ellipse at 50% 30%, rgba(34,211,238,0.06) 0%, transparent 70%);
+    padding: 80px 24px;
+    max-width: 720px;
+    margin: 0 auto;
 }
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, #22d3ee, #818cf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #e8e8e8;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 .hero .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
-    color: #94a3b8;
-    max-width: 680px;
-    margin-bottom: 40px;
+    font-size: 1.15rem;
+    color: #999;
+    margin-bottom: 48px;
     line-height: 1.8;
 }
-.hero .meta-pattern {
+.hero blockquote {
     font-size: 1.1rem;
-    color: #cbd5e1;
-    max-width: 640px;
-    padding: 24px 32px;
-    border-left: 3px solid #22d3ee;
-    background: rgba(15,23,42,0.6);
-    border-radius: 0 12px 12px 0;
-    text-align: left;
-    line-height: 1.7;
+    color: #c8c8c8;
+    padding: 20px 0 20px 24px;
+    border-left: 2px solid #555;
     font-style: italic;
+    line-height: 1.7;
 }
 
 section {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 80px 24px;
+    padding: 64px 24px;
 }
-section.alt { border-top: 1px solid rgba(255,255,255,0.04); }
 section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 12px;
-    color: #f1f5f9;
-}
-section .section-intro {
-    color: #94a3b8;
-    margin-bottom: 32px;
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-section h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #22d3ee;
-    margin: 28px 0 8px;
-}
-
-.callout {
-    padding: 24px 28px;
-    margin: 24px 0;
-    background: rgba(15,23,42,0.6);
-    border: 1px solid rgba(34,211,238,0.08);
-    border-radius: 12px;
-    border-left: 3px solid #818cf8;
-    color: #cbd5e1;
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-.principle {
-    padding: 20px 24px;
     margin-bottom: 16px;
-    background: rgba(15,23,42,0.5);
-    border: 1px solid rgba(34,211,238,0.08);
-    border-radius: 12px;
-    border-left: 3px solid #22d3ee;
+    color: #e8e8e8;
+    line-height: 1.3;
 }
-.principle.extension { border-left-color: #818cf8; }
-.principle .num {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #22d3ee;
+section .intro {
+    color: #999;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.principle-block {
+    margin-bottom: 36px;
+}
+.principle-block .p-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #666;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
-.principle.extension .num { color: #818cf8; }
-.principle .title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #f1f5f9;
+.principle-block h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e0e0e0;
     margin-bottom: 8px;
 }
-.principle .examples {
-    font-size: 0.9rem;
-    color: #94a3b8;
-    line-height: 1.6;
+.principle-block p {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
-.role {
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+.divider {
+    border: none;
+    border-top: 1px solid #222;
+    margin: 48px 0;
 }
-.role:last-child { border-bottom: none; }
-.role .role-title {
-    font-weight: 600;
-    color: #e2e8f0;
+
+.role-item {
+    margin-bottom: 24px;
+}
+.role-item h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #d4d4d4;
     margin-bottom: 4px;
 }
-.role .role-desc {
+.role-item p {
+    color: #888;
     font-size: 0.95rem;
-    color: #94a3b8;
     line-height: 1.6;
 }
 
-.tradeoff {
-    display: inline-block;
-    font-size: 0.85rem;
-    padding: 4px 14px;
-    margin: 4px;
-    background: rgba(248,113,113,0.08);
-    border: 1px solid rgba(248,113,113,0.15);
-    border-radius: 20px;
-    color: #fca5a5;
+.example-block {
+    margin-bottom: 28px;
+    padding-left: 16px;
+    border-left: 1px solid #333;
 }
-
-.vocab-word {
-    display: inline-block;
-    font-size: 0.95rem;
-    padding: 6px 16px;
-    margin: 4px;
-    background: rgba(34,211,238,0.06);
-    border: 1px solid rgba(34,211,238,0.12);
-    border-radius: 20px;
-    color: #22d3ee;
-}
-
-.example-card {
-    padding: 16px 20px;
-    margin-bottom: 12px;
-    background: rgba(15,23,42,0.4);
-    border: 1px solid rgba(255,255,255,0.04);
-    border-radius: 10px;
-}
-.example-card .domain {
-    font-size: 0.7rem;
-    color: #64748b;
+.example-block .domain-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    color: #666;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 4px;
 }
-.example-card .ex-title {
-    font-weight: 600;
-    color: #e2e8f0;
+.example-block h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #d4d4d4;
     margin-bottom: 4px;
 }
-.example-card .ex-desc {
+.example-block p {
+    color: #888;
     font-size: 0.9rem;
-    color: #94a3b8;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    margin: 3px;
+    border: 1px solid #333;
+    color: #999;
+}
+.tag.warn {
+    border-color: #442222;
+    color: #c88;
 }
 
 footer {
-    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
     padding: 60px 24px;
-    color: #334155;
+    color: #444;
+    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
 }
+footer a { color: #666; }
 </style>
 </head>
 <body>
@@ -197,231 +167,246 @@ footer {
 <div class="hero">
     <h1>Forward Compatible</h1>
     <p class="subtitle">
-        A framework for understanding how systems — biological, cultural, technological, institutional —
-        meet futures they weren't built for.
+        A framework for understanding how systems — biological, cultural, technological,
+        institutional — meet futures beyond what they were designed for.
     </p>
-    <div class="meta-pattern">
-        Someone included what the system was designed to exclude, and the system got better for everyone.
-    </div>
+    <blockquote>
+        Someone included what the system was previously designed to exclude,
+        and the system got better for everyone.
+    </blockquote>
 </div>
 
-<!-- ═══════════ THE CONTEXT PROBLEM ═══════════ -->
-<section id="context">
+<!-- ═══════════ WHY ═══════════ -->
+<section>
     <h2>Why This Matters</h2>
-    <p class="section-intro">
-        No individual can hold all the context needed for complex decisions. The future always contains
-        information we don't have yet. Forward-compatible systems aren't just nice to have — they're
-        necessary because closure is always premature given what we can't yet see.
+    <p class="intro">
+        No individual can hold all the context needed for complex decisions.
+        The future always contains information we don't have yet.
+        Every system eventually encounters something it wasn't designed for.
+        The question is whether it breaks or adapts.
     </p>
-    <div class="callout">
-        FC isn't an alternative to your existing worldview. It's a lens for understanding what makes
-        worldviews <em>work</em> — and how they can work for more people. Every worldview that ever
-        worked got something right. Forward compatibility doesn't ask you to discard what works — it
-        asks what else might be true alongside it.
-    </div>
-    <p style="color:#94a3b8;margin-top:16px;">
-        When communities share frameworks for integrating perspectives, they collectively see more
-        than any member can alone. FC's core pattern — include what's been excluded — is the mechanism
-        that keeps this from collapsing into groupthink. The aspiration toward shared understanding
-        <em>is</em> the method.
+    <p style="color:#bbb;margin-bottom:24px;">
+        FC is a tool for understanding what makes worldviews work — and how they can
+        work for more people. Forward compatibility asks what else might be true.
+    </p>
+    <p style="color:#999;">
+        When communities share frameworks for integrating perspectives,
+        they collectively hold more context than any member can alone.
+        Frameworks can include new perspectives rather than enforcing existing ones.
     </p>
 </section>
+
+<hr class="divider">
 
 <!-- ═══════════ PRINCIPLES ═══════════ -->
-<section id="what" class="alt">
+<section>
     <h2>The Principles</h2>
-    <p class="section-intro">
-        Forward compatibility is a fifty-year-old engineering concept that describes something deeper than engineering:
-        the structural property that lets a system handle input that doesn't exist yet.
-        It appears across biology, language, institutions, and culture — anywhere something lasts.
+    <p class="intro">
+        Forward compatibility started as an engineering concept — the structural property
+        that lets a system handle input that doesn't exist yet. But the same pattern appears
+        across biology, language, institutions, and culture. Wherever systems persist across
+        time, the ones that can integrate what they weren't originally designed for tend to
+        outlast the ones that can't.
     </p>
 
-    <h3 style="color:#64748b;letter-spacing:2px;font-size:0.75rem;text-transform:uppercase;margin-bottom:20px;">Established Principles</h3>
-
-    <div class="principle">
-        <div class="num">Principle 1</div>
-        <div class="title">Ignore what you don't understand</div>
-        <div class="examples">Accept unknown input without breaking. HTML skipping unrecognized tags. A person hearing a new word and continuing the sentence.</div>
-    </div>
-    <div class="principle">
-        <div class="num">Principle 2</div>
-        <div class="title">Negotiate to common ground</div>
-        <div class="examples">Two systems find the best shared capability. USB devices handshaking to the highest speed they both support. Two people code-switching to a shared language.</div>
-    </div>
-    <div class="principle">
-        <div class="num">Principle 3</div>
-        <div class="title">Degrade in layers rather than fail as a unit</div>
-        <div class="examples">Older systems get a complete but less rich experience. JPEG base layer readable by old decoders while new decoders get enhancement layers. Innate immunity handling anything imprecisely while adaptive immunity adds precision.</div>
-    </div>
-    <div class="principle">
-        <div class="num">Principle 4</div>
-        <div class="title">Leave room for what doesn't exist yet</div>
-        <div class="examples">Build extensibility into the design. TCP's options field. Grammar broad enough to accept vocabulary that hasn't been coined. Protocol Buffers' field numbering that reserves space for future fields.</div>
+    <div class="principle-block">
+        <div class="p-label">Principle 1</div>
+        <h3>Prepare for what you don't yet understand</h3>
+        <p>Don't break when you encounter something unfamiliar. HTML renders what it can and skips unrecognized tags — it doesn't reject the whole page. A person hearing a new word continues the conversation rather than stopping it.</p>
     </div>
 
-    <h3 style="color:#64748b;letter-spacing:2px;font-size:0.75rem;text-transform:uppercase;margin:40px 0 20px;">Extensions Beyond Engineering</h3>
+    <div class="principle-block">
+        <div class="p-label">Principle 2</div>
+        <h3>Negotiate to common ground</h3>
+        <p>Two systems find the best shared capability. USB devices handshaking to the highest speed they both support. Two people code-switching to a shared language.</p>
+    </div>
 
-    <div class="principle extension">
-        <div class="num">Principle 5</div>
-        <div class="title">Integrate the unknown</div>
-        <div class="examples">Don't just skip or preserve unfamiliar input — learn from it. The immune system's memory cells. A person who encounters a new word eight times and becomes a different processor.</div>
+    <div class="principle-block">
+        <div class="p-label">Principle 3</div>
+        <h3>Degrade in layers rather than fail as a unit</h3>
+        <p>Older systems get a complete but less rich experience. JPEG base layer readable by old decoders while new decoders get enhancement layers. Innate immunity handling anything imprecisely while adaptive immunity adds precision.</p>
     </div>
-    <div class="principle extension">
-        <div class="num">Principle 6</div>
-        <div class="title">Protect co-evolved relationships</div>
-        <div class="examples">Systems that developed together break when separated. Melbourne's trams and urban density. Indigenous polyculture — the Three Sisters (corn, beans, squash) co-evolved to support each other. Separating them into monoculture rows loses what makes each one thrive.</div>
+
+    <div class="principle-block">
+        <div class="p-label">Principle 4</div>
+        <h3>Leave room for what doesn't exist yet</h3>
+        <p>Design for inputs you can't predict. TCP's options field. Grammar broad enough to accept vocabulary that hasn't been coined. JSON's open key-value structure — any field can appear without breaking the format.</p>
     </div>
-    <div class="principle extension">
-        <div class="num">Principle 7</div>
-        <div class="title">Maintain renewal mechanisms</div>
-        <div class="examples">The capacity to keep the system alive has to itself be forward compatible. Ise Shrine's apprenticeship cycle — 1,300 years of renewal. Libraries depending on political funding cycles.</div>
+
+    <hr class="divider">
+
+    <div class="principle-block">
+        <div class="p-label" style="color:#888;">Extension 5</div>
+        <h3>Integrate the unknown</h3>
+        <p>Don't just skip or preserve unfamiliar input — learn from it. The immune system's memory cells remember every pathogen they've encountered and respond faster the next time. A person who encounters a new word enough times doesn't just know a new word — they can think thoughts they couldn't think before.</p>
     </div>
-    <div class="principle extension">
-        <div class="num">Principle 8</div>
-        <div class="title">Ship stewardship alongside the system</div>
-        <div class="examples">A technology isn't finished when it works. It's finished when you can describe the living system it enters — and how to tend that system's health while using it. Antibiotics without microbiome guidance. Social platforms without attention ecology guidance. The mechanical vocabulary had no conceptual slot for this — "build, deploy, optimize" doesn't include "tend."</div>
+
+    <div class="principle-block">
+        <div class="p-label" style="color:#888;">Extension 6</div>
+        <h3>Protect co-evolved relationships</h3>
+        <p>Systems that developed together break when separated. Melbourne's trams and urban density. Indigenous polyculture — the Three Sisters (corn, beans, squash) co-evolved to support each other. Separating them into monoculture rows loses what makes each one thrive.</p>
+    </div>
+
+    <div class="principle-block">
+        <div class="p-label" style="color:#888;">Extension 7</div>
+        <h3>Maintain renewal mechanisms</h3>
+        <p>The capacity to keep the system alive has to itself be forward compatible. Ise Shrine's apprenticeship cycle — 1,300 years of renewal. Libraries depending on political funding cycles.</p>
+    </div>
+
+    <div class="principle-block">
+        <div class="p-label" style="color:#888;">Extension 8</div>
+        <h3>Ship stewardship alongside the system</h3>
+        <p>A technology isn't finished when it works. It's finished when you can describe the living system it enters — and how to tend that system's health while using it. Antibiotics shipped without microbiome guidance. Social platforms launched without guidance on what they do to attention, trust, and community. The technology "worked"; the ecology it entered was left untended.</p>
     </div>
 </section>
+
+<hr class="divider">
 
 <!-- ═══════════ WHAT FC DOES ═══════════ -->
-<section id="roles" class="alt">
+<section>
     <h2>What FC Does</h2>
-    <p class="section-intro">FC isn't just descriptive. It's a working tool.</p>
+    <p class="intro">FC is a working tool — not just a way to describe systems, but a way to evaluate, compare, and design them.</p>
 
-    <div class="role">
-        <div class="role-title">A framework for shared orientation</div>
-        <div class="role-desc">Humans need shared frameworks that provide orientation, meaning, and priorities. Religions, constitutions, scientific paradigms, and cultural traditions all fill this need. FC describes the pattern they share when they work well, and offers a framework for building new shared understanding across difference.</div>
+    <div class="role-item">
+        <h3>A framework for shared orientation</h3>
+        <p>Humans need shared frameworks that provide orientation, meaning, and priorities. Religions, constitutions, scientific paradigms, and cultural traditions all fill this need. FC describes the pattern they share when they work well, and offers a framework for building new shared understanding across difference.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Premium connector</div>
-        <div class="role-desc">Makes unrelated things legible as the same phenomenon. The immune system and HTML parsing are doing the same thing in different substrates. Knowledge transfers across domains.</div>
+    <div class="role-item">
+        <h3>Connector across domains</h3>
+        <p>Makes unrelated things visible as the same phenomenon. The immune system and HTML parsing are doing similar structural work in different substrates. Insights from one field become actionable in another.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Refiner of good and better</div>
-        <div class="role-desc">Gives you answerable criteria. Does this system handle what it doesn't yet understand? Does it have room for what doesn't exist yet?</div>
+    <div class="role-item">
+        <h3>Evaluative criteria</h3>
+        <p>Gives you specific, answerable questions to ask of any system. Does it handle what it doesn't yet understand? Does it have room for what doesn't exist yet? Does it protect the relationships that make it work?</p>
     </div>
-    <div class="role">
-        <div class="role-title">Comparison tool</div>
-        <div class="role-desc">Hold any two systems next to each other. Melbourne kept its trams, American cities ripped theirs out. The HGP opened its data, Celera kept it proprietary. Vaccination was deliberate but bespoke, the mRNA platform is deliberate and modular. FC gives you a common axis.</div>
+    <div class="role-item">
+        <h3>Comparison tool</h3>
+        <p>Hold any two systems next to each other. Melbourne kept its trams, American cities ripped theirs out. The HGP opened its data, Celera kept it proprietary. Vaccination was deliberate but bespoke, the mRNA platform is deliberate and modular.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Diagnostic tool</div>
-        <div class="role-desc">Walk up to any system and ask structured questions: what's the interface, where's the capacity, is there room for the unknown, what's the renewal mechanism, what's fragile?</div>
+    <div class="role-item">
+        <h3>Diagnostic tool</h3>
+        <p>Walk up to any system and ask structured questions: what's the interface, where's the capacity, is there room for the unknown, what's the renewal mechanism, what's fragile?</p>
     </div>
-    <div class="role">
-        <div class="role-title">Early warning system</div>
-        <div class="role-desc">If the flexibility hasn't been exercised, it's probably ossifying. If the renewal mechanism depends on something fragile, you can see the vulnerability before it collapses.</div>
+    <div class="role-item">
+        <h3>Early warning system</h3>
+        <p>If the flexibility hasn't been exercised, it's probably ossifying. If the renewal mechanism depends on something fragile, you can see the vulnerability before it collapses.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Design guidance</div>
-        <div class="role-desc">Leave room. Make the interface stable but extensible. Protect co-evolved relationships. Exercise your flexibility or lose it. Ship stewardship alongside the system.</div>
+    <div class="role-item">
+        <h3>Design guidance</h3>
+        <p>Leave room. Make the interface stable but extensible. Protect co-evolved relationships. Exercise your flexibility or lose it. Ship stewardship alongside the system.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Translation layer between fields</div>
-        <div class="role-desc">An engineer, a linguist, an immunologist, and an urban planner are all doing versions of the same thing but can't talk to each other about it. FC gives them shared vocabulary. Insights from one field become actionable in another.</div>
+    <div class="role-item">
+        <h3>Translation layer between fields</h3>
+        <p>An engineer, a linguist, an immunologist, and an urban planner are all doing versions of the same thing but can't talk to each other about it. FC gives them shared vocabulary. Insights from one field become actionable in another.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Reframes what progress means</div>
-        <div class="role-desc">Most people think progress means new things replacing old things. FC says the best progress is when systems expand — when contact with the future makes things more capable rather than obsolete. That's a fundamentally different vision of what getting better looks like.</div>
+    <div class="role-item">
+        <h3>Reframes what progress means</h3>
+        <p>Most people think progress means new things replacing old things. FC says the best progress is when systems expand — when contact with the future makes things more capable rather than obsolete.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Makes invisible architecture visible</div>
-        <div class="role-desc">You don't notice the USB negotiation, the browser skipping unknown tags, grammar handling a new word. FC reveals the design decisions behind the seamless experience. It reveals infrastructure you were standing on without knowing it.</div>
+    <div class="role-item">
+        <h3>Makes invisible architecture visible</h3>
+        <p>You don't notice the USB negotiation, the browser skipping unknown tags, grammar handling a new word. FC reveals the design decisions behind the seamless experience.</p>
     </div>
-    <div class="role">
-        <div class="role-title">Empirical grounds for optimism</div>
-        <div class="role-desc">Accumulated evidence that openness works — that systems which build room for the unknown outlast and outperform systems that close down. Not naive optimism. Architectural.</div>
+    <div class="role-item">
+        <h3>Structural grounds for optimism</h3>
+        <p>The examples in this framework aren't cherry-picked success stories — they're a pattern that appears independently across biology, engineering, culture, and institutions. Systems that build room for the unknown tend to outlast systems that close down. That's not a wish. It's a structural observation.</p>
     </div>
 </section>
+
+<hr class="divider">
 
 <!-- ═══════════ EXAMPLES ═══════════ -->
-<section id="examples" class="alt">
-    <h2>Examples Across Domains</h2>
-    <p class="section-intro">FC appears wherever systems persist across time. These aren't analogies — they're the same structural pattern in different substrates.</p>
+<section>
+    <h2>Examples</h2>
+    <p class="intro">These span biology, engineering, culture, and institutions — different domains, but a recognizable pattern across all of them.</p>
 
-    <div class="example-card">
-        <div class="domain">Engineering</div>
-        <div class="ex-title">NTSC Color Television (1953)</div>
-        <div class="ex-desc">CBS built a technically superior color system that was incompatible with 28 million existing black-and-white sets. NTSC won because it was forward compatible — old TVs could still display the signal. The better technology lost to the more compatible one.</div>
+    <div class="example-block">
+        <div class="domain-label">Engineering</div>
+        <h3>NTSC Color Television (1953)</h3>
+        <p>CBS built a technically superior color system that was incompatible with 28 million existing black-and-white sets. NTSC won because it was forward compatible — old TVs could still display the signal. The better technology lost to the more compatible one.</p>
     </div>
-    <div class="example-card">
-        <div class="domain">Culture</div>
-        <div class="ex-title">Ise Shrine — 1,300 Years of Renewal</div>
-        <div class="ex-desc">Japan's Ise Shrine has been rebuilt every 20 years for over a millennium. The structure changes; the knowledge of how to build it transfers across generations through apprenticeship. The renewal mechanism is itself forward compatible — tokowaka, "eternal youth through renewal."</div>
+    <div class="example-block">
+        <div class="domain-label">Culture</div>
+        <h3>Ise Shrine — 1,300 Years of Renewal</h3>
+        <p>Japan's Ise Shrine has been rebuilt every 20 years for over a millennium. The structure changes; the knowledge of how to build it transfers across generations through apprenticeship. The renewal mechanism is itself forward compatible — tokowaka, "eternal youth through renewal."</p>
     </div>
-    <div class="example-card">
-        <div class="domain">Agriculture</div>
-        <div class="ex-title">Polyculture vs. Monoculture</div>
-        <div class="ex-desc">Across the Americas, many peoples practiced polyculture agroforestry at landscape scale — interplanting diverse species in ways that looked like "wilderness" to colonizers who only recognized monoculture rows as agriculture. Eastern Woodland forest gardening, Pacific Northwest camas prairie management, and the well-known Three Sisters (corn, beans, squash) are a few of many examples. Monoculture optimizes for one known output — efficient short-term, catastrophically fragile. Polyculture includes diversity that lets the system absorb shocks, cycle nutrients, and sustain itself across generations. The FC pattern in soil: include what monoculture excludes, and the system is more resilient for everyone in it.</div>
+    <div class="example-block">
+        <div class="domain-label">Agriculture</div>
+        <h3>Polyculture vs. Monoculture</h3>
+        <p>Across the Americas, many peoples practiced polyculture agroforestry at landscape scale — interplanting diverse species in ways that were often not recognized as agriculture by colonizers whose frameworks defined farming as monoculture rows. Monoculture optimizes for one known output — efficient short-term, catastrophically fragile. Polyculture includes diversity that lets the system absorb shocks, cycle nutrients, and sustain itself across generations.</p>
     </div>
-    <div class="example-card">
-        <div class="domain">Urban Design</div>
-        <div class="ex-title">Melbourne's Trams</div>
-        <div class="ex-desc">Melbourne kept its trams. American cities ripped theirs out. The trams co-evolved with urban density, walkability, and street life. Removing them didn't just lose transit — it broke a web of relationships that had developed together.</div>
+    <div class="example-block">
+        <div class="domain-label">Urban Design</div>
+        <h3>Melbourne's Trams</h3>
+        <p>Melbourne kept its trams. American cities ripped theirs out. The trams co-evolved with urban density, walkability, and street life. Removing them didn't just lose transit — it broke a web of relationships that had developed together.</p>
     </div>
-    <div class="example-card">
-        <div class="domain">Medicine</div>
-        <div class="ex-title">mRNA Platforms vs. Bespoke Vaccines</div>
-        <div class="ex-desc">Traditional vaccination was deliberate but bespoke — each vaccine designed for one pathogen. The mRNA platform is deliberate and modular — the delivery system stays stable while the payload changes. Forward compatible by design.</div>
+    <div class="example-block">
+        <div class="domain-label">Medicine</div>
+        <h3>mRNA Platforms vs. Bespoke Vaccines</h3>
+        <p>Traditional vaccination was deliberate but bespoke — each vaccine designed for one pathogen. The mRNA platform is deliberate and modular — the delivery system stays stable while the payload changes.</p>
     </div>
-    <div class="example-card">
-        <div class="domain">Accessibility</div>
-        <div class="ex-title">The Curb Cut Effect</div>
-        <div class="ex-desc">Curb cuts were designed for wheelchair users. They turned out to help everyone — parents with strollers, delivery workers, cyclists, travelers with luggage. Including what was excluded made the system better for everyone.</div>
+    <div class="example-block">
+        <div class="domain-label">Accessibility</div>
+        <h3>The Curb Cut Effect</h3>
+        <p>Curb cuts were designed for wheelchair users. They turned out to help everyone — parents with strollers, delivery workers, cyclists, travelers with luggage. Including what was excluded made the system better for everyone.</p>
     </div>
-    <div class="example-card">
-        <div class="domain">Aviation</div>
-        <div class="ex-title">Crew Resource Management</div>
-        <div class="ex-desc">After crashes caused by captains who couldn't be questioned, aviation redesigned cockpit culture to include the co-pilot's perspective by default. Including what hierarchy excluded — dissenting input — made the system dramatically safer.</div>
+    <div class="example-block">
+        <div class="domain-label">Aviation</div>
+        <h3>Crew Resource Management</h3>
+        <p>After crashes caused by captains who couldn't be questioned, aviation redesigned cockpit culture to include the co-pilot's perspective by default. Including what hierarchy excluded — dissenting input — made the system dramatically safer.</p>
     </div>
 </section>
+
+<hr class="divider">
 
 <!-- ═══════════ VOCABULARY ═══════════ -->
-<section id="vocabulary" class="alt">
+<section>
     <h2>The Vocabulary</h2>
-    <p class="section-intro">
-        Twenty-first century technologies work with living systems — gene editing, microbiome cultivation,
-        mRNA platforms, ecosystem management. You can't "deploy" a microbiome. You cultivate it.
-        The mechanical vocabulary ("build, deploy, optimize") didn't just lack precision — it closed off
-        entire categories of responsibility. There was no conceptual slot for "tend the living system
-        this technology enters."
+    <p class="intro">
+        Technologies increasingly work with living systems — editing genomes, cultivating microbiomes,
+        managing ecosystems. You can't "deploy" a microbiome. You cultivate it. The mechanical vocabulary
+        ("build, deploy, optimize") was precise for machines, but it closed off categories of responsibility
+        that ecological work has always required. "Tend the living system this enters" was always part of
+        farming, fermentation, and medicine — it just wasn't part of the prestige vocabulary.
     </p>
-    <p style="color:#94a3b8;margin-bottom:20px;">
+    <p style="color:#888;margin-bottom:24px;">
         Ecological knowledge was always present alongside mechanical engineering — in farms, fermentation,
-        medicine, soil. What changed isn't that we started doing ecological work. It's that we're finally
-        giving it the vocabulary it deserves.
+        medicine, soil. What changed isn't that we started doing ecological work. It's that the work is
+        finally gaining the recognition it has long warranted.
     </p>
     <div>
-        <span class="vocab-word">cultivate</span>
-        <span class="vocab-word">mend</span>
-        <span class="vocab-word">steward</span>
-        <span class="vocab-word">weave</span>
-        <span class="vocab-word">foster</span>
-        <span class="vocab-word">restore</span>
-        <span class="vocab-word">nurture</span>
-        <span class="vocab-word">tend</span>
-        <span class="vocab-word">temper</span>
-        <span class="vocab-word">renew</span>
-        <span class="vocab-word">compost</span>
+        <span class="tag">cultivate</span>
+        <span class="tag">mend</span>
+        <span class="tag">steward</span>
+        <span class="tag">weave</span>
+        <span class="tag">foster</span>
+        <span class="tag">restore</span>
+        <span class="tag">nurture</span>
+        <span class="tag">tend</span>
+        <span class="tag">temper</span>
+        <span class="tag">renew</span>
+        <span class="tag">compost</span>
     </div>
 </section>
 
+<hr class="divider">
+
 <!-- ═══════════ TRADEOFFS ═══════════ -->
-<section id="tradeoffs" class="alt">
+<section>
     <h2>Known Tradeoffs</h2>
-    <p class="section-intro">Forward compatibility is not free. The costs are real and worth naming.</p>
-    <div>
-        <span class="tradeoff">Complexity overhead</span>
-        <span class="tradeoff">Ossification from disuse</span>
-        <span class="tradeoff">Security risks from graceful degradation</span>
-        <span class="tradeoff">The inner platform effect</span>
-        <span class="tradeoff">Entrenched flaws that become permanent</span>
-        <span class="tradeoff">Integration on one system's terms</span>
+    <p class="intro">Forward compatibility is not free. The costs are real and worth naming.</p>
+    <div style="margin-bottom:20px;">
+        <span class="tag warn">Complexity overhead</span>
+        <span class="tag warn">Ossification from disuse</span>
+        <span class="tag warn">Security risks from graceful degradation</span>
+        <span class="tag warn">The inner platform effect</span>
+        <span class="tag warn">Entrenched flaws that become permanent</span>
+        <span class="tag warn">Integration on one system's terms</span>
     </div>
-    <p style="color:#64748b;font-size:0.9rem;margin-top:16px;">
-        Postel's Law ("be liberal in what you accept") has a real critique: systems that are too tolerant
-        can entrench flaws that become impossible to fix. TLS downgrade attacks exploit graceful degradation.
-        FC takes the tradeoffs seriously — compatibility has costs, and naming them honestly is part of the work.
+    <p style="color:#888;font-size:0.9rem;">
+        Postel's Law ("be liberal in what you accept") has a real critique: systems that are too
+        tolerant can entrench flaws that become impossible to fix. TLS downgrade attacks exploit
+        graceful degradation. Compatibility has costs, and naming them honestly is part of the work.
     </p>
 </section>
 

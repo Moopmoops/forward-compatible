@@ -74,7 +74,21 @@ Two layers to the argument: (a) ecological vocabulary is more technically precis
 
 **Draft copy direction:** "A technology isn't finished when it works. It's finished when you can describe the living system it enters — and how to tend that system's health while using it."
 
-### 10. Meta-principle: Don't flatten the past
+### 10. The W3C progression as FC in miniature: ignore → discard → preserve
+
+The W3C TAG's three levels of handling unknown input tell a story that maps directly to FC's ambition:
+
+- **Must ignore unknowns** — don't break when you encounter what you don't recognize. Baseline survival.
+- **Must accept and discard unknowns** — take it in, process what you can, let go of the rest. The system acknowledges the unknown exists.
+- **Must accept and preserve unknowns** — take it in, keep it intact even though you can't process it, pass it through so something downstream or future might understand it.
+
+That third level is the most forward-compatible — and it's remarkably close to FC's core claim. The system doesn't just tolerate the unknown, it *holds* it for a future that might need it.
+
+**Site treatment:** This progression is a powerful way to explain FC's relationship to its engineering origins. The engineering concept gives you level one (don't break). FC extends the aspiration all the way through: don't just survive the unknown — hold it, tend it, and expect to be improved by it.
+
+**Draft copy direction:** "The most forward-compatible systems don't just tolerate what they don't understand — they hold it, intact, for a future that might."
+
+### 11. Meta-principle: Don't flatten the past
 
 **The idea:** FC should model the honest complexity it advocates for. Clean before/after narratives are cognitively tempting but they flatten history. When FC talks about its own origins (extending engineering concepts) or the traditions it draws from (ecological, Indigenous, relational), it should acknowledge parallel knowledge systems, institutional privilege, marginalization, and reintegration — not "we used to X, now we Y."
 

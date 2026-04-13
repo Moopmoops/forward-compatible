@@ -2,6 +2,11 @@
 
 ## Session: 2026-04-11 — Shared Worldviews, Moral Frameworks, and the Context Problem
 
+### The meta-pattern (refined)
+"Someone included what the system was **previously** designed to exclude, and the system got better for everyone."
+
+The word "previously" matters: it acknowledges that exclusion wasn't necessarily malicious or permanent — it was a design boundary that made sense at the time, given what was known. The system wasn't built *against* the excluded thing, it was built *without* it. "Previously" frames design boundaries as temporal, not essential. This avoids flattening the past, avoids locating blame in a single actor, and honors what the original design got right while recognizing what it missed.
+
 ### Starting point
 Benjamin is reframing how FC relates to religion. The structural observation is true — FC does what religion does (tells you where you came from, where you're going, what to value) — but "replacement for religion" is oppositional framing. The move: **fostering shared worldviews**, not replacing existing ones.
 
@@ -66,6 +71,11 @@ Santos identifies how scale determines credibility: whatever claims universality
 FC may go further than Santos's coexistence model. Santos protects the particular against the universal. FC is reaching for something different: frameworks designed from the start to be *transformed by encounter*. Not "your knowledge can exist next to mine" but "my framework is incomplete until it's been shaped by yours." Benjamin's framing: build a space that isn't exclusionary, then actively ask others what their vision is — find existing foundations or build together. This is hospitable rather than universal or particular. Permeable by design.
 
 This may be FC's clearest original contribution relative to existing thinkers in this space: not coexistence of knowledge systems, but frameworks that *expect to be changed* by what they encounter.
+
+**16. The name: forward compatible vs. future proof vs. forward systems**
+"Future proof" is defensive — survive the future unchanged. Bulletproof, waterproof. The aspiration is persistence. "Forward compatible" is relational — it implies a relationship with what comes next. But "compatible" undersells the ambition — in engineering it means "doesn't break," while FC means "gets better through integrating the unknown." "Forward systems" drops both defensive and underselling framings, but loses the relational provocation — compatible with *what*? That question is where the concept lives.
+
+Working conclusion: "forward compatible" may be the best vehicle *because* it undersells. It lets people in through a familiar concept and then shows them something larger. It also shares a name with the engineering term, providing a bridge from Wikipedia/engineering contexts to the broader framework. Open question whether a new term could capture the full ambition better — "forward generative," "forward integrative," "forward cultivating" were considered but each has drawbacks.
 
 ### Nuances and tensions to track
 - "Fostering shared worldviews" is affirming; "replacing religion" is oppositional. Same structural observation, opposite emotional register. The site should always use the affirming frame.
