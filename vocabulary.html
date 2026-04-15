@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary — Forward Compatible</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --bg: #0c0c0c;
+    --text: #c8c8c8;
+    --text-bright: #e8e8e8;
+    --text-dim: #555;
+    --accent: #c9a55a;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* ── NAV ── */
+.back {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    z-index: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.back:hover { color: var(--text); }
+
+/* ── INTRO ── */
+.intro-scene {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+}
+.intro-scene h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-bright);
+    margin-bottom: 24px;
+}
+.intro-scene p {
+    font-size: 1rem;
+    color: var(--text-dim);
+    max-width: 480px;
+    line-height: 1.8;
+}
+
+/* ── WORD SCENE ── */
+.word-scene {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.word-scene canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.word-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+}
+.word-content h2 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-bright);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.word-content p {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+}
+.word-scene.active .word-content h2,
+.word-scene.active .word-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── OUTRO ── */
+.outro {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+}
+.outro p {
+    font-size: 1rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+.outro a { color: var(--accent); text-decoration: none; }
+.outro a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<a href="/" class="back">&larr; Forward Compatible</a>
+
+<div class="intro-scene">
+    <h1>The Vocabulary</h1>
+    <p>
+        FC uses words from cultivation, not construction.
+        Each word carries a way of relating to the systems we tend.
+        Scroll to experience them.
+    </p>
+</div>
+
+<!-- ═══════════ CULTIVATE ═══════════ -->
+<div class="word-scene" id="scene-cultivate">
+    <canvas id="canvas-cultivate"></canvas>
+    <div class="word-content">
+        <h2>cultivate</h2>
+        <p>Not build. Not deploy. Work with something living over time, shaping conditions for growth you can't fully control. The outcome is never entirely yours.</p>
+    </div>
+</div>
+
+<!-- ═══════════ MEND ═══════════ -->
+<div class="word-scene" id="scene-mend">
+    <canvas id="canvas-mend"></canvas>
+    <div class="word-content">
+        <h2>mend</h2>
+        <p>Not replace. Find where the break is and restore connection across it. What was separated becomes continuous again. The repair is visible — and that's honest.</p>
+    </div>
+</div>
+
+<!-- ═══════════ STEWARD ═══════════ -->
+<div class="word-scene" id="scene-steward">
+    <canvas id="canvas-steward"></canvas>
+    <div class="word-content">
+        <h2>steward</h2>
+        <p>Hold responsibility for something that isn't yours alone. You inherited it, you'll pass it on. Your job is to leave it more capable than you found it.</p>
+    </div>
+</div>
+
+<!-- ═══════════ WEAVE ═══════════ -->
+<div class="word-scene" id="scene-weave">
+    <canvas id="canvas-weave"></canvas>
+    <div class="word-content">
+        <h2>weave</h2>
+        <p>Bring separate threads into relationship. Each one keeps its identity but gains strength from the structure they form together. Pull one and the whole fabric responds.</p>
+    </div>
+</div>
+
+<!-- ═══════════ FOSTER ═══════════ -->
+<div class="word-scene" id="scene-foster">
+    <canvas id="canvas-foster"></canvas>
+    <div class="word-content">
+        <h2>foster</h2>
+        <p>Create conditions for something to thrive that can't yet sustain itself. Temporary shelter that makes permanent growth possible. You provide the environment; it provides the becoming.</p>
+    </div>
+</div>
+
+<!-- ═══════════ RESTORE ═══════════ -->
+<div class="word-scene" id="scene-restore">
+    <canvas id="canvas-restore"></canvas>
+    <div class="word-content">
+        <h2>restore</h2>
+        <p>Bring something back not to what it was, but to what it can be. Restoration isn't nostalgia — it's giving a system the capacity to function again on its own terms.</p>
+    </div>
+</div>
+
+<!-- ═══════════ NURTURE ═══════════ -->
+<div class="word-scene" id="scene-nurture">
+    <canvas id="canvas-nurture"></canvas>
+    <div class="word-content">
+        <h2>nurture</h2>
+        <p>Sustained attention over time. Not a single intervention but a continuous relationship. What you nurture changes — and so do you.</p>
+    </div>
+</div>
+
+<!-- ═══════════ TEND ═══════════ -->
+<div class="word-scene" id="scene-tend">
+    <canvas id="canvas-tend"></canvas>
+    <div class="word-content">
+        <h2>tend</h2>
+        <p>Small, repeated acts of care. Not dramatic. Not heroic. The garden doesn't need a revolution — it needs someone who shows up.</p>
+    </div>
+</div>
+
+<!-- ═══════════ TEMPER ═══════════ -->
+<div class="word-scene" id="scene-temper">
+    <canvas id="canvas-temper"></canvas>
+    <div class="word-content">
+        <h2>temper</h2>
+        <p>Strengthen through controlled stress. Steel tempered by heat. Character tempered by difficulty. The right amount of pressure makes things more resilient, not more brittle.</p>
+    </div>
+</div>
+
+<!-- ═══════════ RENEW ═══════════ -->
+<div class="word-scene" id="scene-renew">
+    <canvas id="canvas-renew"></canvas>
+    <div class="word-content">
+        <h2>renew</h2>
+        <p>Not repeat. Not replace. Carry the essential forward into a new form. The shrine is rebuilt. The knowledge survives. The thing that lasts is the capacity for renewal itself.</p>
+    </div>
+</div>
+
+<!-- ═══════════ COMPOST ═══════════ -->
+<div class="word-scene" id="scene-compost">
+    <canvas id="canvas-compost"></canvas>
+    <div class="word-content">
+        <h2>compost</h2>
+        <p>Let what's finished become the foundation for what's next. Ideas don't get discarded — they decompose into nutrients. The old worldview feeds the new one. Nothing is wasted if you know how to let it transform.</p>
+    </div>
+</div>
+
+<div class="outro">
+    <p>These aren't metaphors. They're precise.<br><a href="/">Return to Forward Compatible</a></p>
+</div>
+
+<script>
+// ── Intersection Observer for scene activation ──
+var scenes = document.querySelectorAll('.word-scene');
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.4 });
+scenes.forEach(function(s) { observer.observe(s); });
+
+// ── Canvas animations ──
+// Each word gets a unique visual system
+
+function initCanvas(id) {
+    var canvas = document.getElementById(id);
+    if (!canvas) return null;
+    var ctx = canvas.getContext('2d');
+    function resize() {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    return { canvas: canvas, ctx: ctx, w: function() { return canvas.offsetWidth; }, h: function() { return canvas.offsetHeight; } };
+}
+
+// ── CULTIVATE: particles that grow outward like roots ──
+(function() {
+    var c = initCanvas('canvas-cultivate');
+    if (!c) return;
+    var particles = [];
+    var cx, cy;
+
+    function seed() {
+        cx = c.w() / 2;
+        cy = c.h() / 2;
+        for (var i = 0; i < 120; i++) {
+            var angle = Math.random() * Math.PI * 2;
+            var speed = 0.2 + Math.random() * 0.5;
+            particles.push({
+                x: cx, y: cy,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                life: 0, maxLife: 200 + Math.random() * 300,
+                size: 1 + Math.random() * 2
+            });
+        }
+    }
+    seed();
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        particles.forEach(function(p) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vx += (Math.random() - 0.5) * 0.02;
+            p.vy += (Math.random() - 0.5) * 0.02;
+            p.life++;
+            var alpha = Math.max(0, 1 - p.life / p.maxLife) * 0.4;
+            c.ctx.fillStyle = 'rgba(120, 160, 80, ' + alpha + ')';
+            c.ctx.beginPath();
+            c.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            c.ctx.fill();
+            if (p.life > p.maxLife) {
+                p.x = cx; p.y = cy; p.life = 0;
+                var a = Math.random() * Math.PI * 2;
+                p.vx = Math.cos(a) * (0.2 + Math.random() * 0.5);
+                p.vy = Math.sin(a) * (0.2 + Math.random() * 0.5);
+            }
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── MEND: broken lines that reconnect ──
+(function() {
+    var c = initCanvas('canvas-mend');
+    if (!c) return;
+    var lines = [];
+    var progress = 0;
+
+    for (var i = 0; i < 8; i++) {
+        var y = 0.15 + (i / 8) * 0.7;
+        var breakPt = 0.35 + Math.random() * 0.3;
+        var gap = 0.03 + Math.random() * 0.04;
+        lines.push({ y: y, breakPt: breakPt, gap: gap });
+    }
+
+    var scene = document.getElementById('scene-mend');
+    var activated = false;
+    var mObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !activated) { activated = true; }
+    }, { threshold: 0.4 });
+    mObs.observe(scene);
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        if (activated && progress < 1) progress += 0.005;
+
+        lines.forEach(function(l) {
+            var w = c.w(), h = c.h();
+            var y = l.y * h;
+            var currentGap = l.gap * (1 - progress);
+
+            c.ctx.strokeStyle = 'rgba(180, 140, 100, 0.25)';
+            c.ctx.lineWidth = 1;
+            c.ctx.beginPath();
+            c.ctx.moveTo(w * 0.1, y);
+            c.ctx.lineTo(w * (l.breakPt - currentGap), y);
+            c.ctx.stroke();
+            c.ctx.beginPath();
+            c.ctx.moveTo(w * (l.breakPt + currentGap), y);
+            c.ctx.lineTo(w * 0.9, y);
+            c.ctx.stroke();
+
+            if (progress > 0.8) {
+                var glowAlpha = (progress - 0.8) * 5 * 0.3;
+                c.ctx.strokeStyle = 'rgba(201, 165, 90, ' + glowAlpha + ')';
+                c.ctx.lineWidth = 2;
+                c.ctx.beginPath();
+                c.ctx.moveTo(w * (l.breakPt - 0.02), y);
+                c.ctx.lineTo(w * (l.breakPt + 0.02), y);
+                c.ctx.stroke();
+            }
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── STEWARD: steady pulse, like a lighthouse ──
+(function() {
+    var c = initCanvas('canvas-steward');
+    if (!c) return;
+    var t = 0;
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.015;
+        var cx = c.w() / 2, cy = c.h() / 2;
+
+        for (var i = 0; i < 4; i++) {
+            var phase = t - i * 0.8;
+            var radius = ((phase % 3.2) / 3.2) * Math.min(cx, cy) * 0.9;
+            var alpha = Math.max(0, 0.2 - (radius / (Math.min(cx, cy) * 0.9)) * 0.2);
+            c.ctx.strokeStyle = 'rgba(160, 160, 180, ' + alpha + ')';
+            c.ctx.lineWidth = 1;
+            c.ctx.beginPath();
+            c.ctx.arc(cx, cy, Math.max(1, radius), 0, Math.PI * 2);
+            c.ctx.stroke();
+        }
+
+        var coreAlpha = 0.15 + Math.sin(t * 2) * 0.1;
+        c.ctx.fillStyle = 'rgba(201, 165, 90, ' + coreAlpha + ')';
+        c.ctx.beginPath();
+        c.ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+        c.ctx.fill();
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── WEAVE: threads crossing ──
+(function() {
+    var c = initCanvas('canvas-weave');
+    if (!c) return;
+    var t = 0;
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.008;
+        var w = c.w(), h = c.h();
+
+        for (var i = 0; i < 12; i++) {
+            var phase = i * 0.5 + t;
+            var x1 = w * (0.1 + (i / 12) * 0.8);
+            var y1 = h * 0.1;
+            var x2 = w * (0.1 + ((i + 3) / 12 % 1) * 0.8);
+            var y2 = h * 0.9;
+            var cpx = w / 2 + Math.sin(phase) * w * 0.2;
+            var cpy = h / 2 + Math.cos(phase * 0.7) * h * 0.1;
+
+            c.ctx.strokeStyle = 'rgba(140, 130, 160, 0.12)';
+            c.ctx.lineWidth = 1;
+            c.ctx.beginPath();
+            c.ctx.moveTo(x1, y1);
+            c.ctx.quadraticCurveTo(cpx, cpy, x2, y2);
+            c.ctx.stroke();
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── FOSTER: small element growing, sheltered ──
+(function() {
+    var c = initCanvas('canvas-foster');
+    if (!c) return;
+    var t = 0;
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.01;
+        var cx = c.w() / 2, cy = c.h() / 2;
+
+        // Shelter arc
+        var shelterR = 60 + Math.sin(t * 0.5) * 5;
+        c.ctx.strokeStyle = 'rgba(160, 160, 140, 0.15)';
+        c.ctx.lineWidth = 1;
+        c.ctx.beginPath();
+        c.ctx.arc(cx, cy - 10, shelterR, Math.PI * 0.8, Math.PI * 0.2);
+        c.ctx.stroke();
+
+        // Growing inner
+        var innerR = 5 + Math.sin(t) * 2 + t * 0.3 % 20;
+        var innerAlpha = 0.1 + Math.sin(t) * 0.05;
+        c.ctx.fillStyle = 'rgba(120, 180, 100, ' + innerAlpha + ')';
+        c.ctx.beginPath();
+        c.ctx.arc(cx, cy + 5, innerR, 0, Math.PI * 2);
+        c.ctx.fill();
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── RESTORE: faded pattern coming to clarity ──
+(function() {
+    var c = initCanvas('canvas-restore');
+    if (!c) return;
+    var activated = false;
+    var progress = 0;
+    var dots = [];
+
+    for (var i = 0; i < 80; i++) {
+        dots.push({
+            x: 0.15 + Math.random() * 0.7,
+            y: 0.2 + Math.random() * 0.6,
+            size: 1 + Math.random() * 3,
+            delay: Math.random()
+        });
+    }
+
+    var scene = document.getElementById('scene-restore');
+    var rObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) activated = true;
+    }, { threshold: 0.4 });
+    rObs.observe(scene);
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        if (activated && progress < 1) progress += 0.004;
+
+        dots.forEach(function(d) {
+            var a = Math.max(0, Math.min(1, (progress - d.delay * 0.5) * 3)) * 0.3;
+            c.ctx.fillStyle = 'rgba(201, 165, 90, ' + a + ')';
+            c.ctx.beginPath();
+            c.ctx.arc(d.x * c.w(), d.y * c.h(), d.size, 0, Math.PI * 2);
+            c.ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── NURTURE: warm concentric rings expanding slowly ──
+(function() {
+    var c = initCanvas('canvas-nurture');
+    if (!c) return;
+    var t = 0;
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.008;
+        var cx = c.w() / 2, cy = c.h() / 2;
+
+        for (var i = 0; i < 6; i++) {
+            var radius = 20 + i * 35 + Math.sin(t + i * 0.4) * 8;
+            var alpha = 0.06 + Math.sin(t + i) * 0.03;
+            c.ctx.strokeStyle = 'rgba(200, 150, 100, ' + alpha + ')';
+            c.ctx.lineWidth = 1;
+            c.ctx.beginPath();
+            c.ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+            c.ctx.stroke();
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── TEND: gentle repeated adjustments ──
+(function() {
+    var c = initCanvas('canvas-tend');
+    if (!c) return;
+    var t = 0;
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.02;
+        var w = c.w(), h = c.h();
+
+        // A line that gently sways and is "tended" back
+        for (var x = 0; x < w; x += 3) {
+            var normalY = h / 2;
+            var drift = Math.sin(x * 0.01 + t) * 15 + Math.sin(x * 0.005 + t * 0.3) * 10;
+            var correction = drift * 0.3 * Math.sin(t * 2);
+            var y = normalY + drift - correction;
+            var alpha = 0.15;
+            c.ctx.fillStyle = 'rgba(160, 160, 140, ' + alpha + ')';
+            c.ctx.fillRect(x, y, 2, 1);
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── TEMPER: heat colors shifting to stable ──
+(function() {
+    var c = initCanvas('canvas-temper');
+    if (!c) return;
+    var t = 0;
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.01;
+        var cx = c.w() / 2, cy = c.h() / 2;
+
+        var heat = Math.max(0, Math.sin(t * 0.5));
+        var r = 180 + heat * 75;
+        var g = 80 + (1 - heat) * 80;
+        var b = 60 + (1 - heat) * 80;
+
+        for (var i = 0; i < 3; i++) {
+            var radius = 30 + i * 25 + Math.sin(t * 2 + i) * (heat * 10);
+            var alpha = 0.08 + heat * 0.06;
+            c.ctx.strokeStyle = 'rgba(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b) + ',' + alpha + ')';
+            c.ctx.lineWidth = 1.5;
+            c.ctx.beginPath();
+            c.ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+            c.ctx.stroke();
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── RENEW: dissolve and reform cycle ──
+(function() {
+    var c = initCanvas('canvas-renew');
+    if (!c) return;
+    var particles = [];
+    var t = 0;
+    var cx, cy;
+
+    for (var i = 0; i < 60; i++) {
+        var angle = (i / 60) * Math.PI * 2;
+        var r = 50;
+        particles.push({
+            homeX: Math.cos(angle) * r,
+            homeY: Math.sin(angle) * r,
+            x: 0, y: 0, phase: Math.random() * Math.PI * 2
+        });
+    }
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.012;
+        cx = c.w() / 2;
+        cy = c.h() / 2;
+
+        var cycle = (Math.sin(t) + 1) / 2; // 0 = scattered, 1 = formed
+
+        particles.forEach(function(p) {
+            var scatter = 1 - cycle;
+            var targetX = p.homeX + Math.sin(t + p.phase) * 80 * scatter;
+            var targetY = p.homeY + Math.cos(t * 0.7 + p.phase) * 80 * scatter;
+            p.x += (targetX - p.x) * 0.05;
+            p.y += (targetY - p.y) * 0.05;
+
+            var alpha = 0.15 + cycle * 0.2;
+            c.ctx.fillStyle = 'rgba(201, 165, 90, ' + alpha + ')';
+            c.ctx.beginPath();
+            c.ctx.arc(cx + p.x, cy + p.y, 2, 0, Math.PI * 2);
+            c.ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+// ── COMPOST: elements breaking apart and recombining ──
+(function() {
+    var c = initCanvas('canvas-compost');
+    if (!c) return;
+    var particles = [];
+    var t = 0;
+
+    for (var i = 0; i < 80; i++) {
+        particles.push({
+            x: Math.random(), y: 0.3 + Math.random() * 0.4,
+            vy: 0.0002 + Math.random() * 0.0003,
+            size: 1 + Math.random() * 2.5,
+            hue: 30 + Math.random() * 40,
+            phase: Math.random() * Math.PI * 2
+        });
+    }
+
+    function draw() {
+        c.ctx.clearRect(0, 0, c.w(), c.h());
+        t += 0.01;
+        var w = c.w(), h = c.h();
+
+        particles.forEach(function(p) {
+            p.y += p.vy;
+            p.x += Math.sin(t + p.phase) * 0.001;
+
+            // When they reach the bottom, they rise as something new
+            if (p.y > 0.85) {
+                p.y = 0.3;
+                p.hue = 60 + Math.random() * 60; // greener
+                p.size = 1 + Math.random() * 1.5;
+            }
+
+            var alpha = 0.15 + Math.sin(t + p.phase) * 0.05;
+            var rr = p.hue > 50 ? 80 : 140;
+            var gg = p.hue > 50 ? 140 : 100;
+            var bb = 60;
+            c.ctx.fillStyle = 'rgba(' + rr + ',' + gg + ',' + bb + ',' + alpha + ')';
+            c.ctx.beginPath();
+            c.ctx.arc(p.x * w, p.y * h, p.size, 0, Math.PI * 2);
+            c.ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+</script>
+</body>
+</html>
