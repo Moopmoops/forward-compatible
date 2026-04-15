@@ -32,6 +32,50 @@ body {
 a { color: var(--accent); text-decoration: none; opacity: 0.8; }
 a:hover { opacity: 1; }
 
+/* ── SCROLL REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-slow {
+    transition-duration: 1.2s;
+}
+.pull .reveal, .pull.reveal {
+    transform: translateY(0) scale(0.97);
+}
+.pull .reveal.visible, .pull.reveal.visible {
+    transform: translateY(0) scale(1);
+}
+
+/* Stagger children */
+.stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+.stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+.stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+.stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
+.stagger > .reveal:nth-child(5) { transition-delay: 0.4s; }
+.stagger > .reveal:nth-child(6) { transition-delay: 0.5s; }
+.stagger > .reveal:nth-child(7) { transition-delay: 0.6s; }
+.stagger > .reveal:nth-child(8) { transition-delay: 0.7s; }
+.stagger > .reveal:nth-child(9) { transition-delay: 0.8s; }
+.stagger > .reveal:nth-child(10) { transition-delay: 0.9s; }
+.stagger > .reveal:nth-child(11) { transition-delay: 1.0s; }
+
+/* Hero special — already visible, fades in on load */
+.hero-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroIn 1s ease forwards;
+}
+.hero-reveal:nth-child(2) { animation-delay: 0.3s; }
+@keyframes heroIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .col {
     max-width: 640px;
     margin: 0 auto;
@@ -241,8 +285,8 @@ footer a:hover { color: var(--text-dim); }
 
 <!-- ═══════════════════════════════════════ -->
 <div class="hero col">
-    <h1>Forward<br>Compatible</h1>
-    <p class="subtitle">
+    <h1 class="hero-reveal">Forward<br>Compatible</h1>
+    <p class="subtitle hero-reveal">
         A framework for understanding how systems — biological, cultural,
         technological, institutional — meet futures beyond what they were
         designed for.
@@ -250,7 +294,7 @@ footer a:hover { color: var(--text-dim); }
 </div>
 
 <!-- ═══════════════════════════════════════ -->
-<div class="pull">
+<div class="pull reveal reveal-slow">
     <p>Someone included what the system was previously designed to exclude, and the system got better for everyone.</p>
     <div class="attr">The meta-pattern</div>
 </div>
@@ -259,8 +303,8 @@ footer a:hover { color: var(--text-dim); }
 
 <!-- ═══════════════════════════════════════ -->
 <div class="section col">
-    <h2>Why This Matters</h2>
-    <p class="intro">
+    <h2 class="reveal">Why This Matters</h2>
+    <p class="intro reveal">
         No individual can hold all the context needed for complex decisions.
         The future always contains information we don't have yet.
     </p>
@@ -280,8 +324,8 @@ footer a:hover { color: var(--text-dim); }
 
 <!-- ═══════════════════════════════════════ -->
 <div class="section col">
-    <h2>The Principles</h2>
-    <p class="intro">
+    <h2 class="reveal">The Principles</h2>
+    <p class="intro reveal">
         Forward compatibility started as an engineering concept — the structural
         property that lets a system handle input that doesn't exist yet. But the
         same pattern appears across biology, language, institutions, and culture.
@@ -289,51 +333,51 @@ footer a:hover { color: var(--text-dim); }
         they weren't originally designed for tend to outlast the ones that can't.
     </p>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label">Principle 1</div>
         <h3>Prepare for what you don't yet understand</h3>
         <p>Don't break when you encounter something unfamiliar. HTML renders what it can and skips unrecognized tags — it doesn't reject the whole page. A person hearing a new word continues the conversation rather than stopping it.</p>
     </div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label">Principle 2</div>
         <h3>Negotiate to common ground</h3>
         <p>Two systems find the best shared capability. USB devices handshaking to the highest speed they both support. Two people code-switching to a shared language.</p>
     </div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label">Principle 3</div>
         <h3>Degrade in layers rather than fail as a unit</h3>
         <p>Older systems get a complete but less rich experience. JPEG base layer readable by old decoders while new decoders get enhancement layers. Innate immunity handling anything imprecisely while adaptive immunity adds precision.</p>
     </div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label">Principle 4</div>
         <h3>Leave room for what doesn't exist yet</h3>
         <p>Design for inputs you can't predict. TCP's options field. Grammar broad enough to accept vocabulary that hasn't been coined. JSON's open key-value structure — any field can appear without breaking the format.</p>
     </div>
 
-    <div class="extension-marker">Extensions beyond engineering</div>
+    <div class="extension-marker reveal reveal-slow">Extensions beyond engineering</div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label" style="color:var(--accent);opacity:0.5;">Extension 5</div>
         <h3>Integrate the unknown</h3>
         <p>Don't just skip or preserve unfamiliar input — learn from it. The immune system's memory cells remember every pathogen they've encountered and respond faster the next time. A person who encounters a new word enough times doesn't just know a new word — they can think thoughts they couldn't think before.</p>
     </div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label" style="color:var(--accent);opacity:0.5;">Extension 6</div>
         <h3>Protect co-evolved relationships</h3>
         <p>Systems that developed together break when separated. Melbourne's trams and urban density. Indigenous polyculture — the Three Sisters co-evolved to support each other. Separating them into monoculture rows loses what makes each one thrive.</p>
     </div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label" style="color:var(--accent);opacity:0.5;">Extension 7</div>
         <h3>Maintain renewal mechanisms</h3>
         <p>The capacity to keep the system alive has to itself be forward compatible. Ise Shrine's apprenticeship cycle — 1,300 years of renewal. Libraries depending on political funding cycles.</p>
     </div>
 
-    <div class="principle">
+    <div class="principle reveal">
         <div class="label" style="color:var(--accent);opacity:0.5;">Extension 8</div>
         <h3>Ship stewardship alongside the system</h3>
         <p>A technology isn't finished when it works. It's finished when you can describe the living system it enters — and how to tend that system's health while using it. Antibiotics shipped without microbiome guidance. Social platforms launched without guidance on what they do to attention, trust, and community. The technology "worked"; the ecology it entered was left untended.</p>
@@ -341,7 +385,7 @@ footer a:hover { color: var(--text-dim); }
 </div>
 
 <!-- ═══════════════════════════════════════ -->
-<div class="pull">
+<div class="pull reveal reveal-slow">
     <p>Care compounds with no diminishing returns.</p>
 </div>
 
@@ -349,81 +393,81 @@ footer a:hover { color: var(--text-dim); }
 
 <!-- ═══════════════════════════════════════ -->
 <div class="section col">
-    <h2>What FC Does</h2>
-    <p class="intro">
+    <h2 class="reveal">What FC Does</h2>
+    <p class="intro reveal">
         A working tool — not just a way to describe systems, but a way to
         evaluate, compare, and design them.
     </p>
 
-    <div class="role"><h3>A framework for shared orientation</h3><p>Humans need shared frameworks that provide orientation, meaning, and priorities. Religions, constitutions, scientific paradigms, and cultural traditions all fill this need. FC describes the pattern they share when they work well, and offers a framework for building new shared understanding across difference.</p></div>
+    <div class="role reveal"><h3>A framework for shared orientation</h3><p>Humans need shared frameworks that provide orientation, meaning, and priorities. Religions, constitutions, scientific paradigms, and cultural traditions all fill this need. FC describes the pattern they share when they work well, and offers a framework for building new shared understanding across difference.</p></div>
 
-    <div class="role"><h3>Connector across domains</h3><p>Makes unrelated things visible as the same phenomenon. The immune system and HTML parsing are doing similar structural work in different substrates. Insights from one field become actionable in another.</p></div>
+    <div class="role reveal"><h3>Connector across domains</h3><p>Makes unrelated things visible as the same phenomenon. The immune system and HTML parsing are doing similar structural work in different substrates. Insights from one field become actionable in another.</p></div>
 
-    <div class="role"><h3>Evaluative criteria</h3><p>Gives you specific, answerable questions to ask of any system. Does it handle what it doesn't yet understand? Does it have room for what doesn't exist yet? Does it protect the relationships that make it work?</p></div>
+    <div class="role reveal"><h3>Evaluative criteria</h3><p>Gives you specific, answerable questions to ask of any system. Does it handle what it doesn't yet understand? Does it have room for what doesn't exist yet? Does it protect the relationships that make it work?</p></div>
 
-    <div class="role"><h3>Comparison tool</h3><p>Hold any two systems next to each other. Melbourne kept its trams, American cities ripped theirs out. The HGP opened its data, Celera kept it proprietary.</p></div>
+    <div class="role reveal"><h3>Comparison tool</h3><p>Hold any two systems next to each other. Melbourne kept its trams, American cities ripped theirs out. The HGP opened its data, Celera kept it proprietary.</p></div>
 
-    <div class="role"><h3>Diagnostic tool</h3><p>Walk up to any system and ask: what's the interface, where's the capacity, is there room for the unknown, what's the renewal mechanism, what's fragile?</p></div>
+    <div class="role reveal"><h3>Diagnostic tool</h3><p>Walk up to any system and ask: what's the interface, where's the capacity, is there room for the unknown, what's the renewal mechanism, what's fragile?</p></div>
 
-    <div class="role"><h3>Early warning system</h3><p>If the flexibility hasn't been exercised, it's probably ossifying. If the renewal mechanism depends on something fragile, you can see the vulnerability before it collapses.</p></div>
+    <div class="role reveal"><h3>Early warning system</h3><p>If the flexibility hasn't been exercised, it's probably ossifying. If the renewal mechanism depends on something fragile, you can see the vulnerability before it collapses.</p></div>
 
-    <div class="role"><h3>Design guidance</h3><p>Leave room. Make the interface stable but extensible. Protect co-evolved relationships. Exercise your flexibility or lose it. Ship stewardship alongside the system.</p></div>
+    <div class="role reveal"><h3>Design guidance</h3><p>Leave room. Make the interface stable but extensible. Protect co-evolved relationships. Exercise your flexibility or lose it. Ship stewardship alongside the system.</p></div>
 
-    <div class="role"><h3>Translation layer</h3><p>An engineer, a linguist, an immunologist, and an urban planner are all doing versions of the same thing but can't talk to each other about it. FC gives them shared vocabulary.</p></div>
+    <div class="role reveal"><h3>Translation layer</h3><p>An engineer, a linguist, an immunologist, and an urban planner are all doing versions of the same thing but can't talk to each other about it. FC gives them shared vocabulary.</p></div>
 
-    <div class="role"><h3>Reframes progress</h3><p>Most people think progress means new things replacing old things. The best progress is when systems expand — when contact with the future makes things more capable rather than obsolete.</p></div>
+    <div class="role reveal"><h3>Reframes progress</h3><p>Most people think progress means new things replacing old things. The best progress is when systems expand — when contact with the future makes things more capable rather than obsolete.</p></div>
 
-    <div class="role"><h3>Reveals invisible architecture</h3><p>You don't notice the USB negotiation, the browser skipping unknown tags, grammar handling a new word. FC reveals the design decisions behind the seamless experience.</p></div>
+    <div class="role reveal"><h3>Reveals invisible architecture</h3><p>You don't notice the USB negotiation, the browser skipping unknown tags, grammar handling a new word. FC reveals the design decisions behind the seamless experience.</p></div>
 
-    <div class="role"><h3>Structural grounds for optimism</h3><p>The examples aren't cherry-picked success stories — they're a pattern that appears independently across biology, engineering, culture, and institutions. Systems that build room for the unknown tend to outlast systems that close down. That's not a wish. It's a structural observation.</p></div>
+    <div class="role reveal"><h3>Structural grounds for optimism</h3><p>The examples aren't cherry-picked success stories — they're a pattern that appears independently across biology, engineering, culture, and institutions. Systems that build room for the unknown tend to outlast systems that close down. That's not a wish. It's a structural observation.</p></div>
 </div>
 
 <hr class="rule">
 
 <!-- ═══════════════════════════════════════ -->
 <div class="section col">
-    <h2>Examples</h2>
-    <p class="intro">
+    <h2 class="reveal">Examples</h2>
+    <p class="intro reveal">
         Different domains, but a recognizable pattern across all of them.
     </p>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Engineering</div>
         <h3>NTSC Color Television</h3>
         <p>CBS built a technically superior color system that was incompatible with 28 million existing black-and-white sets. NTSC won because it was forward compatible — old TVs could still display the signal. The better technology lost to the more compatible one.</p>
     </div>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Culture</div>
         <h3>Ise Shrine</h3>
         <p>Japan's Ise Shrine has been rebuilt every 20 years for over a millennium. The structure changes; the knowledge of how to build it transfers across generations through apprenticeship. The renewal mechanism is itself forward compatible — tokowaka, "eternal youth through renewal."</p>
     </div>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Agriculture</div>
         <h3>Polyculture vs. Monoculture</h3>
         <p>Across the Americas, many peoples practiced polyculture agroforestry at landscape scale — interplanting diverse species in ways that were often not recognized as agriculture by colonizers whose frameworks defined farming as monoculture rows. Monoculture optimizes for one known output — efficient short-term, catastrophically fragile. Polyculture includes diversity that lets the system absorb shocks, cycle nutrients, and sustain itself across generations.</p>
     </div>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Urban Design</div>
         <h3>Melbourne's Trams</h3>
         <p>Melbourne kept its trams. American cities ripped theirs out. The trams co-evolved with urban density, walkability, and street life. Removing them didn't just lose transit — it broke a web of relationships that had developed together.</p>
     </div>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Medicine</div>
         <h3>mRNA Platforms</h3>
         <p>Traditional vaccination was deliberate but bespoke — each vaccine designed for one pathogen. The mRNA platform is deliberate and modular — the delivery system stays stable while the payload changes.</p>
     </div>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Accessibility</div>
         <h3>The Curb Cut Effect</h3>
         <p>Curb cuts were designed for wheelchair users. They turned out to help everyone — parents with strollers, delivery workers, cyclists, travelers with luggage. Including what was excluded made the system better for everyone.</p>
     </div>
 
-    <div class="example">
+    <div class="example reveal">
         <div class="domain">Aviation</div>
         <h3>Crew Resource Management</h3>
         <p>After crashes caused by captains who couldn't be questioned, aviation redesigned cockpit culture to include the co-pilot's perspective by default. Including what hierarchy excluded — dissenting input — made the system dramatically safer.</p>
@@ -434,8 +478,8 @@ footer a:hover { color: var(--text-dim); }
 
 <!-- ═══════════════════════════════════════ -->
 <div class="section col">
-    <h2>The Vocabulary</h2>
-    <p class="intro">
+    <h2 class="reveal">The Vocabulary</h2>
+    <p class="intro reveal">
         Technologies increasingly work with living systems — editing genomes,
         cultivating microbiomes, managing ecosystems. You can't "deploy" a
         microbiome. You cultivate it.
@@ -446,18 +490,18 @@ footer a:hover { color: var(--text-dim); }
         "Tend the living system this enters" was always part of farming,
         fermentation, and medicine — it just wasn't part of the prestige vocabulary.
     </p>
-    <div class="vocab-grid">
-        <span class="word">cultivate</span>
-        <span class="word">mend</span>
-        <span class="word">steward</span>
-        <span class="word">weave</span>
-        <span class="word">foster</span>
-        <span class="word">restore</span>
-        <span class="word">nurture</span>
-        <span class="word">tend</span>
-        <span class="word">temper</span>
-        <span class="word">renew</span>
-        <span class="word">compost</span>
+    <div class="vocab-grid stagger">
+        <span class="word reveal">cultivate</span>
+        <span class="word reveal">mend</span>
+        <span class="word reveal">steward</span>
+        <span class="word reveal">weave</span>
+        <span class="word reveal">foster</span>
+        <span class="word reveal">restore</span>
+        <span class="word reveal">nurture</span>
+        <span class="word reveal">tend</span>
+        <span class="word reveal">temper</span>
+        <span class="word reveal">renew</span>
+        <span class="word reveal">compost</span>
     </div>
 </div>
 
@@ -465,8 +509,8 @@ footer a:hover { color: var(--text-dim); }
 
 <!-- ═══════════════════════════════════════ -->
 <div class="section col">
-    <h2>Known Tradeoffs</h2>
-    <p class="intro">Forward compatibility is not free. The costs are real and worth naming.</p>
+    <h2 class="reveal">Known Tradeoffs</h2>
+    <p class="intro reveal">Forward compatibility is not free. The costs are real and worth naming.</p>
     <ul class="tradeoff-list">
         <li>Complexity overhead</li>
         <li>Ossification from disuse</li>
@@ -490,5 +534,26 @@ footer a:hover { color: var(--text-dim); }
     <a href="https://archerbenjamin.substack.com">Substack</a>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    reveals.forEach(function(el) {
+        observer.observe(el);
+    });
+});
+</script>
 </body>
 </html>
