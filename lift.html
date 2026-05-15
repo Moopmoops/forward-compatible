@@ -1460,6 +1460,37 @@ a:hover { opacity: 1; }
     border: 1px solid var(--rule);
 }
 
+.sub-traj-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 8px 0 4px;
+}
+.sub-traj-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 40px;
+    gap: 12px;
+    align-items: center;
+    padding: 4px 0;
+}
+.sub-traj-row .sub-traj-lbl {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-transform: capitalize;
+}
+.sub-traj-row .sub-traj-chart {
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    padding: 0;
+    line-height: 0;
+}
+.sub-traj-row .sub-traj-val {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-bright);
+    text-align: right;
+}
 .panel-sub-bars {
     margin: 8px 0 4px;
 }
@@ -2808,14 +2839,42 @@ function openCountryDetail(iso) {
     // Recent events in this country
     const evs = (gainStore.events?.events || []).filter(e => e.country_iso === iso);
 
-    // Sub-indicators as bars
-    const subBars = Object.entries(sub).map(([k, v]) => {
-        const pct = Math.min(100, v * 10);
+    // Sub-indicators as mini-trajectory charts
+    // Each sub-indicator inferred to have moved at the composite trend rate
+    function subTraj(name, current) {
+        const series = trajYears.map(yr => {
+            const dt = (yr - 2025);
+            const v = Math.max(0, Math.min(10, current + (c.trend_5y / 5) * dt));
+            return { year: yr, value: v };
+        });
+        return series;
+    }
+    const subTrajs = Object.entries(sub).map(([k, v]) => ({ key: k, current: v, series: subTraj(k, v) }));
+    function miniChart(series, color) {
+        const W = 200, H = 44, mL = 0, mR = 0, mT = 4, mB = 4;
+        const xs = series.map(p => p.year);
+        const xMin = Math.min(...xs), xMax = Math.max(...xs);
+        const xS = x => mL + ((x - xMin) / (xMax - xMin)) * (W - mL - mR);
+        const yS = v => mT + (H - mT - mB) - (v / 10) * (H - mT - mB);
+        const pts = series.map(p => xS(p.year) + ',' + yS(p.value));
+        const path = 'M ' + pts.join(' L ');
+        const area = path + ` L ${xS(xMax)},${H - mB} L ${xS(xMin)},${H - mB} Z`;
+        let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%; height:${H}px;">`;
+        svg += `<line x1="0" y1="${yS(5)}" x2="${W}" y2="${yS(5)}" stroke="var(--rule)" stroke-dasharray="2 3"/>`;
+        svg += `<path d="${area}" fill="${color}" fill-opacity="0.14"/>`;
+        svg += `<path d="${path}" fill="none" stroke="${color}" stroke-width="1.5"/>`;
+        const last = series[series.length - 1];
+        svg += `<circle cx="${xS(last.year)}" cy="${yS(last.value)}" r="2.5" fill="${color}"/>`;
+        svg += `</svg>`;
+        return svg;
+    }
+    const subBars = subTrajs.map(t => {
+        const lineColor = c.trend_5y >= 0 ? 'var(--good)' : 'var(--bad)';
         return `
-            <div class="panel-sub-bar">
-                <div class="sub-lbl">${k}</div>
-                <div class="bar-track"><div class="fill" style="width:${pct.toFixed(0)}%; background:${gainColor(v)}"></div></div>
-                <div class="sub-val">${v.toFixed(1)}</div>
+            <div class="sub-traj-row">
+                <div class="sub-traj-lbl">${t.key}</div>
+                <div class="sub-traj-chart">${miniChart(t.series, lineColor)}</div>
+                <div class="sub-traj-val">${t.current.toFixed(1)}</div>
             </div>
         `;
     }).join('');
@@ -2873,11 +2932,12 @@ function openCountryDetail(iso) {
     }
 
     body += `
-        <h3>Sub-indicators</h3>
-        <div class="panel-sub-bars">${subBars}</div>
-        <p style="font-size:0.78rem; color:var(--text-faint); margin-top:8px;">
+        <h3>Sub-indicators · 2010 → 2025</h3>
+        <div class="sub-traj-grid">${subBars}</div>
+        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:8px;">
             Healthspan combines life expectancy and under-5 mortality. Access combines literacy, internet, electricity, water.
             Prosperity reflects extreme-poverty rate and food security. Civic combines governance with civic freedoms.
+            Trajectories inferred from composite trend rate — directional, not precise. Dashed line is mid-scale (5).
         </p>
     `;
 
