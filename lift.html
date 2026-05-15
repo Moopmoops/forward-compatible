@@ -968,6 +968,361 @@ a:hover { opacity: 1; }
     transform: translateY(0);
 }
 
+/* ── FILTER UI ── */
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+}
+.filter-row .filter-label {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-right: 4px;
+}
+.filter-chip {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 5px 11px;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+    user-select: none;
+}
+.filter-chip:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+.filter-chip.active {
+    color: var(--text-bright);
+    background: var(--surface-2);
+    border-color: var(--accent);
+}
+.filter-chip.cat-medical.active { border-color: #5a9078; }
+.filter-chip.cat-environmental.active { border-color: #6aa86c; }
+.filter-chip.cat-rights.active { border-color: #c9a55a; }
+.filter-chip.cat-scientific.active { border-color: #6a92b8; }
+.filter-chip.cat-humanitarian.active { border-color: #b88466; }
+.filter-chip.cat-accessibility.active { border-color: #a585c0; }
+.filter-chip.tier-multi.active { border-color: var(--good); }
+.filter-chip.tier-adjudicated.active { border-color: var(--text-bright); }
+.filter-chip.tier-disputed.active { border-color: var(--accent); }
+.filter-chip.tier-single.active { border-color: var(--text-dim); }
+.search-input {
+    flex: 1;
+    min-width: 180px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    color: var(--text);
+    padding: 6px 12px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    outline: none;
+    transition: border-color 0.15s;
+}
+.search-input:focus { border-color: var(--accent); }
+.search-input::placeholder { color: var(--text-faint); }
+.filter-count {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    margin-left: auto;
+}
+
+/* ── EVENT ROW INTERACTION ── */
+.events-table tbody tr {
+    cursor: pointer;
+}
+.events-table tbody tr.row-hidden { display: none; }
+.country-cell, .timeline-svg .event-dot, .mover-row, .treaty-row {
+    cursor: pointer;
+}
+
+/* ── DETAIL PANEL ── */
+.detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+}
+.detail-overlay.visible { opacity: 1; pointer-events: auto; }
+
+.detail-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(520px, 100vw);
+    background: var(--surface);
+    border-left: 1px solid var(--rule-bright);
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(0.25, 0.5, 0.25, 1);
+    z-index: 1001;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.detail-panel.open { transform: translateX(0); }
+
+.detail-panel .panel-header {
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    z-index: 5;
+}
+.detail-panel .panel-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.75;
+    margin-bottom: 6px;
+}
+.detail-panel .panel-title {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    color: var(--text-bright);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+.detail-panel .panel-subtitle {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 6px;
+    line-height: 1.5;
+}
+.detail-panel .panel-close {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--text-dim);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: all 0.15s;
+}
+.detail-panel .panel-close:hover {
+    color: var(--text-bright);
+    border-color: var(--rule-bright);
+    background: var(--bg);
+}
+
+.detail-panel .panel-body {
+    padding: 26px 28px 60px;
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+.detail-panel .panel-body h3 {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 26px 0 12px;
+    font-weight: 500;
+}
+.detail-panel .panel-body h3:first-child { margin-top: 0; }
+.detail-panel .panel-body p { margin-bottom: 12px; color: var(--text-dim); font-size: 0.86rem; }
+.detail-panel .panel-body p.lead { color: var(--text); font-size: 0.92rem; }
+.detail-panel .panel-body em {
+    color: var(--text-bright);
+    font-style: italic;
+}
+
+.panel-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+.panel-stat {
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    padding: 12px 14px;
+}
+.panel-stat .lbl {
+    font-family: var(--sans);
+    font-size: 0.58rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+}
+.panel-stat .val {
+    font-family: var(--mono);
+    font-size: 1.1rem;
+    color: var(--text-bright);
+    font-weight: 500;
+}
+.panel-stat .val .delta-pos { color: var(--good); }
+.panel-stat .val .delta-neg { color: var(--bad); }
+
+.panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.panel-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--text);
+    line-height: 1.55;
+    cursor: pointer;
+    transition: padding-left 0.15s;
+}
+.panel-list li:hover { padding-left: 6px; color: var(--text-bright); }
+.panel-list li:last-child { border-bottom: none; }
+.panel-list .li-meta {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 2px;
+}
+.panel-list .li-date {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-right: 10px;
+}
+.panel-list .empty {
+    color: var(--text-faint);
+    font-style: italic;
+    cursor: default;
+}
+.panel-list .empty:hover { padding-left: 0; color: var(--text-faint); }
+
+.panel-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.panel-chips .chip {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--text-dim);
+    background: var(--surface-2);
+    padding: 3px 8px;
+    border: 1px solid var(--rule);
+}
+
+.panel-sub-bars {
+    margin: 8px 0 4px;
+}
+.panel-sub-bar {
+    display: grid;
+    grid-template-columns: 100px 1fr 40px;
+    gap: 12px;
+    align-items: center;
+    padding: 6px 0;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text);
+}
+.panel-sub-bar .sub-lbl {
+    color: var(--text-dim);
+    font-size: 0.74rem;
+    text-transform: capitalize;
+}
+.panel-sub-bar .bar-track {
+    height: 6px;
+    background: var(--rule);
+    position: relative;
+    overflow: hidden;
+}
+.panel-sub-bar .bar-track .fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: var(--gain-5);
+    transition: width 0.5s;
+}
+.panel-sub-bar .sub-val {
+    font-family: var(--mono);
+    color: var(--text-bright);
+    text-align: right;
+    font-size: 0.78rem;
+}
+
+.panel-callout {
+    background: var(--surface-2);
+    border-left: 2px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+.panel-callout strong { color: var(--text-bright); }
+
+.panel-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0 18px;
+}
+.panel-tag {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid;
+    color: var(--text-dim);
+    border-color: var(--rule-bright);
+}
+.panel-tag.tier-multi { color: var(--good); border-color: rgba(106, 138, 110, 0.5); }
+.panel-tag.tier-single { color: var(--text-dim); border-color: var(--rule-bright); }
+.panel-tag.tier-disputed { color: var(--accent); border-color: rgba(201, 165, 90, 0.5); }
+.panel-tag.tier-adjudicated { color: var(--text-bright); border-color: var(--text-dim); background: rgba(255,255,255,0.04); }
+.panel-tag.cat-medical { color: #5a9078; border-color: rgba(90,144,120,0.5); }
+.panel-tag.cat-environmental { color: #6aa86c; border-color: rgba(106,168,108,0.5); }
+.panel-tag.cat-rights { color: #c9a55a; border-color: rgba(201,165,90,0.5); }
+.panel-tag.cat-scientific { color: #6a92b8; border-color: rgba(106,146,184,0.5); }
+.panel-tag.cat-humanitarian { color: #b88466; border-color: rgba(184,132,102,0.5); }
+.panel-tag.cat-accessibility { color: #a585c0; border-color: rgba(165,133,192,0.5); }
+
+.no-scroll { overflow: hidden; }
+
+/* ── HOVER / EXPLORE HINT ── */
+.explore-hint {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--text-faint);
+    letter-spacing: 0.5px;
+    margin-top: 12px;
+    text-align: right;
+}
+.explore-hint::before {
+    content: "↳ ";
+    color: var(--accent);
+}
+
 /* ── FOOTER ── */
 footer {
     padding: 80px 0 60px;
@@ -1087,6 +1442,16 @@ footer a:hover { color: var(--text); }
                 </div>
                 <div class="viz-source">SRC: WHO, OWID, UNESCO, Nobel · ILLUSTRATIVE</div>
             </div>
+            <div class="filter-row" id="timeline-filters">
+                <span class="filter-label">Filter</span>
+                <span class="filter-chip cat-medical active" data-cat="medical">Medical</span>
+                <span class="filter-chip cat-scientific active" data-cat="scientific">Scientific</span>
+                <span class="filter-chip cat-rights active" data-cat="rights">Rights</span>
+                <span class="filter-chip cat-environmental active" data-cat="environmental">Environmental</span>
+                <span class="filter-chip cat-humanitarian active" data-cat="humanitarian">Humanitarian</span>
+                <span class="filter-chip cat-accessibility active" data-cat="accessibility">Accessibility</span>
+                <span class="filter-count" id="timeline-count"></span>
+            </div>
             <div class="timeline-wrap">
                 <svg id="timeline-svg" class="timeline-svg" viewBox="0 0 1140 460" preserveAspectRatio="none"></svg>
             </div>
@@ -1098,6 +1463,7 @@ footer a:hover { color: var(--text); }
                 <span><i class="swatch" style="background:#a06850"></i>Humanitarian</span>
                 <span><i class="swatch" style="background:#8a6aa8"></i>Accessibility</span>
             </div>
+            <div class="explore-hint">Click any dot for full detail</div>
             <div class="viz-caption">
                 The timeline is incomplete by construction. Every project assembling such a list has to make selection decisions — what counts as a population-scale gain, what threshold qualifies, how to handle gains with environmental or social costs. We expose the criteria rather than hide them, and let the disagreement live in the range itself.
             </div>
@@ -1192,6 +1558,26 @@ footer a:hover { color: var(--text); }
                     <h3>Recent ledger entries · last 14 days</h3>
                 </div>
                 <div class="viz-source">SRC: aggregated · ILLUSTRATIVE</div>
+            </div>
+            <div class="filter-row" id="events-filters">
+                <span class="filter-label">Category</span>
+                <span class="filter-chip cat-all active" data-filter="cat" data-val="all">All</span>
+                <span class="filter-chip cat-medical" data-filter="cat" data-val="medical">Medical</span>
+                <span class="filter-chip cat-scientific" data-filter="cat" data-val="scientific">Scientific</span>
+                <span class="filter-chip cat-rights" data-filter="cat" data-val="rights">Rights</span>
+                <span class="filter-chip cat-environmental" data-filter="cat" data-val="environmental">Environmental</span>
+                <span class="filter-chip cat-humanitarian" data-filter="cat" data-val="humanitarian">Humanitarian</span>
+                <span class="filter-chip cat-accessibility" data-filter="cat" data-val="accessibility">Accessibility</span>
+            </div>
+            <div class="filter-row" id="events-tier-filters" style="margin-top:-8px;">
+                <span class="filter-label">Tier</span>
+                <span class="filter-chip tier-all active" data-filter="tier" data-val="all">All</span>
+                <span class="filter-chip tier-multi" data-filter="tier" data-val="multi">Multi-source</span>
+                <span class="filter-chip tier-adjudicated" data-filter="tier" data-val="adjudicated">Adjudicated</span>
+                <span class="filter-chip tier-disputed" data-filter="tier" data-val="disputed">Disputed</span>
+                <span class="filter-chip tier-single" data-filter="tier" data-val="single">Single-source</span>
+                <input type="text" class="search-input" id="events-search" placeholder="Search gains, countries, actors…">
+                <span class="filter-count" id="events-count"></span>
             </div>
             <table class="events-table">
                 <thead><tr>
@@ -1440,9 +1826,40 @@ footer a:hover { color: var(--text); }
     </div>
 </footer>
 
+<!-- ── DETAIL PANEL ── -->
+<div id="detail-overlay" class="detail-overlay"></div>
+<aside id="detail-panel" class="detail-panel" aria-hidden="true">
+    <div class="panel-header">
+        <div>
+            <div id="panel-eyebrow" class="panel-eyebrow"></div>
+            <div id="panel-title" class="panel-title"></div>
+            <div id="panel-subtitle" class="panel-subtitle"></div>
+        </div>
+        <button id="panel-close" class="panel-close" aria-label="Close">×</button>
+    </div>
+    <div id="panel-body" class="panel-body"></div>
+</aside>
+
 <div id="tooltip" class="tip"></div>
 
 <script>
+// ─────────────────────────────────────────────────────────────
+// Cross-render data store + filter state
+// ─────────────────────────────────────────────────────────────
+const gainStore = {
+    heatmap: null,
+    timeline: null,
+    movers: null,
+    disputes: null,
+    structural: null,
+    events: null,
+    treaties: null,
+    sources: null
+};
+
+const eventFilters = { cat: 'all', tier: 'all', query: '' };
+const timelineCats = new Set(['medical', 'scientific', 'rights', 'environmental', 'humanitarian', 'accessibility']);
+
 // ─────────────────────────────────────────────────────────────
 // Tooltip helper
 // ─────────────────────────────────────────────────────────────
@@ -1487,8 +1904,8 @@ async function loadJSON(path) {
 // ─────────────────────────────────────────────────────────────
 async function renderHeatmap() {
     const data = await loadJSON('lift/data/heatmap.json');
+    gainStore.heatmap = data;
     const wrap = document.getElementById('heatmap');
-    // Sort by score descending so soaring first
     const sorted = data.countries.slice().sort((a, b) => b.score - a.score);
     sorted.forEach(c => {
         const cell = document.createElement('div');
@@ -1496,13 +1913,8 @@ async function renderHeatmap() {
         cell.style.background = gainColor(c.score);
         const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
         cell.innerHTML = `
-            <div>
-                <div class="iso">${c.iso}</div>
-            </div>
-            <div>
-                <div class="score">${c.score.toFixed(1)}</div>
-                <div class="name">${c.name}</div>
-            </div>
+            <div><div class="iso">${c.iso}</div></div>
+            <div><div class="score">${c.score.toFixed(1)}</div><div class="name">${c.name}</div></div>
             <div class="trend">${trendStr}</div>
         `;
         cell.addEventListener('mouseenter', e => {
@@ -1514,12 +1926,13 @@ async function renderHeatmap() {
                     healthspan ${sub.healthspan} &nbsp; access ${sub.access}<br>
                     prosperity ${sub.prosperity}<br>
                     civic ${sub.civic}<br>
-                    <span style="color:var(--text-dim)">5-yr trend ${trendStr}</span>
+                    <span style="color:var(--text-dim)">5-yr trend ${trendStr} · click for detail</span>
                 </div>
             `, e);
         });
         cell.addEventListener('mousemove', moveTip);
         cell.addEventListener('mouseleave', hideTip);
+        cell.addEventListener('click', () => { hideTip(); openCountryDetail(c.iso); });
         wrap.appendChild(cell);
     });
 }
@@ -1529,6 +1942,13 @@ async function renderHeatmap() {
 // ─────────────────────────────────────────────────────────────
 async function renderTimeline() {
     const data = await loadJSON('lift/data/timeline.json');
+    gainStore.timeline = data;
+    drawTimeline();
+}
+
+function drawTimeline() {
+    const data = gainStore.timeline;
+    if (!data) return;
     const svg = document.getElementById('timeline-svg');
     const W = 1140, H = 460;
     const margin = { top: 20, right: 30, bottom: 50, left: 70 };
@@ -1572,8 +1992,11 @@ async function renderTimeline() {
     }
 
     // Plot events
+    let shown = 0;
     data.events.forEach(ev => {
         if ((ev.magnitude_low || 0) === 0 && (ev.magnitude_high || 0) === 0) return;
+        if (!timelineCats.has(ev.category)) return;
+        shown++;
         const midYear = (ev.start + ev.end) / 2;
         const midMag = Math.sqrt((ev.magnitude_low || 1) * (ev.magnitude_high || ev.magnitude_low || 1));
         const cx = xScale(midYear);
@@ -1597,7 +2020,7 @@ async function renderTimeline() {
 
     svg.innerHTML = svgContent;
 
-    // Hover
+    // Hover + click
     svg.querySelectorAll('.event-dot').forEach(dot => {
         dot.addEventListener('mouseenter', e => {
             const ev = data.events.find(x => x.id === dot.dataset.id);
@@ -1608,12 +2031,16 @@ async function renderTimeline() {
                 <strong>${ev.name}</strong>
                 <div class="tip-sub">${ev.start === ev.end ? ev.start : ev.start + '–' + ev.end} · ${(ev.actors || []).join(', ')}</div>
                 <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem; color:var(--text-bright)">people reached: ${range}</div>
-                ${ev.notes ? `<div class="tip-sub" style="margin-top:6px;">${ev.notes}</div>` : ''}
+                <div class="tip-sub" style="margin-top:6px;">click for full detail</div>
             `, e);
         });
         dot.addEventListener('mousemove', moveTip);
         dot.addEventListener('mouseleave', hideTip);
+        dot.addEventListener('click', () => { hideTip(); openTimelineDetail(dot.dataset.id); });
     });
+
+    const countEl = document.getElementById('timeline-count');
+    if (countEl) countEl.textContent = shown + ' of ' + data.events.length + ' shown';
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1621,6 +2048,7 @@ async function renderTimeline() {
 // ─────────────────────────────────────────────────────────────
 async function renderMovers() {
     const data = await loadJSON('lift/data/movers.json');
+    gainStore.movers = data;
     const wrap = document.getElementById('movers');
 
     const maxAbs = Math.max(
@@ -1630,7 +2058,7 @@ async function renderMovers() {
 
     function side(title, items, klass) {
         const html = items.map(m => `
-            <div class="mover-row ${klass}">
+            <div class="mover-row ${klass}" data-iso="${m.iso}">
                 <div class="label">
                     ${m.name} <span style="color:var(--text-faint); font-family:var(--mono); font-size:0.72rem;">${m.iso}</span>
                     <div class="drivers">${m.drivers.join(' · ')}</div>
@@ -1645,6 +2073,10 @@ async function renderMovers() {
     wrap.innerHTML =
         side('Improving ↑', data.improving, 'good') +
         side('Regressing ↓', data.regressing, 'bad');
+
+    wrap.querySelectorAll('.mover-row').forEach(row => {
+        row.addEventListener('click', () => openCountryDetail(row.dataset.iso));
+    });
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1652,6 +2084,7 @@ async function renderMovers() {
 // ─────────────────────────────────────────────────────────────
 async function renderDisputes() {
     const data = await loadJSON('lift/data/disputed.json');
+    gainStore.disputes = data;
     const wrap = document.getElementById('disputes');
 
     function fmt(n) {
@@ -1694,6 +2127,7 @@ async function renderDisputes() {
 // ─────────────────────────────────────────────────────────────
 async function renderStructural() {
     const data = await loadJSON('lift/data/structural.json');
+    gainStore.structural = data;
     const wrap = document.getElementById('structural-grid');
 
     function sparkline(series) {
@@ -1785,12 +2219,13 @@ async function renderStructural() {
 // ─────────────────────────────────────────────────────────────
 async function renderEvents() {
     const data = await loadJSON('lift/data/events.json');
+    gainStore.events = data;
     const tbody = document.getElementById('events-body');
-    tbody.innerHTML = data.events.map(e => {
+    tbody.innerHTML = data.events.map((e, idx) => {
         const sources = (e.sources || []).map(s => `<span>${s}</span>`).join('');
         const cat = e.category || 'other';
         return `
-            <tr>
+            <tr data-idx="${idx}" data-cat="${cat}" data-tier="${e.tier}" data-search="${(e.country + ' ' + (e.actor||'') + ' ' + e.summary).toLowerCase().replace(/"/g, '&quot;')}">
                 <td class="col-date">${e.date}</td>
                 <td class="col-country">${e.country}</td>
                 <td class="col-actor">${e.actor || ''}</td>
@@ -1801,6 +2236,30 @@ async function renderEvents() {
             </tr>
         `;
     }).join('');
+
+    tbody.querySelectorAll('tr').forEach(tr => {
+        tr.addEventListener('click', () => openEventDetail(parseInt(tr.dataset.idx, 10)));
+    });
+
+    applyEventFilters();
+}
+
+function applyEventFilters() {
+    const tbody = document.getElementById('events-body');
+    if (!tbody) return;
+    const rows = tbody.querySelectorAll('tr');
+    let shown = 0;
+    rows.forEach(tr => {
+        const matchCat = (eventFilters.cat === 'all') || (tr.dataset.cat === eventFilters.cat);
+        const matchTier = (eventFilters.tier === 'all') || (tr.dataset.tier === eventFilters.tier);
+        const q = eventFilters.query.trim().toLowerCase();
+        const matchQ = !q || tr.dataset.search.includes(q);
+        const ok = matchCat && matchTier && matchQ;
+        tr.classList.toggle('row-hidden', !ok);
+        if (ok) shown++;
+    });
+    const countEl = document.getElementById('events-count');
+    if (countEl) countEl.textContent = shown + ' of ' + rows.length + ' shown';
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1808,13 +2267,14 @@ async function renderEvents() {
 // ─────────────────────────────────────────────────────────────
 async function renderTreaties() {
     const data = await loadJSON('lift/data/treaties.json');
+    gainStore.treaties = data;
     const wrap = document.getElementById('treaties');
     const TOTAL_UN = 198;
     wrap.innerHTML = data.treaties.map(t => {
         const pct = Math.min(100, (t.parties / TOTAL_UN * 100));
         const tag = t.near_universal ? '<span class="universal-tag">near-universal</span>' : '';
         return `
-            <div class="treaty-row">
+            <div class="treaty-row" data-tid="${t.id}">
                 <div class="tname">${t.name}${tag}<small>${t.scope || 'in force ' + t.year}</small></div>
                 <div class="tparties">
                     <strong>${t.parties}</strong> parties
@@ -1825,6 +2285,9 @@ async function renderTreaties() {
             </div>
         `;
     }).join('');
+    wrap.querySelectorAll('.treaty-row').forEach(row => {
+        row.addEventListener('click', () => openTreatyDetail(row.dataset.tid));
+    });
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1855,6 +2318,7 @@ function renderDonut() {
 
 async function renderMatrix() {
     const data = await loadJSON('lift/data/sources.json');
+    gainStore.sources = data;
     const wrap = document.getElementById('matrix-wrap');
     const categories = [
         { key: 'healthspan', label: 'Healthspan' },
@@ -1884,6 +2348,334 @@ async function renderMatrix() {
 }
 
 // ─────────────────────────────────────────────────────────────
+// Detail panel — open/close + builders
+// ─────────────────────────────────────────────────────────────
+const panelEl = () => document.getElementById('detail-panel');
+const overlayEl = () => document.getElementById('detail-overlay');
+
+function openPanel(eyebrow, title, subtitle, bodyHTML) {
+    document.getElementById('panel-eyebrow').textContent = eyebrow || '';
+    document.getElementById('panel-title').innerHTML = title || '';
+    document.getElementById('panel-subtitle').innerHTML = subtitle || '';
+    document.getElementById('panel-body').innerHTML = bodyHTML || '';
+    const p = panelEl();
+    p.classList.add('open');
+    p.setAttribute('aria-hidden', 'false');
+    overlayEl().classList.add('visible');
+    document.body.classList.add('no-scroll');
+    panelEl().scrollTop = 0;
+}
+function closePanel() {
+    const p = panelEl();
+    p.classList.remove('open');
+    p.setAttribute('aria-hidden', 'true');
+    overlayEl().classList.remove('visible');
+    document.body.classList.remove('no-scroll');
+}
+
+function fmt(n) {
+    if (n == null) return '—';
+    if (n >= 1e9) return (n / 1e9).toFixed(2).replace(/\.?0+$/, '') + 'B';
+    if (n >= 1e6) return (n / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M';
+    if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.?0+$/, '') + 'K';
+    return n.toLocaleString();
+}
+function esc(s) {
+    return (s || '').toString().replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+// ─────────────────────────────────────────────────────────────
+// Country detail
+// ─────────────────────────────────────────────────────────────
+function openCountryDetail(iso) {
+    const c = (gainStore.heatmap?.countries || []).find(x => x.iso === iso);
+    if (!c) return;
+    const sub = c.sub || {};
+    const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
+    const trendClass = c.trend_5y > 0 ? 'delta-pos' : (c.trend_5y < 0 ? 'delta-neg' : '');
+
+    // Find this country among movers
+    const mv = gainStore.movers;
+    const improving = mv?.improving.find(m => m.iso === iso);
+    const regressing = mv?.regressing.find(m => m.iso === iso);
+    const mover = improving || regressing;
+
+    // Recent events in this country
+    const evs = (gainStore.events?.events || []).filter(e => e.country_iso === iso);
+
+    // Sub-indicators as bars
+    const subBars = Object.entries(sub).map(([k, v]) => {
+        const pct = Math.min(100, v * 10);
+        return `
+            <div class="panel-sub-bar">
+                <div class="sub-lbl">${k}</div>
+                <div class="bar-track"><div class="fill" style="width:${pct.toFixed(0)}%; background:${gainColor(v)}"></div></div>
+                <div class="sub-val">${v.toFixed(1)}</div>
+            </div>
+        `;
+    }).join('');
+
+    let body = `
+        <div class="panel-stat-grid">
+            <div class="panel-stat">
+                <div class="lbl">Progress score</div>
+                <div class="val">${c.score.toFixed(1)} <span style="color:var(--text-faint); font-size:0.7rem;">/ 10</span></div>
+            </div>
+            <div class="panel-stat">
+                <div class="lbl">5-yr trend</div>
+                <div class="val"><span class="${trendClass}">${trendStr}</span></div>
+            </div>
+        </div>
+    `;
+
+    if (c.note) {
+        body += `<div class="panel-callout"><strong>Note:</strong> ${esc(c.note)}</div>`;
+    }
+
+    body += `
+        <h3>Sub-indicators</h3>
+        <div class="panel-sub-bars">${subBars}</div>
+        <p style="font-size:0.78rem; color:var(--text-faint); margin-top:8px;">
+            Healthspan combines life expectancy and under-5 mortality. Access combines literacy, internet, electricity, water.
+            Prosperity reflects extreme-poverty rate and food security. Civic combines governance with civic freedoms.
+        </p>
+    `;
+
+    if (mover) {
+        body += `
+            <h3>Five-year movement</h3>
+            <p class="lead">${esc(mover.name)} is in the <em>${improving ? 'improving' : 'regressing'}</em> cohort. Drivers cited:</p>
+            <div class="panel-chips">${mover.drivers.map(d => `<span class="chip">${esc(d)}</span>`).join('')}</div>
+        `;
+    }
+
+    body += `<h3>Recent ledger entries</h3>`;
+    if (evs.length === 0) {
+        body += `<ul class="panel-list"><li class="empty">No recent entries — this country's gains arrive via the structural and timeline records.</li></ul>`;
+    } else {
+        body += `<ul class="panel-list">${evs.map((e, i) => {
+            const realIdx = gainStore.events.events.indexOf(e);
+            return `
+                <li data-idx="${realIdx}" data-jump="event">
+                    <span class="li-date">${e.date}</span>${esc(e.summary)}
+                    <div class="li-meta">${esc(e.actor || '')} · <span class="panel-tag cat-${e.category}">${e.category}</span> · <span class="panel-tag tier-${e.tier}">${e.tier}</span></div>
+                </li>
+            `;
+        }).join('')}</ul>`;
+    }
+
+    // Timeline events filtered loosely by country/region (very rough — actors often global)
+    const tlMatches = (gainStore.timeline?.events || []).filter(ev => {
+        const txt = ((ev.actors || []).join(' ') + ' ' + (ev.notes || '') + ' ' + ev.name).toLowerCase();
+        return txt.includes(c.name.toLowerCase()) || (c.iso !== 'USA' && txt.includes(c.iso.toLowerCase()));
+    }).slice(0, 8);
+    if (tlMatches.length) {
+        body += `<h3>Historical events referencing ${esc(c.name)}</h3>`;
+        body += `<ul class="panel-list">${tlMatches.map(ev => `
+            <li data-id="${ev.id}" data-jump="timeline">
+                <span class="li-date">${ev.start === ev.end ? ev.start : ev.start + '–' + ev.end}</span>${esc(ev.name)}
+                <div class="li-meta">people reached ${fmt(ev.magnitude_high || ev.magnitude_low)} · <span class="panel-tag cat-${ev.category}">${ev.category}</span></div>
+            </li>
+        `).join('')}</ul>`;
+    }
+
+    openPanel(c.region, esc(c.name) + ' · <span style="font-family:var(--mono); color:var(--text-dim); font-size:0.9rem;">' + c.iso + '</span>', '', body);
+    wirePanelJumps();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Timeline event detail
+// ─────────────────────────────────────────────────────────────
+function openTimelineDetail(id) {
+    const ev = (gainStore.timeline?.events || []).find(x => x.id === id);
+    if (!ev) return;
+    const period = ev.start === ev.end ? ev.start : ev.start + '–' + ev.end;
+    const reach = ev.magnitude_low === ev.magnitude_high ? fmt(ev.magnitude_low) : (fmt(ev.magnitude_low) + ' – ' + fmt(ev.magnitude_high));
+
+    let body = `
+        <div class="panel-tag-row">
+            <span class="panel-tag cat-${ev.category}">${ev.category}</span>
+        </div>
+        <div class="panel-stat-grid">
+            <div class="panel-stat">
+                <div class="lbl">Period</div>
+                <div class="val" style="font-size:0.9rem;">${period}</div>
+            </div>
+            <div class="panel-stat">
+                <div class="lbl">People reached</div>
+                <div class="val" style="font-size:0.9rem;">${reach}</div>
+            </div>
+        </div>
+    `;
+    if (ev.actors && ev.actors.length) {
+        body += `<h3>Actors</h3><div class="panel-chips">${ev.actors.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</div>`;
+    }
+    if (ev.notes) {
+        body += `<h3>Notes</h3><p class="lead">${esc(ev.notes)}</p>`;
+    }
+
+    // Related events: same category, nearby decade
+    const decade = Math.floor(((ev.start + ev.end) / 2) / 10) * 10;
+    const related = (gainStore.timeline.events || []).filter(x => {
+        if (x.id === ev.id) return false;
+        const midX = (x.start + x.end) / 2;
+        return x.category === ev.category && Math.abs(midX - decade) < 30;
+    }).slice(0, 6);
+    if (related.length) {
+        body += `<h3>Related in the same era</h3><ul class="panel-list">${related.map(r => `
+            <li data-id="${r.id}" data-jump="timeline">
+                <span class="li-date">${r.start === r.end ? r.start : r.start + '–' + r.end}</span>${esc(r.name)}
+                <div class="li-meta">people reached ${fmt(r.magnitude_high || r.magnitude_low)}</div>
+            </li>
+        `).join('')}</ul>`;
+    }
+
+    openPanel('Timeline · ' + ev.category, esc(ev.name), period, body);
+    wirePanelJumps();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Event row detail
+// ─────────────────────────────────────────────────────────────
+function openEventDetail(idx) {
+    const e = gainStore.events?.events[idx];
+    if (!e) return;
+    const sources = (e.sources || []).map(s => `<span class="chip">${esc(s)}</span>`).join('');
+    const tierDef = (gainStore.events.tier_definitions || {})[e.tier] || '';
+
+    let body = `
+        <div class="panel-tag-row">
+            <span class="panel-tag cat-${e.category}">${e.category}</span>
+            <span class="panel-tag tier-${e.tier}">${e.tier}</span>
+        </div>
+        <p class="lead">${esc(e.summary)}</p>
+        <div class="panel-stat-grid">
+            <div class="panel-stat">
+                <div class="lbl">Date</div>
+                <div class="val" style="font-size:0.95rem;">${e.date}</div>
+            </div>
+            <div class="panel-stat">
+                <div class="lbl">Where</div>
+                <div class="val" style="font-size:0.95rem;">${esc(e.country)}</div>
+            </div>
+        </div>
+        <h3>Actor</h3>
+        <p>${esc(e.actor || 'Unattributed')}</p>
+        <h3>Sources</h3>
+        <div class="panel-chips">${sources}</div>
+        <p style="font-size:0.78rem;">${esc(tierDef)}</p>
+    `;
+
+    // Country context jump if known
+    if (e.country_iso && gainStore.heatmap?.countries.find(c => c.iso === e.country_iso)) {
+        body += `<h3>Country context</h3>
+            <ul class="panel-list"><li data-iso="${e.country_iso}" data-jump="country">
+                Open the ${esc(e.country)} country page
+                <div class="li-meta">composite progress score + sub-indicators + recent entries</div>
+            </li></ul>`;
+    }
+
+    openPanel(e.date + ' · ' + e.country, esc(e.summary), '', body);
+    wirePanelJumps();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Treaty detail
+// ─────────────────────────────────────────────────────────────
+function openTreatyDetail(tid) {
+    const t = (gainStore.treaties?.treaties || []).find(x => x.id === tid);
+    if (!t) return;
+    const TOTAL_UN = 198;
+    const pct = (t.parties / TOTAL_UN * 100);
+    let body = `
+        <div class="panel-stat-grid">
+            <div class="panel-stat">
+                <div class="lbl">Parties</div>
+                <div class="val">${t.parties}</div>
+            </div>
+            <div class="panel-stat">
+                <div class="lbl">Of UN states</div>
+                <div class="val">${pct.toFixed(0)}%</div>
+            </div>
+        </div>
+    `;
+    if (t.scope) body += `<h3>Scope</h3><p class="lead">${esc(t.scope)}</p>`;
+    body += `<h3>In force</h3><p>${t.year}</p>`;
+    if (t.notes) body += `<h3>Notes</h3><p>${esc(t.notes)}</p>`;
+    if (t.near_universal) body += `<div class="panel-callout"><strong>Near-universal:</strong> at ${pct.toFixed(0)}% of UN member states, this is among the most widely ratified treaties in history. Whatever else is true about compliance and reservations, this is a body of conduct the world's states have collectively committed to.</div>`;
+    openPanel('Treaty · ' + t.year, esc(t.name), '', body);
+    wirePanelJumps();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Wire jump-links inside a panel (lets users hop between records)
+// ─────────────────────────────────────────────────────────────
+function wirePanelJumps() {
+    document.querySelectorAll('#panel-body [data-jump]').forEach(el => {
+        el.addEventListener('click', () => {
+            const kind = el.dataset.jump;
+            if (kind === 'country') openCountryDetail(el.dataset.iso);
+            else if (kind === 'timeline') openTimelineDetail(el.dataset.id);
+            else if (kind === 'event') openEventDetail(parseInt(el.dataset.idx, 10));
+        });
+    });
+}
+
+// ─────────────────────────────────────────────────────────────
+// Filter chip handlers
+// ─────────────────────────────────────────────────────────────
+function initFilters() {
+    // Events filter (category + tier)
+    ['events-filters', 'events-tier-filters'].forEach(rowId => {
+        const row = document.getElementById(rowId);
+        if (!row) return;
+        row.querySelectorAll('.filter-chip[data-filter]').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const f = chip.dataset.filter;
+                const v = chip.dataset.val;
+                eventFilters[f] = v;
+                row.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', c.dataset.val === v));
+                applyEventFilters();
+            });
+        });
+    });
+
+    // Search
+    const search = document.getElementById('events-search');
+    if (search) {
+        search.addEventListener('input', e => {
+            eventFilters.query = e.target.value;
+            applyEventFilters();
+        });
+    }
+
+    // Timeline category toggles
+    const tfilters = document.getElementById('timeline-filters');
+    if (tfilters) {
+        tfilters.querySelectorAll('.filter-chip[data-cat]').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const cat = chip.dataset.cat;
+                if (timelineCats.has(cat)) timelineCats.delete(cat);
+                else timelineCats.add(cat);
+                chip.classList.toggle('active', timelineCats.has(cat));
+                drawTimeline();
+            });
+        });
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Panel close handlers
+// ─────────────────────────────────────────────────────────────
+function initPanel() {
+    document.getElementById('panel-close').addEventListener('click', closePanel);
+    document.getElementById('detail-overlay').addEventListener('click', closePanel);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && panelEl().classList.contains('open')) closePanel();
+    });
+}
+
+// ─────────────────────────────────────────────────────────────
 // Reveal animation
 // ─────────────────────────────────────────────────────────────
 function initReveal() {
@@ -1904,6 +2696,8 @@ function initReveal() {
 // ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     initReveal();
+    initPanel();
+    initFilters();
     renderHeatmap().catch(console.error);
     renderTimeline().catch(console.error);
     renderMovers().catch(console.error);
