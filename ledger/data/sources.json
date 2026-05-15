@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-14",
+  "sources": [
+    {
+      "id": "acled",
+      "name": "Armed Conflict Location & Event Data",
+      "abbr": "ACLED",
+      "url": "https://acleddata.com",
+      "api": "https://api.acleddata.com/acled/read",
+      "ingest_method": "rest_api",
+      "license": "CC BY-NC-SA 4.0 (registration required)",
+      "grain": "event",
+      "geography": "global",
+      "time_range": "1997–present",
+      "coverage": {
+        "events": true,
+        "deaths": true,
+        "actors": true,
+        "structural": false,
+        "historical_pre1997": false
+      },
+      "update_cadence": "weekly",
+      "schedule": "cron: 0 6 * * 1",
+      "notes": "Event-level data on political violence and protest. Single most granular dataset for current conflict events."
+    },
+    {
+      "id": "ucdp",
+      "name": "Uppsala Conflict Data Program",
+      "abbr": "UCDP",
+      "url": "https://ucdp.uu.se",
+      "api": "https://ucdpapi.pcr.uu.se/api/gedevents",
+      "ingest_method": "rest_api",
+      "license": "Open use with attribution",
+      "grain": "event",
+      "geography": "global",
+      "time_range": "1989–present",
+      "coverage": {
+        "events": true,
+        "deaths": true,
+        "actors": true,
+        "structural": false,
+        "historical_pre1989": false
+      },
+      "update_cadence": "annual + monthly candidates",
+      "schedule": "cron: 0 6 1 * *",
+      "notes": "State-based, non-state, and one-sided violence. Strong source for triangulation against ACLED."
+    },
+    {
+      "id": "vdem",
+      "name": "Varieties of Democracy",
+      "abbr": "V-Dem",
+      "url": "https://v-dem.net",
+      "api": "https://v-dem.net/data/dataset-archive/",
+      "ingest_method": "csv_download",
+      "license": "CC BY 4.0",
+      "grain": "country-year",
+      "geography": "202 polities",
+      "time_range": "1789–present",
+      "coverage": {
+        "events": false,
+        "deaths": false,
+        "actors": false,
+        "rights_indices": true,
+        "structural": true,
+        "historical_pre1900": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 4 *",
+      "notes": "3,500+ expert raters scoring civil liberties, electoral integrity, freedom from torture and political killing back to 1789. Best for long time-series."
+    },
+    {
+      "id": "hrmi",
+      "name": "Human Rights Measurement Initiative",
+      "abbr": "HRMI",
+      "url": "https://rightstracker.org",
+      "api": "https://humanrightsmeasurement.org/data/",
+      "ingest_method": "csv_download",
+      "license": "CC BY 4.0",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "2017–present",
+      "coverage": {
+        "events": false,
+        "deaths": false,
+        "rights_indices": true,
+        "structural": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 7 *",
+      "notes": "Country-level scores on civil/political and economic/social rights. Comparable, methodology fully published. Closest thing to a global rights scorecard."
+    },
+    {
+      "id": "ohchr",
+      "name": "UN Office of the High Commissioner for Human Rights",
+      "abbr": "OHCHR",
+      "url": "https://www.ohchr.org",
+      "api": "https://uhri.ohchr.org/api/",
+      "ingest_method": "rest_api + structured scrape",
+      "license": "Public (UN information)",
+      "grain": "recommendation + verified case",
+      "geography": "global",
+      "time_range": "varies",
+      "coverage": {
+        "events": true,
+        "deaths": true,
+        "rights_indices": false,
+        "structural": true,
+        "treaty_compliance": true
+      },
+      "update_cadence": "continuous",
+      "schedule": "cron: 0 */6 * * *",
+      "notes": "Universal Human Rights Index + Universal Periodic Review recommendations. Verified casualty data in conflict zones (Ukraine, Gaza, Syria)."
+    },
+    {
+      "id": "hrw",
+      "name": "Human Rights Watch",
+      "abbr": "HRW",
+      "url": "https://www.hrw.org",
+      "ingest_method": "structured_scrape + llm_extract",
+      "license": "Fair use for aggregation; attribution required",
+      "grain": "report + case",
+      "geography": "global",
+      "time_range": "1988–present",
+      "coverage": {
+        "events": true,
+        "deaths": true,
+        "structural": true,
+        "investigative_depth": true
+      },
+      "update_cadence": "continuous",
+      "schedule": "cron: 0 */4 * * *",
+      "notes": "Investigative reporting on specific incidents. LLM extraction pulls (country, date, event_type, actor, casualties) from narrative reports."
+    },
+    {
+      "id": "amnesty",
+      "name": "Amnesty International",
+      "abbr": "AI",
+      "url": "https://www.amnesty.org",
+      "ingest_method": "structured_scrape + llm_extract",
+      "license": "Fair use for aggregation; attribution required",
+      "grain": "report + case",
+      "geography": "global",
+      "time_range": "1961–present",
+      "coverage": {
+        "events": true,
+        "deaths": true,
+        "structural": true
+      },
+      "update_cadence": "continuous",
+      "schedule": "cron: 0 */4 * * *",
+      "notes": "Country reports + urgent actions. Pairs with HRW for cross-confirmation of single-source events."
+    },
+    {
+      "id": "state_dept",
+      "name": "US State Department Country Reports on Human Rights Practices",
+      "abbr": "USSD",
+      "url": "https://www.state.gov/reports-bureau-of-democracy-human-rights-and-labor/country-reports-on-human-rights-practices/",
+      "ingest_method": "structured_scrape + llm_extract",
+      "license": "Public (US government work)",
+      "grain": "annual country report",
+      "geography": "global (excluding US)",
+      "time_range": "1977–present",
+      "coverage": {
+        "events": true,
+        "structural": true,
+        "treaty_compliance": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 15 4 *",
+      "notes": "Congressionally mandated. Useful for cross-reference; bias must be disclosed in record provenance. Notably does not cover US conduct."
+    },
+    {
+      "id": "sipri",
+      "name": "Stockholm International Peace Research Institute",
+      "abbr": "SIPRI",
+      "url": "https://www.sipri.org",
+      "api": "https://armstrade.sipri.org",
+      "ingest_method": "csv_download",
+      "license": "Open use with attribution",
+      "grain": "transfer + country-year",
+      "geography": "global",
+      "time_range": "1950–present",
+      "coverage": {
+        "events": false,
+        "arms_transfers": true,
+        "military_expenditure": true,
+        "structural": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 3 *",
+      "notes": "Authoritative arms transfer database. Structural harm dataset — who is arming whom."
+    },
+    {
+      "id": "citizenlab",
+      "name": "Citizen Lab",
+      "abbr": "CitLab",
+      "url": "https://citizenlab.ca",
+      "ingest_method": "structured_scrape + llm_extract",
+      "license": "CC BY 4.0",
+      "grain": "investigation",
+      "geography": "global",
+      "time_range": "2001–present",
+      "coverage": {
+        "surveillance_exports": true,
+        "spyware_deployments": true,
+        "structural": true
+      },
+      "update_cadence": "continuous",
+      "schedule": "cron: 0 */12 * * *",
+      "notes": "Forensic confirmation of spyware deployments (Pegasus, Predator). Structural-harm coverage that traditional rights bodies miss."
+    },
+    {
+      "id": "ejatlas",
+      "name": "Environmental Justice Atlas",
+      "abbr": "EJAtlas",
+      "url": "https://ejatlas.org",
+      "ingest_method": "structured_scrape + llm_extract",
+      "license": "CC BY-NC-SA 3.0",
+      "grain": "case",
+      "geography": "global",
+      "time_range": "ongoing",
+      "coverage": {
+        "environmental_conflict": true,
+        "indigenous_displacement": true,
+        "extractive_harms": true,
+        "structural": true
+      },
+      "update_cadence": "continuous",
+      "schedule": "cron: 0 6 * * 0",
+      "notes": "4,000+ documented cases of environmental harm linked to industrial/extractive activity. The category most other ledgers omit entirely."
+    },
+    {
+      "id": "ushmm",
+      "name": "USHMM Simon-Skjodt Center & Holocaust Encyclopedia",
+      "abbr": "USHMM",
+      "url": "https://www.ushmm.org",
+      "ingest_method": "structured_scrape + llm_extract",
+      "license": "Educational use; attribution required",
+      "grain": "historical event + case study",
+      "geography": "global",
+      "time_range": "1900–present",
+      "coverage": {
+        "historical_atrocity": true,
+        "early_warning": true,
+        "genocide_risk": true
+      },
+      "update_cadence": "as published",
+      "schedule": "manual review monthly",
+      "notes": "Risk assessments + historical encyclopedia coverage. Strong on early-warning signals for ongoing risk."
+    },
+    {
+      "id": "wiki_genocides",
+      "name": "Wikipedia: List of Genocides + Genocides in History",
+      "abbr": "WP",
+      "url": "https://en.wikipedia.org/wiki/List_of_genocides",
+      "ingest_method": "structured_scrape",
+      "license": "CC BY-SA 4.0",
+      "grain": "historical event",
+      "geography": "global",
+      "time_range": "antiquity–present",
+      "coverage": {
+        "historical_atrocity": true
+      },
+      "update_cadence": "continuous (community-maintained)",
+      "schedule": "cron: 0 6 1 * *",
+      "notes": "Most complete cross-cultural historical index in one place. Every claim cites underlying scholarship; we follow the citations rather than trusting the index directly."
+    },
+    {
+      "id": "icc",
+      "name": "International Criminal Court",
+      "abbr": "ICC",
+      "url": "https://www.icc-cpi.int",
+      "ingest_method": "structured_scrape",
+      "license": "Public",
+      "grain": "case + indictment",
+      "geography": "global (state parties)",
+      "time_range": "2002–present",
+      "coverage": {
+        "indictments": true,
+        "convictions": true,
+        "treaty_compliance": true
+      },
+      "update_cadence": "as filed",
+      "schedule": "cron: 0 6 * * *",
+      "notes": "Adjudicated record. The 'verified' tier for the highest-stakes claims."
+    },
+    {
+      "id": "gdelt",
+      "name": "GDELT Project",
+      "abbr": "GDELT",
+      "url": "https://www.gdeltproject.org",
+      "api": "http://data.gdeltproject.org/gdeltv2/",
+      "ingest_method": "rest_api",
+      "license": "Open",
+      "grain": "media event",
+      "geography": "global",
+      "time_range": "1979–present",
+      "coverage": {
+        "events": true,
+        "noisy": true
+      },
+      "update_cadence": "every 15 minutes",
+      "schedule": "cron: */15 * * * *",
+      "notes": "Massive real-time media event database. Noisy — used only for early-warning signal, never as primary source. Records flagged 'gdelt-only' are explicitly low-confidence."
+    }
+  ],
+  "ingestion_principles": [
+    "Every record retains its source ID and original URL.",
+    "Records are never silently merged; they are linked into incidents with explicit confidence scores.",
+    "Disagreement between sources is shown, not hidden.",
+    "Single-source records are tagged 'single-source' rather than suppressed.",
+    "Bias of the source (e.g. State Dept on US adversaries) is part of the record metadata.",
+    "Every ingestion cycle writes a changelog entry to the public corrections log.",
+    "Same lens applies to all states. No category is exempt by virtue of geopolitical alignment."
+  ]
+}

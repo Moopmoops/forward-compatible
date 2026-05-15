@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-14",
+  "methodology": "Treaty ratification status from UN Treaty Collection. 'Major non-party' here means a state of substantial geopolitical weight that has not ratified.",
+  "data_status": "illustrative — reflects public ratification status as of last verification",
+  "treaties": [
+    {
+      "id": "icc_rome",
+      "name": "Rome Statute (International Criminal Court)",
+      "year": 2002,
+      "scope": "Jurisdiction over genocide, war crimes, crimes against humanity, aggression",
+      "parties": 124,
+      "major_non_parties": ["USA", "CHN", "RUS", "IND", "ISR", "IRN", "EGY", "PAK", "TUR"],
+      "notes": "USA signed (2000) and unsigned (2002). Russia withdrew its signature (2016). Several African states have threatened or initiated withdrawal."
+    },
+    {
+      "id": "cat",
+      "name": "Convention Against Torture",
+      "year": 1987,
+      "scope": "Absolute prohibition; mandatory state reporting; Optional Protocol allows inspections",
+      "parties": 173,
+      "major_non_parties": ["IND", "MMR", "ZWE"],
+      "op_cat_non_parties": ["USA", "CHN", "RUS", "ISR", "EGY", "SAU", "IRN", "PRK"],
+      "notes": "Most major powers are parties to CAT; the Optional Protocol allowing inspection has many fewer parties."
+    },
+    {
+      "id": "crpd",
+      "name": "Convention on the Rights of Persons with Disabilities",
+      "year": 2008,
+      "parties": 191,
+      "major_non_parties": ["USA"],
+      "notes": "US signed (2009), Senate failed to ratify (2012)."
+    },
+    {
+      "id": "icescr",
+      "name": "International Covenant on Economic, Social and Cultural Rights",
+      "year": 1976,
+      "parties": 171,
+      "major_non_parties": ["USA", "ZAF (signed but not ratified Op Protocol)"],
+      "notes": "USA signed (1977), never ratified."
+    },
+    {
+      "id": "crc",
+      "name": "Convention on the Rights of the Child",
+      "year": 1990,
+      "parties": 196,
+      "major_non_parties": ["USA"],
+      "notes": "Only UN member state that has not ratified."
+    },
+    {
+      "id": "ccm",
+      "name": "Convention on Cluster Munitions",
+      "year": 2010,
+      "parties": 111,
+      "major_non_parties": ["USA", "CHN", "RUS", "IND", "ISR", "PAK", "BRA", "EGY", "KOR"],
+      "notes": "Major arms producers/users have largely declined to join."
+    },
+    {
+      "id": "mban",
+      "name": "Anti-Personnel Mine Ban Convention (Ottawa)",
+      "year": 1999,
+      "parties": 164,
+      "major_non_parties": ["USA", "CHN", "RUS", "IND", "ISR", "PAK", "EGY", "KOR", "PRK"],
+      "notes": "USA is the largest non-party despite stockpile reductions."
+    },
+    {
+      "id": "tpnw",
+      "name": "Treaty on the Prohibition of Nuclear Weapons",
+      "year": 2021,
+      "parties": 73,
+      "major_non_parties": ["USA", "CHN", "RUS", "GBR", "FRA", "IND", "PAK", "ISR", "PRK", "and all NATO members"],
+      "notes": "No nuclear-armed state has signed."
+    },
+    {
+      "id": "icppd",
+      "name": "International Convention for the Protection of All Persons from Enforced Disappearance",
+      "year": 2010,
+      "parties": 76,
+      "major_non_parties": ["USA", "CHN", "RUS", "IND", "ISR", "EGY", "SAU", "IRN", "PAK", "TUR", "AUS", "CAN", "GBR"],
+      "notes": "Disappearance is a category most accountability regimes underweight; few major powers are parties."
+    }
+  ]
+}

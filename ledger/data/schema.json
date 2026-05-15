@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "name": "Ledger normalized event schema",
+  "purpose": "Records from every source connector are normalized to this shape before entering the incident store. Each source-record stays linked to its origin; multiple source-records may resolve to a single incident.",
+  "record": {
+    "id": "string — globally unique; format: {source_id}-{source_record_id}",
+    "source_id": "string — references sources.json[].id",
+    "source_record_id": "string — the source's own ID for this record",
+    "source_url": "string — direct URL to the source document or API record",
+    "ingested_at": "ISO 8601 — when the connector wrote this record",
+    "country_iso": "string — ISO 3166-1 alpha-3, or 'UNK' if disputed/non-state territory",
+    "country_name": "string — display name in English",
+    "secondary_locations": "array of {lat, lng, name} — finer-grained where applicable",
+    "actor_raw": "string — exact actor string from source",
+    "actor_normalized": "string — canonical form, e.g. 'russia.state.military'; result of entity-resolution pass",
+    "actor_relationship_to_state": "enum — 'state_forces' | 'state_sanctioned' | 'state_tolerated' | 'non_state' | 'unknown'",
+    "event_type": "enum — 'violence_against_civilians' | 'execution' | 'arbitrary_detention' | 'enforced_disappearance' | 'torture' | 'press_restriction' | 'transnational_repression' | 'detention_conditions' | 'due_process' | 'settler_violence' | 'armed_conflict' | 'political_repression' | 'rule_of_law' | 'environmental_harm' | 'mass_displacement' | 'sanctions_action' | 'arms_transfer' | 'surveillance_deployment' | 'historical_atrocity' | 'other'",
+    "date": "string — ISO 8601 date or range",
+    "date_precision": "enum — 'day' | 'month' | 'year' | 'range'",
+    "casualties": {
+      "dead": "integer or null",
+      "dead_low": "integer or null — when source publishes a range",
+      "dead_high": "integer or null",
+      "injured": "integer or null",
+      "missing": "integer or null",
+      "detained": "integer or null"
+    },
+    "severity": {
+      "score": "float 0-10 — derived",
+      "method": "string — derivation method id"
+    },
+    "summary": "string — one-sentence canonical description",
+    "narrative": "string — fuller account if available",
+    "source_bias_disclosure": "string — when the source has known bias relevant to interpretation, e.g. State Dept reports do not cover US conduct",
+    "verification_tier": "enum — 'multi' | 'single' | 'disputed' | 'adjudicated' (computed at incident-resolution time)",
+    "incident_id": "string — the canonical incident this record resolves to",
+    "confidence": "float 0-1 — derived from source count, source agreement, and corroboration window"
+  },
+  "incident_resolution": {
+    "purpose": "Collapse multiple source-records that describe the same event into one canonical incident, while preserving every source-record.",
+    "method": [
+      "1. Embed each record's location + actor + date + summary; nearest-neighbor candidate matching.",
+      "2. LLM verification pass on candidates: 'Are these the same incident? Yes / No / Probably / Different incidents same area.'",
+      "3. Produce canonical incident with: best-supported date, location, actor; min/max casualty range across sources; list of source-record ids.",
+      "4. If sources materially disagree (e.g. casualty figures differ by >50%), tier = 'disputed' and disagreement is preserved in the incident record."
+    ]
+  },
+  "changelog": {
+    "purpose": "Every change to a published record (correction, retraction, addition of new source) is logged with timestamp and reason. The changelog is public and queryable. This is the cultural design that separates a serious record from advocacy material."
+  }
+}

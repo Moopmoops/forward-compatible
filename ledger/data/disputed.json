@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-14",
+  "methodology": "When sources publish different counts for the same event, we show every source rather than picking one. The range itself is the finding. This is closer to honest than the false precision of a single number.",
+  "data_status": "illustrative — pipeline not yet live; figures approximate reported ranges as of mid-2026",
+  "disputes": [
+    {
+      "id": "ukraine_civ",
+      "name": "Civilian deaths, Russia–Ukraine war (2022–present)",
+      "claims": [
+        {"source": "UN OHCHR (verified individual cases)", "count": 12914, "methodology": "Verified named individuals, lower bound — OHCHR explicitly notes 'actual figures are considerably higher'"},
+        {"source": "Ukrainian government", "count": 47000, "methodology": "Aggregated official estimates"},
+        {"source": "Russian official statements", "count": 8200, "methodology": "Russian state media compilations — methodology not published"},
+        {"source": "Independent academic (Mediazona/BBC cross-reference)", "count": 28500, "methodology": "Named-casualty cross-reference with obituary data"}
+      ],
+      "honest_finding": "Likely range 25,000–55,000 civilian deaths. UN figure is a floor by design; Ukrainian figure approximates an upper end; Russian figure unreliable."
+    },
+    {
+      "id": "gaza_civ",
+      "name": "Civilian deaths, Gaza war (Oct 2023–present)",
+      "claims": [
+        {"source": "Gaza Health Ministry", "count": 46000, "methodology": "Counted bodies received at hospitals, names recorded"},
+        {"source": "The Lancet excess-mortality estimate", "count": 186000, "methodology": "Includes indirect deaths from system collapse, displacement, disease — typical ratio applied"},
+        {"source": "IDF official statements", "count": 17000, "methodology": "IDF estimate of combatants killed; civilian estimates not separately published"},
+        {"source": "Airwars cross-source verification", "count": 52000, "methodology": "Per-incident verification from multiple sources"}
+      ],
+      "honest_finding": "Direct deaths credibly in the 46k–55k range; total excess mortality including indirect deaths could exceed 186k. IDF figure does not address civilian deaths directly."
+    },
+    {
+      "id": "xinjiang_detain",
+      "name": "Uyghurs detained in 're-education' system, Xinjiang (2017–2022)",
+      "claims": [
+        {"source": "PRC official", "count": 0, "methodology": "Initially denied existence; later characterized as 'vocational training'"},
+        {"source": "Adrian Zenz (academic)", "count": 1800000, "methodology": "Document analysis, leaked Xinjiang Police Files"},
+        {"source": "Australian Strategic Policy Institute", "count": 1000000, "methodology": "Satellite imagery + leaked documents"},
+        {"source": "UN OHCHR August 2022 report", "count": 0, "methodology": "Range not specified; report concluded 'serious human rights violations' including 'patterns of torture' but does not publish a number"}
+      ],
+      "honest_finding": "Independent estimates converge on roughly 1.0–1.8 million people detained. PRC denials are not credible given documentary leaks."
+    },
+    {
+      "id": "drc_east",
+      "name": "Civilian deaths, eastern DRC (M23 conflict, 2022–present)",
+      "claims": [
+        {"source": "UN MONUSCO verified", "count": 8500, "methodology": "Verified incidents"},
+        {"source": "Kivu Security Tracker", "count": 14200, "methodology": "Per-event documentation across multiple armed groups"},
+        {"source": "Government of DRC", "count": 6000, "methodology": "Official statements"},
+        {"source": "Government of Rwanda", "note": "Denies forces present", "methodology": "Despite UN Group of Experts documentation of Rwandan forces"}
+      ],
+      "honest_finding": "Verified deaths above 8k; full toll likely 14k–25k including unverified incidents in remote areas."
+    },
+    {
+      "id": "iraq_war_civ",
+      "name": "Iraq War civilian deaths (2003–2011, post-invasion)",
+      "claims": [
+        {"source": "Iraq Body Count (named incidents)", "count": 200000, "methodology": "Documented named-casualty incidents — by design a floor"},
+        {"source": "Lancet 2006 cluster study", "count": 654965, "methodology": "Excess mortality survey, contested"},
+        {"source": "PLOS Med 2013 multi-source", "count": 461000, "methodology": "Survey + facility data triangulation"},
+        {"source": "US Department of Defense", "count": 0, "methodology": "DoD historically declined to publish civilian death estimates"}
+      ],
+      "honest_finding": "Credible range 200k–650k. The 200k figure is a documented floor; survey estimates put the likely total above 460k."
+    }
+  ]
+}
