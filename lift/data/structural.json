@@ -1,11 +1,47 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-05-15",
-  "methodology": "Structural lifts are slow, longer-arc gains that compound across generations: vaccine coverage, electrification, internet access, life expectancy, renewable energy share. Sources are Our World in Data, World Bank, IEA, ITU, WHO, and UNESCO.",
+  "methodology": "Structural lifts are slow, longer-arc gains that compound across decades. Each panel pulls from the authoritative custodian agency (UN IGME, WHO GHO, World Bank, UNESCO UIS, ITU, IEA, IPU, V-Dem, FAO, UNODC, Amnesty, World Database on Protected Areas) and is presented at the same time scale. Direction is encoded — 'up_is_good' for things we want to grow (literacy, electrification) and 'down_is_good' for things we want to shrink (mortality, undernourishment). The grouping by domain (Healthspan / Access / Prosperity / Civic / Environment / Safety) mirrors the composite heatmap dimensions plus two domains the heatmap omits.",
   "data_status": "illustrative — pipeline not yet live; values approximate published figures",
+  "domains": [
+    {"id": "healthspan", "label": "Healthspan", "framing": "How long, healthy, and protected lives are."},
+    {"id": "access", "label": "Access", "framing": "Whether the basic substrate of modern life — knowledge, power, water, connectivity — is reachable."},
+    {"id": "prosperity", "label": "Prosperity", "framing": "Whether material conditions meet a floor."},
+    {"id": "civic", "label": "Civic", "framing": "Whether voice and accountable government are extended."},
+    {"id": "environment", "label": "Environment", "framing": "Whether the systems we depend on are being protected and restored."},
+    {"id": "safety", "label": "Safety", "framing": "Whether everyday and political violence is being reduced."}
+  ],
   "panels": [
     {
+      "id": "life_expectancy",
+      "domain": "healthspan",
+      "title": "Global life expectancy at birth",
+      "subtitle": "Years lived on average; world population-weighted",
+      "y_label": "Years",
+      "source": "UN World Population Prospects / OWID",
+      "series": [
+        {"year": 1900, "value": 32},
+        {"year": 1950, "value": 47},
+        {"year": 1970, "value": 56},
+        {"year": 1990, "value": 64},
+        {"year": 2000, "value": 67},
+        {"year": 2010, "value": 70},
+        {"year": 2019, "value": 73},
+        {"year": 2021, "value": 71},
+        {"year": 2024, "value": 73}
+      ],
+      "direction": "up_is_good",
+      "framing": "Roughly doubled in a century. The COVID dip in 2020–2021 was the first global decline since WWII; the rebound is underway. Country variation remains large.",
+      "description": "Average years lived from birth, calculated from age-specific mortality rates. This is the single most aggregated health-system output: it integrates child mortality, infectious disease control, maternal health, treatment of chronic disease, road safety, and access to clean food and water into one number. The 73-year global average masks a 25-year spread between the strongest and weakest national figures.",
+      "costs": "Longer lives also mean more years lived with disability and age-related disease — healthspan and lifespan have not grown at the same rate. Pension and care-economy systems were not designed for the current age profile.",
+      "sources": [
+        {"name": "UN World Population Prospects 2024", "url": "https://population.un.org/wpp/"},
+        {"name": "OWID — Life expectancy", "url": "https://ourworldindata.org/life-expectancy"}
+      ]
+    },
+    {
       "id": "child_mortality",
+      "domain": "healthspan",
       "title": "Global under-5 mortality rate",
       "subtitle": "Deaths per 1,000 live births",
       "y_label": "Deaths per 1,000",
@@ -20,47 +56,44 @@
         {"year": 2020, "value": 39},
         {"year": 2022, "value": 37}
       ],
-      "framing": "Roughly 7 million fewer children under five die each year compared to 1990. Driven by vaccines, oral rehydration therapy, skilled birth attendance, and rising household incomes.",
-      "direction": "down_is_good"
+      "direction": "down_is_good",
+      "framing": "Roughly 7 million fewer children under five die each year compared to 1990. Drivers: vaccines, ORT, skilled birth attendance, rising household incomes.",
+      "description": "Probability that a child born in a given year dies before reaching age 5, expressed per 1,000 live births. Falling from 93 to 37 over three decades is the single largest population-scale health gain in the modern era. Sub-Saharan Africa still has rates an order of magnitude higher than the global average; the global figure is dragged down by a small number of countries with the slowest declines.",
+      "costs": "Recent stalling in some regions; ecological cost of expanded human population is real and not addressed in this metric alone.",
+      "sources": [
+        {"name": "UN IGME 2023 estimates", "url": "https://childmortality.org/"},
+        {"name": "OWID — Child mortality", "url": "https://ourworldindata.org/child-mortality"}
+      ]
     },
     {
-      "id": "renewables",
-      "title": "Global renewable share of electricity generation",
-      "subtitle": "Hydro + wind + solar + bioenergy as % of generation",
-      "y_label": "Percent of generation",
-      "source": "IEA / Ember",
-      "series_grouped": [
-        {"name": "Solar+Wind", "values": [{"year": 2010, "value": 1.8}, {"year": 2014, "value": 4.5}, {"year": 2018, "value": 7.4}, {"year": 2020, "value": 9.3}, {"year": 2022, "value": 12.0}, {"year": 2024, "value": 15.4}]},
-        {"name": "Hydro", "values": [{"year": 2010, "value": 16.0}, {"year": 2014, "value": 16.4}, {"year": 2018, "value": 16.2}, {"year": 2020, "value": 16.8}, {"year": 2022, "value": 15.0}, {"year": 2024, "value": 14.2}]},
-        {"name": "All renewables", "values": [{"year": 2010, "value": 19.5}, {"year": 2014, "value": 22.0}, {"year": 2018, "value": 25.4}, {"year": 2020, "value": 27.9}, {"year": 2022, "value": 29.4}, {"year": 2024, "value": 30.6}]},
-        {"name": "Fossil", "values": [{"year": 2010, "value": 67.5}, {"year": 2014, "value": 66.0}, {"year": 2018, "value": 63.7}, {"year": 2020, "value": 61.3}, {"year": 2022, "value": 60.8}, {"year": 2024, "value": 59.2}]}
-      ],
-      "framing": "The crossover that mattered: in 2023, more new generating capacity added globally was renewable than fossil. Solar and wind costs have fallen ~90% and ~70% respectively over the period.",
-      "direction": "up_is_good"
-    },
-    {
-      "id": "internet_access",
-      "title": "Global internet usage",
-      "subtitle": "Percent of population online",
-      "y_label": "Percent online",
-      "source": "ITU / Our World in Data",
+      "id": "maternal_mortality",
+      "domain": "healthspan",
+      "title": "Global maternal mortality ratio",
+      "subtitle": "Maternal deaths per 100,000 live births",
+      "y_label": "Deaths per 100,000",
+      "source": "WHO / UN Maternal Mortality Estimation Group",
       "series": [
-        {"year": 2000, "value": 6.8},
-        {"year": 2005, "value": 16.0},
-        {"year": 2010, "value": 28.7},
-        {"year": 2015, "value": 41.0},
-        {"year": 2018, "value": 51.0},
-        {"year": 2020, "value": 60.0},
-        {"year": 2022, "value": 66.0},
-        {"year": 2024, "value": 71.0}
+        {"year": 1990, "value": 385},
+        {"year": 2000, "value": 339},
+        {"year": 2010, "value": 257},
+        {"year": 2015, "value": 220},
+        {"year": 2020, "value": 223},
+        {"year": 2023, "value": 197}
       ],
-      "framing": "From under 7% to over 70% in 24 years. Mobile-first access has been the lever in the developing world. Quality and freedom of access are not measured here.",
-      "direction": "up_is_good"
+      "direction": "down_is_good",
+      "framing": "Roughly halved since 1990. Antenatal care, skilled birth attendance, blood transfusion availability, and emergency obstetric capacity are the workhorses.",
+      "description": "Number of women dying from pregnancy-related causes per 100,000 live births. The MMR is the most direct measure of a health system's care for women. WHO's target was a two-thirds reduction from 1990–2015; the world achieved roughly 44%. Sub-Saharan Africa still has rates more than 30× those in high-income countries.",
+      "costs": "Some recent backsliding in middle-income contexts; US is the only HIC with rising MMR — uneven access to care explains most of it.",
+      "sources": [
+        {"name": "WHO — Maternal mortality", "url": "https://www.who.int/news-room/fact-sheets/detail/maternal-mortality"},
+        {"name": "Trends in maternal mortality 2000–2023 (WHO/UNICEF/UNFPA/WB/UNDESA)"}
+      ]
     },
     {
       "id": "vaccine_coverage",
-      "title": "DTP3 immunization coverage of one-year-olds",
-      "subtitle": "Global average, all infants",
+      "domain": "healthspan",
+      "title": "DTP3 immunization coverage",
+      "subtitle": "Percent of one-year-olds, global average",
       "y_label": "Percent coverage",
       "source": "WHO/UNICEF Estimates of National Immunization Coverage",
       "series": [
@@ -73,8 +106,324 @@
         {"year": 2021, "value": 81},
         {"year": 2023, "value": 84}
       ],
-      "framing": "From a quarter of infants covered in 1980 to over four-fifths now. Pandemic disruption visible in the 2021 dip; recovery underway. DTP3 is the standard benchmark for system performance.",
-      "direction": "up_is_good"
+      "direction": "up_is_good",
+      "framing": "From a fifth of infants in 1980 to over four-fifths now. DTP3 (third dose) is the standard benchmark for routine-immunization system performance.",
+      "description": "Coverage of the third dose of diphtheria-tetanus-pertussis vaccine, the benchmark indicator for routine immunization system function because it requires three contacts with the health system. Pandemic disruption in 2021 was the largest single-year drop in 30 years; recovery is underway. Zero-dose children (no vaccines at all) remain concentrated in fragile and conflict-affected states.",
+      "costs": "Vaccine hesitancy in some HICs and conflict-zone access remain the persistent obstacles to closure.",
+      "sources": [
+        {"name": "WHO/UNICEF WUENIC 2024", "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/immunization-analysis-and-insights/global-monitoring/immunization-coverage/who-unicef-estimates-of-national-immunization-coverage"}
+      ]
+    },
+    {
+      "id": "internet_access",
+      "domain": "access",
+      "title": "Global internet usage",
+      "subtitle": "Percent of population online",
+      "y_label": "Percent",
+      "source": "ITU / Our World in Data",
+      "series": [
+        {"year": 2000, "value": 6.8},
+        {"year": 2005, "value": 16.0},
+        {"year": 2010, "value": 28.7},
+        {"year": 2015, "value": 41.0},
+        {"year": 2018, "value": 51.0},
+        {"year": 2020, "value": 60.0},
+        {"year": 2022, "value": 66.0},
+        {"year": 2024, "value": 71.0}
+      ],
+      "direction": "up_is_good",
+      "framing": "From under 7% to over 70% in 24 years. Mobile-first access has been the lever in the developing world. Quality and freedom of access are not measured here.",
+      "description": "Share of the world population reporting any internet use in the past three months. The fastest-spreading information technology in human history. The remaining ~29% are concentrated in low-income, rural, and elderly cohorts; affordability rather than coverage is now often the binding constraint.",
+      "costs": "Surveillance capacity, misinformation amplification, attention-capture business models, and screen-time effects on developmental cohorts are real and unmeasured in this metric.",
+      "sources": [
+        {"name": "ITU Facts and Figures 2024", "url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-internet-use/"}
+      ]
+    },
+    {
+      "id": "adult_literacy",
+      "domain": "access",
+      "title": "Global adult literacy rate",
+      "subtitle": "Percent of adults able to read and write",
+      "y_label": "Percent",
+      "source": "UNESCO Institute for Statistics / OWID",
+      "series": [
+        {"year": 1820, "value": 12},
+        {"year": 1900, "value": 21},
+        {"year": 1950, "value": 36},
+        {"year": 1970, "value": 51},
+        {"year": 1990, "value": 67},
+        {"year": 2000, "value": 82},
+        {"year": 2010, "value": 84},
+        {"year": 2022, "value": 87}
+      ],
+      "direction": "up_is_good",
+      "framing": "From ~12% literate adults in 1820 to ~87% today. The gender gap has narrowed sharply over the last 50 years.",
+      "description": "Share of adults aged 15+ who can read and write a simple sentence about everyday life. Functional literacy (in modern bureaucracies, finance, online forms) remains far less universal than basic literacy. Definitions vary across national surveys; the trend is robust, the level is imprecise at the margins.",
+      "costs": "Definitional looseness — functional and digital literacy lag basic literacy in most cohorts; remaining gaps are concentrated in older female cohorts in South Asia and sub-Saharan Africa.",
+      "sources": [
+        {"name": "UIS Statistics", "url": "http://data.uis.unesco.org/"},
+        {"name": "OWID — Literacy", "url": "https://ourworldindata.org/literacy"}
+      ]
+    },
+    {
+      "id": "electricity_access",
+      "domain": "access",
+      "title": "Access to electricity",
+      "subtitle": "Percent of population with electricity",
+      "y_label": "Percent",
+      "source": "World Bank / IEA SDG 7 tracking",
+      "series": [
+        {"year": 1990, "value": 71},
+        {"year": 2000, "value": 78},
+        {"year": 2010, "value": 83},
+        {"year": 2015, "value": 87},
+        {"year": 2020, "value": 91},
+        {"year": 2022, "value": 91.4}
+      ],
+      "direction": "up_is_good",
+      "framing": "From 71% in 1990 to over 91% now. Off-grid solar and mini-grid deployments accelerated the last-mile push.",
+      "description": "Share of the population with access to electricity at home. The remaining ~700 million unconnected people are concentrated in sub-Saharan Africa; pace of progress there has slowed and may need to accelerate to close the gap before 2030. Access in this metric does not specify quality (hours per day, reliability) or affordability.",
+      "costs": "Quality (hours/day, voltage stability) and affordability gaps remain even where access is technically present; some grid expansions have been fossil-fuel powered.",
+      "sources": [
+        {"name": "World Bank — Access to electricity (% of population)", "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS"},
+        {"name": "Tracking SDG 7 Report 2024"}
+      ]
+    },
+    {
+      "id": "drinking_water",
+      "domain": "access",
+      "title": "Safely managed drinking water at home",
+      "subtitle": "Percent with safely managed service",
+      "y_label": "Percent",
+      "source": "WHO/UNICEF Joint Monitoring Programme",
+      "series": [
+        {"year": 2000, "value": 61},
+        {"year": 2005, "value": 64},
+        {"year": 2010, "value": 67},
+        {"year": 2015, "value": 71},
+        {"year": 2020, "value": 74},
+        {"year": 2022, "value": 73}
+      ],
+      "direction": "up_is_good",
+      "framing": "From 61% in 2000 to 73% in 2022. 'Safely managed' is the strictest definition — improved source, accessible at home, available when needed, free from contamination.",
+      "description": "The JMP definition has four tiers: surface water, unimproved, basic, safely managed. The series above tracks the highest tier — water that is improved at the source, accessible at home, available on demand, and free from contamination. Roughly 2.2 billion people still lack this. About 700 million rely on water sources that meet none of the four JMP criteria.",
+      "costs": "Climate-driven water stress (rainfall variability, glacial melt) is raising risk in regions that have improved access.",
+      "sources": [
+        {"name": "WHO/UNICEF JMP 2023", "url": "https://washdata.org/"}
+      ]
+    },
+    {
+      "id": "extreme_poverty",
+      "domain": "prosperity",
+      "title": "Extreme poverty rate",
+      "subtitle": "Share below the $2.15/day PPP poverty line",
+      "y_label": "Percent",
+      "source": "World Bank PIP / Our World in Data",
+      "series": [
+        {"year": 1990, "value": 36.2},
+        {"year": 2000, "value": 28.0},
+        {"year": 2010, "value": 15.6},
+        {"year": 2015, "value": 10.1},
+        {"year": 2019, "value": 8.5},
+        {"year": 2020, "value": 9.3},
+        {"year": 2022, "value": 9.1}
+      ],
+      "direction": "down_is_good",
+      "framing": "From over a third of humanity to under a tenth in a generation. China and Vietnam drove most of the early gains; the remaining stretch is concentrated in fragile states.",
+      "description": "Share of the world population living on less than $2.15 per day (2017 PPP). The line is contested — critics including Jason Hickel argue it is too low to capture meaningful poverty; alternative lines ($3.65, $6.85) show much slower and more uneven progress. The direction is robust across every defensible line; the magnitude depends on which line is chosen.",
+      "costs": "Inequality within many countries rose even as cross-country gaps narrowed; ecological footprint scaled with consumption; progress on the $2.15-to-$6.85 range is stalling.",
+      "sources": [
+        {"name": "World Bank PIP", "url": "https://pip.worldbank.org/"},
+        {"name": "OWID — Extreme poverty", "url": "https://ourworldindata.org/extreme-poverty"}
+      ]
+    },
+    {
+      "id": "undernourishment",
+      "domain": "prosperity",
+      "title": "Prevalence of undernourishment",
+      "subtitle": "Percent of population, FAO definition",
+      "y_label": "Percent",
+      "source": "FAO State of Food Security and Nutrition",
+      "series": [
+        {"year": 2000, "value": 13.1},
+        {"year": 2010, "value": 8.3},
+        {"year": 2014, "value": 7.6},
+        {"year": 2019, "value": 7.9},
+        {"year": 2021, "value": 9.3},
+        {"year": 2023, "value": 9.2}
+      ],
+      "direction": "down_is_good",
+      "framing": "Falling steadily until ~2014, then a pandemic-and-war-driven reversal. The 2030 SDG zero-hunger target is now out of reach.",
+      "description": "FAO's prevalence of undernourishment (POU) measures the share of the population whose habitual food consumption is insufficient to provide the dietary energy levels required to maintain a normal, active, healthy life. The 2020s reversal is driven by the pandemic, conflict (Ukraine grain disruption, Tigray, Sudan, Gaza), and climate shocks to agricultural systems.",
+      "costs": "The metric does not capture quality (micronutrient deficiency, obesity-malnutrition double burden) which has not improved on the same trajectory.",
+      "sources": [
+        {"name": "FAO SOFI 2024", "url": "https://www.fao.org/publications/sofi/2024/"}
+      ]
+    },
+    {
+      "id": "women_in_parliament",
+      "domain": "civic",
+      "title": "Women in national parliaments",
+      "subtitle": "Percent of seats, world average",
+      "y_label": "Percent",
+      "source": "Inter-Parliamentary Union (IPU)",
+      "series": [
+        {"year": 1995, "value": 11.3},
+        {"year": 2000, "value": 13.1},
+        {"year": 2005, "value": 16.0},
+        {"year": 2010, "value": 19.0},
+        {"year": 2015, "value": 22.2},
+        {"year": 2020, "value": 24.9},
+        {"year": 2024, "value": 26.9}
+      ],
+      "direction": "up_is_good",
+      "framing": "More than doubled since 1995. Rwanda, Cuba, Nicaragua, and Mexico are now over 50%; many parliaments remain below 20%.",
+      "description": "Share of seats in lower or single chambers of national parliaments held by women, aggregated by the IPU. Includes the effect of quota systems where they apply (about 80 countries have some form of legislative gender quota). The 26.9% figure is global average; the median country is in the low-20s; a handful of parliaments remain below 10%.",
+      "costs": "Representation is not the same as substantive equality — women parliamentarians face documented harassment and time-imbalance; some 'quotas' don't translate into committee leadership or executive office.",
+      "sources": [
+        {"name": "IPU Women in parliament: 1995–2024", "url": "https://data.ipu.org/women-ranking/"}
+      ]
+    },
+    {
+      "id": "liberal_democracy",
+      "domain": "civic",
+      "title": "Liberal democracy index",
+      "subtitle": "V-Dem global mean, 0–1 scale",
+      "y_label": "Index 0–1",
+      "source": "V-Dem Institute",
+      "series": [
+        {"year": 1990, "value": 0.35},
+        {"year": 2000, "value": 0.42},
+        {"year": 2010, "value": 0.43},
+        {"year": 2015, "value": 0.40},
+        {"year": 2020, "value": 0.35},
+        {"year": 2023, "value": 0.32}
+      ],
+      "direction": "up_is_good",
+      "framing": "Rose through the 1990s and 2000s; declined since the mid-2010s. The 'autocratization wave' is real and ongoing. This is the indicator most plausibly trending the wrong way in this entire ledger.",
+      "description": "V-Dem's Liberal Democracy Index combines free-and-fair-elections measures with rule of law, individual liberties, and judicial constraints on the executive. The 2010s onward trajectory has been negative for the first sustained period since V-Dem's series begins. The Ledger's heatmap reflects this same pattern; this panel is included here to be honest about the directional reversal even as other indicators continue rising.",
+      "costs": "Some critics argue V-Dem's expert-rating methodology embeds Western liberal assumptions; the direction of travel is consistent across alternative measures (Freedom House, EIU, BTI).",
+      "sources": [
+        {"name": "V-Dem Democracy Report 2024", "url": "https://www.v-dem.net/publications/democracy-reports/"}
+      ]
+    },
+    {
+      "id": "marriage_equality_count",
+      "domain": "civic",
+      "title": "Countries with marriage equality",
+      "subtitle": "Number of jurisdictions where same-sex marriage is legal",
+      "y_label": "Countries",
+      "source": "Human Rights Campaign / ILGA",
+      "series": [
+        {"year": 2001, "value": 1},
+        {"year": 2005, "value": 4},
+        {"year": 2010, "value": 9},
+        {"year": 2015, "value": 20},
+        {"year": 2020, "value": 29},
+        {"year": 2024, "value": 37}
+      ],
+      "direction": "up_is_good",
+      "framing": "From the Netherlands in 2001 to 37 jurisdictions by 2025. Includes constitutional decisions, parliamentary acts, and referendums.",
+      "description": "Number of jurisdictions where same-sex marriage is legally recognized. Includes constitutional rulings (US Obergefell 2015, Taiwan 2017, India under challenge), parliamentary acts (Argentina 2010), and referendums (Ireland 2015). Outside this group, ~70 countries still criminalize same-sex relations.",
+      "costs": "Backlash against trans rights in some same jurisdictions; selective legal recognition without anti-discrimination protections; reversal risk under shifting political coalitions.",
+      "sources": [
+        {"name": "ILGA World maps", "url": "https://ilga.org/maps"}
+      ]
+    },
+    {
+      "id": "renewables",
+      "domain": "environment",
+      "title": "Renewable share of electricity",
+      "subtitle": "Percent of generation; hydro + wind + solar + bioenergy",
+      "y_label": "Percent",
+      "source": "IEA / Ember",
+      "series": [
+        {"year": 2010, "value": 19.5},
+        {"year": 2014, "value": 22.0},
+        {"year": 2018, "value": 25.4},
+        {"year": 2020, "value": 27.9},
+        {"year": 2022, "value": 29.4},
+        {"year": 2024, "value": 30.6}
+      ],
+      "direction": "up_is_good",
+      "framing": "Past 30%. In 2023 more new generating capacity added globally was renewable than fossil. Solar and wind costs fell ~90% and ~70% respectively over the decade.",
+      "description": "Combined share of hydro, wind, solar PV, solar thermal, bioenergy and geothermal in global electricity generation. The mix has shifted: solar + wind grew from 1.8% in 2010 to over 15% in 2024, displacing both fossil generation and the relative share of hydro. Including nuclear, the low-carbon share is over 40%.",
+      "costs": "Lithium, cobalt, rare-earth mining footprints; end-of-life PV recycling not yet built at scale; grid integration challenges (curtailment, capacity firming); affected-worker transitions uneven.",
+      "sources": [
+        {"name": "IEA Renewables 2024", "url": "https://www.iea.org/reports/renewables-2024"},
+        {"name": "Ember Global Electricity Review 2025"}
+      ]
+    },
+    {
+      "id": "protected_area",
+      "domain": "environment",
+      "title": "Protected land area",
+      "subtitle": "Percent of global land surface under protection",
+      "y_label": "Percent",
+      "source": "World Database on Protected Areas (WDPA)",
+      "series": [
+        {"year": 1990, "value": 8.5},
+        {"year": 2000, "value": 12.5},
+        {"year": 2010, "value": 14.5},
+        {"year": 2015, "value": 15.0},
+        {"year": 2020, "value": 16.5},
+        {"year": 2023, "value": 17.2}
+      ],
+      "direction": "up_is_good",
+      "framing": "Doubled since 1990. The 30x30 framework adopted at CBD COP15 (2022) commits parties to 30% protection by 2030 — meaning this curve has to nearly double again in seven years.",
+      "description": "Share of terrestrial area covered by protected areas as defined in the WDPA. Includes IUCN management categories I–VI. 'Paper parks' — designated but not managed — count in the total; effective management is the open question that the 30x30 framework aims to address.",
+      "costs": "Past 'fortress conservation' models displaced Indigenous communities; some protected areas exist on paper without enforcement; financing pledges far below requested levels.",
+      "sources": [
+        {"name": "Protected Planet — WDPA", "url": "https://www.protectedplanet.net/en"},
+        {"name": "CBD COP15 — 30x30 framework"}
+      ]
+    },
+    {
+      "id": "homicide_rate",
+      "domain": "safety",
+      "title": "Global homicide rate",
+      "subtitle": "Intentional homicides per 100,000",
+      "y_label": "Per 100,000",
+      "source": "UNODC Global Study on Homicide",
+      "series": [
+        {"year": 2000, "value": 7.1},
+        {"year": 2005, "value": 6.9},
+        {"year": 2010, "value": 7.0},
+        {"year": 2015, "value": 6.3},
+        {"year": 2020, "value": 5.8},
+        {"year": 2022, "value": 5.9}
+      ],
+      "direction": "down_is_good",
+      "framing": "Roughly flat-to-falling globally. Sharp regional differences: Latin America and the Caribbean remain far above the global mean; East Asia and Western Europe far below.",
+      "description": "Intentional homicide victims per 100,000 population, as collected by UNODC from national criminal justice statistics. Globally, roughly 460,000 people are murdered each year. Latin America accounts for ~30% of that total despite holding under 10% of world population.",
+      "costs": "Data quality varies widely; under-reporting in some jurisdictions; femicides and political killings sometimes mis-categorized.",
+      "sources": [
+        {"name": "UNODC Global Study on Homicide 2023", "url": "https://www.unodc.org/unodc/en/data-and-analysis/global-study-on-homicide.html"}
+      ]
+    },
+    {
+      "id": "death_penalty_abolition",
+      "domain": "safety",
+      "title": "Countries that have abolished the death penalty",
+      "subtitle": "In law or in practice (10+ years no execution)",
+      "y_label": "Countries",
+      "source": "Amnesty International / Cornell Death Penalty Worldwide",
+      "series": [
+        {"year": 1977, "value": 16},
+        {"year": 1990, "value": 48},
+        {"year": 2000, "value": 75},
+        {"year": 2010, "value": 96},
+        {"year": 2020, "value": 108},
+        {"year": 2024, "value": 113}
+      ],
+      "direction": "up_is_good",
+      "framing": "From 16 abolitionist countries in 1977 to 113 today. The remaining retentionist states are a shrinking group; recent abolitions include Zambia (2022), Equatorial Guinea (2022), Ghana (2023, parliamentary), Malaysia (2023, mandatory only).",
+      "description": "Number of countries that have abolished the death penalty for all crimes in law, or that are abolitionist in practice (have not carried out an execution in at least 10 years and are believed to have a policy not to). Retentionist countries account for a shrinking minority of the world; the trend is one of the more robustly directional civic indicators.",
+      "costs": "Five countries account for the overwhelming majority of executions globally (China, Iran, Saudi Arabia, Iraq, USA among democracies); recent expansion of capital crimes in some retentionist states is a backsliding pattern.",
+      "sources": [
+        {"name": "Amnesty Death Sentences and Executions 2023", "url": "https://www.amnesty.org/en/documents/act50/7952/2024/en/"},
+        {"name": "Cornell Death Penalty Worldwide", "url": "https://deathpenaltyworldwide.org/"}
+      ]
     }
   ]
 }
