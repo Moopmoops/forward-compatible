@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "name": "Lift normalized gain-record schema",
+  "purpose": "Records from every source connector are normalized to this shape before entering the gain store. Each source-record stays linked to its origin; multiple source-records may resolve to a single canonical gain.",
+  "record": {
+    "id": "string — globally unique; format: {source_id}-{source_record_id}",
+    "source_id": "string — references sources.json[].id",
+    "source_record_id": "string — the source's own ID for this record",
+    "source_url": "string — direct URL to the source document or API record",
+    "ingested_at": "ISO 8601 — when the connector wrote this record",
+    "country_iso": "string — ISO 3166-1 alpha-3, or 'GLB' for global, 'EU' for EU-level",
+    "country_name": "string — display name in English",
+    "actor_raw": "string — exact actor string from source",
+    "actor_normalized": "string — canonical form, e.g. 'who.headquarters', 'usa.fda', 'iucn.redlist'",
+    "actor_relationship_to_state": "enum — 'state_agency' | 'multilateral' | 'civil_society' | 'private_sector' | 'researcher' | 'unknown'",
+    "event_type": "enum — 'disease_elimination' | 'disease_outcome' | 'drug_approval' | 'vaccine_introduction' | 'vaccine_coverage_gain' | 'species_recovery' | 'protected_area' | 'renewable_share' | 'renewable_capacity' | 'electrification' | 'sanitation_access' | 'water_access' | 'education_attainment' | 'literacy_milestone' | 'poverty_reduction' | 'peace_agreement' | 'rights_expansion' | 'rights_administration' | 'treaty_ratification' | 'climate_finance' | 'scientific_milestone' | 'maternal_mortality' | 'child_mortality' | 'child_nutrition' | 'other'",
+    "date": "string — ISO 8601 date or range",
+    "date_precision": "enum — 'day' | 'month' | 'year' | 'range'",
+    "magnitude": {
+      "value": "float or null",
+      "unit": "string — e.g. 'people', 'percent', 'doses', 'km2', 'species'",
+      "low": "float or null — when source publishes a range",
+      "high": "float or null"
+    },
+    "direction": "enum — 'up_is_good' | 'down_is_good' (so e.g. mortality down counts as positive lift)",
+    "scale_score": {
+      "score": "float 0-10 — derived from magnitude × population reach × durability heuristic",
+      "method": "string — derivation method id"
+    },
+    "summary": "string — one-sentence canonical description",
+    "narrative": "string — fuller account if available",
+    "source_caveats": "string — when the source has known caveats, e.g. WHO point estimates differ from IHME modeled estimates; flag both",
+    "verification_tier": "enum — 'multi' | 'single' | 'disputed' | 'adjudicated' (computed at incident-resolution time)",
+    "gain_id": "string — the canonical gain this record resolves to",
+    "confidence": "float 0-1 — derived from source count, source agreement, and corroboration window"
+  },
+  "incident_resolution": {
+    "purpose": "Collapse multiple source-records that describe the same gain into one canonical gain record, while preserving every source-record.",
+    "method": [
+      "1. Embed each record's metric + actor + date + summary; nearest-neighbor candidate matching.",
+      "2. LLM verification pass on candidates: 'Are these the same gain? Yes / No / Probably / Related but distinct.'",
+      "3. Produce canonical gain with: best-supported date, scope, magnitude range across sources; list of source-record ids.",
+      "4. If sources materially disagree (e.g. magnitude figures differ by >50%), tier = 'disputed' and disagreement is preserved in the canonical record."
+    ]
+  },
+  "selection_criteria": {
+    "purpose": "Not everything that improves is a 'lift'. We track gains that meet at least one of these criteria.",
+    "criteria": [
+      "Population-scale effect: ≥100,000 people affected, OR an irreversible-pattern milestone (first eradication, first ratification).",
+      "Documented by at least one source with a public methodology.",
+      "Durable: not a single-year fluctuation; either confirmed across multiple years OR locked in by an institutional commitment.",
+      "Trackable: there is a future state where the gain is sustained or lost — not a one-time celebration with no follow-up."
+    ]
+  },
+  "changelog": {
+    "purpose": "Every change to a published gain record (correction, retraction, addition of new source) is logged with timestamp and reason. The changelog is public and queryable. The Lift is not a marketing document; mistakes get retracted on the same record they were made in."
+  }
+}

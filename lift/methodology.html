@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — The Lift — Forward Compatible</title>
+<meta name="description" content="How gain records flow from source to public ledger: ingestion connectors, normalization, entity resolution, gain triangulation, magnitude scoring, and the public corrections log.">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #0c0c0c;
+    --surface: #131313;
+    --surface-2: #181818;
+    --rule: #1a1a1a;
+    --rule-bright: #2a2a2a;
+    --text: #c8c8c8;
+    --text-bright: #e8e8e8;
+    --text-dim: #777;
+    --text-faint: #444;
+    --accent: #c9a55a;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'Menlo', monospace;
+    --good: #6a8a6e;
+    --bad: #a64a3a;
+    --gain-6: #258055;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; opacity: 0.85; }
+a:hover { opacity: 1; }
+
+.back {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(12,12,12,0.85);
+    padding: 8px 14px;
+    border: 1px solid var(--rule);
+    z-index: 100;
+}
+.back:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+
+.col { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+.col-wide { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+.hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+}
+.hero .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 28px;
+}
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 28px;
+}
+.hero .subtitle {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.85;
+    max-width: 580px;
+}
+
+.section { padding: 64px 0; }
+.section h2 {
+    font-size: 1.5rem;
+    color: var(--text-bright);
+    font-weight: 600;
+    margin-bottom: 14px;
+    line-height: 1.3;
+}
+.section h3 {
+    font-size: 1.05rem;
+    color: var(--text-bright);
+    font-weight: 600;
+    margin: 32px 0 10px;
+}
+.section .eyebrow-sm {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+}
+.section p {
+    margin-bottom: 18px;
+}
+.section p.intro {
+    color: var(--text-dim);
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.code {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+    line-height: 1.7;
+    color: var(--text);
+    overflow-x: auto;
+    margin: 20px 0;
+}
+.code .k { color: var(--accent); }
+.code .s { color: var(--good); }
+.code .c { color: var(--text-faint); font-style: italic; }
+.code .n { color: var(--text-bright); }
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 24px 0;
+}
+@media (max-width: 720px) { .tier-grid { grid-template-columns: 1fr; } }
+.tier-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+    border-left: 3px solid;
+}
+.tier-card.multi { border-left-color: var(--good); }
+.tier-card.adj { border-left-color: var(--text-bright); }
+.tier-card.disputed { border-left-color: var(--accent); }
+.tier-card.single { border-left-color: var(--text-dim); }
+.tier-card h4 {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-bright);
+    margin-bottom: 8px;
+}
+.tier-card p {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.pipeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    margin: 16px 0;
+}
+.pipeline-table th, .pipeline-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
+    vertical-align: top;
+}
+.pipeline-table th {
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule-bright);
+}
+.pipeline-table td.src-id {
+    font-family: var(--mono);
+    color: var(--text-dim);
+    font-size: 0.78rem;
+}
+.pipeline-table td.method {
+    color: var(--text);
+}
+.pipeline-table td.cadence {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--text-dim);
+}
+
+.callout {
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 22px 26px;
+    margin: 24px 0;
+}
+.callout .label {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+.callout p { margin-bottom: 12px; color: var(--text); font-size: 0.95rem; }
+.callout p:last-child { margin-bottom: 0; }
+
+ul.bare {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+ul.bare li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+ul.bare li:last-child { border-bottom: none; }
+ul.bare li::before {
+    content: "→";
+    color: var(--accent);
+    margin-right: 14px;
+    font-family: var(--mono);
+}
+
+footer {
+    padding: 60px 0;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-top: 80px;
+}
+</style>
+</head>
+<body>
+
+<a href="/lift.html" class="back">&larr; The Lift</a>
+
+<div class="hero col">
+    <div class="eyebrow">Methodology · The Lift</div>
+    <h1>How a gain becomes a record</h1>
+    <p class="subtitle">
+        Every entry in The Lift passes through four stages: ingestion from named sources, normalization to a shared schema, gain resolution across sources, and verification tiering. This document is the spec for each stage, written so any reader can audit the path from source document to public claim. The Lift and The Ledger share the same architecture — what differs is what gets recorded, not how.
+    </p>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">1 · Ingestion</div>
+    <h2>How sources enter the system</h2>
+    <p class="intro">
+        Each source has its own connector. Connectors are independent — one source breaking, changing its API, or going offline never blocks the rest. Connectors run on a per-source schedule and write to a per-source staging area before any normalization happens.
+    </p>
+
+    <h3>Three ingestion patterns</h3>
+
+    <table class="pipeline-table">
+        <thead><tr><th>Pattern</th><th>When</th><th>Sources</th></tr></thead>
+        <tbody>
+            <tr>
+                <td class="src-id">REST API pull</td>
+                <td class="method">Source publishes a structured API. Highest fidelity, lowest maintenance.</td>
+                <td class="cadence">World Bank · UN SDG · WHO GHO · ITU · IUCN · UN IGME</td>
+            </tr>
+            <tr>
+                <td class="src-id">CSV download</td>
+                <td class="method">Source publishes annual or quarterly bulk datasets. Stable schema, predictable cadence.</td>
+                <td class="cadence">OWID · UNESCO UIS · IHME GBD · Gapminder · IEA</td>
+            </tr>
+            <tr>
+                <td class="src-id">Scrape + LLM extract</td>
+                <td class="method">Source publishes narrative reports or PDFs. Structured scrape pulls report URLs and metadata; Claude extraction pulls (where, when, actor, metric, magnitude) into the normalized schema.</td>
+                <td class="cadence">IPCC · GAVI impact reports · UN Special Rapporteur findings · regulator approval notices</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="label">Reviewer in the loop</div>
+        <p>For LLM-extracted gain records, the first several hundred extractions per source go through human review against the original source text. Errors recalibrate the prompt. After calibration, sampling continues at a configurable rate.</p>
+        <p>Optimistic over-extraction is the failure mode to watch for. A record of gains has an even stronger temptation than a record of harms to overclaim, so the human review loop is especially load-bearing here.</p>
+    </div>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">2 · Normalization</div>
+    <h2>The shared gain-record schema</h2>
+    <p class="intro">
+        Every source-record, regardless of origin, is mapped to the schema below before entering the gain store. The original record is preserved alongside the normalized form — no data is dropped during translation.
+    </p>
+
+    <div class="code">
+<span class="c">// One source-record</span>
+{
+  <span class="k">"id"</span>: <span class="s">"who_gho-vac.dtp3.2023.global"</span>,
+  <span class="k">"source_id"</span>: <span class="s">"who_gho"</span>,
+  <span class="k">"source_record_id"</span>: <span class="s">"VAC_DTP3"</span>,
+  <span class="k">"source_url"</span>: <span class="s">"https://ghoapi.azureedge.net/api/VAC_DTP3"</span>,
+  <span class="k">"ingested_at"</span>: <span class="s">"2026-05-14T06:00:00Z"</span>,
+  <span class="k">"country_iso"</span>: <span class="s">"GLB"</span>,
+  <span class="k">"country_name"</span>: <span class="s">"Global"</span>,
+  <span class="k">"actor_raw"</span>: <span class="s">"WHO/UNICEF Estimates of National Immunization Coverage"</span>,
+  <span class="k">"actor_normalized"</span>: <span class="s">"who.headquarters"</span>,
+  <span class="k">"actor_relationship_to_state"</span>: <span class="s">"multilateral"</span>,
+  <span class="k">"event_type"</span>: <span class="s">"vaccine_coverage_gain"</span>,
+  <span class="k">"date"</span>: <span class="s">"2023"</span>,
+  <span class="k">"magnitude"</span>: { <span class="k">"value"</span>: <span class="n">84</span>, <span class="k">"unit"</span>: <span class="s">"percent"</span> },
+  <span class="k">"direction"</span>: <span class="s">"up_is_good"</span>,
+  <span class="k">"summary"</span>: <span class="s">"DTP3 coverage of one-year-olds: 84% globally"</span>,
+  <span class="k">"source_caveats"</span>: <span class="s">"WHO point estimates; IHME GBD modeled estimates differ slightly"</span>,
+  <span class="k">"gain_id"</span>: <span class="s">"gain-2023-glb-dtp3-coverage"</span>,
+  <span class="k">"confidence"</span>: <span class="n">0.92</span>
+}
+    </div>
+
+    <p>The full schema definition with every enum value lives in <a href="/lift/data/schema.json">schema.json</a>. It is versioned: any breaking change to the shape requires a major-version bump and a migration script for existing records.</p>
+
+    <h3>Entity resolution</h3>
+    <p>
+        Actor names — <em>"World Health Organization"</em>, <em>"WHO Headquarters"</em>, <em>"WHO Strategic Advisory Group of Experts"</em>, <em>"WHO IVB"</em> — need to resolve to a canonical actor identity so that contributions and patterns are visible across sources. Same problem for instruments and metric names across reports.
+    </p>
+    <p>
+        Approach: embedding-based candidate matching against a canonical actor table; Claude verification on candidates the embedding alone can't separate confidently. The actor table is structured (state agency, multilateral, civil society, private sector, researcher), with the classification subject to its own provenance chain.
+    </p>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">3 · Gain resolution</div>
+    <h2>Linking source-records into gain records</h2>
+    <p class="intro">
+        When OWID, the World Bank, and the UN IGME all report on the same child-mortality reduction, The Lift creates one canonical gain with three linked source-records — not three duplicate entries, and not one record that hides the others.
+    </p>
+
+    <ul class="bare">
+        <li>Candidate matching by metric + actor + date + summary embedding, within a configurable window.</li>
+        <li>Claude verification pass on candidates: <em>"Are these source-records describing the same gain? Yes / No / Probably / Related but distinct."</em></li>
+        <li>Canonical gain generated: best-supported date, scope, magnitude range across sources, full source-record list.</li>
+        <li>If magnitude figures across confirming sources differ by &gt;50%, tier flips to <em>disputed</em> and all source figures surface in the public record.</li>
+    </ul>
+
+    <h3>Why preservation matters</h3>
+    <p>
+        Other aggregators often merge source-records and lose the provenance — a magnitude figure shows up with no clear path back to which source said what. The Lift keeps every source-record addressable: a gain record points to its sources, each source has its own URL and methodology disclosure, and a reader can always reconstruct the chain.
+    </p>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">4 · Verification tiering</div>
+    <h2>How records are classified</h2>
+    <p class="intro">
+        Every published record carries a tier. The tier is computed, not editorial — it follows from the source count, source agreement, and time window of corroboration. For The Lift, the <em>adjudicated</em> tier is broader than for The Ledger: it includes any decision by a regulator or status authority of record (FDA, EMA, IUCN status committees, treaty depositories, peace-accord signings).
+    </p>
+
+    <div class="tier-grid">
+        <div class="tier-card multi">
+            <h4>Multi-source</h4>
+            <p>Two or more independent sources, magnitude figures agreeing within ±20% (or all sources reporting in non-numeric terms with compatible descriptions), all within a corroboration window.</p>
+        </div>
+        <div class="tier-card adj">
+            <h4>Adjudicated</h4>
+            <p>Confirmed by a regulator or status authority of record — FDA/EMA approval, IUCN Red List status change, UN Treaty Collection deposit, signed peace accord, formal disease-elimination certification. The strongest tier; durable, time-stamped fact.</p>
+        </div>
+        <div class="tier-card disputed">
+            <h4>Disputed</h4>
+            <p>Multiple sources cover the same gain but materially disagree on magnitude or significance. Tier is preserved as <em>disputed</em>; the disagreement itself is surfaced in the public record.</p>
+        </div>
+        <div class="tier-card single">
+            <h4>Single-source</h4>
+            <p>Reported by one source; not yet corroborated. Surfaced anyway, with explicit <em>single-source</em> tag. This is information, not noise — suppressing single-source reports means losing real signal from places and topics where coverage is thin.</p>
+        </div>
+    </div>
+
+    <div class="callout">
+        <div class="label">Why we don't average</div>
+        <p>Averaging diverging magnitude estimates produces a number that has no methodological backing — it's not what any source published, and it implies a precision the underlying data doesn't support.</p>
+        <p>So when sources disagree, the record carries the range and the methodology behind each estimate. The <em>honest finding</em> field in the public record synthesizes what can be said responsibly. Readers see what each source published; they don't get a fabricated consensus.</p>
+    </div>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">5 · Costs alongside gains</div>
+    <h2>Every gain has a costs field</h2>
+    <p class="intro">
+        Empty is allowed; missing is not. This is the discipline that distinguishes a gains record from progress-movement marketing. If a gain has documented environmental, equity, or distributional costs, those costs sit on the same record — not on a separate page, and not in a footnote.
+    </p>
+
+    <ul class="bare">
+        <li><strong>Haber-Bosch:</strong> feeds roughly half of humanity; eutrophication, nitrogen runoff, and energy-intensive manufacturing are co-listed costs.</li>
+        <li><strong>Green Revolution:</strong> famine reduction across South Asia; aquifer depletion, monoculture pesticide exposure, and smallholder displacement are co-listed.</li>
+        <li><strong>Smallpox eradication:</strong> ~5M deaths/year averted continuously since 1980; no significant ongoing cost identified — empty is correct.</li>
+        <li><strong>Renewables expansion:</strong> displaces fossil generation; mining footprints (lithium, cobalt, rare earths) and end-of-life recycling are co-listed.</li>
+        <li><strong>GLP-1 agonists:</strong> cardiovascular and renal benefit; cost-access disparities, muscle loss, and supply-driven scarcity for type-2 patients are co-listed.</li>
+    </ul>
+
+    <p>
+        The discipline cuts both ways. A "gain" with so much offsetting cost that the net is unclear should not be tiered as a gain at all — it should appear with the disagreement framing of the disputed tier, and ideally appear in The Ledger record at the same time.
+    </p>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">6 · Magnitude scoring</div>
+    <h2>How a gain's reach is rated</h2>
+    <p class="intro">
+        A gain's <em>magnitude</em> field is what drives its prominence on the page — dot size on the timeline, ordering in the events table, weight in the country composite. The scoring formula is published, contested in the open, and revised in the corrections log when assumptions change.
+    </p>
+
+    <h3>Magnitude formula (v1)</h3>
+    <p>
+        <code style="font-family:var(--mono); font-size:0.86rem; background:var(--surface); padding:2px 6px; border:1px solid var(--rule);">magnitude = log10(people_reached) × durability_factor × evidence_factor</code>
+    </p>
+    <ul class="bare">
+        <li><strong>People reached:</strong> the count of people whose lives are materially affected by the gain. For disease eradications, this is the prevalence × population × years of effect.</li>
+        <li><strong>Durability factor:</strong> 1.0 for irreversible (eradication, ratification deposit, regulator approval), 0.7 for institutional commitment, 0.4 for a single-year measurement.</li>
+        <li><strong>Evidence factor:</strong> 1.0 for multi-source agreement, 0.8 for single-source, 0.6 for disputed.</li>
+    </ul>
+    <p>
+        The formula is intentionally coarse. It exists to keep visualizations honest, not to produce a final ranking. Readers should see the magnitude as approximate.
+    </p>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">7 · Caveat disclosure</div>
+    <h2>Every source has known shape</h2>
+    <p class="intro">
+        Source caveats are metadata, not flaws. Every record carries the caveat disclosure of its source. The reader can choose to weight a national-government claim about its own development gains differently than an independent NGO measurement of the same indicator — and the system surfaces the information needed to make that judgment.
+    </p>
+
+    <ul class="bare">
+        <li><strong>National governments on their own gains:</strong> reported, tagged as such; corroborated against independent sources before tier flips to multi.</li>
+        <li><strong>Private-sector announcements (drug approvals, renewable capacity):</strong> recorded only when there is a regulator filing or independent verification.</li>
+        <li><strong>UN/multilateral aggregations:</strong> generally high-fidelity; the underlying country reports inherit each country's caveats.</li>
+        <li><strong>NGO impact reports:</strong> generally high-fidelity; mission framing disclosed (e.g., GAVI's program scope, WHO program priorities).</li>
+        <li><strong>Long historical reconstructions (Gapminder, OWID):</strong> useful for narrative scope; uncertainty bands disclosed; not used as primary source for any specific gain entry.</li>
+    </ul>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">8 · Public corrections log</div>
+    <h2>Everything that changes, recorded</h2>
+    <p class="intro">
+        When a magnitude is revised, a record is removed, or a tier is reclassified, the change writes a row to a queryable public log. The page links to this log from every record. Optimistic numbers are especially worth retracting on the same record they were celebrated on.
+    </p>
+
+    <h3>What gets logged</h3>
+    <ul class="bare">
+        <li>Magnitude figure revised (before/after, source citation, reason).</li>
+        <li>Tier reclassified (single → multi, multi → disputed, etc.).</li>
+        <li>Source-record added or removed from a gain.</li>
+        <li>Gain merged into another, or split apart.</li>
+        <li>Costs field updated (cost added, cost downgraded, cost retracted).</li>
+        <li>Record retracted (with explicit retraction notice preserved at original URL).</li>
+    </ul>
+</div>
+
+<hr class="rule">
+
+<div class="section col">
+    <div class="eyebrow-sm">9 · Governance</div>
+    <h2>How the project stays honest over time</h2>
+    <p class="intro">
+        A gains record has an additional failure mode beyond what The Ledger faces — capture by interests whose products are part of the record. The governance design has to refuse that capture explicitly.
+    </p>
+
+    <ul class="bare">
+        <li><strong>Open data, open methodology.</strong> Every ingestion script, every normalization rule, every magnitude scoring weight is public. The data the public sees is the data the public can audit.</li>
+        <li><strong>No corporate-sponsored gains.</strong> Foundation- and reader-supported. Vaccine manufacturers, renewable-energy firms, and pharmaceutical developers do not fund the record their products appear in.</li>
+        <li><strong>Independent advisory board.</strong> Drawn from progress studies, public health, conservation biology, and rights work. Reviews magnitude scoring weights and caveat disclosures.</li>
+        <li><strong>Public corrections log.</strong> All changes recorded with reason and timestamp. Reviewable by anyone.</li>
+        <li><strong>Costs alongside gains, always.</strong> No exception for politically popular categories. A gain whose costs we won't name isn't a gain that's been honestly measured.</li>
+    </ul>
+</div>
+
+<footer class="col-wide">
+    The Lift · methodology spec v1 · in development · <a href="/lift.html">return to lift</a> · <a href="/ledger/methodology.html">ledger methodology</a> · <a href="/">Forward Compatible</a>
+</footer>
+
+</body>
+</html>

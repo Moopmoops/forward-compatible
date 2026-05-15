@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lift — Forward Compatible</title>
+<meta name="description" content="A civilizational gains record: what humanity is building, drawing on multiple independent sources, with disagreement shown rather than hidden.">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #0c0c0c;
+    --surface: #131313;
+    --surface-2: #181818;
+    --rule: #1a1a1a;
+    --rule-bright: #2a2a2a;
+    --text: #c8c8c8;
+    --text-bright: #e8e8e8;
+    --text-dim: #777;
+    --text-faint: #444;
+    --accent: #c9a55a;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'Menlo', monospace;
+
+    /* Progress ramp — stalled (warm-brown) → soaring (deep emerald) */
+    --gain-1: #3a322a;
+    --gain-2: #4d4232;
+    --gain-3: #6a5538;
+    --gain-4: #5a6240;
+    --gain-5: #3f7048;
+    --gain-6: #258055;
+    --neutral: #2a2a2a;
+
+    --bad: #a64a3a;
+    --good: #6a8a6e;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a { color: var(--accent); text-decoration: none; opacity: 0.85; }
+a:hover { opacity: 1; }
+
+/* ── NAV ── */
+.back {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    z-index: 100;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(12,12,12,0.85);
+    padding: 8px 14px;
+    border: 1px solid var(--rule);
+}
+.back:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+
+.col { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+.col-narrow { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+.col-wide { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ── HERO ── */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+}
+.hero .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 28px;
+}
+.hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--text-bright);
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 32px;
+}
+.hero h1 em {
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+    opacity: 0.9;
+}
+.hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.85;
+    max-width: 580px;
+}
+
+/* ── STATUS BANNER ── */
+.status-banner {
+    background: var(--surface);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    margin: 60px 0 0;
+}
+.status-banner .col-wide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+}
+.status-banner .pulse {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gain-6);
+    margin-right: 10px;
+    animation: pulse 2.4s infinite ease-in-out;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* ── SECTIONS ── */
+.section { padding: 96px 0; }
+.section-tight { padding: 56px 0; }
+.section h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+.section .eyebrow-sm {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+}
+.section .intro {
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 680px;
+}
+.section .intro em { color: var(--text-bright); font-style: italic; }
+
+.rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* ── PULL QUOTE ── */
+.pull {
+    padding: 80px 24px;
+    text-align: center;
+}
+.pull p {
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-bright);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+.pull .attr {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    color: var(--text-faint);
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ── VIZ COMMON ── */
+.viz-frame {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 32px 28px 28px;
+    margin: 0 auto;
+}
+.viz-frame.full { max-width: 1180px; }
+.viz-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.viz-title-row h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 4px;
+}
+.viz-title-row .viz-source {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    letter-spacing: 0.5px;
+}
+.viz-caption {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 16px;
+    line-height: 1.65;
+    max-width: 720px;
+}
+
+/* ── HEATMAP ── */
+.heatmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 6px;
+}
+.country-cell {
+    aspect-ratio: 5 / 3;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: default;
+    transition: transform 0.15s, filter 0.15s;
+    position: relative;
+}
+.country-cell:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.25);
+    z-index: 2;
+}
+.country-cell .iso {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.country-cell .score {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
+}
+.country-cell .name {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.2;
+}
+.country-cell .trend {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.75);
+}
+.country-cell.conflict::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(201, 165, 90, 0.5);
+    pointer-events: none;
+}
+
+.heatmap-legend {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+}
+.legend-bar {
+    display: flex;
+    height: 12px;
+    width: 200px;
+}
+.legend-bar > div { flex: 1; }
+.legend-bar > div:nth-child(1) { background: var(--gain-1); }
+.legend-bar > div:nth-child(2) { background: var(--gain-2); }
+.legend-bar > div:nth-child(3) { background: var(--gain-3); }
+.legend-bar > div:nth-child(4) { background: var(--gain-4); }
+.legend-bar > div:nth-child(5) { background: var(--gain-5); }
+.legend-bar > div:nth-child(6) { background: var(--gain-6); }
+
+/* ── TIMELINE ── */
+.timeline-wrap {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+.timeline-svg {
+    width: 100%;
+    height: 460px;
+    display: block;
+}
+.timeline-svg .axis-line { stroke: var(--rule-bright); stroke-width: 1; }
+.timeline-svg .axis-tick { stroke: var(--rule-bright); stroke-width: 1; }
+.timeline-svg .axis-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    fill: var(--text-faint);
+}
+.timeline-svg .grid-line { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 2 4; }
+.timeline-svg .event-dot {
+    fill: var(--gain-5);
+    fill-opacity: 0.65;
+    stroke: rgba(63, 112, 72, 1);
+    stroke-width: 1;
+    cursor: default;
+    transition: fill-opacity 0.15s, stroke-width 0.15s;
+}
+.timeline-svg .event-dot:hover {
+    fill-opacity: 1;
+    stroke-width: 2;
+}
+.timeline-svg .event-dot.cat-medical { fill: #3f7860; stroke: #5a9078; }
+.timeline-svg .event-dot.cat-scientific { fill: #5078a0; stroke: #6a92b8; }
+.timeline-svg .event-dot.cat-rights { fill: #c9a55a; stroke: #d8b66a; }
+.timeline-svg .event-dot.cat-environmental { fill: #4e8a4c; stroke: #6aa86c; }
+.timeline-svg .event-dot.cat-humanitarian { fill: #a06850; stroke: #b88466; }
+.timeline-svg .event-dot.cat-accessibility { fill: #8a6aa8; stroke: #a585c0; }
+
+.timeline-legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+.timeline-legend .swatch {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* ── MOVERS ── */
+.movers-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+}
+.movers-side h4 {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.movers-side.good h4 { color: var(--good); }
+.movers-side.bad h4 { color: var(--bad); }
+.mover-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+    gap: 16px;
+}
+.mover-row:last-child { border-bottom: none; }
+.mover-row .label {
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    color: var(--text);
+}
+.mover-row .label .drivers {
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    line-height: 1.4;
+    margin-top: 2px;
+}
+.mover-row .delta {
+    font-family: var(--mono);
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+.mover-row.good .delta { color: var(--good); }
+.mover-row.bad .delta { color: var(--bad); }
+.mover-bar-wrap {
+    grid-column: 1 / -1;
+    height: 4px;
+    background: var(--rule);
+    margin-top: 6px;
+    overflow: hidden;
+}
+.mover-bar-wrap .fill { height: 100%; transition: width 0.6s ease; }
+.movers-side.good .mover-bar-wrap .fill { background: var(--good); }
+.movers-side.bad .mover-bar-wrap .fill { background: var(--bad); }
+
+@media (max-width: 720px) {
+    .movers-wrap { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ── DISAGREEMENT PANEL ── */
+.dispute {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+}
+.dispute:last-child { border-bottom: none; }
+.dispute .title {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text-bright);
+    margin-bottom: 14px;
+}
+.dispute-bars { margin: 18px 0 14px; }
+.dispute-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 130px;
+    gap: 14px;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.82rem;
+}
+.dispute-row .src {
+    font-family: var(--sans);
+    color: var(--text-dim);
+    font-size: 0.78rem;
+}
+.dispute-row .bar-wrap {
+    height: 18px;
+    background: linear-gradient(90deg, transparent, var(--rule) 1px, transparent 1px) repeat-x;
+    background-size: 10% 100%;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+}
+.dispute-row .bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8px;
+    background: var(--good);
+    opacity: 0.85;
+    min-width: 3px;
+}
+.dispute-row .bar.zero {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-faint);
+}
+.dispute-row .count {
+    font-family: var(--mono);
+    color: var(--text-bright);
+    text-align: right;
+    font-size: 0.82rem;
+}
+.dispute-row .count.null { color: var(--text-faint); }
+.dispute-finding {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--text);
+    background: var(--surface-2);
+    border-left: 2px solid var(--accent);
+    padding: 12px 16px;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+.dispute-finding strong { color: var(--text-bright); font-weight: 500; }
+
+@media (max-width: 720px) {
+    .dispute-row { grid-template-columns: 1fr; gap: 4px; }
+    .dispute-row .count { text-align: left; }
+}
+
+/* ── STRUCTURAL PANELS ── */
+.structural-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+@media (max-width: 720px) {
+    .structural-grid { grid-template-columns: 1fr; }
+}
+.struct-panel {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+}
+.struct-panel h4 {
+    font-family: var(--serif);
+    font-size: 0.98rem;
+    color: var(--text-bright);
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.struct-panel .sub {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    margin-bottom: 18px;
+}
+.struct-panel .latest {
+    font-family: var(--mono);
+    font-size: 1.85rem;
+    color: var(--text-bright);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.struct-panel .change {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--good);
+    margin-bottom: 16px;
+}
+.struct-panel .change.bad { color: var(--bad); }
+.struct-panel svg { width: 100%; height: 90px; display: block; }
+.struct-panel .struct-line {
+    fill: none;
+    stroke: var(--good);
+    stroke-width: 1.5;
+}
+.struct-panel .struct-area {
+    fill: var(--good);
+    fill-opacity: 0.12;
+}
+.struct-panel .struct-line.alt-1 { stroke: var(--accent); }
+.struct-panel .struct-line.alt-2 { stroke: var(--gain-6); }
+.struct-panel .struct-line.alt-3 { stroke: var(--text-dim); }
+.struct-panel .struct-line.declining { stroke: var(--bad); }
+.struct-panel .struct-axis {
+    font-family: var(--mono);
+    font-size: 9px;
+    fill: var(--text-faint);
+}
+.struct-panel .framing {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+}
+.struct-panel .legend-inline {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    margin-top: 6px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.struct-panel .legend-inline span:before {
+    content: "■";
+    margin-right: 4px;
+}
+
+/* ── EVENTS LEDGER ── */
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 0.84rem;
+}
+.events-table thead {
+    border-bottom: 1px solid var(--rule-bright);
+}
+.events-table th {
+    text-align: left;
+    padding: 12px 8px;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 500;
+}
+.events-table td {
+    padding: 14px 8px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    color: var(--text);
+    line-height: 1.55;
+}
+.events-table tbody tr:hover { background: rgba(255,255,255,0.015); }
+.events-table .col-date {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+    width: 100px;
+}
+.events-table .col-country {
+    color: var(--text-bright);
+    font-weight: 500;
+    width: 120px;
+}
+.events-table .col-actor {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    width: 180px;
+}
+.events-table .col-tier { width: 110px; }
+.events-table .col-cat { width: 110px; }
+.events-table .col-cat .cat-pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    padding: 2px 7px;
+    border: 1px solid var(--rule-bright);
+    color: var(--text-dim);
+}
+.events-table .col-cat .cat-pill.medical { color: #5a9078; border-color: rgba(90,144,120,0.4); }
+.events-table .col-cat .cat-pill.environmental { color: #6aa86c; border-color: rgba(106,168,108,0.4); }
+.events-table .col-cat .cat-pill.rights { color: #c9a55a; border-color: rgba(201,165,90,0.4); }
+.events-table .col-cat .cat-pill.scientific { color: #6a92b8; border-color: rgba(106,146,184,0.4); }
+.events-table .col-cat .cat-pill.humanitarian { color: #b88466; border-color: rgba(184,132,102,0.4); }
+.events-table .col-cat .cat-pill.accessibility { color: #a585c0; border-color: rgba(165,133,192,0.4); }
+.events-table .col-sources { width: 200px; }
+.tier-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid;
+}
+.tier-multi { color: var(--good); border-color: rgba(106, 138, 110, 0.4); }
+.tier-single { color: var(--text-dim); border-color: var(--rule-bright); }
+.tier-disputed { color: var(--accent); border-color: rgba(201, 165, 90, 0.45); }
+.tier-adjudicated { color: var(--text-bright); border-color: var(--text-dim); background: rgba(255,255,255,0.04); }
+.source-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.source-chips span {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--text-dim);
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border: 1px solid var(--rule);
+}
+
+@media (max-width: 820px) {
+    .events-table .col-actor, .events-table .col-sources, .events-table .col-cat { display: none; }
+}
+
+/* ── TREATIES ── */
+.treaty-row {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1.2fr 0.5fr 1.5fr;
+    gap: 20px;
+    align-items: baseline;
+}
+.treaty-row:last-child { border-bottom: none; }
+.treaty-row .tname {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: var(--text-bright);
+    font-weight: 500;
+}
+.treaty-row .tname small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    margin-top: 3px;
+    font-weight: 400;
+}
+.treaty-row .tname .universal-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gain-6);
+    border: 1px solid rgba(37, 128, 85, 0.45);
+    padding: 1px 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.treaty-row .tparties {
+    font-family: var(--mono);
+    font-size: 0.86rem;
+    color: var(--text-dim);
+}
+.treaty-row .tparties strong {
+    color: var(--text-bright);
+    font-weight: 500;
+}
+.treaty-row .tparties .parties-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--rule);
+    margin-top: 8px;
+    overflow: hidden;
+}
+.treaty-row .tparties .parties-bar .fill {
+    height: 100%;
+    background: var(--good);
+    transition: width 0.6s ease;
+}
+.treaty-row .tnotes {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+@media (max-width: 720px) {
+    .treaty-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ── SOURCE MATRIX ── */
+.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+}
+.matrix-table th, .matrix-table td {
+    padding: 9px 10px;
+    border: 1px solid var(--rule);
+    text-align: center;
+    vertical-align: middle;
+}
+.matrix-table th {
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 500;
+    background: var(--surface);
+}
+.matrix-table td.src-name {
+    text-align: left;
+    color: var(--text);
+}
+.matrix-table td.src-name small {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--text-faint);
+    margin-top: 1px;
+}
+.matrix-table td .check {
+    color: var(--good);
+    font-family: var(--mono);
+}
+.matrix-table td .dot {
+    color: var(--text-faint);
+    font-family: var(--mono);
+}
+
+/* ── TIER DONUT ── */
+.tier-section {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    align-items: center;
+}
+@media (max-width: 640px) {
+    .tier-section { grid-template-columns: 1fr; gap: 24px; }
+}
+.donut-svg { width: 220px; height: 220px; display: block; }
+.donut-svg .seg-multi { fill: var(--good); }
+.donut-svg .seg-adj { fill: var(--text-bright); }
+.donut-svg .seg-disputed { fill: var(--accent); }
+.donut-svg .seg-single { fill: var(--text-dim); }
+.donut-svg .donut-bg { fill: var(--surface-2); }
+.tier-text { font-family: var(--sans); font-size: 0.86rem; }
+.tier-text .row {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+}
+.tier-text .row:last-child { border-bottom: none; }
+.tier-text .sw { width: 14px; height: 14px; }
+.tier-text .sw.multi { background: var(--good); }
+.tier-text .sw.adj { background: var(--text-bright); }
+.tier-text .sw.disputed { background: var(--accent); }
+.tier-text .sw.single { background: var(--text-dim); }
+.tier-text .pct {
+    font-family: var(--mono);
+    color: var(--text-bright);
+}
+.tier-text .label small {
+    display: block;
+    color: var(--text-faint);
+    font-size: 0.74rem;
+    margin-top: 2px;
+}
+
+/* ── PIPELINE DIAGRAM ── */
+.pipeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+}
+@media (max-width: 820px) {
+    .pipeline { grid-template-columns: 1fr 1fr; }
+}
+.pipeline-step {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 22px 20px;
+    position: relative;
+}
+.pipeline-step::before {
+    content: attr(data-step);
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: var(--bg);
+    padding: 0 10px;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+.pipeline-step h4 {
+    font-family: var(--serif);
+    font-size: 0.98rem;
+    color: var(--text-bright);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.pipeline-step p {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+}
+
+/* ── COMMITMENTS ── */
+.commits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 48px;
+}
+@media (max-width: 720px) {
+    .commits { grid-template-columns: 1fr; }
+}
+.commit-item h4 {
+    font-family: var(--sans);
+    font-size: 0.66rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.75;
+    margin-bottom: 8px;
+}
+.commit-item p {
+    color: var(--text);
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+/* ── BUILD PLAN ── */
+.build-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: build-counter;
+}
+.build-list li {
+    counter-increment: build-counter;
+    padding: 20px 0 20px 70px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+}
+.build-list li:last-child { border-bottom: none; }
+.build-list li::before {
+    content: counter(build-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 22px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    letter-spacing: 1px;
+}
+.build-list .step-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text-bright);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+.build-list .step-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* ── TOOLTIP ── */
+.tip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(20,20,20,0.97);
+    border: 1px solid var(--rule-bright);
+    padding: 10px 14px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.12s;
+    max-width: 320px;
+    line-height: 1.55;
+}
+.tip.visible { opacity: 1; }
+.tip strong { color: var(--text-bright); }
+.tip .tip-sub { color: var(--text-dim); font-size: 0.72rem; margin-top: 4px; }
+
+/* ── REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── FOOTER ── */
+footer {
+    padding: 80px 0 60px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-top: 80px;
+}
+footer .colophon {
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-size: 0.8rem;
+    max-width: 680px;
+}
+footer .colophon strong { color: var(--text); font-weight: 500; }
+footer a { color: var(--text-dim); }
+footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<a href="/" class="back">&larr; Forward Compatible</a>
+
+<!-- ── HERO ── -->
+<div class="hero col">
+    <div class="eyebrow">A Forward Compatible project · in development</div>
+    <h1>The <em>Lift</em></h1>
+    <p class="subtitle">
+        A civilizational gains record: what humanity is building — disease eliminated, rights extended, ecosystems restored, knowledge made common — drawing on multiple independent sources, with disagreement shown rather than hidden, and the same lens applied to every part of the world.
+    </p>
+</div>
+
+<!-- ── STATUS BANNER ── -->
+<div class="status-banner">
+    <div class="col-wide">
+        <div><span class="pulse"></span>Status: <strong style="color:var(--text-bright)">design + pipeline scaffolding</strong> · live ingestion not yet running</div>
+        <div>Schema v1 · 15 sources catalogued · <a href="/lift/methodology.html">methodology &rarr;</a></div>
+    </div>
+</div>
+
+<!-- ── PREMISE ── -->
+<div class="section col">
+    <div class="eyebrow-sm">Premise</div>
+    <h2 class="reveal">No single place tracks what humanity is actually building. The pieces exist; the integration doesn't.</h2>
+    <p class="intro reveal">
+        Our World in Data charts the trends. The World Bank publishes the macro numbers. The WHO records the disease eliminations. GAVI counts the vaccines. The IUCN tracks species recoveries. UNESCO holds the literacy series. Each project is excellent inside its scope. None of them, by themselves, gives a citizen a complete view of what is being lifted — by whom, by how much, and how durably.
+    </p>
+    <p style="margin-bottom: 22px;" class="reveal">
+        The Lift combines them. Same record format, same verification standards, same lens for every gain — including the ones that are unglamorous, slow-burning, or located far from the centers of media attention.
+    </p>
+    <p style="color: var(--text-dim);" class="reveal">
+        We start with the visualization layer — the shape of what an integrated record makes possible. The ingestion pipeline is being designed alongside; live data flows incrementally as each source connector lands.
+    </p>
+</div>
+
+<!-- ── PULL ── -->
+<div class="pull">
+    <p>The opposite of accountability is not optimism. It is precision about what compounded.</p>
+    <div class="attr">Principle 1</div>
+</div>
+
+<hr class="rule">
+
+<!-- ── HEATMAP ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Composite progress score</div>
+        <h2 class="reveal">Every state, scored on the same scale</h2>
+        <p class="intro reveal">
+            A composite of healthspan, access, prosperity, and civic indicators — built from UN IGME, World Bank, UNESCO, ITU, and OWID series. 0 is the weakest current attainment; 10 is the strongest. Five-year trend in the corner — most are positive, but a few have retreated sharply.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Composite progress score · 2025</h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Hover any country for sub-indicators.</div>
+                </div>
+                <div class="viz-source">SRC: OWID + WB + UNESCO + ITU · ILLUSTRATIVE</div>
+            </div>
+            <div id="heatmap" class="heatmap"></div>
+            <div class="heatmap-legend">
+                <span>Stalled</span>
+                <div class="legend-bar"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <span>Soaring</span>
+                <span style="margin-left:24px; font-style:italic;">Gold border = active armed conflict or institutional collapse</span>
+            </div>
+            <div class="viz-caption">
+                The composite hides as much as it reveals. A country can have transformative healthspan and access gains while civic indicators remain low — or the reverse. Each cell points to the panel of indicators that built it.
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── TIMELINE ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Historical record</div>
+        <h2 class="reveal">A century-and-a-quarter of compounding gains, on a log scale</h2>
+        <p class="intro reveal">
+            Selection drawn from peer-reviewed scholarship and authoritative records — WHO official histories, UNESCO archives, Our World in Data, Nobel records, IUCN. The vertical axis is logarithmic because the population reach of these gains spans many orders of magnitude. Where scholarship disagrees on attribution or scale, we publish the range, not a single number.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Civilizational gains · 1900–2026</h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Dot size = population reached (log).</div>
+                </div>
+                <div class="viz-source">SRC: WHO, OWID, UNESCO, Nobel · ILLUSTRATIVE</div>
+            </div>
+            <div class="timeline-wrap">
+                <svg id="timeline-svg" class="timeline-svg" viewBox="0 0 1140 460" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="timeline-legend">
+                <span><i class="swatch" style="background:#3f7860"></i>Medical</span>
+                <span><i class="swatch" style="background:#5078a0"></i>Scientific</span>
+                <span><i class="swatch" style="background:#c9a55a"></i>Rights</span>
+                <span><i class="swatch" style="background:#4e8a4c"></i>Environmental</span>
+                <span><i class="swatch" style="background:#a06850"></i>Humanitarian</span>
+                <span><i class="swatch" style="background:#8a6aa8"></i>Accessibility</span>
+            </div>
+            <div class="viz-caption">
+                The timeline is incomplete by construction. Every project assembling such a list has to make selection decisions — what counts as a population-scale gain, what threshold qualifies, how to handle gains with environmental or social costs. We expose the criteria rather than hide them, and let the disagreement live in the range itself.
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── MOVERS ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Direction of travel</div>
+        <h2 class="reveal">Where conditions changed most over five years</h2>
+        <p class="intro reveal">
+            Largest deltas in the composite progress score, 2020 → 2025. Most of the world's median country edged up. A smaller cohort retreated sharply — and the magnitude of those reversals is larger than the magnitude of typical advance. Both halves are part of the honest record.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Composite progress score · 5-year delta</h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Positive = gains. Negative = erosion.</div>
+                </div>
+                <div class="viz-source">SRC: composite indicators · ILLUSTRATIVE</div>
+            </div>
+            <div class="movers-wrap" id="movers"></div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── DISAGREEMENT ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Where sources disagree</div>
+        <h2 class="reveal">Disputed magnitudes, surfaced rather than averaged</h2>
+        <p class="intro reveal">
+            False precision in the positive direction is as much a distortion as false precision in the negative direction. When sources publish different numbers for the same gain, picking one is editorial. So we don't. Each panel shows every source's figure, the methodology behind it, and an honest finding that doesn't pretend more confidence than the evidence supports.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Source disagreement on magnitudes · selected gains</h3>
+                </div>
+                <div class="viz-source">SRC: per-gain provenance · ILLUSTRATIVE</div>
+            </div>
+            <div id="disputes"></div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── STRUCTURAL ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Structural lifts</div>
+        <h2 class="reveal">The slow gains that compound across decades</h2>
+        <p class="intro reveal">
+            Child mortality, renewables, internet access, vaccine coverage. These are the slowest-moving curves on the page and the ones with the largest cumulative population effect. The numbers in the corners are the latest; the framing notes the pattern that makes the curve possible.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="structural-grid reveal" id="structural-grid"></div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── EVENTS LEDGER ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Recent gains</div>
+        <h2 class="reveal">The live ledger</h2>
+        <p class="intro reveal">
+            Each row is a normalized record from one or more source connectors. Tier badges reflect how well the gain is corroborated: multi-source, single-source (surfaced anyway, tagged), disputed (sources materially disagree), adjudicated (confirmed by a regulator or court of record — FDA, EMA, IUCN status change, treaty deposit, peace accord signed).
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Recent ledger entries · last 14 days</h3>
+                </div>
+                <div class="viz-source">SRC: aggregated · ILLUSTRATIVE</div>
+            </div>
+            <table class="events-table">
+                <thead><tr>
+                    <th class="col-date">Date</th>
+                    <th class="col-country">Where</th>
+                    <th class="col-actor">Actor</th>
+                    <th>Gain</th>
+                    <th class="col-cat">Category</th>
+                    <th class="col-tier">Tier</th>
+                    <th class="col-sources">Sources</th>
+                </tr></thead>
+                <tbody id="events-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── TREATIES ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Treaty reach</div>
+        <h2 class="reveal">What humanity has formally agreed on</h2>
+        <p class="intro reveal">
+            A pattern emerges across the major rights-expansion and protection treaties: a few of them are nearly universally ratified. Whatever else is true about compliance and reservations, this is the body of conduct the world's states have collectively committed to. The Ledger tracks who refuses to sign; The Lift tracks what got broadly signed.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Reach of core rights-expansion and protection treaties</h3>
+                </div>
+                <div class="viz-source">SRC: UN Treaty Collection · OHCHR</div>
+            </div>
+            <div id="treaties"></div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── VERIFICATION TIERS ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Verification mix</div>
+        <h2 class="reveal">How records are classified</h2>
+        <p class="intro reveal">
+            Single-source records are not suppressed — they are flagged for what they are. The mix of tiers is itself an indicator: when too high a fraction is single-source, coverage is shallow; when too high a fraction is disputed, sources are diverging in ways worth investigating. For The Lift, adjudicated records get particular weight because regulator approvals and IUCN status changes are durable, time-stamped facts.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Distribution of current ledger records by verification tier</h3>
+                </div>
+                <div class="viz-source">SRC: schema definition</div>
+            </div>
+            <div class="tier-section">
+                <svg class="donut-svg" viewBox="0 0 220 220">
+                    <circle class="donut-bg" cx="110" cy="110" r="100"></circle>
+                    <g id="donut-segments" transform="translate(110,110) rotate(-90)"></g>
+                    <circle cx="110" cy="110" r="58" fill="var(--bg)"></circle>
+                    <text x="110" y="106" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="var(--text-dim)">target</text>
+                    <text x="110" y="124" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="var(--text-bright)">distribution</text>
+                </svg>
+                <div class="tier-text">
+                    <div class="row"><div class="sw multi"></div><div class="label"><strong style="color:var(--text-bright)">Multi-source</strong><small>≥2 independent sources, magnitude agreement within ±20%</small></div><div class="pct">52%</div></div>
+                    <div class="row"><div class="sw adj"></div><div class="label"><strong style="color:var(--text-bright)">Adjudicated</strong><small>Regulator approval, IUCN status change, treaty deposit, peace accord</small></div><div class="pct">18%</div></div>
+                    <div class="row"><div class="sw disputed"></div><div class="label"><strong style="color:var(--text-bright)">Disputed</strong><small>Multiple sources, material disagreement preserved</small></div><div class="pct">12%</div></div>
+                    <div class="row"><div class="sw single"></div><div class="label"><strong style="color:var(--text-bright)">Single-source</strong><small>One source; surfaced with explicit tag</small></div><div class="pct">18%</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── SOURCE COVERAGE ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Source coverage matrix</div>
+        <h2 class="reveal">What each source can tell us</h2>
+        <p class="intro reveal">
+            No source covers every category. The Lift's value is connecting the coverage that exists, not replacing any of the underlying projects — all of which we link, cite, and credit.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal" style="overflow-x:auto;">
+            <div class="viz-title-row">
+                <div>
+                    <h3>Source × category coverage</h3>
+                </div>
+                <div class="viz-source">SRC: sources.json</div>
+            </div>
+            <div id="matrix-wrap"></div>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── COMMITMENTS ── -->
+<div class="section col">
+    <div class="eyebrow-sm reveal">Commitments</div>
+    <h2 class="reveal">What this record is and isn't</h2>
+    <p class="intro reveal">
+        The same load-bearing promises as The Ledger. A record of gains has to refuse to be marketing copy from the first day or it never earns trust.
+    </p>
+
+    <div class="commits">
+        <div class="commit-item reveal">
+            <h4>The same lens, including the costs</h4>
+            <p>If we count Haber-Bosch among the gains because it feeds half of humanity, we count its environmental costs in the same record. If we count the Green Revolution, we count its ecological and equity tradeoffs. A gain that needs to hide its costs is not a gain that holds up.</p>
+        </div>
+        <div class="commit-item reveal">
+            <h4>Provenance in every record</h4>
+            <p>Every claim links to the underlying source, with caveats disclosed when known. We do not paraphrase past the source's confidence interval. We do not silently average estimates.</p>
+        </div>
+        <div class="commit-item reveal">
+            <h4>Working with, not against</h4>
+            <p>OWID, World Bank, UN-SDG, WHO GHO, GAVI, IUCN, IEA, UNESCO UIS, IHME — these are the projects whose work this record stands on. Our job is connection and presentation, not replacement.</p>
+        </div>
+        <div class="commit-item reveal">
+            <h4>Public corrections log</h4>
+            <p>When a record changes — a magnitude revised, an attribution corrected, a tier reclassified — the change is recorded with timestamp and reason in a public log. Optimistic numbers get retracted on the same record they were celebrated on.</p>
+        </div>
+        <div class="commit-item reveal">
+            <h4>Open methodology, open data</h4>
+            <p>Every ingestion script, every normalization rule, every magnitude derivation is in the open. The data the public sees is the data the public can audit.</p>
+        </div>
+        <div class="commit-item reveal">
+            <h4>No corporate-sponsored gains</h4>
+            <p>The Lift is foundation- and reader-supported. Companies whose products are part of the record (vaccine manufacturers, renewable-energy firms, gene-therapy developers) do not fund it. The funding sources are published.</p>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── PIPELINE ── -->
+<div class="section col-wide">
+    <div class="eyebrow-sm reveal">Architecture</div>
+    <h2 class="reveal">How the auto-pull-and-verify pipeline works</h2>
+    <p class="intro reveal" style="max-width:780px;">
+        Four stages. Each is independent and replaceable. Records keep their full provenance chain end to end — at no point does a normalized record lose its connection to the underlying source document.
+    </p>
+
+    <div class="pipeline">
+        <div class="pipeline-step reveal" data-step="01 · Ingest">
+            <h4>Source connectors</h4>
+            <p>One connector per source. REST API where available (World Bank, UN SDG, WHO GHO, IUCN, ITU); CSV download on a schedule for annual datasets (UNESCO UIS, OWID, IHME); structured scrape plus LLM extraction for narrative or PDF sources (IPCC reports, GAVI impact pages). Each connector writes raw records to a per-source staging table.</p>
+        </div>
+        <div class="pipeline-step reveal" data-step="02 · Normalize">
+            <h4>Schema mapping</h4>
+            <p>Per-source mapping rules translate raw records into the normalized gain schema (see <a href="/lift/methodology.html">methodology</a>). Country names → ISO codes. Actors → canonical entity ids via embedding-based candidate matching plus LLM verification on edge cases. Original record kept alongside normalized form.</p>
+        </div>
+        <div class="pipeline-step reveal" data-step="03 · Resolve">
+            <h4>Gain triangulation</h4>
+            <p>Records that describe the same gain are linked, not merged. Candidate matching by metric + actor + date + summary embedding. LLM verification pass. Output is a canonical gain with the list of source records, magnitude range across sources, and a confidence score derived from source count, agreement, and corroboration window.</p>
+        </div>
+        <div class="pipeline-step reveal" data-step="04 · Publish">
+            <h4>Tier + render</h4>
+            <p>Verification tier computed: multi, single, disputed, adjudicated. Records flow into the public ledger with full provenance and any disagreement preserved. Every change writes a row in the corrections log, which is public and queryable.</p>
+        </div>
+    </div>
+</div>
+
+<hr class="rule">
+
+<!-- ── BUILD PLAN ── -->
+<div class="section col">
+    <div class="eyebrow-sm reveal">Build plan</div>
+    <h2 class="reveal">What ships next</h2>
+    <p class="intro reveal">
+        Order matters. The first connectors are the structural backbone — once they're flowing, everything else is incremental. The Lift and The Ledger share the same architecture and run on the same pipeline service, so each connector benefits both records.
+    </p>
+
+    <ol class="build-list">
+        <li class="reveal">
+            <div class="step-title">World Bank Open Data + OWID connectors</div>
+            <div class="step-desc">Two macro-indicator sources with clean APIs. Standing them up together lets the heatmap and structural panels populate from day one.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">UN IGME + WHO GHO ingest</div>
+            <div class="step-desc">Country-year backbone for the healthspan dimension of the composite — child mortality, life expectancy, vaccine coverage. Annual cadence; stable, well-documented.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">UNESCO UIS + ITU ingest</div>
+            <div class="step-desc">Access dimension: literacy, schooling, internet usage. Annual cadence.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">FDA / EMA approval feed</div>
+            <div class="step-desc">Adjudicated tier records arrive directly from regulator publication. Includes generic and biosimilar approvals where access expansion is the gain.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">IUCN Red List + species recovery feed</div>
+            <div class="step-desc">Status changes (especially downlistings — Endangered → Vulnerable, Vulnerable → Near Threatened) are events worth tracking. The Green Status of Species (added 2021) measures recovery potential.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">Magnitude scoring</div>
+            <div class="step-desc">A gain's magnitude is population reach × durability × evidence quality. The scoring rules are published, contested in the open, and revised in the corrections log when assumptions change.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">Costs-alongside-gains discipline</div>
+            <div class="step-desc">Every gain entry has a 'costs' field. Empty is allowed; missing is not. This is the discipline that distinguishes a serious gains record from progress-movement marketing.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">Public corrections log</div>
+            <div class="step-desc">Every change to a published gain record — magnitude revised, tier reclassified, source added — writes a row to a queryable public log. The page links to this from every record.</div>
+        </li>
+        <li class="reveal">
+            <div class="step-title">Independent governance</div>
+            <div class="step-desc">An advisory board drawn from progress studies, public health, conservation biology, and rights work. Publishes the funding sources. Reviews the scoring weights and the source caveat disclosures. This is the cultural design that lets the record outlive any one author.</div>
+        </li>
+    </ol>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="col-wide">
+    <div class="colophon">
+        <strong>The Lift</strong> is a <a href="/">Forward Compatible</a> project in development.
+        Data shown is illustrative — pipeline scaffolding and schema are live; ingestion is incremental.
+        <br><br>
+        Built on the work of <a href="https://ourworldindata.org">Our World in Data</a>,
+        <a href="https://data.worldbank.org">the World Bank</a>,
+        <a href="https://unstats.un.org/sdgs">UN SDG Statistics</a>,
+        <a href="https://www.who.int/data/gho">WHO Global Health Observatory</a>,
+        <a href="https://childmortality.org">UN IGME</a>,
+        <a href="https://www.iea.org">the IEA</a>,
+        <a href="https://www.iucnredlist.org">IUCN Red List</a>,
+        <a href="https://www.ipcc.ch">IPCC</a>,
+        <a href="https://www.gavi.org">GAVI</a>,
+        <a href="http://uis.unesco.org">UNESCO UIS</a>,
+        <a href="https://www.healthdata.org">IHME</a>,
+        <a href="https://www.gapminder.org">Gapminder</a>, and others — each of whom is the authoritative source within their scope.
+    </div>
+    <div>
+        Forward Compatible · <a href="/">return home</a> · <a href="/lift/methodology.html">methodology</a> · <a href="/ledger.html">the Ledger</a> · <a href="https://archerbenjamin.substack.com">substack</a>
+    </div>
+</footer>
+
+<div id="tooltip" class="tip"></div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// Tooltip helper
+// ─────────────────────────────────────────────────────────────
+const tip = document.getElementById('tooltip');
+function showTip(html, e) {
+    tip.innerHTML = html;
+    tip.classList.add('visible');
+    moveTip(e);
+}
+function moveTip(e) {
+    const padding = 14;
+    const rect = tip.getBoundingClientRect();
+    let x = e.clientX + padding;
+    let y = e.clientY + padding;
+    if (x + rect.width > window.innerWidth - 12) x = e.clientX - rect.width - padding;
+    if (y + rect.height > window.innerHeight - 12) y = e.clientY - rect.height - padding;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+}
+function hideTip() { tip.classList.remove('visible'); }
+
+// Progress score → color
+function gainColor(score) {
+    if (score < 3.0) return 'var(--gain-1)';
+    if (score < 4.5) return 'var(--gain-2)';
+    if (score < 5.8) return 'var(--gain-3)';
+    if (score < 6.8) return 'var(--gain-4)';
+    if (score < 7.8) return 'var(--gain-5)';
+    return 'var(--gain-6)';
+}
+
+// ─────────────────────────────────────────────────────────────
+// Data loaders
+// ─────────────────────────────────────────────────────────────
+async function loadJSON(path) {
+    const res = await fetch(path);
+    return await res.json();
+}
+
+// ─────────────────────────────────────────────────────────────
+// 1. Heatmap
+// ─────────────────────────────────────────────────────────────
+async function renderHeatmap() {
+    const data = await loadJSON('lift/data/heatmap.json');
+    const wrap = document.getElementById('heatmap');
+    // Sort by score descending so soaring first
+    const sorted = data.countries.slice().sort((a, b) => b.score - a.score);
+    sorted.forEach(c => {
+        const cell = document.createElement('div');
+        cell.className = 'country-cell' + (c.note && (c.note.includes('conflict') || c.note.includes('collapse')) ? ' conflict' : '');
+        cell.style.background = gainColor(c.score);
+        const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
+        cell.innerHTML = `
+            <div>
+                <div class="iso">${c.iso}</div>
+            </div>
+            <div>
+                <div class="score">${c.score.toFixed(1)}</div>
+                <div class="name">${c.name}</div>
+            </div>
+            <div class="trend">${trendStr}</div>
+        `;
+        cell.addEventListener('mouseenter', e => {
+            const sub = c.sub;
+            showTip(`
+                <strong>${c.name}</strong> · <span style="font-family:var(--mono);">${c.iso}</span>
+                <div class="tip-sub">${c.region}${c.note ? ' · <em>' + c.note + '</em>' : ''}</div>
+                <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem;">
+                    healthspan ${sub.healthspan} &nbsp; access ${sub.access}<br>
+                    prosperity ${sub.prosperity}<br>
+                    civic ${sub.civic}<br>
+                    <span style="color:var(--text-dim)">5-yr trend ${trendStr}</span>
+                </div>
+            `, e);
+        });
+        cell.addEventListener('mousemove', moveTip);
+        cell.addEventListener('mouseleave', hideTip);
+        wrap.appendChild(cell);
+    });
+}
+
+// ─────────────────────────────────────────────────────────────
+// 2. Timeline (SVG, log scale on population reached)
+// ─────────────────────────────────────────────────────────────
+async function renderTimeline() {
+    const data = await loadJSON('lift/data/timeline.json');
+    const svg = document.getElementById('timeline-svg');
+    const W = 1140, H = 460;
+    const margin = { top: 20, right: 30, bottom: 50, left: 70 };
+    const innerW = W - margin.left - margin.right;
+    const innerH = H - margin.top - margin.bottom;
+
+    const yearMin = 1900, yearMax = 2026;
+    const xScale = y => margin.left + ((y - yearMin) / (yearMax - yearMin)) * innerW;
+
+    // Log scale Y: 10^3 (1k) to 10^10 (10B)
+    const logMin = Math.log10(1e3);
+    const logMax = Math.log10(1e10);
+    const yScale = v => {
+        if (v <= 0) v = 1;
+        const lv = Math.log10(v);
+        return margin.top + innerH - ((lv - logMin) / (logMax - logMin)) * innerH;
+    };
+
+    let svgContent = '';
+
+    // Grid lines (log decades)
+    for (let exp = 3; exp <= 10; exp++) {
+        const y = yScale(Math.pow(10, exp));
+        svgContent += `<line class="grid-line" x1="${margin.left}" y1="${y}" x2="${margin.left + innerW}" y2="${y}"/>`;
+        const label = exp === 3 ? '1K' : exp === 4 ? '10K' : exp === 5 ? '100K' : exp === 6 ? '1M' : exp === 7 ? '10M' : exp === 8 ? '100M' : exp === 9 ? '1B' : '10B';
+        svgContent += `<text class="axis-label" x="${margin.left - 10}" y="${y + 3}" text-anchor="end">${label}</text>`;
+    }
+
+    // Axis lines
+    svgContent += `<line class="axis-line" x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${margin.top + innerH}"/>`;
+    svgContent += `<line class="axis-line" x1="${margin.left}" y1="${margin.top + innerH}" x2="${margin.left + innerW}" y2="${margin.top + innerH}"/>`;
+
+    // Y axis title
+    svgContent += `<text class="axis-label" x="${margin.left - 40}" y="${margin.top + innerH / 2}" text-anchor="middle" transform="rotate(-90, ${margin.left - 40}, ${margin.top + innerH / 2})" style="letter-spacing:1.5px; text-transform:uppercase; font-size:9px;">People reached (log)</text>`;
+
+    // X axis labels
+    for (let yr = 1900; yr <= 2026; yr += 10) {
+        const x = xScale(yr);
+        svgContent += `<line class="axis-tick" x1="${x}" y1="${margin.top + innerH}" x2="${x}" y2="${margin.top + innerH + 5}"/>`;
+        svgContent += `<text class="axis-label" x="${x}" y="${margin.top + innerH + 18}" text-anchor="middle">${yr}</text>`;
+    }
+
+    // Plot events
+    data.events.forEach(ev => {
+        if ((ev.magnitude_low || 0) === 0 && (ev.magnitude_high || 0) === 0) return;
+        const midYear = (ev.start + ev.end) / 2;
+        const midMag = Math.sqrt((ev.magnitude_low || 1) * (ev.magnitude_high || ev.magnitude_low || 1));
+        const cx = xScale(midYear);
+        const cy = yScale(midMag);
+        const r = Math.max(3, Math.min(18, Math.log10(midMag) * 1.8));
+
+        // Range bar (low to high years)
+        if (ev.start !== ev.end) {
+            const x1 = xScale(ev.start), x2 = xScale(ev.end);
+            svgContent += `<line x1="${x1}" y1="${cy}" x2="${x2}" y2="${cy}" stroke="rgba(106,138,110,0.3)" stroke-width="1"/>`;
+        }
+        // Magnitude range bar (vertical)
+        if (ev.magnitude_low && ev.magnitude_high && ev.magnitude_low !== ev.magnitude_high) {
+            const y1 = yScale(ev.magnitude_high), y2 = yScale(ev.magnitude_low);
+            svgContent += `<line x1="${cx}" y1="${y1}" x2="${cx}" y2="${y2}" stroke="rgba(106,138,110,0.35)" stroke-width="1"/>`;
+            svgContent += `<line x1="${cx - 3}" y1="${y1}" x2="${cx + 3}" y2="${y1}" stroke="rgba(106,138,110,0.5)" stroke-width="1"/>`;
+            svgContent += `<line x1="${cx - 3}" y1="${y2}" x2="${cx + 3}" y2="${y2}" stroke="rgba(106,138,110,0.5)" stroke-width="1"/>`;
+        }
+        svgContent += `<circle class="event-dot cat-${ev.category}" cx="${cx}" cy="${cy}" r="${r}" data-id="${ev.id}"/>`;
+    });
+
+    svg.innerHTML = svgContent;
+
+    // Hover
+    svg.querySelectorAll('.event-dot').forEach(dot => {
+        dot.addEventListener('mouseenter', e => {
+            const ev = data.events.find(x => x.id === dot.dataset.id);
+            const range = (ev.magnitude_low === ev.magnitude_high)
+                ? ev.magnitude_low.toLocaleString()
+                : ev.magnitude_low.toLocaleString() + ' – ' + ev.magnitude_high.toLocaleString();
+            showTip(`
+                <strong>${ev.name}</strong>
+                <div class="tip-sub">${ev.start === ev.end ? ev.start : ev.start + '–' + ev.end} · ${(ev.actors || []).join(', ')}</div>
+                <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem; color:var(--text-bright)">people reached: ${range}</div>
+                ${ev.notes ? `<div class="tip-sub" style="margin-top:6px;">${ev.notes}</div>` : ''}
+            `, e);
+        });
+        dot.addEventListener('mousemove', moveTip);
+        dot.addEventListener('mouseleave', hideTip);
+    });
+}
+
+// ─────────────────────────────────────────────────────────────
+// 3. Movers — improving on top, regressing below
+// ─────────────────────────────────────────────────────────────
+async function renderMovers() {
+    const data = await loadJSON('lift/data/movers.json');
+    const wrap = document.getElementById('movers');
+
+    const maxAbs = Math.max(
+        ...data.improving.map(d => Math.abs(d.delta)),
+        ...data.regressing.map(d => Math.abs(d.delta))
+    );
+
+    function side(title, items, klass) {
+        const html = items.map(m => `
+            <div class="mover-row ${klass}">
+                <div class="label">
+                    ${m.name} <span style="color:var(--text-faint); font-family:var(--mono); font-size:0.72rem;">${m.iso}</span>
+                    <div class="drivers">${m.drivers.join(' · ')}</div>
+                </div>
+                <div class="delta">${m.delta > 0 ? '+' : ''}${m.delta.toFixed(1)}</div>
+                <div class="mover-bar-wrap"><div class="fill" style="width: ${(Math.abs(m.delta) / maxAbs * 100).toFixed(1)}%"></div></div>
+            </div>
+        `).join('');
+        return `<div class="movers-side ${klass}"><h4>${title}</h4>${html}</div>`;
+    }
+
+    wrap.innerHTML =
+        side('Improving ↑', data.improving, 'good') +
+        side('Regressing ↓', data.regressing, 'bad');
+}
+
+// ─────────────────────────────────────────────────────────────
+// 4. Disputes
+// ─────────────────────────────────────────────────────────────
+async function renderDisputes() {
+    const data = await loadJSON('lift/data/disputed.json');
+    const wrap = document.getElementById('disputes');
+
+    function fmt(n) {
+        if (n >= 1e9) return (n / 1e9).toFixed(2).replace(/\.?0+$/, '') + 'B';
+        if (n >= 1e6) return (n / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M';
+        if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.?0+$/, '') + 'K';
+        return n.toLocaleString();
+    }
+
+    wrap.innerHTML = data.disputes.map(d => {
+        const numeric = d.claims.filter(c => typeof c.count === 'number');
+        const maxCount = Math.max(...numeric.map(c => c.count), 1);
+        const rows = d.claims.map(c => {
+            const isNumeric = typeof c.count === 'number';
+            const widthPct = isNumeric ? Math.max(2, (c.count / maxCount * 100)) : 0;
+            const display = isNumeric ? fmt(c.count) : (c.note || 'no figure');
+            const barHtml = isNumeric
+                ? (c.count === 0 ? `<span class="bar zero"></span>` : `<span class="bar" style="width:${widthPct}%"></span>`)
+                : '';
+            return `
+                <div class="dispute-row">
+                    <div class="src">${c.source}<div style="font-size:0.7rem;color:var(--text-faint);margin-top:2px;">${c.methodology || ''}</div></div>
+                    <div class="bar-wrap">${barHtml}</div>
+                    <div class="count ${isNumeric ? '' : 'null'}">${display}</div>
+                </div>
+            `;
+        }).join('');
+        return `
+            <div class="dispute">
+                <div class="title">${d.name}</div>
+                <div class="dispute-bars">${rows}</div>
+                <div class="dispute-finding"><strong>Honest finding:</strong> ${d.honest_finding}</div>
+            </div>
+        `;
+    }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// 5. Structural panels
+// ─────────────────────────────────────────────────────────────
+async function renderStructural() {
+    const data = await loadJSON('lift/data/structural.json');
+    const wrap = document.getElementById('structural-grid');
+
+    function sparkline(series) {
+        const W = 280, H = 60;
+        const xs = series.map(p => p.year);
+        const ys = series.map(p => p.value);
+        const xMin = Math.min(...xs), xMax = Math.max(...xs);
+        const yMin = 0, yMax = Math.max(...ys);
+        const xS = x => 10 + ((x - xMin) / (xMax - xMin)) * (W - 20);
+        const yS = y => 5 + (H - 10) - ((y - yMin) / (yMax - yMin)) * (H - 10);
+        const pts = series.map(p => xS(p.year) + ',' + yS(p.value));
+        const path = 'M ' + pts.join(' L ');
+        const areaPath = path + ` L ${xS(xMax)},${H - 5} L ${xS(xMin)},${H - 5} Z`;
+        return { path, areaPath, xMin, xMax, yMax };
+    }
+
+    function fmtVal(v, unit) {
+        if (unit === 'percent') return v.toFixed(1) + '%';
+        if (v >= 1000) return (v / 1000).toFixed(1) + 'K';
+        return v.toLocaleString();
+    }
+
+    wrap.innerHTML = data.panels.map(p => {
+        const isDownGood = p.direction === 'down_is_good';
+
+        if (p.series_grouped) {
+            const colors = ['var(--good)', 'var(--accent)', 'var(--gain-6)', 'var(--bad)'];
+            const legendItems = [];
+            let yMaxAll = 0;
+            p.series_grouped.forEach(g => {
+                g.values.forEach(v => { if (v.value > yMaxAll) yMaxAll = v.value; });
+            });
+            let svg = `<svg viewBox="0 0 280 80" preserveAspectRatio="none">`;
+            p.series_grouped.forEach((g, i) => {
+                const W = 280, H = 60;
+                const xs = g.values.map(p => p.year);
+                const xMin = Math.min(...xs), xMax = Math.max(...xs);
+                const xS = x => 10 + ((x - xMin) / (xMax - xMin)) * (W - 20);
+                const yS = y => 5 + (H - 10) - (y / yMaxAll) * (H - 10);
+                const pts = g.values.map(p => xS(p.year) + ',' + yS(p.value));
+                const decline = g.name === 'Fossil';
+                svg += `<polyline class="struct-line ${decline ? 'declining' : 'alt-' + i}" points="${pts.join(' ')}" stroke="${decline ? 'var(--bad)' : colors[i]}" fill="none" />`;
+                legendItems.push(`<span style="color:${decline ? 'var(--bad)' : colors[i]}">${g.name}</span>`);
+            });
+            svg += `</svg>`;
+            const headline = p.series_grouped.find(g => g.name === 'All renewables') || p.series_grouped[0];
+            const lastVal = headline.values[headline.values.length - 1].value;
+            const firstVal = headline.values[0].value;
+            const changeStr = ((lastVal - firstVal) / firstVal * 100).toFixed(0) + '% over period';
+
+            return `
+                <div class="struct-panel">
+                    <h4>${p.title}</h4>
+                    <div class="sub">${p.subtitle}</div>
+                    <div class="latest">${lastVal.toFixed(1)}%</div>
+                    <div class="change">${headline.name} · +${changeStr}</div>
+                    ${svg}
+                    <div class="legend-inline">${legendItems.join(' ')}</div>
+                    <div class="framing">${p.framing}</div>
+                </div>
+            `;
+        } else {
+            const { path, areaPath } = sparkline(p.series);
+            const lastVal = p.series[p.series.length - 1].value;
+            const firstVal = p.series[0].value;
+            const pctChange = ((lastVal - firstVal) / firstVal * 100).toFixed(0);
+            const goodMove = isDownGood ? lastVal < firstVal : lastVal > firstVal;
+            const sign = isDownGood ? (lastVal < firstVal ? '−' : '+') : (lastVal >= firstVal ? '+' : '−');
+            const displayLast = lastVal.toLocaleString();
+            return `
+                <div class="struct-panel">
+                    <h4>${p.title}</h4>
+                    <div class="sub">${p.subtitle}</div>
+                    <div class="latest">${displayLast}${p.y_label && p.y_label.includes('Percent') ? '%' : ''}</div>
+                    <div class="change ${goodMove ? '' : 'bad'}">${sign}${Math.abs(pctChange)}% · ${p.series[0].year}–${p.series[p.series.length - 1].year}</div>
+                    <svg viewBox="0 0 280 80" preserveAspectRatio="none">
+                        <path class="struct-area" d="${areaPath}"/>
+                        <path class="struct-line" d="${path}"/>
+                    </svg>
+                    <div class="framing">${p.framing}</div>
+                </div>
+            `;
+        }
+    }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// 6. Events table
+// ─────────────────────────────────────────────────────────────
+async function renderEvents() {
+    const data = await loadJSON('lift/data/events.json');
+    const tbody = document.getElementById('events-body');
+    tbody.innerHTML = data.events.map(e => {
+        const sources = (e.sources || []).map(s => `<span>${s}</span>`).join('');
+        const cat = e.category || 'other';
+        return `
+            <tr>
+                <td class="col-date">${e.date}</td>
+                <td class="col-country">${e.country}</td>
+                <td class="col-actor">${e.actor || ''}</td>
+                <td>${e.summary}</td>
+                <td class="col-cat"><span class="cat-pill ${cat}">${cat}</span></td>
+                <td class="col-tier"><span class="tier-badge tier-${e.tier}">${e.tier}</span></td>
+                <td class="col-sources"><div class="source-chips">${sources}</div></td>
+            </tr>
+        `;
+    }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// 7. Treaty reach — parties bar instead of non-parties chips
+// ─────────────────────────────────────────────────────────────
+async function renderTreaties() {
+    const data = await loadJSON('lift/data/treaties.json');
+    const wrap = document.getElementById('treaties');
+    const TOTAL_UN = 198;
+    wrap.innerHTML = data.treaties.map(t => {
+        const pct = Math.min(100, (t.parties / TOTAL_UN * 100));
+        const tag = t.near_universal ? '<span class="universal-tag">near-universal</span>' : '';
+        return `
+            <div class="treaty-row">
+                <div class="tname">${t.name}${tag}<small>${t.scope || 'in force ' + t.year}</small></div>
+                <div class="tparties">
+                    <strong>${t.parties}</strong> parties
+                    <span class="parties-bar"><span class="fill" style="width:${pct.toFixed(1)}%"></span></span>
+                    <span style="font-size:0.7rem; color:var(--text-faint);">${pct.toFixed(0)}% of UN member states</span>
+                </div>
+                <div class="tnotes">${t.notes || ''}</div>
+            </div>
+        `;
+    }).join('');
+}
+
+// ─────────────────────────────────────────────────────────────
+// 8. Donut + 9. Source matrix
+// ─────────────────────────────────────────────────────────────
+function renderDonut() {
+    const segments = [
+        { key: 'multi', pct: 52, cls: 'seg-multi' },
+        { key: 'adj', pct: 18, cls: 'seg-adj' },
+        { key: 'disputed', pct: 12, cls: 'seg-disputed' },
+        { key: 'single', pct: 18, cls: 'seg-single' }
+    ];
+    const g = document.getElementById('donut-segments');
+    let cumulative = 0;
+    const R = 100;
+    let html = '';
+    segments.forEach(s => {
+        const startAngle = (cumulative / 100) * 2 * Math.PI;
+        const endAngle = ((cumulative + s.pct) / 100) * 2 * Math.PI;
+        const x1 = R * Math.cos(startAngle), y1 = R * Math.sin(startAngle);
+        const x2 = R * Math.cos(endAngle), y2 = R * Math.sin(endAngle);
+        const largeArc = (endAngle - startAngle) > Math.PI ? 1 : 0;
+        html += `<path class="${s.cls}" d="M 0 0 L ${x1} ${y1} A ${R} ${R} 0 ${largeArc} 1 ${x2} ${y2} Z"/>`;
+        cumulative += s.pct;
+    });
+    g.innerHTML = html;
+}
+
+async function renderMatrix() {
+    const data = await loadJSON('lift/data/sources.json');
+    const wrap = document.getElementById('matrix-wrap');
+    const categories = [
+        { key: 'healthspan', label: 'Healthspan' },
+        { key: 'access', label: 'Access' },
+        { key: 'prosperity', label: 'Prosperity' },
+        { key: 'education', label: 'Education' },
+        { key: 'energy', label: 'Energy' },
+        { key: 'environmental', label: 'Environment' },
+        { key: 'structural', label: 'Structural' },
+        { key: 'ratifications', label: 'Treaties' }
+    ];
+    let html = `<table class="matrix-table"><thead><tr><th style="text-align:left;">Source</th>`;
+    categories.forEach(c => { html += `<th>${c.label}</th>`; });
+    html += `<th style="text-align:left;">License</th></tr></thead><tbody>`;
+
+    data.sources.forEach(s => {
+        html += `<tr><td class="src-name">${s.name} <small>${s.abbr}</small></td>`;
+        categories.forEach(c => {
+            const has = s.coverage && (s.coverage[c.key] === true);
+            html += `<td>${has ? '<span class="check">●</span>' : '<span class="dot">·</span>'}</td>`;
+        });
+        html += `<td class="src-name"><small>${s.license || ''}</small></td>`;
+        html += `</tr>`;
+    });
+    html += `</tbody></table>`;
+    wrap.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Reveal animation
+// ─────────────────────────────────────────────────────────────
+function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+}
+
+// ─────────────────────────────────────────────────────────────
+// Boot
+// ─────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    initReveal();
+    renderHeatmap().catch(console.error);
+    renderTimeline().catch(console.error);
+    renderMovers().catch(console.error);
+    renderDisputes().catch(console.error);
+    renderStructural().catch(console.error);
+    renderEvents().catch(console.error);
+    renderTreaties().catch(console.error);
+    renderDonut();
+    renderMatrix().catch(console.error);
+});
+</script>
+
+</body>
+</html>

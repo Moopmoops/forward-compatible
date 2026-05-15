@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-15",
+  "methodology": "Ratification reach for rights-expansion and protection treaties. Number of state parties reflects status from the UN Treaty Collection. The most-ratified treaties show what humanity has formally agreed on, even where compliance falls short. The Ledger tracks who refuses; The Lift tracks what got broadly signed.",
+  "data_status": "illustrative — reflects public ratification status as of last verification",
+  "treaties": [
+    {
+      "id": "crc",
+      "name": "Convention on the Rights of the Child",
+      "year": 1990,
+      "scope": "Most widely ratified human rights treaty in history",
+      "parties": 196,
+      "near_universal": true,
+      "notes": "Every UN member state except the United States has ratified. Establishes a child-rights floor governments can be measured against."
+    },
+    {
+      "id": "geneva_conventions",
+      "name": "Geneva Conventions (I–IV)",
+      "year": 1949,
+      "scope": "Laws of war; protection of wounded, sick, prisoners, civilians",
+      "parties": 196,
+      "near_universal": true,
+      "notes": "Universal ratification. Compliance is uneven; the standard itself is the most-agreed-upon body of conduct rules in history."
+    },
+    {
+      "id": "cedaw",
+      "name": "Convention on the Elimination of All Forms of Discrimination Against Women",
+      "year": 1981,
+      "parties": 189,
+      "notes": "Near-universal but with substantive reservations from many state parties. Reporting cycle is the active accountability mechanism."
+    },
+    {
+      "id": "icerd",
+      "name": "International Convention on the Elimination of All Forms of Racial Discrimination",
+      "year": 1969,
+      "parties": 182,
+      "notes": "One of the earliest core UN rights treaties; Article 4 hate-speech provisions remain contested in some Western jurisdictions."
+    },
+    {
+      "id": "fctc",
+      "name": "WHO Framework Convention on Tobacco Control",
+      "year": 2005,
+      "parties": 182,
+      "scope": "First treaty negotiated under WHO; tobacco demand- and supply-reduction measures",
+      "notes": "Credited with rapid global declines in adult smoking prevalence; structural rather than behavioral intervention."
+    },
+    {
+      "id": "marrakesh",
+      "name": "Marrakesh Treaty (accessible books)",
+      "year": 2016,
+      "scope": "Mandatory copyright exceptions for blind, visually impaired, and print-disabled readers",
+      "parties": 130,
+      "notes": "Pioneered the principle that copyright cannot block access for the print-disabled. Cross-border exchange of accessible books is now legal."
+    },
+    {
+      "id": "minamata",
+      "name": "Minamata Convention on Mercury",
+      "year": 2017,
+      "parties": 149,
+      "scope": "Protects human health and environment from anthropogenic mercury emissions",
+      "notes": "Phase-out timetable for many mercury products; small-scale gold mining is the harder unfinished file."
+    },
+    {
+      "id": "montreal_protocol",
+      "name": "Montreal Protocol on Substances that Deplete the Ozone Layer",
+      "year": 1989,
+      "parties": 198,
+      "near_universal": true,
+      "scope": "First universally ratified UN treaty; phase-out of CFCs and HCFCs",
+      "notes": "Ozone layer projected to recover to 1980 levels by 2066 over most of the globe. Kigali Amendment (2016) added HFCs."
+    },
+    {
+      "id": "biodiversity_30x30",
+      "name": "Kunming-Montreal Global Biodiversity Framework",
+      "year": 2022,
+      "parties": 196,
+      "scope": "30% of land and ocean protected by 2030; restoration of degraded ecosystems",
+      "notes": "Adopted under the Convention on Biological Diversity (which itself has 196 parties; US is the principal non-party). Implementation is the next test."
+    }
+  ]
+}

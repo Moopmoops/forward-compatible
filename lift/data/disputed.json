@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-15",
+  "methodology": "When sources publish different numbers for the same gain, we show every source rather than picking one. The range itself is the finding. False precision in the positive direction is as much a distortion as false precision in the negative direction.",
+  "data_status": "illustrative — pipeline not yet live; figures approximate published ranges as of mid-2026",
+  "disputes": [
+    {
+      "id": "extreme_poverty",
+      "name": "People lifted from extreme poverty, 1990–2024",
+      "claims": [
+        {"source": "World Bank ($2.15 PPP line)", "count": 1100000000, "methodology": "Official World Bank international poverty line, 2017 PPP rebased"},
+        {"source": "Our World in Data (multi-line synthesis)", "count": 1300000000, "methodology": "Aggregated across $2.15 and $3.65 lines; broader denominator"},
+        {"source": "Critics ($7.40 PPP — Hickel et al.)", "count": 300000000, "methodology": "Argument that $2.15 line underestimates true poverty; at $7.40 the gain is far smaller"},
+        {"source": "PovcalNet rebased 2017 PPP", "count": 950000000, "methodology": "Direct PovcalNet aggregation"}
+      ],
+      "honest_finding": "Direction is unambiguous: extreme poverty has fallen sharply by every line. The magnitude depends on where you draw the line — and the line is a value judgment, not just a measurement. We surface the lines and let the reader weigh."
+    },
+    {
+      "id": "covid_lives_saved",
+      "name": "Lives saved by COVID-19 vaccines, first year of rollout",
+      "claims": [
+        {"source": "The Lancet ID (Watson et al., 2022)", "count": 14400000, "methodology": "Mathematical model fit to excess-mortality data across 185 countries"},
+        {"source": "Commonwealth Fund (US-only model)", "count": 3200000, "methodology": "US-only model assuming counterfactual outbreaks"},
+        {"source": "Imperial College deaths-averted model", "count": 19800000, "methodology": "Higher counterfactual mortality assumption; reported as a range with central estimate 19.8M"},
+        {"source": "WHO (range)", "note": "WHO has not published a single point estimate", "methodology": "References Watson et al. and Imperial as the reference range"}
+      ],
+      "honest_finding": "Lives saved in the first year of rollout are credibly 14M–20M globally. The methodology disagreements concern the counterfactual outbreak path, not whether vaccines saved lives."
+    },
+    {
+      "id": "child_mortality_drop",
+      "name": "Reduction in under-5 deaths per year, 1990 vs. latest",
+      "claims": [
+        {"source": "UN IGME 2023 estimates", "count": 7300000, "methodology": "UNICEF/WHO/UN Population Division estimates; latest 2022 figures"},
+        {"source": "IHME Global Burden of Disease 2021", "count": 6900000, "methodology": "GBD modeling with different demographic adjustments"},
+        {"source": "Our World in Data (UN IGME)", "count": 7300000, "methodology": "Republishes UN IGME"},
+        {"source": "Pre-1990 baselines (varying)", "note": "Earlier baseline estimates vary considerably; the 1990 figure itself is reconstructed"}
+      ],
+      "honest_finding": "Roughly 7 million fewer children under five die each year now compared to 1990 — a population-scale gain larger than the death toll of most wars in history."
+    },
+    {
+      "id": "renewable_share",
+      "name": "Share of global electricity from renewables, 2024",
+      "claims": [
+        {"source": "IEA Renewables 2024", "count": 30, "methodology": "Hydro + wind + solar + bio share of generation; reports 30%"},
+        {"source": "Ember Global Electricity Review", "count": 32, "methodology": "Includes nuclear in 'low-carbon' framing; renewable-only figure 30%"},
+        {"source": "BP Statistical Review", "count": 28, "methodology": "Slightly different boundary (industrial vs grid)"},
+        {"source": "IRENA capacity report", "note": "Capacity vs generation are different metrics — IRENA reports capacity, not generation share"}
+      ],
+      "honest_finding": "Renewables supplied roughly 30% of global electricity generation in 2024. Including nuclear takes the low-carbon share over 40%."
+    },
+    {
+      "id": "conflict_deaths_trend",
+      "name": "Long-run trend in battle deaths per capita, 1950–2024",
+      "claims": [
+        {"source": "Pinker (cited in Better Angels)", "note": "Argues dramatic long-run decline", "methodology": "Per-capita battle deaths from UCDP/PRIO and historical compilations"},
+        {"source": "Cirillo & Taleb (2016)", "note": "Argues distribution is fat-tailed; declines are within statistical noise", "methodology": "Power-law analysis of historical war casualties"},
+        {"source": "UCDP latest figures", "count": 237000, "methodology": "Battle-related deaths in 2024 — higher than the 2010s low point"},
+        {"source": "Our World in Data (UCDP)", "note": "Republishes UCDP", "methodology": "Visual emphasis on long downtrend with recent uptick"}
+      ],
+      "honest_finding": "Per capita battle deaths today remain far below mid-20th century peaks, but recent years (Ukraine, Sudan, Gaza, Tigray) have lifted absolute figures above the 2010s. Calling the longer trend a 'permanent decline' is contested; the long-run direction is positive but conditional."
+    }
+  ]
+}

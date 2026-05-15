@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-15",
+  "sources": [
+    {
+      "id": "owid",
+      "name": "Our World in Data",
+      "abbr": "OWID",
+      "url": "https://ourworldindata.org",
+      "api": "https://ourworldindata.org/grapher/",
+      "ingest_method": "csv_download + structured fetch",
+      "license": "CC BY 4.0 (most datasets)",
+      "grain": "country-year, world-year",
+      "geography": "global",
+      "time_range": "varies; many series back to 1800s",
+      "coverage": {
+        "healthspan": true,
+        "access": true,
+        "prosperity": true,
+        "education": true,
+        "energy": true,
+        "environmental": true,
+        "events": false
+      },
+      "update_cadence": "rolling — depends on source dataset",
+      "schedule": "cron: 0 6 * * 1",
+      "notes": "Republishes underlying data from official sources (UN, WHO, World Bank, IEA) with consistent methodology. Pipeline anchor for cross-domain comparison."
+    },
+    {
+      "id": "world_bank",
+      "name": "World Bank Open Data",
+      "abbr": "WB",
+      "url": "https://data.worldbank.org",
+      "api": "https://api.worldbank.org/v2/",
+      "ingest_method": "rest_api",
+      "license": "CC BY 4.0",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "1960–present",
+      "coverage": {
+        "prosperity": true,
+        "access": true,
+        "education": true,
+        "energy": true,
+        "structural": true
+      },
+      "update_cadence": "varies per indicator",
+      "schedule": "cron: 0 6 15 * *",
+      "notes": "Authoritative for poverty rates, GDP, electrification, water access, and basic-services indicators. PovcalNet/PIP for poverty line analyses."
+    },
+    {
+      "id": "un_sdg",
+      "name": "UN SDG Indicators Database",
+      "abbr": "UN-SDG",
+      "url": "https://unstats.un.org/sdgs",
+      "api": "https://unstats.un.org/sdgapi/",
+      "ingest_method": "rest_api",
+      "license": "Public (UN information)",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "2000–present",
+      "coverage": {
+        "all_sdg_indicators": true,
+        "prosperity": true,
+        "healthspan": true,
+        "education": true,
+        "gender": true,
+        "environmental": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 7 *",
+      "notes": "Curated UN repository of 230+ SDG indicators. Custodian agencies (WHO, UNESCO, UNICEF, ILO, FAO) supply the data."
+    },
+    {
+      "id": "who_gho",
+      "name": "WHO Global Health Observatory",
+      "abbr": "WHO GHO",
+      "url": "https://www.who.int/data/gho",
+      "api": "https://ghoapi.azureedge.net/api/",
+      "ingest_method": "rest_api",
+      "license": "Public (WHO terms)",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "varies",
+      "coverage": {
+        "healthspan": true,
+        "vaccine_coverage": true,
+        "mortality": true,
+        "ncds": true
+      },
+      "update_cadence": "rolling",
+      "schedule": "cron: 0 6 * * 2",
+      "notes": "Authoritative for life expectancy, vaccine coverage, child & maternal mortality. Some indicators have a publication lag of 1–2 years."
+    },
+    {
+      "id": "unicef_igme",
+      "name": "UN Inter-agency Group for Child Mortality Estimation",
+      "abbr": "UN IGME",
+      "url": "https://childmortality.org",
+      "api": "https://childmortality.org/api/",
+      "ingest_method": "rest_api + csv_download",
+      "license": "Public (UN information)",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "1990–present",
+      "coverage": {
+        "child_mortality": true,
+        "neonatal_mortality": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 10 *",
+      "notes": "Authoritative source for under-5, infant, and neonatal mortality estimates. Joint product of UNICEF, WHO, UN Population Division, World Bank."
+    },
+    {
+      "id": "iea",
+      "name": "International Energy Agency",
+      "abbr": "IEA",
+      "url": "https://www.iea.org",
+      "api": "https://www.iea.org/data-and-statistics/",
+      "ingest_method": "csv_download + structured scrape",
+      "license": "Mixed — some open, some paywalled",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "1971–present",
+      "coverage": {
+        "energy_mix": true,
+        "renewables": true,
+        "electrification": true
+      },
+      "update_cadence": "annual + monthly trackers",
+      "schedule": "cron: 0 6 5 * *",
+      "notes": "Authoritative for global energy statistics, renewable share of generation, and access-to-electricity tracking."
+    },
+    {
+      "id": "iucn_redlist",
+      "name": "IUCN Red List of Threatened Species",
+      "abbr": "IUCN",
+      "url": "https://www.iucnredlist.org",
+      "api": "https://apiv3.iucnredlist.org/",
+      "ingest_method": "rest_api",
+      "license": "Public (terms apply)",
+      "grain": "species",
+      "geography": "global",
+      "time_range": "1964–present",
+      "coverage": {
+        "species_status": true,
+        "recoveries": true,
+        "threats": true
+      },
+      "update_cadence": "rolling (2–4 assessments per year per major taxon)",
+      "schedule": "cron: 0 6 * * 3",
+      "notes": "Tracks both declines and recoveries. The Green Status (added 2021) measures recovery potential."
+    },
+    {
+      "id": "ipcc",
+      "name": "Intergovernmental Panel on Climate Change",
+      "abbr": "IPCC",
+      "url": "https://www.ipcc.ch",
+      "api": "https://www.ipcc.ch/reports/",
+      "ingest_method": "structured scrape + LLM extraction",
+      "license": "Public (UN information)",
+      "grain": "report-section",
+      "geography": "global",
+      "time_range": "1990–present",
+      "coverage": {
+        "climate_assessment": true,
+        "mitigation": true,
+        "adaptation": true
+      },
+      "update_cadence": "assessment cycle (~7 years)",
+      "schedule": "manual on report release",
+      "notes": "Assessment reports are the consensus scientific record. Working Group reports + Synthesis report are the primary outputs."
+    },
+    {
+      "id": "gavi_unicef",
+      "name": "GAVI, the Vaccine Alliance",
+      "abbr": "GAVI",
+      "url": "https://www.gavi.org",
+      "api": "https://www.gavi.org/programmes-impact/our-impact",
+      "ingest_method": "structured scrape + csv_download",
+      "license": "Public (GAVI terms)",
+      "grain": "country-vaccine-year",
+      "geography": "GAVI-eligible countries",
+      "time_range": "2000–present",
+      "coverage": {
+        "vaccine_introduction": true,
+        "coverage_change": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 9 *",
+      "notes": "Tracks vaccine introductions in low-income countries and resulting coverage gains. Reports lives-saved estimates jointly with IVAC."
+    },
+    {
+      "id": "unesco_uis",
+      "name": "UNESCO Institute for Statistics",
+      "abbr": "UIS",
+      "url": "http://uis.unesco.org",
+      "api": "https://uis.unesco.org/en/uis-statistical-tables",
+      "ingest_method": "csv_download",
+      "license": "CC BY-SA 3.0 IGO",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "1970–present",
+      "coverage": {
+        "literacy": true,
+        "education_attainment": true,
+        "enrollment": true,
+        "gender_parity": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 9 *",
+      "notes": "Authoritative for education indicators worldwide. Definitions of 'literacy' vary by survey instrument — caveats apply."
+    },
+    {
+      "id": "ihme_gbd",
+      "name": "Institute for Health Metrics and Evaluation — Global Burden of Disease",
+      "abbr": "IHME GBD",
+      "url": "https://www.healthdata.org",
+      "api": "https://ghdx.healthdata.org/gbd-results-tool",
+      "ingest_method": "csv_download",
+      "license": "IHME Free-of-Charge non-commercial",
+      "grain": "country-cause-age-year",
+      "geography": "global",
+      "time_range": "1990–present",
+      "coverage": {
+        "burden_of_disease": true,
+        "risk_factors": true,
+        "dalys": true
+      },
+      "update_cadence": "annual+",
+      "schedule": "cron: 0 6 1 6 *",
+      "notes": "Independent modeled estimates; often differs from WHO point estimates. Surfacing both is the right move when they diverge."
+    },
+    {
+      "id": "gapminder",
+      "name": "Gapminder Foundation",
+      "abbr": "GM",
+      "url": "https://www.gapminder.org",
+      "api": "https://www.gapminder.org/data/",
+      "ingest_method": "csv_download",
+      "license": "CC BY 4.0",
+      "grain": "country-year",
+      "geography": "global",
+      "time_range": "varies; some indicators back to 1800",
+      "coverage": {
+        "long_historical": true,
+        "income": true,
+        "healthspan": true,
+        "education": true
+      },
+      "update_cadence": "rolling",
+      "schedule": "cron: 0 6 * * 4",
+      "notes": "Compiled long-range historical series with explicit uncertainty bands. Useful for narratives that need century-scale context."
+    },
+    {
+      "id": "ucdp_peace",
+      "name": "UCDP Peace Agreements Dataset",
+      "abbr": "UCDP-PA",
+      "url": "https://ucdp.uu.se/downloads/index.html#peace_agreements",
+      "api": "https://ucdpapi.pcr.uu.se/",
+      "ingest_method": "rest_api + csv_download",
+      "license": "Open use with attribution",
+      "grain": "agreement",
+      "geography": "global",
+      "time_range": "1975–present",
+      "coverage": {
+        "peace_agreements": true,
+        "ceasefires": true
+      },
+      "update_cadence": "annual",
+      "schedule": "cron: 0 6 1 11 *",
+      "notes": "Records all formal peace agreements since 1975 with details on parties, content, and durability."
+    },
+    {
+      "id": "ohchr_pos",
+      "name": "OHCHR Treaty Body Database",
+      "abbr": "OHCHR-TB",
+      "url": "https://tbinternet.ohchr.org",
+      "ingest_method": "structured scrape",
+      "license": "Public (UN information)",
+      "grain": "treaty-state",
+      "geography": "global",
+      "time_range": "varies by treaty",
+      "coverage": {
+        "ratifications": true,
+        "reservations": true,
+        "reporting_compliance": true
+      },
+      "update_cadence": "rolling",
+      "schedule": "cron: 0 6 * * 5",
+      "notes": "Authoritative ratification status for core human rights treaties; the depository record."
+    },
+    {
+      "id": "fda_orange",
+      "name": "FDA / EMA / regulator approvals",
+      "abbr": "REG",
+      "url": "https://www.accessdata.fda.gov/scripts/cder/daf/",
+      "ingest_method": "rest_api",
+      "license": "Public (US/EU government data)",
+      "grain": "approval",
+      "geography": "US, EU, plus selected national",
+      "time_range": "rolling",
+      "coverage": {
+        "drug_approvals": true,
+        "device_approvals": true
+      },
+      "update_cadence": "rolling",
+      "schedule": "cron: 0 6 * * *",
+      "notes": "Approvals are the adjudicated record for new therapies. Includes generic and biosimilar approvals where access expansion is the gain."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "updated": "2026-05-15",
+  "methodology": "Structural lifts are slow, longer-arc gains that compound across generations: vaccine coverage, electrification, internet access, life expectancy, renewable energy share. Sources are Our World in Data, World Bank, IEA, ITU, WHO, and UNESCO.",
+  "data_status": "illustrative — pipeline not yet live; values approximate published figures",
+  "panels": [
+    {
+      "id": "child_mortality",
+      "title": "Global under-5 mortality rate",
+      "subtitle": "Deaths per 1,000 live births",
+      "y_label": "Deaths per 1,000",
+      "source": "UN IGME / Our World in Data",
+      "series": [
+        {"year": 1990, "value": 93},
+        {"year": 1995, "value": 86},
+        {"year": 2000, "value": 76},
+        {"year": 2005, "value": 65},
+        {"year": 2010, "value": 53},
+        {"year": 2015, "value": 44},
+        {"year": 2020, "value": 39},
+        {"year": 2022, "value": 37}
+      ],
+      "framing": "Roughly 7 million fewer children under five die each year compared to 1990. Driven by vaccines, oral rehydration therapy, skilled birth attendance, and rising household incomes.",
+      "direction": "down_is_good"
+    },
+    {
+      "id": "renewables",
+      "title": "Global renewable share of electricity generation",
+      "subtitle": "Hydro + wind + solar + bioenergy as % of generation",
+      "y_label": "Percent of generation",
+      "source": "IEA / Ember",
+      "series_grouped": [
+        {"name": "Solar+Wind", "values": [{"year": 2010, "value": 1.8}, {"year": 2014, "value": 4.5}, {"year": 2018, "value": 7.4}, {"year": 2020, "value": 9.3}, {"year": 2022, "value": 12.0}, {"year": 2024, "value": 15.4}]},
+        {"name": "Hydro", "values": [{"year": 2010, "value": 16.0}, {"year": 2014, "value": 16.4}, {"year": 2018, "value": 16.2}, {"year": 2020, "value": 16.8}, {"year": 2022, "value": 15.0}, {"year": 2024, "value": 14.2}]},
+        {"name": "All renewables", "values": [{"year": 2010, "value": 19.5}, {"year": 2014, "value": 22.0}, {"year": 2018, "value": 25.4}, {"year": 2020, "value": 27.9}, {"year": 2022, "value": 29.4}, {"year": 2024, "value": 30.6}]},
+        {"name": "Fossil", "values": [{"year": 2010, "value": 67.5}, {"year": 2014, "value": 66.0}, {"year": 2018, "value": 63.7}, {"year": 2020, "value": 61.3}, {"year": 2022, "value": 60.8}, {"year": 2024, "value": 59.2}]}
+      ],
+      "framing": "The crossover that mattered: in 2023, more new generating capacity added globally was renewable than fossil. Solar and wind costs have fallen ~90% and ~70% respectively over the period.",
+      "direction": "up_is_good"
+    },
+    {
+      "id": "internet_access",
+      "title": "Global internet usage",
+      "subtitle": "Percent of population online",
+      "y_label": "Percent online",
+      "source": "ITU / Our World in Data",
+      "series": [
+        {"year": 2000, "value": 6.8},
+        {"year": 2005, "value": 16.0},
+        {"year": 2010, "value": 28.7},
+        {"year": 2015, "value": 41.0},
+        {"year": 2018, "value": 51.0},
+        {"year": 2020, "value": 60.0},
+        {"year": 2022, "value": 66.0},
+        {"year": 2024, "value": 71.0}
+      ],
+      "framing": "From under 7% to over 70% in 24 years. Mobile-first access has been the lever in the developing world. Quality and freedom of access are not measured here.",
+      "direction": "up_is_good"
+    },
+    {
+      "id": "vaccine_coverage",
+      "title": "DTP3 immunization coverage of one-year-olds",
+      "subtitle": "Global average, all infants",
+      "y_label": "Percent coverage",
+      "source": "WHO/UNICEF Estimates of National Immunization Coverage",
+      "series": [
+        {"year": 1980, "value": 21},
+        {"year": 1990, "value": 75},
+        {"year": 2000, "value": 73},
+        {"year": 2010, "value": 84},
+        {"year": 2015, "value": 86},
+        {"year": 2019, "value": 86},
+        {"year": 2021, "value": 81},
+        {"year": 2023, "value": 84}
+      ],
+      "framing": "From a quarter of infants covered in 1980 to over four-fifths now. Pandemic disruption visible in the 2021 dip; recovery underway. DTP3 is the standard benchmark for system performance.",
+      "direction": "up_is_good"
+    }
+  ]
+}
