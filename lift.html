@@ -2738,7 +2738,7 @@ async function renderEvents() {
     gainStore.events = data;
     const tbody = document.getElementById('events-body');
     tbody.innerHTML = data.events.map((e, idx) => {
-        const sources = (e.sources || []).map(s => `<span>${s}</span>`).join('');
+        const sources = (e.sources || []).map(s => `<span>${esc(typeof s === 'string' ? s : s.name)}</span>`).join('');
         const cat = e.category || 'other';
         return `
             <tr data-idx="${idx}" data-cat="${cat}" data-tier="${e.tier}" data-search="${(e.country + ' ' + (e.actor||'') + ' ' + e.summary).toLowerCase().replace(/"/g, '&quot;')}">
@@ -3339,8 +3339,8 @@ function openIndicatorDetail(pid) {
 function openEventDetail(idx) {
     const e = gainStore.events?.events[idx];
     if (!e) return;
-    const sources = (e.sources || []).map(s => `<span class="chip">${esc(s)}</span>`).join('');
     const tierDef = (gainStore.events.tier_definitions || {})[e.tier] || '';
+    const mechObj = (gainStore.timeline?.mechanisms || []).find(m => m.id === e.mechanism);
 
     let body = `
         <div class="panel-tag-row">
@@ -3358,12 +3358,36 @@ function openEventDetail(idx) {
                 <div class="val" style="font-size:0.95rem;">${esc(e.country)}</div>
             </div>
         </div>
-        <h3>Actor</h3>
-        <p>${esc(e.actor || 'Unattributed')}</p>
-        <h3>Sources</h3>
-        <div class="panel-chips">${sources}</div>
-        <p style="font-size:0.78rem;">${esc(tierDef)}</p>
     `;
+
+    if (e.description) {
+        body += `<h3>What happened</h3><p>${esc(e.description)}</p>`;
+    }
+
+    body += `<h3>Actor</h3><p>${esc(e.actor || 'Unattributed')}</p>`;
+
+    if (mechObj) {
+        body += `<h3>Mechanism</h3>
+            <ul class="panel-list"><li data-mid="${e.mechanism}" data-jump="mechanism">
+                ${esc(mechObj.label)}
+                <div class="li-meta">${esc(mechObj.description.slice(0, 130))}…</div>
+            </li></ul>`;
+    }
+
+    if (e.costs) {
+        body += `<div class="panel-callout"><strong>Costs alongside:</strong> ${esc(e.costs)}</div>`;
+    }
+
+    if (e.sources && e.sources.length) {
+        body += `<h3>Sources</h3><ul class="panel-list">${e.sources.map(s => {
+            if (typeof s === 'string') return `<li style="cursor:default;">${esc(s)}</li>`;
+            const url = s.url ? ` <span style="color:var(--text-faint); font-family:var(--mono); font-size:0.7rem;">${s.url.replace(/^https?:\/\//, '').slice(0, 50)}</span>` : '';
+            const link = s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--text); text-decoration:none;">${esc(s.name)}${url}</a>` : esc(s.name);
+            return `<li style="cursor:default;">${link}</li>`;
+        }).join('')}</ul>`;
+    }
+
+    body += `<h3>Verification tier</h3><p style="font-size:0.85rem;">${esc(tierDef)}</p>`;
 
     // Country context jump if known
     if (e.country_iso && gainStore.heatmap?.countries.find(c => c.iso === e.country_iso)) {

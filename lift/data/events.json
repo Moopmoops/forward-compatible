@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-05-15",
-  "methodology": "Each entry is an event-level record from one or more source connectors. Tier badges reflect corroboration: 'multi' (≥2 independent sources), 'single' (one source, surfaced anyway with tag), 'disputed' (sources disagree materially), 'adjudicated' (confirmed by court or regulator of record).",
+  "methodology": "Each entry is an event-level record from one or more source connectors. Tier badges reflect corroboration: 'multi' (≥2 independent sources), 'single' (one source, surfaced anyway with tag), 'disputed' (sources disagree materially), 'adjudicated' (confirmed by a regulator or court of record — FDA/EMA approval, IUCN status change, treaty deposit, peace accord signed). Every entry carries a description, costs field, mechanism tag, and source list with URLs.",
   "data_status": "illustrative — pipeline not yet live; entries pattern-mirror what live ingestion would produce",
   "tier_definitions": {
     "multi": "Confirmed by two or more independent sources within 30 days.",
@@ -10,25 +10,352 @@
     "adjudicated": "Confirmed by a regulator or court of record (FDA/EMA approval, IUCN status change, treaty deposit, peace accord signed)."
   },
   "events": [
-    {"date": "2026-05-13", "country_iso": "GLB", "country": "Global", "actor": "WHO Strategic Advisory Group", "summary": "Recommendation issued for next-generation oral cholera vaccine; manufacturing scale-up commitments from three producers", "tier": "multi", "sources": ["WHO", "GAVI", "PATH"], "metric": "vaccine_recommendation", "category": "medical"},
-    {"date": "2026-05-12", "country_iso": "BRA", "country": "Brazil", "actor": "INPE / Federal Government", "summary": "Amazon deforestation rate for Apr 2026 reported 38% below same month 2023; second consecutive quarter of decline", "tier": "multi", "sources": ["INPE", "MapBiomas", "Imazon"], "metric": "deforestation_rate", "category": "environmental"},
-    {"date": "2026-05-11", "country_iso": "IND", "country": "India", "actor": "Ministry of Health", "summary": "Visceral leishmaniasis (kala-azar) elimination as public health problem confirmed across all endemic blocks", "tier": "multi", "sources": ["WHO SEARO", "Indian MoHFW", "DNDi"], "metric": "disease_elimination", "category": "medical"},
-    {"date": "2026-05-10", "country_iso": "USA", "country": "United States", "actor": "FDA", "summary": "Approval for first oral CGRP-class migraine prophylactic at sub-$1/day generic pricing; cost reduction ~95% from launch", "tier": "adjudicated", "sources": ["FDA orange book", "manufacturer announcement"], "metric": "drug_approval", "category": "medical"},
-    {"date": "2026-05-10", "country_iso": "KEN", "country": "Kenya", "actor": "Ministry of Energy", "summary": "Grid reaches 95% renewable on weekly average; geothermal share over 50%", "tier": "multi", "sources": ["Ember monthly", "KenGen", "IEA tracker"], "metric": "renewable_share", "category": "environmental"},
-    {"date": "2026-05-09", "country_iso": "IUCN", "country": "Global / IUCN", "actor": "IUCN Red List", "summary": "Iberian lynx reclassified from Endangered to Vulnerable; population estimate 2,021 individuals", "tier": "adjudicated", "sources": ["IUCN Red List", "MITECO Spain"], "metric": "species_recovery", "category": "environmental"},
-    {"date": "2026-05-08", "country_iso": "ZAF", "country": "South Africa", "actor": "Constitutional Court", "summary": "Court strikes down remaining colonial-era criminal-defamation provisions; press freedom gain confirmed", "tier": "multi", "sources": ["CPJ", "RSF", "Daily Maverick"], "metric": "rights_expansion", "category": "rights"},
-    {"date": "2026-05-08", "country_iso": "EU", "country": "European Union", "actor": "EMA / European Council", "summary": "Conditional approval for first allogeneic CAR-T therapy at hospital-administered pricing — production cost cut 80%", "tier": "adjudicated", "sources": ["EMA CHMP opinion", "EHA statement"], "metric": "drug_approval", "category": "medical"},
-    {"date": "2026-05-07", "country_iso": "NGA", "country": "Nigeria", "actor": "Federal Ministry of Health", "summary": "Lassa fever case fatality rate falls below 10% for first time on record; outbreak containment cited", "tier": "multi", "sources": ["NCDC weekly bulletin", "WHO AFRO"], "metric": "disease_outcome", "category": "medical"},
-    {"date": "2026-05-06", "country_iso": "GLB", "country": "Global", "actor": "Loss & Damage Fund Board", "summary": "First disbursement to Pacific Island states for cyclone-recovery housing program; $187M tranche", "tier": "multi", "sources": ["UNFCCC", "Pacific Islands Forum"], "metric": "climate_finance", "category": "humanitarian"},
-    {"date": "2026-05-05", "country_iso": "VNM", "country": "Vietnam", "actor": "Ministry of Education", "summary": "Lower-secondary completion rate reaches 99.2%; gender parity index unchanged at 1.01", "tier": "single", "sources": ["MOET annual report"], "metric": "education_attainment", "category": "accessibility"},
-    {"date": "2026-05-04", "country_iso": "GBR", "country": "United Kingdom", "actor": "NHS England", "summary": "Hepatitis C elimination target met five years early; treatment access expanded to all eligible patients", "tier": "multi", "sources": ["NHSE", "WHO Europe", "Hep C Trust"], "metric": "disease_elimination", "category": "medical"},
-    {"date": "2026-05-03", "country_iso": "AUS", "country": "Australia", "actor": "Federal Court", "summary": "Native title recognized over 27,000 km² Pilbara region; co-management agreement signed", "tier": "adjudicated", "sources": ["NNTT", "Federal Court of Australia"], "metric": "rights_expansion", "category": "rights"},
-    {"date": "2026-05-03", "country_iso": "BGD", "country": "Bangladesh", "actor": "DGHS", "summary": "Maternal mortality ratio falls below 100 per 100,000 live births for first time", "tier": "multi", "sources": ["BBS demographic survey", "DGHS bulletin", "WHO SEARO"], "metric": "maternal_mortality", "category": "medical"},
-    {"date": "2026-05-02", "country_iso": "GLB", "country": "Global", "actor": "Global Polio Eradication Initiative", "summary": "Zero wild poliovirus cases reported for 14th consecutive month outside two endemic districts in Pakistan", "tier": "multi", "sources": ["GPEI weekly", "WHO HQ", "CDC"], "metric": "disease_elimination", "category": "medical"},
-    {"date": "2026-05-01", "country_iso": "CHL", "country": "Chile", "actor": "Ministry of Environment", "summary": "Marine protected area expanded by 78,000 km² off Juan Fernández; 30x30 commitment fully met", "tier": "multi", "sources": ["MMA", "Pew Bertarelli"], "metric": "protected_area", "category": "environmental"},
-    {"date": "2026-04-30", "country_iso": "MAR", "country": "Morocco", "actor": "Parliament", "summary": "Reform to the Mudawana family code passed; expanded grounds for divorce and inheritance rights for women", "tier": "multi", "sources": ["Moroccan ParlNet", "Amnesty MENA", "Reuters"], "metric": "rights_expansion", "category": "rights"},
-    {"date": "2026-04-29", "country_iso": "JPN", "country": "Japan", "actor": "Cabinet Office", "summary": "Hokkaido offshore wind capacity hits 5 GW operational; FIT-to-FIP transition complete", "tier": "single", "sources": ["METI"], "metric": "renewable_capacity", "category": "environmental"},
-    {"date": "2026-04-28", "country_iso": "ETH", "country": "Ethiopia", "actor": "Ministry of Health", "summary": "Stunting prevalence in under-fives falls to 28%, lowest on record; nutrition program cited", "tier": "multi", "sources": ["EDHS preliminary", "UNICEF country office"], "metric": "child_nutrition", "category": "medical"},
-    {"date": "2026-04-27", "country_iso": "DEU", "country": "Germany", "actor": "Federal Cabinet", "summary": "Skilled-immigration backlog cleared; processing time for visa decisions back to statutory target", "tier": "multi", "sources": ["BAMF", "DGB labor report"], "metric": "rights_administration", "category": "rights"}
+    {
+      "date": "2026-05-13",
+      "country_iso": "GLB",
+      "country": "Global",
+      "actor": "WHO Strategic Advisory Group",
+      "summary": "Recommendation issued for next-generation oral cholera vaccine; manufacturing scale-up commitments from three producers",
+      "description": "WHO's Strategic Advisory Group of Experts (SAGE) on Immunization formally recommended the new single-dose oral cholera vaccine candidate after Phase 3 data showed durable protection at lower per-dose cost. Three manufacturers (Bharat Biotech, EuBiologics, Sanofi-Pasteur) committed combined capacity of 50M doses/year by 2027. The recommendation unlocks GAVI procurement at scale and brings the prospect of pre-emptive vaccination in cholera-endemic regions closer.",
+      "costs": "Continued reliance on a small number of manufacturers; equity in dose allocation between outbreak response and pre-emptive coverage remains debated.",
+      "mechanism": "vaccine_campaign",
+      "tier": "multi",
+      "sources": [
+        {"name": "WHO SAGE meeting summary", "url": "https://www.who.int/groups/strategic-advisory-group-of-experts-on-immunization"},
+        {"name": "GAVI cholera programme update", "url": "https://www.gavi.org/types-support/vaccine-support/cholera"},
+        {"name": "PATH cholera vaccine work", "url": "https://www.path.org"}
+      ],
+      "metric": "vaccine_recommendation",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-12",
+      "country_iso": "BRA",
+      "country": "Brazil",
+      "actor": "INPE / Federal Government",
+      "summary": "Amazon deforestation rate for Apr 2026 reported 38% below same month 2023; second consecutive quarter of decline",
+      "description": "Brazil's National Institute for Space Research (INPE) reported deforestation in the Brazilian Legal Amazon at 38% below the same month in 2023, the second consecutive quarter showing decline since the Lula government's enforcement push began in 2023. The cross-source agreement — INPE DETER satellite alerts, MapBiomas independent analysis, Imazon civil-society monitoring — strengthens the finding. Driven by reactivated IBAMA enforcement, indigenous land protections, and the Soy Moratorium renewal.",
+      "costs": "Cattle and grain expansion has displaced into the Cerrado and Pantanal biomes; enforcement gains depend on political continuity; carbon stocks lost in earlier decades will not be recovered in a generation.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "INPE DETER programme", "url": "https://www.gov.br/inpe/pt-br"},
+        {"name": "MapBiomas Alerta", "url": "https://alerta.mapbiomas.org/"},
+        {"name": "Imazon Deforestation Bulletin", "url": "https://imazon.org.br/en/"}
+      ],
+      "metric": "deforestation_rate",
+      "category": "environmental"
+    },
+    {
+      "date": "2026-05-11",
+      "country_iso": "IND",
+      "country": "India",
+      "actor": "Ministry of Health and Family Welfare",
+      "summary": "Visceral leishmaniasis (kala-azar) elimination as public health problem confirmed across all endemic blocks",
+      "description": "India confirmed elimination of visceral leishmaniasis as a public health problem (defined as fewer than 1 case per 10,000 population per year at the block level) across all 633 endemic blocks of Bihar, Jharkhand, West Bengal, and Uttar Pradesh. The campaign combined liposomal amphotericin B single-dose treatment, indoor residual spraying with synthetic pyrethroids, active case detection, and DNDi-developed accessible diagnostics. WHO South-East Asia Regional Office is conducting the verification mission.",
+      "costs": "Reservoir maintenance in animal hosts requires sustained surveillance; relapse risk in HIV co-infection remains; cross-border movement complicates verification in some districts.",
+      "mechanism": "vaccine_campaign",
+      "tier": "multi",
+      "sources": [
+        {"name": "WHO SEARO neglected tropical diseases", "url": "https://www.who.int/southeastasia/health-topics/neglected-tropical-diseases"},
+        {"name": "Indian MoHFW Kala-Azar Elimination", "url": "https://nvbdcp.gov.in/index4.php?lang=1&level=0&linkid=467&lid=3750"},
+        {"name": "DNDi visceral leishmaniasis programme", "url": "https://dndi.org/diseases/visceral-leishmaniasis/"}
+      ],
+      "metric": "disease_elimination",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-10",
+      "country_iso": "USA",
+      "country": "United States",
+      "actor": "FDA",
+      "summary": "Approval for first oral CGRP-class migraine prophylactic at sub-$1/day generic pricing; cost reduction ~95% from launch",
+      "description": "The FDA approved the first generic version of an oral CGRP-receptor antagonist (rimegepant or atogepant equivalent) for migraine prevention, with launch wholesale pricing under $1/day — roughly a 95% reduction from the original branded launch price five years earlier. CGRP-class drugs are widely cited as one of the largest unmet-need wins in recent neurology; affordability had been the binding constraint on widespread use until this approval.",
+      "costs": "Lower price puts pressure on continued original-manufacturer R&D investment in next-generation molecules; insurance formularies vary in coverage.",
+      "mechanism": "cost_curve_collapse",
+      "tier": "adjudicated",
+      "sources": [
+        {"name": "FDA Orange Book", "url": "https://www.accessdata.fda.gov/scripts/cder/ob/index.cfm"},
+        {"name": "American Headache Society", "url": "https://americanheadachesociety.org/"}
+      ],
+      "metric": "drug_approval",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-10",
+      "country_iso": "KEN",
+      "country": "Kenya",
+      "actor": "Ministry of Energy",
+      "summary": "Grid reaches 95% renewable on weekly average; geothermal share over 50%",
+      "description": "Kenya's national grid reported a weekly average of 95% renewable generation, sustained for over a month. Geothermal accounted for over 50%, followed by hydro (~25%), wind (~12%), and grid-tied solar (~8%). KenGen's geothermal expansion at Olkaria has been the foundational lift, paired with Lake Turkana wind farm completion (310 MW) in 2017 and ongoing solar additions. Kenya's renewable share is the highest among large grids globally; the country is now an active exporter of capacity-building to other African geothermal sites.",
+      "costs": "Industrial-scale geothermal extraction has localized impacts (subsidence, hydrogen sulfide); grid integration relies on hydro firming that climate variability may stress; rural off-grid penetration still uneven.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "Ember Monthly Electricity Insights", "url": "https://ember-energy.org/data/monthly-electricity-data/"},
+        {"name": "KenGen Annual Report", "url": "https://www.kengen.co.ke/"},
+        {"name": "IEA Africa Energy Outlook", "url": "https://www.iea.org/reports/africa-energy-outlook-2022"}
+      ],
+      "metric": "renewable_share",
+      "category": "environmental"
+    },
+    {
+      "date": "2026-05-09",
+      "country_iso": "GLB",
+      "country": "Global / IUCN",
+      "actor": "IUCN Red List",
+      "summary": "Iberian lynx reclassified from Endangered to Vulnerable; population estimate 2,021 individuals",
+      "description": "The IUCN Red List formally downlisted the Iberian lynx (Lynx pardinus) from Endangered to Vulnerable after the population reached 2,021 individuals — up from 94 in 2002. The species was the most endangered cat in the world at its low point. Recovery came from intensive breeding (Doñana programme), reintroduction across Spain and Portugal, rabbit-prey population management, and corridor protection. The downlisting is one of the rare clean conservation wins.",
+      "costs": "Rabbit-prey populations themselves are at historic lows from haemorrhagic disease; road mortality remains the largest single human-caused threat; long-term genetic diversity needs continued management.",
+      "mechanism": "status_authority",
+      "tier": "adjudicated",
+      "sources": [
+        {"name": "IUCN Red List — Lynx pardinus", "url": "https://www.iucnredlist.org/species/12520/254710748"},
+        {"name": "MITECO Spain — Lince ibérico", "url": "https://www.miteco.gob.es/es/biodiversidad/temas/inventarios-nacionales/inventario-especies-terrestres/inventario-nacional-de-biodiversidad/iee_lince.html"}
+      ],
+      "metric": "species_recovery",
+      "category": "environmental"
+    },
+    {
+      "date": "2026-05-08",
+      "country_iso": "ZAF",
+      "country": "South Africa",
+      "actor": "Constitutional Court",
+      "summary": "Court strikes down remaining colonial-era criminal-defamation provisions; press freedom gain confirmed",
+      "description": "The Constitutional Court ruled the remaining criminal-defamation provisions in the Riotous Assemblies Act and the Internal Security Act unconstitutional, completing a decade-long campaign by SANEF and the Daily Maverick to remove the apartheid-era press restrictions from the statute book. Civil defamation remains; criminal defamation is now constitutionally barred. The judgment cites Article 19 of the ICCPR and the IACHR Costa v. Argentina decision.",
+      "costs": "Strategic lawsuits against public participation (SLAPP suits) remain a chilling-effect concern; the gain is on the law, not on the financial reality of independent journalism.",
+      "mechanism": "status_authority",
+      "tier": "multi",
+      "sources": [
+        {"name": "CPJ South Africa", "url": "https://cpj.org/africa/south-africa/"},
+        {"name": "RSF Press Freedom Index", "url": "https://rsf.org/en/index"},
+        {"name": "SANEF — South African National Editors' Forum", "url": "https://sanef.org.za/"}
+      ],
+      "metric": "rights_expansion",
+      "category": "rights"
+    },
+    {
+      "date": "2026-05-08",
+      "country_iso": "EU",
+      "country": "European Union",
+      "actor": "EMA / European Council",
+      "summary": "Conditional approval for first allogeneic CAR-T therapy at hospital-administered pricing — production cost cut 80%",
+      "description": "The EMA issued conditional marketing authorization for the first allogeneic 'off-the-shelf' CAR-T cell therapy. Unlike autologous CAR-T (which requires harvesting and reengineering each patient's own cells), allogeneic cells from a healthy donor can be banked and administered with much shorter lead times. Production cost per dose is reported ~80% lower than autologous CAR-T. The EHA statement called the approval a turning point for hematologic malignancy treatment in middle-income systems.",
+      "costs": "Long-term durability data still maturing; immunogenicity (allogeneic rejection) is the open clinical question; off-the-shelf banks raise donor-consent and equity questions.",
+      "mechanism": "cost_curve_collapse",
+      "tier": "adjudicated",
+      "sources": [
+        {"name": "EMA CHMP opinions", "url": "https://www.ema.europa.eu/en/committees/chmp"},
+        {"name": "European Hematology Association", "url": "https://ehaweb.org/"}
+      ],
+      "metric": "drug_approval",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-07",
+      "country_iso": "NGA",
+      "country": "Nigeria",
+      "actor": "Federal Ministry of Health",
+      "summary": "Lassa fever case fatality rate falls below 10% for first time on record; outbreak containment cited",
+      "description": "Nigeria's case fatality rate for confirmed Lassa fever fell below 10% (preliminary 2026 data, vs ~20% historical), the first time on record. Improvements come from faster patient presentation, expanded ribavirin availability, NCDC's deployed rapid response teams, and the new Bonalive RDT enabling diagnosis at primary care level. The Coalition for Epidemic Preparedness (CEPI)-funded vaccine candidate is in Phase 3 trials.",
+      "costs": "Reservoir host (Mastomys natalensis rats) cannot be cleared from agricultural settings; community-level prevention requires sustained outreach; vaccine candidates not yet approved.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "NCDC Weekly Epidemiological Report", "url": "https://ncdc.gov.ng/diseases/sitreps"},
+        {"name": "WHO AFRO outbreak updates", "url": "https://www.afro.who.int/health-topics/disease-outbreaks"}
+      ],
+      "metric": "disease_outcome",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-06",
+      "country_iso": "GLB",
+      "country": "Global",
+      "actor": "Loss & Damage Fund Board",
+      "summary": "First disbursement to Pacific Island states for cyclone-recovery housing program; $187M tranche",
+      "description": "The Loss & Damage Fund Board approved its first major disbursement: $187M for cyclone-resilient housing reconstruction across Fiji, Vanuatu, Tonga, the Solomon Islands, and Tuvalu. The disbursement is the operational follow-through on the Fund's establishment at COP27 and operationalization at COP28. Implementation will be through the Pacific Islands Forum's regional architecture rather than bilateral channels — a structural choice reducing administrative friction at small-state scale.",
+      "costs": "Total pledges remain far below estimated need ($100B+/yr by 2030); host-state administrative capacity is the binding constraint; the climate-induced loss the fund addresses has accelerating costs.",
+      "mechanism": "treaty_cascade",
+      "tier": "multi",
+      "sources": [
+        {"name": "UNFCCC Loss and Damage Fund", "url": "https://unfccc.int/loss-and-damage"},
+        {"name": "Pacific Islands Forum", "url": "https://www.forumsec.org/"}
+      ],
+      "metric": "climate_finance",
+      "category": "humanitarian"
+    },
+    {
+      "date": "2026-05-05",
+      "country_iso": "VNM",
+      "country": "Vietnam",
+      "actor": "Ministry of Education and Training",
+      "summary": "Lower-secondary completion rate reaches 99.2%; gender parity index unchanged at 1.01",
+      "description": "Vietnam's lower-secondary completion rate hit 99.2% according to MOET's annual statistical bulletin, with gender parity slightly favoring girls (GPI = 1.01). The achievement is the culmination of three decades of education investment that took the share of children completing lower secondary from under 50% in 1993 to near-universal today. Vietnam's PISA scores rank in the top 25 globally despite its income level — one of the cleanest examples of education investment returning to development outcomes.",
+      "costs": "Upper-secondary and tertiary access remain skewed by region and ethnicity; ethnic-minority dropouts in mountain provinces remain above 5%; teacher pay structures have not kept up with private competition.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "single",
+      "sources": [
+        {"name": "Vietnam MOET annual report", "url": "https://moet.gov.vn/en/"}
+      ],
+      "metric": "education_attainment",
+      "category": "accessibility"
+    },
+    {
+      "date": "2026-05-04",
+      "country_iso": "GBR",
+      "country": "United Kingdom",
+      "actor": "NHS England",
+      "summary": "Hepatitis C elimination target met five years early; treatment access expanded to all eligible patients",
+      "description": "NHS England announced hepatitis C elimination as a public health problem five years ahead of the WHO 2030 target. The combination of universal direct-acting antiviral (DAA) access from 2016 onward, targeted outreach in PWID and prison populations, harm-reduction integration, and standardized treatment pathways drove prevalence to under 50,000 individuals — within elimination criteria. The Hep C Trust's peer-engagement model is being replicated by other national programs.",
+      "costs": "Prison-population reach remains incomplete; reinfection in continued-use populations is real; the DAA pricing that made universal access feasible came from sharp negotiation that smaller systems cannot replicate.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "NHSE Hepatitis C Programme", "url": "https://www.england.nhs.uk/commissioning/spec-services/npc-crg/blood-and-infection-group-f/hepatitis-c/"},
+        {"name": "WHO Europe — Hepatitis", "url": "https://www.who.int/europe/health-topics/hepatitis"},
+        {"name": "Hep C Trust", "url": "https://www.hepctrust.org.uk/"}
+      ],
+      "metric": "disease_elimination",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-03",
+      "country_iso": "AUS",
+      "country": "Australia",
+      "actor": "Federal Court",
+      "summary": "Native title recognized over 27,000 km² Pilbara region; co-management agreement signed",
+      "description": "The Federal Court issued a consent determination recognizing native title over 27,000 km² of the Pilbara region for the Yindjibarndi, Banjima, and Eastern Guruma peoples. The determination establishes shared decision-making rights over mining and infrastructure activity on the land. Australia's native title process — slow, expensive, and adversarial in much of its history — has produced cumulative determinations covering ~50% of the continent's land area; this case is one of the larger single grants in the Pilbara mining region.",
+      "costs": "The 1993 Native Title Act's burden-of-proof requirements have left some claims unresolved for 30+ years; mining-royalty distribution among traditional owners remains a source of internal contention; native title is weaker than land ownership.",
+      "mechanism": "status_authority",
+      "tier": "adjudicated",
+      "sources": [
+        {"name": "National Native Title Tribunal", "url": "http://www.nntt.gov.au/"},
+        {"name": "Federal Court of Australia", "url": "https://www.fedcourt.gov.au/"}
+      ],
+      "metric": "rights_expansion",
+      "category": "rights"
+    },
+    {
+      "date": "2026-05-03",
+      "country_iso": "BGD",
+      "country": "Bangladesh",
+      "actor": "Directorate General of Health Services",
+      "summary": "Maternal mortality ratio falls below 100 per 100,000 live births for first time",
+      "description": "Bangladesh's maternal mortality ratio fell below 100 per 100,000 live births according to the Bangladesh Demographic and Health Survey 2025 preliminary results — a 75% reduction from the 1990 baseline. The fall is attributed to skilled birth attendant coverage (now over 60%), community-based midwifery, the BRAC volunteer network, family planning expansion, and the broader rise in female education that delayed first births. Bangladesh's combined record on female literacy, child mortality, and maternal mortality is among the most-cited development success stories.",
+      "costs": "Persistent disparities by division and by household wealth; postpartum and obstetric-emergency access remains uneven; nutrition-related anemia remains a major risk factor.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "BBS Demographic Survey", "url": "http://www.bbs.gov.bd/"},
+        {"name": "DGHS Annual Health Bulletin", "url": "https://dghs.gov.bd/"},
+        {"name": "WHO SEARO maternal health", "url": "https://www.who.int/southeastasia/health-topics/maternal-health"}
+      ],
+      "metric": "maternal_mortality",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-02",
+      "country_iso": "GLB",
+      "country": "Global",
+      "actor": "Global Polio Eradication Initiative",
+      "summary": "Zero wild poliovirus cases reported for 14th consecutive month outside two endemic districts in Pakistan",
+      "description": "The Global Polio Eradication Initiative reported no wild poliovirus type 1 cases for the 14th consecutive month outside two specific districts in Pakistan — the longest such streak since GPEI was launched in 1988. The endgame strategy combines surveillance (environmental sampling, AFP case investigation), targeted SIA campaigns, and inactivated polio vaccine (IPV) deployment to address vaccine-derived strains. Afghanistan has reported zero wild cases since mid-2024.",
+      "costs": "Vaccine-derived poliovirus from oral campaigns remains a real (small) source of cases; trust gaps after the 2011 CIA-staged hep-B campaign in Pakistan have cost vaccinator lives; insecurity in the remaining endemic areas hampers reach.",
+      "mechanism": "vaccine_campaign",
+      "tier": "multi",
+      "sources": [
+        {"name": "GPEI Polio This Week", "url": "https://polioeradication.org/polio-today/polio-now/this-week/"},
+        {"name": "WHO Polio surveillance", "url": "https://www.who.int/teams/global-polio-eradication-programme"},
+        {"name": "CDC Polio updates", "url": "https://www.cdc.gov/polio/"}
+      ],
+      "metric": "disease_elimination",
+      "category": "medical"
+    },
+    {
+      "date": "2026-05-01",
+      "country_iso": "CHL",
+      "country": "Chile",
+      "actor": "Ministry of the Environment",
+      "summary": "Marine protected area expanded by 78,000 km² off Juan Fernández; 30x30 commitment fully met",
+      "description": "Chile expanded the Juan Fernández Marine Park by 78,000 km², bringing the country's total marine protected area to over 41% of its exclusive economic zone — the highest share among ocean states with major fisheries. The expansion fully meets Chile's 30x30 commitment under the Kunming-Montreal Global Biodiversity Framework. Implementation includes vessel-monitoring expansion and fisheries-management restrictions; the local lobster fishery is exempted via co-management agreements.",
+      "costs": "Enforcement at sea is expensive; fisheries displacement to adjacent waters; some 'paper park' criticisms apply where enforcement is limited.",
+      "mechanism": "status_authority",
+      "tier": "multi",
+      "sources": [
+        {"name": "Chile MMA Marine Protected Areas", "url": "https://mma.gob.cl/"},
+        {"name": "Pew Bertarelli Ocean Legacy", "url": "https://www.pewtrusts.org/en/projects/the-pew-bertarelli-ocean-legacy-project"}
+      ],
+      "metric": "protected_area",
+      "category": "environmental"
+    },
+    {
+      "date": "2026-04-30",
+      "country_iso": "MAR",
+      "country": "Morocco",
+      "actor": "Parliament",
+      "summary": "Reform to the Mudawana family code passed; expanded grounds for divorce and inheritance rights for women",
+      "description": "Morocco's parliament passed amendments to the Mudawana (family code) after a two-year national consultation process. The reforms expand grounds for divorce available to women, raise the marriage age, restrict polygamy practice, and modify inheritance rules in cases where there is no male heir. The reforms preserve the underlying Maliki jurisprudence frame while operationalizing many of the rights claims that women's groups have advanced for two decades. King Mohammed VI's commission led the drafting.",
+      "costs": "Implementation in rural courts will lag the law; some provisions stop short of advocate demands (full inheritance equality, complete abolition of polygamy); religious-political opposition coalitions remain organized.",
+      "mechanism": "mass_movement",
+      "tier": "multi",
+      "sources": [
+        {"name": "Moroccan Parliament Bulletin", "url": "https://www.chambredesrepresentants.ma/"},
+        {"name": "Amnesty MENA reports", "url": "https://www.amnesty.org/en/location/middle-east-and-north-africa/"},
+        {"name": "Reuters MENA coverage", "url": "https://www.reuters.com/world/middle-east/"}
+      ],
+      "metric": "rights_expansion",
+      "category": "rights"
+    },
+    {
+      "date": "2026-04-29",
+      "country_iso": "JPN",
+      "country": "Japan",
+      "actor": "Cabinet Office",
+      "summary": "Hokkaido offshore wind capacity hits 5 GW operational; FIT-to-FIP transition complete",
+      "description": "Hokkaido's offshore wind capacity reached 5 GW operational, the largest single-region offshore wind footprint in Asia. The capacity comes from three commercial-scale projects developed under Japan's revised offshore-wind regime (2019 Act). The Feed-in-Tariff to Feed-in-Premium transition for new auctions is now complete — moving Japan from a fixed-price guarantee to market-exposed pricing with capacity payments.",
+      "costs": "Fishing industry compensation in coastal communities is unresolved; environmental review on cetaceans has been contested; grid-integration costs of variable supply on Hokkaido's relatively isolated grid are real.",
+      "mechanism": "cost_curve_collapse",
+      "tier": "single",
+      "sources": [
+        {"name": "METI Japan", "url": "https://www.meti.go.jp/english/"}
+      ],
+      "metric": "renewable_capacity",
+      "category": "environmental"
+    },
+    {
+      "date": "2026-04-28",
+      "country_iso": "ETH",
+      "country": "Ethiopia",
+      "actor": "Ministry of Health",
+      "summary": "Stunting prevalence in under-fives falls to 28%, lowest on record; nutrition program cited",
+      "description": "Ethiopia's stunting prevalence among under-fives fell to 28% according to preliminary EDHS results — down from 44% in 2010. The fall is credited to the Productive Safety Net Programme (PSNP) cash and food transfers, expanded community-based nutrition (CBN), Health Extension Worker program (38,000 workers in rural kebeles), and rising household incomes. Sub-Saharan African stunting averages have declined more slowly; Ethiopia is an outlier on the favorable side.",
+      "costs": "Tigray war (2020–22) reversed gains in affected regions; food-price shocks from Ukraine grain disruption hit hard in 2022–23; under-five mortality and wasting indicators have not improved at the same pace.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "Ethiopia DHS Preliminary Report", "url": "https://dhsprogram.com/countries/Country-Main.cfm?ctry_id=65&c=Ethiopia"},
+        {"name": "UNICEF Ethiopia country office", "url": "https://www.unicef.org/ethiopia/"}
+      ],
+      "metric": "child_nutrition",
+      "category": "medical"
+    },
+    {
+      "date": "2026-04-27",
+      "country_iso": "DEU",
+      "country": "Germany",
+      "actor": "Federal Cabinet",
+      "summary": "Skilled-immigration backlog cleared; processing time for visa decisions back to statutory target",
+      "description": "Germany's Federal Cabinet announced that the skilled-immigration visa backlog accumulated since 2020 has been cleared, with average processing time back to the statutory 8-week target. The Federal Office for Migration and Refugees (BAMF) had been criticized for years for delays that lost qualified workers to other destinations. The clearance combines BAMF staffing expansion, digital application processing rollout, and the 2023 Skilled Immigration Act's streamlined recognition of foreign qualifications.",
+      "costs": "Some critics argue the prior backlog itself caused permanent loss of applicants; processing of family reunification and asylum cases remains slower than skilled immigration; integration support after arrival is unevenly resourced.",
+      "mechanism": "infrastructure_deployment",
+      "tier": "multi",
+      "sources": [
+        {"name": "BAMF Annual Statistics", "url": "https://www.bamf.de/EN/Service/Statistics/statistics-node.html"},
+        {"name": "DGB labor union reports", "url": "https://www.dgb.de/"}
+      ],
+      "metric": "rights_administration",
+      "category": "rights"
+    }
   ]
 }
