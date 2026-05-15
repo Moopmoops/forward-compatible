@@ -643,7 +643,7 @@
       "magnitude_high": 8000000000,
       "category": "humanitarian",
       "description": "The four 1949 Geneva Conventions and their Additional Protocols are the most universally ratified treaties in history \u2014 every UN member state is a party. They govern treatment of the wounded, prisoners, and civilians in armed conflict. Compliance is grossly uneven; the standard itself is the most-agreed body of conduct rules ever produced.",
-      "costs": "Universal ratification has not produced universal compliance \u2014 the gap between the rules and the conduct is the open accountability problem (and the subject of The Ledger).",
+      "costs": "Universal ratification has not produced universal compliance \u2014 the gap between the rules and the conduct is the open accountability problem.",
       "sources": [
         {
           "name": "ICRC \u2014 Treaty database",
@@ -1492,61 +1492,61 @@
       "id": "treaty_cascade",
       "label": "Treaty + ratification cascade",
       "description": "A formal international agreement, signed and then ratified by states one after another, that locks in conduct rules above any single government. The cascade is the key \u2014 the treaty itself is paper until enough states bind themselves, and then continuing ratification is the visible compounding pattern.",
-      "fc_pattern": "Stable interface, extensible by design. The treaty text is the stable spec; the ratification list is the growing capability set."
+      "design_pattern": "A stable interface that gets more powerful with use. The treaty text is the spec that doesn't change; the ratification list is the growing capability set. Each new state party is the gain compounding."
     },
     {
       "id": "vaccine_campaign",
       "label": "Vaccine / eradication campaign",
       "description": "A scientific discovery combined with a coordinated global delivery system, surveillance, and last-mile reach. The vaccine itself is a tool; the campaign is the cultural design that makes the tool universal.",
-      "fc_pattern": "Care compounds with no diminishing returns: every vaccinated cohort is itself a barrier to future transmission for the unvaccinated."
+      "design_pattern": "Every vaccinated cohort is itself a barrier to future transmission. The gain does not diminish \u2014 it compounds in the population that follows."
     },
     {
       "id": "open_standard",
       "label": "Open standard / royalty-free release",
       "description": "Knowledge or specification released into the commons, deliberately without rent extraction. The decision to release determines whether the gain compounds (as TCP/IP did) or fragments (as proprietary protocols typically do).",
-      "fc_pattern": "Leave room for what doesn't exist yet \u2014 the open release is what makes the standard accommodate every later use case the original designers didn't predict."
+      "design_pattern": "An open release makes the standard accommodate every later use case the original designers didn't predict. The non-rent-extracting decision at the start is the cultural design that lets the gain scale."
     },
     {
       "id": "scientific_breakthrough",
       "label": "Scientific breakthrough \u2192 diffusion",
       "description": "A research finding (mechanism, molecule, process) that solves a previously intractable problem, followed by the slower work of clinical / industrial / regulatory diffusion. The diffusion is what scales the gain.",
-      "fc_pattern": "Integrate the unknown \u2014 the breakthrough is the moment when the system encounters new information and reorganizes around it."
+      "design_pattern": "The breakthrough is the moment when the system encounters new information and reorganizes around it. The slower diffusion that follows is what scales the gain to population."
     },
     {
       "id": "cost_curve_collapse",
       "label": "Cost-curve collapse",
       "description": "A technology that was technically feasible but economically marginal becomes cheap enough to be universal. Solar, sequencing, mobile phones, paper, printing. The cost curve does the political work that policy alone could not.",
-      "fc_pattern": "Degrade in layers rather than fail as a unit \u2014 the cheap technology can serve a base layer of users; richer applications layer on top."
+      "design_pattern": "The cheap technology serves a base layer of users; richer applications layer on top. Once a technology becomes nearly free, it stops being a question of whether and becomes a question of how."
     },
     {
       "id": "status_authority",
       "label": "Status authority change",
       "description": "A formal decision by a regulator, court, or status committee (IUCN, FDA, constitutional court, treaty depository) that creates a durable, time-stamped fact. Adjudicated gains by definition.",
-      "fc_pattern": "Negotiate to common ground \u2014 the authority's decision is the protocol handshake at scale."
+      "design_pattern": "The authority's decision creates a durable, time-stamped fact that subordinate actors can rely on. A regulator's signature is the protocol handshake at population scale."
     },
     {
       "id": "mass_movement",
       "label": "Mass movement \u2192 political change",
       "description": "Sustained organizing creates political pressure sufficient to change law or institution. The movement itself is the gain insofar as it builds future capacity for the next change.",
-      "fc_pattern": "Include what the system was designed to exclude \u2014 and the system gets better for everyone."
+      "design_pattern": "Sustained organizing creates capacity that outlasts any single demand. Movements that win once leave the institutional muscle for the next win \u2014 the gain is partly the movement itself."
     },
     {
       "id": "infrastructure_deployment",
       "label": "Infrastructure deployment",
       "description": "State-led or state-and-multilateral capital deployed to extend basic services \u2014 sanitation, electricity, water, schools, health systems \u2014 to populations that previously lacked them. Slow, expensive, and the foundation of every later compounding gain.",
-      "fc_pattern": "Ship stewardship alongside the system \u2014 infrastructure that works requires governance and maintenance commensurate with the lift."
+      "design_pattern": "Infrastructure that works requires governance and maintenance commensurate with the lift. The pipe is the gain; the institution that keeps water flowing through it is the gain that keeps the gain."
     },
     {
       "id": "knowledge_accumulation",
       "label": "Knowledge accumulation",
       "description": "Bodies of knowledge \u2014 writing, science, scholarship, archives, encyclopedias \u2014 accumulating across generations. Each generation inherits more than it produces. The substrate of every later mechanism.",
-      "fc_pattern": "Maintain renewal mechanisms \u2014 the institutions that carry knowledge across generations are themselves the gain."
+      "design_pattern": "The institutions that carry knowledge across generations are themselves the gain. Each generation inherits more than it produces only because the carrying mechanism works."
     },
     {
       "id": "domestication",
       "label": "Domestication / cultivation",
       "description": "Selective relationship with biological systems \u2014 crops, animals, microbes, soil, nitrogen \u2014 that yields food, fuel, and fiber at population scale. Includes both ancient (Neolithic) and modern (Haber-Bosch, Green Revolution) forms. Always entangled with costs.",
-      "fc_pattern": "Protect co-evolved relationships \u2014 domestication that breaks the relationships between organisms and their context yields fragile gains that need ever more inputs to sustain."
+      "design_pattern": "The relationship is more important than any one trait. Domestication that breaks the relationships between organisms and their context yields fragile gains that need ever more inputs to sustain."
     }
   ]
 }

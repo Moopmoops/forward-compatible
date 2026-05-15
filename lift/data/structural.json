@@ -301,7 +301,7 @@
       ],
       "direction": "up_is_good",
       "framing": "Rose through the 1990s and 2000s; declined since the mid-2010s. The 'autocratization wave' is real and ongoing. This is the indicator most plausibly trending the wrong way in this entire ledger.",
-      "description": "V-Dem's Liberal Democracy Index combines free-and-fair-elections measures with rule of law, individual liberties, and judicial constraints on the executive. The 2010s onward trajectory has been negative for the first sustained period since V-Dem's series begins. The Ledger's heatmap reflects this same pattern; this panel is included here to be honest about the directional reversal even as other indicators continue rising.",
+      "description": "V-Dem's Liberal Democracy Index combines free-and-fair-elections measures with rule of law, individual liberties, and judicial constraints on the executive. The 2010s onward trajectory has been negative for the first sustained period since V-Dem's series begins. This panel is included to be honest about the directional reversal even as other indicators continue rising.",
       "costs": "Some critics argue V-Dem's expert-rating methodology embeds Western liberal assumptions; the direction of travel is consistent across alternative measures (Freedom House, EIU, BTI).",
       "sources": [
         {"name": "V-Dem Democracy Report 2024", "url": "https://www.v-dem.net/publications/democracy-reports/"}

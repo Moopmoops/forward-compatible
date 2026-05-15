@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-05-15",
-  "methodology": "Ratification reach for rights-expansion and protection treaties. Number of state parties reflects status from the UN Treaty Collection. The most-ratified treaties show what humanity has formally agreed on, even where compliance falls short. The Ledger tracks who refuses; The Lift tracks what got broadly signed.",
+  "methodology": "Ratification reach for rights-expansion and protection treaties. Number of state parties reflects status from the UN Treaty Collection. The most-ratified treaties show what humanity has formally agreed on, even where compliance falls short.",
   "data_status": "illustrative — reflects public ratification status as of last verification",
   "treaties": [
     {
@@ -135,7 +135,7 @@
       "parties": 195,
       "near_universal": true,
       "scope": "Hold warming well below 2°C; pursue 1.5°C; nationally determined contributions; transparency framework",
-      "notes": "Near-universal ratification. Implementation gap is the open accountability question (and the subject of much Ledger-side reporting). The Global Stocktake mechanism formalizes 5-yr review cycles."
+      "notes": "Near-universal ratification. Implementation gap is the open accountability question. The Global Stocktake mechanism formalizes 5-yr review cycles."
     },
     {
       "id": "ilo_core",
