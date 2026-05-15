@@ -359,6 +359,10 @@ a:hover { opacity: 1; }
 .timeline-svg .event-dot.cat-environmental { fill: #4e8a4c; stroke: #6aa86c; }
 .timeline-svg .event-dot.cat-humanitarian { fill: #a06850; stroke: #b88466; }
 .timeline-svg .event-dot.cat-accessibility { fill: #8a6aa8; stroke: #a585c0; }
+.timeline-svg .event-dot.cat-agriculture { fill: #a08550; stroke: #b89968; }
+.timeline-svg .event-dot.cat-communication { fill: #4090a0; stroke: #5aabbb; }
+.timeline-svg .event-dot.cat-governance { fill: #5060a8; stroke: #6878b8; }
+.timeline-svg .event-dot.cat-safety { fill: #c0824a; stroke: #d49860; }
 
 .timeline-legend {
     display: flex;
@@ -653,6 +657,10 @@ a:hover { opacity: 1; }
 .events-table .col-cat .cat-pill.scientific { color: #6a92b8; border-color: rgba(106,146,184,0.4); }
 .events-table .col-cat .cat-pill.humanitarian { color: #b88466; border-color: rgba(184,132,102,0.4); }
 .events-table .col-cat .cat-pill.accessibility { color: #a585c0; border-color: rgba(165,133,192,0.4); }
+.events-table .col-cat .cat-pill.agriculture { color: #b89968; border-color: rgba(184,153,104,0.4); }
+.events-table .col-cat .cat-pill.communication { color: #5aabbb; border-color: rgba(90,171,187,0.4); }
+.events-table .col-cat .cat-pill.governance { color: #6878b8; border-color: rgba(104,120,184,0.4); }
+.events-table .col-cat .cat-pill.safety { color: #d49860; border-color: rgba(212,152,96,0.4); }
 .events-table .col-sources { width: 200px; }
 .tier-badge {
     display: inline-block;
@@ -1010,6 +1018,50 @@ a:hover { opacity: 1; }
 .filter-chip.cat-scientific.active { border-color: #6a92b8; }
 .filter-chip.cat-humanitarian.active { border-color: #b88466; }
 .filter-chip.cat-accessibility.active { border-color: #a585c0; }
+.filter-chip.cat-agriculture.active { border-color: #b89968; }
+.filter-chip.cat-communication.active { border-color: #5aabbb; }
+.filter-chip.cat-governance.active { border-color: #6878b8; }
+.filter-chip.cat-safety.active { border-color: #d49860; }
+.range-mode-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 18px;
+    flex-wrap: wrap;
+}
+.range-mode-row .range-label {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-right: 4px;
+}
+.range-mode-row .range-chip {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.range-mode-row .range-chip:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+.range-mode-row .range-chip.active {
+    color: var(--text-bright);
+    background: var(--surface-2);
+    border-color: var(--accent);
+}
+.range-mode-row .range-chip small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--text-faint);
+    margin-top: 2px;
+    letter-spacing: 0;
+}
 .filter-chip.tier-multi.active { border-color: var(--good); }
 .filter-chip.tier-adjudicated.active { border-color: var(--text-bright); }
 .filter-chip.tier-disputed.active { border-color: var(--accent); }
@@ -1306,6 +1358,10 @@ a:hover { opacity: 1; }
 .panel-tag.cat-scientific { color: #6a92b8; border-color: rgba(106,146,184,0.5); }
 .panel-tag.cat-humanitarian { color: #b88466; border-color: rgba(184,132,102,0.5); }
 .panel-tag.cat-accessibility { color: #a585c0; border-color: rgba(165,133,192,0.5); }
+.panel-tag.cat-agriculture { color: #b89968; border-color: rgba(184,153,104,0.5); }
+.panel-tag.cat-communication { color: #5aabbb; border-color: rgba(90,171,187,0.5); }
+.panel-tag.cat-governance { color: #6878b8; border-color: rgba(104,120,184,0.5); }
+.panel-tag.cat-safety { color: #d49860; border-color: rgba(212,152,96,0.5); }
 
 .no-scroll { overflow: hidden; }
 
@@ -1427,9 +1483,9 @@ footer a:hover { color: var(--text); }
 <div class="section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Historical record</div>
-        <h2 class="reveal">A century-and-a-quarter of compounding gains, on a log scale</h2>
+        <h2 class="reveal">Twelve millennia of compounding gains, on a log scale</h2>
         <p class="intro reveal">
-            Selection drawn from peer-reviewed scholarship and authoritative records — WHO official histories, UNESCO archives, Our World in Data, Nobel records, IUCN. The vertical axis is logarithmic because the population reach of these gains spans many orders of magnitude. Where scholarship disagrees on attribution or scale, we publish the range, not a single number.
+            Selection drawn from peer-reviewed scholarship — Cambridge Histories, Bellwood's <em>First Farmers</em>, Mokyr's economic history, WHO official histories, UNESCO archives, OWID, Nobel records, IUCN, and discipline-specific reference works. The vertical axis is logarithmic because population reach spans many orders of magnitude. Where scholarship disagrees on attribution or even on whether a development counts as a gain at all (e.g. agriculture, the Columbian Exchange), we publish the range, surface the dispute, and list the costs alongside.
         </p>
     </div>
 
@@ -1437,10 +1493,17 @@ footer a:hover { color: var(--text); }
         <div class="viz-frame full reveal">
             <div class="viz-title-row">
                 <div>
-                    <h3>Civilizational gains · 1900–2026</h3>
-                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Dot size = population reached (log).</div>
+                    <h3>Civilizational gains · across recorded history</h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Dot size = population reached (log) · switch the era chips to zoom in or out.</div>
                 </div>
-                <div class="viz-source">SRC: WHO, OWID, UNESCO, Nobel · ILLUSTRATIVE</div>
+                <div class="viz-source">SRC: scholarly aggregation · ILLUSTRATIVE</div>
+            </div>
+            <div class="range-mode-row" id="timeline-range">
+                <span class="range-label">Era</span>
+                <span class="range-chip" data-range="all">All time<small>50k BCE – 2026</small></span>
+                <span class="range-chip" data-range="deep">Deep history<small>50k BCE – 1500</small></span>
+                <span class="range-chip" data-range="premodern">Pre-modern<small>1500 – 1900</small></span>
+                <span class="range-chip active" data-range="modern">Modern<small>1900 – 2026</small></span>
             </div>
             <div class="filter-row" id="timeline-filters">
                 <span class="filter-label">Filter</span>
@@ -1450,6 +1513,10 @@ footer a:hover { color: var(--text); }
                 <span class="filter-chip cat-environmental active" data-cat="environmental">Environmental</span>
                 <span class="filter-chip cat-humanitarian active" data-cat="humanitarian">Humanitarian</span>
                 <span class="filter-chip cat-accessibility active" data-cat="accessibility">Accessibility</span>
+                <span class="filter-chip cat-agriculture active" data-cat="agriculture">Agriculture</span>
+                <span class="filter-chip cat-communication active" data-cat="communication">Communication</span>
+                <span class="filter-chip cat-governance active" data-cat="governance">Governance</span>
+                <span class="filter-chip cat-safety active" data-cat="safety">Safety</span>
                 <span class="filter-count" id="timeline-count"></span>
             </div>
             <div class="timeline-wrap">
@@ -1462,8 +1529,12 @@ footer a:hover { color: var(--text); }
                 <span><i class="swatch" style="background:#4e8a4c"></i>Environmental</span>
                 <span><i class="swatch" style="background:#a06850"></i>Humanitarian</span>
                 <span><i class="swatch" style="background:#8a6aa8"></i>Accessibility</span>
+                <span><i class="swatch" style="background:#a08550"></i>Agriculture</span>
+                <span><i class="swatch" style="background:#4090a0"></i>Communication</span>
+                <span><i class="swatch" style="background:#5060a8"></i>Governance</span>
+                <span><i class="swatch" style="background:#c0824a"></i>Safety</span>
             </div>
-            <div class="explore-hint">Click any dot for full detail</div>
+            <div class="explore-hint">Click any dot for full detail · drag the era chips to scrub time</div>
             <div class="viz-caption">
                 The timeline is incomplete by construction. Every project assembling such a list has to make selection decisions — what counts as a population-scale gain, what threshold qualifies, how to handle gains with environmental or social costs. We expose the criteria rather than hide them, and let the disagreement live in the range itself.
             </div>
@@ -1568,6 +1639,10 @@ footer a:hover { color: var(--text); }
                 <span class="filter-chip cat-environmental" data-filter="cat" data-val="environmental">Environmental</span>
                 <span class="filter-chip cat-humanitarian" data-filter="cat" data-val="humanitarian">Humanitarian</span>
                 <span class="filter-chip cat-accessibility" data-filter="cat" data-val="accessibility">Accessibility</span>
+                <span class="filter-chip cat-agriculture" data-filter="cat" data-val="agriculture">Agriculture</span>
+                <span class="filter-chip cat-communication" data-filter="cat" data-val="communication">Communication</span>
+                <span class="filter-chip cat-governance" data-filter="cat" data-val="governance">Governance</span>
+                <span class="filter-chip cat-safety" data-filter="cat" data-val="safety">Safety</span>
             </div>
             <div class="filter-row" id="events-tier-filters" style="margin-top:-8px;">
                 <span class="filter-label">Tier</span>
@@ -1858,7 +1933,17 @@ const gainStore = {
 };
 
 const eventFilters = { cat: 'all', tier: 'all', query: '' };
-const timelineCats = new Set(['medical', 'scientific', 'rights', 'environmental', 'humanitarian', 'accessibility']);
+const timelineCats = new Set(['medical', 'scientific', 'rights', 'environmental', 'humanitarian', 'accessibility', 'agriculture', 'communication', 'governance', 'safety']);
+let timelineRange = 'modern'; // 'all' | 'deep' | 'premodern' | 'modern'
+
+// Year formatting for BCE / CE
+function fmtYear(y) {
+    if (y <= -1000) return Math.round(Math.abs(y) / 1000) + 'k BCE';
+    if (y < 0) return Math.abs(y) + ' BCE';
+    if (y === 0) return '1 BCE';
+    if (y < 1500) return y + ' CE';
+    return String(y);
+}
 
 // ─────────────────────────────────────────────────────────────
 // Tooltip helper
@@ -1955,10 +2040,26 @@ function drawTimeline() {
     const innerW = W - margin.left - margin.right;
     const innerH = H - margin.top - margin.bottom;
 
-    const yearMin = 1900, yearMax = 2026;
-    const xScale = y => margin.left + ((y - yearMin) / (yearMax - yearMin)) * innerW;
+    // Range presets
+    const ranges = {
+        modern:    { yearMin: 1900,   yearMax: 2026, ticks: [1900,1920,1940,1960,1980,2000,2020], scale: 'linear' },
+        premodern: { yearMin: 1500,   yearMax: 1900, ticks: [1500,1600,1700,1800,1900],          scale: 'linear' },
+        deep:      { yearMin: -10000, yearMax: 1500, ticks: [-10000,-8000,-5000,-3000,-1000,0,500,1000,1500], scale: 'linear' },
+        all:       { yearMin: -50000, yearMax: 2026, ticks: [-50000,-10000,-3000,0,1000,1500,1800,1900,1950,2000,2026], scale: 'log' }
+    };
+    const cfg = ranges[timelineRange] || ranges.modern;
 
-    // Log scale Y: 10^3 (1k) to 10^10 (10B)
+    // X scale (linear or pseudo-log on years-until-end)
+    let xScale;
+    if (cfg.scale === 'log') {
+        const refMax = cfg.yearMax + 1;
+        const logSpan = Math.log10(refMax - cfg.yearMin);
+        xScale = y => margin.left + (1 - Math.log10(Math.max(1, refMax - y)) / logSpan) * innerW;
+    } else {
+        xScale = y => margin.left + ((y - cfg.yearMin) / (cfg.yearMax - cfg.yearMin)) * innerW;
+    }
+
+    // Y log scale (1K → 10B)
     const logMin = Math.log10(1e3);
     const logMax = Math.log10(1e10);
     const yScale = v => {
@@ -1969,7 +2070,7 @@ function drawTimeline() {
 
     let svgContent = '';
 
-    // Grid lines (log decades)
+    // Y grid lines (log decades)
     for (let exp = 3; exp <= 10; exp++) {
         const y = yScale(Math.pow(10, exp));
         svgContent += `<line class="grid-line" x1="${margin.left}" y1="${y}" x2="${margin.left + innerW}" y2="${y}"/>`;
@@ -1984,20 +2085,22 @@ function drawTimeline() {
     // Y axis title
     svgContent += `<text class="axis-label" x="${margin.left - 40}" y="${margin.top + innerH / 2}" text-anchor="middle" transform="rotate(-90, ${margin.left - 40}, ${margin.top + innerH / 2})" style="letter-spacing:1.5px; text-transform:uppercase; font-size:9px;">People reached (log)</text>`;
 
-    // X axis labels
-    for (let yr = 1900; yr <= 2026; yr += 10) {
+    // X axis ticks
+    cfg.ticks.forEach(yr => {
+        if (yr < cfg.yearMin || yr > cfg.yearMax) return;
         const x = xScale(yr);
         svgContent += `<line class="axis-tick" x1="${x}" y1="${margin.top + innerH}" x2="${x}" y2="${margin.top + innerH + 5}"/>`;
-        svgContent += `<text class="axis-label" x="${x}" y="${margin.top + innerH + 18}" text-anchor="middle">${yr}</text>`;
-    }
+        svgContent += `<text class="axis-label" x="${x}" y="${margin.top + innerH + 18}" text-anchor="middle">${fmtYear(yr)}</text>`;
+    });
 
     // Plot events
     let shown = 0;
     data.events.forEach(ev => {
         if ((ev.magnitude_low || 0) === 0 && (ev.magnitude_high || 0) === 0) return;
         if (!timelineCats.has(ev.category)) return;
-        shown++;
         const midYear = (ev.start + ev.end) / 2;
+        if (midYear < cfg.yearMin || midYear > cfg.yearMax) return;
+        shown++;
         const midMag = Math.sqrt((ev.magnitude_low || 1) * (ev.magnitude_high || ev.magnitude_low || 1));
         const cx = xScale(midYear);
         const cy = yScale(midMag);
@@ -2484,12 +2587,12 @@ function openCountryDetail(iso) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Timeline event detail
+// Timeline event detail — now renders description / costs / sources
 // ─────────────────────────────────────────────────────────────
 function openTimelineDetail(id) {
     const ev = (gainStore.timeline?.events || []).find(x => x.id === id);
     if (!ev) return;
-    const period = ev.start === ev.end ? ev.start : ev.start + '–' + ev.end;
+    const period = ev.start === ev.end ? fmtYear(ev.start) : fmtYear(ev.start) + ' – ' + fmtYear(ev.end);
     const reach = ev.magnitude_low === ev.magnitude_high ? fmt(ev.magnitude_low) : (fmt(ev.magnitude_low) + ' – ' + fmt(ev.magnitude_high));
 
     let body = `
@@ -2499,32 +2602,54 @@ function openTimelineDetail(id) {
         <div class="panel-stat-grid">
             <div class="panel-stat">
                 <div class="lbl">Period</div>
-                <div class="val" style="font-size:0.9rem;">${period}</div>
+                <div class="val" style="font-size:0.95rem;">${period}</div>
             </div>
             <div class="panel-stat">
                 <div class="lbl">People reached</div>
-                <div class="val" style="font-size:0.9rem;">${reach}</div>
+                <div class="val" style="font-size:0.95rem;">${reach}</div>
             </div>
         </div>
     `;
-    if (ev.actors && ev.actors.length) {
-        body += `<h3>Actors</h3><div class="panel-chips">${ev.actors.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</div>`;
-    }
-    if (ev.notes) {
+
+    if (ev.description) {
+        body += `<h3>What happened</h3><p class="lead">${esc(ev.description).replace(/\n\n/g, '</p><p class="lead">')}</p>`;
+    } else if (ev.notes) {
         body += `<h3>Notes</h3><p class="lead">${esc(ev.notes)}</p>`;
     }
 
-    // Related events: same category, nearby decade
-    const decade = Math.floor(((ev.start + ev.end) / 2) / 10) * 10;
+    if (ev.actors && ev.actors.length) {
+        body += `<h3>Actors</h3><div class="panel-chips">${ev.actors.map(a => `<span class="chip">${esc(a)}</span>`).join('')}</div>`;
+    }
+
+    if (ev.costs) {
+        body += `<div class="panel-callout"><strong>Costs alongside the gain:</strong> ${esc(ev.costs)}</div>`;
+    }
+
+    if (ev.sources && ev.sources.length) {
+        body += `<h3>Sources</h3><ul class="panel-list">${ev.sources.map(s => {
+            const url = s.url ? ` <span style="color:var(--text-faint); font-family:var(--mono); font-size:0.7rem;">${s.url.replace(/^https?:\/\//, '').slice(0, 50)}</span>` : '';
+            const link = s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--text); text-decoration:none;">${esc(s.name)}${url}</a>` : esc(s.name);
+            return `<li style="cursor:default;">${link}</li>`;
+        }).join('')}</ul>`;
+    }
+
+    if (ev.notes && ev.description) {
+        body += `<h3>Note</h3><p>${esc(ev.notes)}</p>`;
+    }
+
+    // Related events: same category, overlapping era
+    const span = (ev.end - ev.start) || 50;
+    const decadeSpan = Math.max(50, span * 1.5);
     const related = (gainStore.timeline.events || []).filter(x => {
         if (x.id === ev.id) return false;
-        const midX = (x.start + x.end) / 2;
-        return x.category === ev.category && Math.abs(midX - decade) < 30;
+        const xMid = (x.start + x.end) / 2;
+        const evMid = (ev.start + ev.end) / 2;
+        return x.category === ev.category && Math.abs(xMid - evMid) < decadeSpan;
     }).slice(0, 6);
     if (related.length) {
         body += `<h3>Related in the same era</h3><ul class="panel-list">${related.map(r => `
             <li data-id="${r.id}" data-jump="timeline">
-                <span class="li-date">${r.start === r.end ? r.start : r.start + '–' + r.end}</span>${esc(r.name)}
+                <span class="li-date">${r.start === r.end ? fmtYear(r.start) : fmtYear(r.start) + '–' + fmtYear(r.end)}</span>${esc(r.name)}
                 <div class="li-meta">people reached ${fmt(r.magnitude_high || r.magnitude_low)}</div>
             </li>
         `).join('')}</ul>`;
@@ -2658,6 +2783,18 @@ function initFilters() {
                 if (timelineCats.has(cat)) timelineCats.delete(cat);
                 else timelineCats.add(cat);
                 chip.classList.toggle('active', timelineCats.has(cat));
+                drawTimeline();
+            });
+        });
+    }
+
+    // Timeline era / range mode
+    const rangeRow = document.getElementById('timeline-range');
+    if (rangeRow) {
+        rangeRow.querySelectorAll('.range-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                timelineRange = chip.dataset.range;
+                rangeRow.querySelectorAll('.range-chip').forEach(c => c.classList.toggle('active', c.dataset.range === timelineRange));
                 drawTimeline();
             });
         });
