@@ -1,876 +1,1552 @@
 {
   "schema_version": 2,
   "updated": "2026-05-15",
-  "methodology": "Selection drawn from peer-reviewed scholarship and authoritative records — Cambridge Histories, Britannica's primary-source bibliographies, WHO official histories, UNESCO archives, Nobel records, Our World in Data, IUCN, and discipline-specific reference works (Bellwood's First Farmers, Mokyr's Lever of Riches, Roser/Ortiz-Ospina at OWID). The vertical axis is logarithmic because the population reach of these gains spans many orders of magnitude. The horizontal axis switches mode (Deep / Pre-modern / Modern / All) because no single time scale can show 12,000 years of human gains without compressing the recent ones to invisibility. Where scholarship disagrees on attribution, scale, or whether a development counts as a 'gain' at all (e.g. agriculture, the Columbian Exchange), we publish the range, surface the dispute, and list the costs alongside.",
-  "data_status": "illustrative — pipeline not yet live",
+  "methodology": "Selection drawn from peer-reviewed scholarship and authoritative records \u2014 Cambridge Histories, Britannica's primary-source bibliographies, WHO official histories, UNESCO archives, Nobel records, Our World in Data, IUCN, and discipline-specific reference works (Bellwood's First Farmers, Mokyr's Lever of Riches, Roser/Ortiz-Ospina at OWID). The vertical axis is logarithmic because the population reach of these gains spans many orders of magnitude. The horizontal axis switches mode (Deep / Pre-modern / Modern / All) because no single time scale can show 12,000 years of human gains without compressing the recent ones to invisibility. Where scholarship disagrees on attribution, scale, or whether a development counts as a 'gain' at all (e.g. agriculture, the Columbian Exchange), we publish the range, surface the dispute, and list the costs alongside.",
+  "data_status": "illustrative \u2014 pipeline not yet live",
   "events": [
     {
       "id": "behavioral_modernity",
-      "start": -70000, "end": -45000,
+      "start": -70000,
+      "end": -45000,
       "name": "Behavioral modernity emerges",
-      "actors": ["Homo sapiens populations across Africa, Asia"],
-      "magnitude_low": 100000, "magnitude_high": 1000000,
+      "actors": [
+        "Homo sapiens populations across Africa, Asia"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 1000000,
       "category": "accessibility",
-      "description": "The package of symbolic thought, abstract reasoning, planning, and complex language that distinguishes anatomically modern humans cognitively. Bead-making, ochre use, long-distance trade in obsidian and shell, and burial with grave goods all appear in this window. Some scholars place the transition earlier (~200k BCE in Africa, gradually); others see a sharper 'cognitive revolution' around 50k BCE. The dating is contested; the magnitude is not — this is the substrate every later gain depends on.",
+      "description": "The package of symbolic thought, abstract reasoning, planning, and complex language that distinguishes anatomically modern humans cognitively. Bead-making, ochre use, long-distance trade in obsidian and shell, and burial with grave goods all appear in this window. Some scholars place the transition earlier (~200k BCE in Africa, gradually); others see a sharper 'cognitive revolution' around 50k BCE. The dating is contested; the magnitude is not \u2014 this is the substrate every later gain depends on.",
       "costs": "None identifiable; the substrate of culture itself.",
       "sources": [
-        {"name": "Henshilwood et al., Science 2002 (Blombos)", "url": "https://www.science.org/doi/10.1126/science.1067575"},
-        {"name": "McBrearty & Brooks, J. Hum. Evol. 2000", "url": "https://www.sciencedirect.com/science/article/pii/S0047248400904355"}
+        {
+          "name": "Henshilwood et al., Science 2002 (Blombos)",
+          "url": "https://www.science.org/doi/10.1126/science.1067575"
+        },
+        {
+          "name": "McBrearty & Brooks, J. Hum. Evol. 2000",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0047248400904355"
+        }
       ],
-      "notes": "Date range reflects scholarly disagreement on the tempo of the transition."
+      "notes": "Date range reflects scholarly disagreement on the tempo of the transition.",
+      "mechanism": "knowledge_accumulation"
     },
     {
       "id": "cave_art",
-      "start": -45000, "end": -10000,
+      "start": -45000,
+      "end": -10000,
       "name": "Cave art and figurative expression",
-      "actors": ["Upper Paleolithic peoples — Chauvet, Lascaux, Sulawesi, Altamira"],
-      "magnitude_low": 10000, "magnitude_high": 1000000,
+      "actors": [
+        "Upper Paleolithic peoples \u2014 Chauvet, Lascaux, Sulawesi, Altamira"
+      ],
+      "magnitude_low": 10000,
+      "magnitude_high": 1000000,
       "category": "accessibility",
       "description": "The earliest known figurative cave paintings (Sulawesi pig ~45k BCE, Chauvet horses ~32k BCE) and portable art demonstrate symbolic communication across generations. The pattern is not regionally limited: cave and rock art emerges independently across Europe, Asia, Australia, and Africa, suggesting that representational thought is a deep universal of behaviorally modern humans.",
-      "costs": "None — pure expressive gain.",
+      "costs": "None \u2014 pure expressive gain.",
       "sources": [
-        {"name": "Aubert et al., Nature 2014 (Sulawesi)", "url": "https://www.nature.com/articles/nature13422"},
-        {"name": "Clottes, Chauvet Cave (Univ. Utah Press)"}
-      ]
+        {
+          "name": "Aubert et al., Nature 2014 (Sulawesi)",
+          "url": "https://www.nature.com/articles/nature13422"
+        },
+        {
+          "name": "Clottes, Chauvet Cave (Univ. Utah Press)"
+        }
+      ],
+      "mechanism": "knowledge_accumulation"
     },
     {
       "id": "dog_domestication",
-      "start": -25000, "end": -14000,
+      "start": -25000,
+      "end": -14000,
       "name": "Dog domestication",
-      "actors": ["foraging societies across Eurasia"],
-      "magnitude_low": 1000000, "magnitude_high": 100000000,
+      "actors": [
+        "foraging societies across Eurasia"
+      ],
+      "magnitude_low": 1000000,
+      "magnitude_high": 100000000,
       "category": "agriculture",
-      "description": "The wolf-to-dog transition created the first non-human partner in human work — hunting, sentinel duty, herding, sled-pulling. Genomic studies place the split between 25,000 and 14,000 years ago, well before agriculture. Dogs co-evolved with humans for so long that their digestion changed alongside ours (amylase gene expansion).",
-      "costs": "Marginal — wolf populations affected by human-dog displacement of niche; ongoing welfare concerns in industrial breeding.",
+      "description": "The wolf-to-dog transition created the first non-human partner in human work \u2014 hunting, sentinel duty, herding, sled-pulling. Genomic studies place the split between 25,000 and 14,000 years ago, well before agriculture. Dogs co-evolved with humans for so long that their digestion changed alongside ours (amylase gene expansion).",
+      "costs": "Marginal \u2014 wolf populations affected by human-dog displacement of niche; ongoing welfare concerns in industrial breeding.",
       "sources": [
-        {"name": "Frantz et al., Science 2016", "url": "https://www.science.org/doi/10.1126/science.aaf3161"},
-        {"name": "Bergström et al., Science 2020", "url": "https://www.science.org/doi/10.1126/science.aba9572"}
-      ]
+        {
+          "name": "Frantz et al., Science 2016",
+          "url": "https://www.science.org/doi/10.1126/science.aaf3161"
+        },
+        {
+          "name": "Bergstr\u00f6m et al., Science 2020",
+          "url": "https://www.science.org/doi/10.1126/science.aba9572"
+        }
+      ],
+      "mechanism": "domestication"
     },
     {
       "id": "neolithic_revolution",
-      "start": -10000, "end": -8000,
-      "name": "Neolithic Revolution — agriculture begins independently",
-      "actors": ["Levant (wheat, barley)", "China (rice, millet)", "Mesoamerica (maize, beans)", "Andes (potato, quinoa)", "New Guinea (taro)", "Sub-Saharan Africa (sorghum, yams)"],
-      "magnitude_low": 100000000, "magnitude_high": 8000000000,
+      "start": -10000,
+      "end": -8000,
+      "name": "Neolithic Revolution \u2014 agriculture begins independently",
+      "actors": [
+        "Levant (wheat, barley)",
+        "China (rice, millet)",
+        "Mesoamerica (maize, beans)",
+        "Andes (potato, quinoa)",
+        "New Guinea (taro)",
+        "Sub-Saharan Africa (sorghum, yams)"
+      ],
+      "magnitude_low": 100000000,
+      "magnitude_high": 8000000000,
       "category": "agriculture",
-      "description": "The independent domestication of crops and animals across at least six world regions over a 4,000-year window. Sedentism, food storage, and population growth follow. The Neolithic transition is the foundation of every later civilizational gain — without it, no cities, writing, states, science. But it is also a contested 'gain': early agriculturalists were shorter, sicker, and worked harder than the foragers they replaced. Population grew while individual welfare arguably declined for millennia.",
+      "description": "The independent domestication of crops and animals across at least six world regions over a 4,000-year window. Sedentism, food storage, and population growth follow. The Neolithic transition is the foundation of every later civilizational gain \u2014 without it, no cities, writing, states, science. But it is also a contested 'gain': early agriculturalists were shorter, sicker, and worked harder than the foragers they replaced. Population grew while individual welfare arguably declined for millennia.",
       "costs": "Reduced height and dental health in early agriculturalists vs. foragers (skeletal record); zoonotic disease emergence; the long entrenchment of patriarchal inheritance norms; ecological transformation at scale.",
       "sources": [
-        {"name": "Bellwood, First Farmers (2005, Wiley-Blackwell)"},
-        {"name": "Diamond, Guns Germs and Steel — first chapters"},
-        {"name": "Mummert et al., Econ. Hum. Biol. 2011 (stature decline)", "url": "https://www.sciencedirect.com/science/article/abs/pii/S1570677X11000074"}
+        {
+          "name": "Bellwood, First Farmers (2005, Wiley-Blackwell)"
+        },
+        {
+          "name": "Diamond, Guns Germs and Steel \u2014 first chapters"
+        },
+        {
+          "name": "Mummert et al., Econ. Hum. Biol. 2011 (stature decline)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S1570677X11000074"
+        }
       ],
-      "notes": "Genuinely disputed as a 'gain' — see costs. We include it because the population-scale downstream effects are indisputable."
+      "notes": "Genuinely disputed as a 'gain' \u2014 see costs. We include it because the population-scale downstream effects are indisputable.",
+      "mechanism": "domestication"
     },
     {
       "id": "settlements",
-      "start": -9500, "end": -7000,
-      "name": "First permanent settlements (Jericho, Çatalhöyük)",
-      "actors": ["Levantine and Anatolian populations"],
-      "magnitude_low": 10000, "magnitude_high": 1000000,
+      "start": -9500,
+      "end": -7000,
+      "name": "First permanent settlements (Jericho, \u00c7atalh\u00f6y\u00fck)",
+      "actors": [
+        "Levantine and Anatolian populations"
+      ],
+      "magnitude_low": 10000,
+      "magnitude_high": 1000000,
       "category": "governance",
-      "description": "Pre-pottery Neolithic walled settlements like Jericho (occupied from ~9500 BCE) and the densely-packed Çatalhöyük in central Anatolia (~7400 BCE) demonstrate sustained communal living before classical city-states. The cooperative infrastructure — granaries, defensive walls, shared shrines — prefigures every later civic institution.",
+      "description": "Pre-pottery Neolithic walled settlements like Jericho (occupied from ~9500 BCE) and the densely-packed \u00c7atalh\u00f6y\u00fck in central Anatolia (~7400 BCE) demonstrate sustained communal living before classical city-states. The cooperative infrastructure \u2014 granaries, defensive walls, shared shrines \u2014 prefigures every later civic institution.",
       "costs": "Crowd-disease emergence; inequality begins to entrench through grain storage.",
       "sources": [
-        {"name": "Hodder, The Leopard's Tale (Çatalhöyük, 2006)"},
-        {"name": "Kenyon excavation reports (Jericho)"}
-      ]
+        {
+          "name": "Hodder, The Leopard's Tale (\u00c7atalh\u00f6y\u00fck, 2006)"
+        },
+        {
+          "name": "Kenyon excavation reports (Jericho)"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "writing",
-      "start": -3200, "end": -3000,
+      "start": -3200,
+      "end": -3000,
       "name": "Cuneiform writing invented in Sumer",
-      "actors": ["Sumerian temple administrators"],
-      "magnitude_low": 100000, "magnitude_high": 10000000,
+      "actors": [
+        "Sumerian temple administrators"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 10000000,
       "category": "communication",
-      "description": "The first known writing system — wedge marks pressed into wet clay to record temple grain accounts. Within centuries cuneiform was being used for law codes, literature (Gilgamesh), astronomical observations, and diplomatic correspondence. Egyptian hieroglyphs emerge in roughly the same window. Writing is the technology that makes knowledge accumulate across generations.",
+      "description": "The first known writing system \u2014 wedge marks pressed into wet clay to record temple grain accounts. Within centuries cuneiform was being used for law codes, literature (Gilgamesh), astronomical observations, and diplomatic correspondence. Egyptian hieroglyphs emerge in roughly the same window. Writing is the technology that makes knowledge accumulate across generations.",
       "costs": "Concentration of administrative power; literacy gap that took 5,000 years to close.",
       "sources": [
-        {"name": "Schmandt-Besserat, Before Writing (Univ. Texas Press)"},
-        {"name": "Cooper, J. Mesopotamian History — Sumer overview"}
-      ]
+        {
+          "name": "Schmandt-Besserat, Before Writing (Univ. Texas Press)"
+        },
+        {
+          "name": "Cooper, J. Mesopotamian History \u2014 Sumer overview"
+        }
+      ],
+      "mechanism": "open_standard"
     },
     {
       "id": "indus_sanitation",
-      "start": -2600, "end": -1900,
+      "start": -2600,
+      "end": -1900,
       "name": "Indus Valley sanitation systems",
-      "actors": ["Mohenjo-daro, Harappa, ~1,000 sites"],
-      "magnitude_low": 1000000, "magnitude_high": 5000000,
+      "actors": [
+        "Mohenjo-daro, Harappa, ~1,000 sites"
+      ],
+      "magnitude_low": 1000000,
+      "magnitude_high": 5000000,
       "category": "medical",
       "description": "The Indus Valley Civilization built the most extensive Bronze Age urban water infrastructure: covered drains, household latrines connected to street drains, public baths, and brick-lined wells. Their cities were planned on grids. Sanitation as a public-health practice would not return at this scale until 19th-century London.",
       "costs": "None obvious in record; the civilization itself collapsed around 1900 BCE for reasons still debated (climate, river shifts, decline of trade).",
       "sources": [
-        {"name": "Possehl, The Indus Civilization (2002, AltaMira)"},
-        {"name": "Kenoyer, Ancient Cities of the Indus Valley"}
-      ]
+        {
+          "name": "Possehl, The Indus Civilization (2002, AltaMira)"
+        },
+        {
+          "name": "Kenoyer, Ancient Cities of the Indus Valley"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "hammurabi",
-      "start": -1754, "end": -1754,
-      "name": "Code of Hammurabi — written law",
-      "actors": ["King Hammurabi of Babylon"],
-      "magnitude_low": 100000, "magnitude_high": 1000000,
+      "start": -1754,
+      "end": -1754,
+      "name": "Code of Hammurabi \u2014 written law",
+      "actors": [
+        "King Hammurabi of Babylon"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 1000000,
       "category": "governance",
       "description": "The 282 laws inscribed on the basalt stela in Babylon's central marketplace are the oldest substantially preserved written legal code. The text proclaims its purpose as 'to prevent the strong from oppressing the weak.' The principle that law is public, written, and applies above the ruler's whim has direct lines to every constitutional regime since.",
       "costs": "Severe penalties by modern standards; lex talionis ('eye for eye') normalized; class-based punishments codified.",
       "sources": [
-        {"name": "Roth, Law Collections from Mesopotamia (1995, Society of Biblical Literature)"},
-        {"name": "Louvre Museum stela archive", "url": "https://www.louvre.fr/en/explore/the-palace/the-law-code-of-hammurabi"}
-      ]
+        {
+          "name": "Roth, Law Collections from Mesopotamia (1995, Society of Biblical Literature)"
+        },
+        {
+          "name": "Louvre Museum stela archive",
+          "url": "https://www.louvre.fr/en/explore/the-palace/the-law-code-of-hammurabi"
+        }
+      ],
+      "mechanism": "status_authority"
     },
     {
       "id": "phoenician_alphabet",
-      "start": -1050, "end": -1050,
+      "start": -1050,
+      "end": -1050,
       "name": "Phoenician consonantal alphabet",
-      "actors": ["Phoenician trading cities — Tyre, Sidon, Byblos"],
-      "magnitude_low": 100000000, "magnitude_high": 1000000000,
+      "actors": [
+        "Phoenician trading cities \u2014 Tyre, Sidon, Byblos"
+      ],
+      "magnitude_low": 100000000,
+      "magnitude_high": 1000000000,
       "category": "communication",
       "description": "Twenty-two signs, each standing for a consonant. The first practical alphabet, an order of magnitude faster to learn than cuneiform or hieroglyphs. Greek, Aramaic, Hebrew, Arabic, and ultimately Latin alphabets all descend from it. Mass literacy became technically possible from this moment, even though it took 3,000 years to become widespread.",
       "costs": "Loss of richer logographic information density in source languages adopting alphabets (though arguably more than offset).",
       "sources": [
-        {"name": "Healey, The Early Alphabet (1990, British Museum)"},
-        {"name": "Sass, The Alphabet at the Turn of the Millennium"}
-      ]
+        {
+          "name": "Healey, The Early Alphabet (1990, British Museum)"
+        },
+        {
+          "name": "Sass, The Alphabet at the Turn of the Millennium"
+        }
+      ],
+      "mechanism": "open_standard"
     },
     {
       "id": "axial_age",
-      "start": -800, "end": -200,
-      "name": "Axial Age — Buddha, Confucius, Greek philosophy, Hebrew prophets, Upanishads",
-      "actors": ["Siddhārtha Gautama, Confucius, Socrates/Plato/Aristotle, Isaiah/Jeremiah, Upanishadic sages"],
-      "magnitude_low": 500000000, "magnitude_high": 4000000000,
+      "start": -800,
+      "end": -200,
+      "name": "Axial Age \u2014 Buddha, Confucius, Greek philosophy, Hebrew prophets, Upanishads",
+      "actors": [
+        "Siddh\u0101rtha Gautama, Confucius, Socrates/Plato/Aristotle, Isaiah/Jeremiah, Upanishadic sages"
+      ],
+      "magnitude_low": 500000000,
+      "magnitude_high": 4000000000,
       "category": "rights",
       "description": "Across Eurasia in a single 600-year window, civilizations independently developed the moral frameworks that became Buddhism, Confucianism, classical Greek philosophy, prophetic Judaism, and the Upanishadic tradition. The shared move: turning ethical attention inward, treating individual moral responsibility as primary, and articulating a universal humanity that transcends tribe. Karl Jaspers named this convergence; later historians have debated the boundary but not the pattern.",
       "costs": "Some traditions used to legitimate hierarchies (caste, gender, slavery) for millennia after, against their own founding texts.",
       "sources": [
-        {"name": "Armstrong, The Great Transformation (2006, Knopf)"},
-        {"name": "Bellah & Joas, The Axial Age and Its Consequences (2012, Harvard)"}
-      ]
+        {
+          "name": "Armstrong, The Great Transformation (2006, Knopf)"
+        },
+        {
+          "name": "Bellah & Joas, The Axial Age and Its Consequences (2012, Harvard)"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "athenian_democracy",
-      "start": -508, "end": -322,
+      "start": -508,
+      "end": -322,
       "name": "Athenian democracy as a sustained experiment",
-      "actors": ["Cleisthenes's reforms; ~250 years of practice"],
-      "magnitude_low": 100000, "magnitude_high": 250000,
+      "actors": [
+        "Cleisthenes's reforms; ~250 years of practice"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 250000,
       "category": "governance",
-      "description": "After Cleisthenes's 508 BCE reforms, Athens ran direct democracy — assembly votes, jury courts, sortition for office — for nearly two centuries. Citizenship was sharply limited: men, ethnic Athenians, free. But the practical mechanisms of accountability (ostracism, audit of officials, public oratory) and the underlying claim that ordinary people can govern themselves became the reference for every later democratic experiment.",
+      "description": "After Cleisthenes's 508 BCE reforms, Athens ran direct democracy \u2014 assembly votes, jury courts, sortition for office \u2014 for nearly two centuries. Citizenship was sharply limited: men, ethnic Athenians, free. But the practical mechanisms of accountability (ostracism, audit of officials, public oratory) and the underlying claim that ordinary people can govern themselves became the reference for every later democratic experiment.",
       "costs": "Slavery, women excluded from citizenship, metics taxed without political voice. Democracy's later association with these exclusions was a 2,400-year project to undo.",
       "sources": [
-        {"name": "Hansen, The Athenian Democracy in the Age of Demosthenes (1991)"},
-        {"name": "Ober, Mass and Elite in Democratic Athens (Princeton)"}
-      ]
+        {
+          "name": "Hansen, The Athenian Democracy in the Age of Demosthenes (1991)"
+        },
+        {
+          "name": "Ober, Mass and Elite in Democratic Athens (Princeton)"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "roman_aqueducts",
-      "start": -312, "end": 226,
+      "start": -312,
+      "end": 226,
       "name": "Roman aqueduct and sanitation infrastructure",
-      "actors": ["Roman Republic and Empire engineers"],
-      "magnitude_low": 5000000, "magnitude_high": 20000000,
+      "actors": [
+        "Roman Republic and Empire engineers"
+      ],
+      "magnitude_low": 5000000,
+      "magnitude_high": 20000000,
       "category": "medical",
       "description": "Eleven major aqueducts brought ~1 billion liters of water daily into Rome at its peak. Combined with the cloaca maxima sewer system, public baths, and fountains, Roman cities delivered piped clean water to a scale not matched in Europe for 1,500 years after the Empire fell. Roman bathing culture itself shaped public-health norms across the Mediterranean.",
-      "costs": "Lead contamination from pipes — long-debated, recent isotope studies suggest exposure was real but probably not catastrophic at population level. Slave labor in aqueduct construction.",
+      "costs": "Lead contamination from pipes \u2014 long-debated, recent isotope studies suggest exposure was real but probably not catastrophic at population level. Slave labor in aqueduct construction.",
       "sources": [
-        {"name": "Hodge, Roman Aqueducts and Water Supply (Duckworth)"},
-        {"name": "Delile et al., PNAS 2014 (lead exposure)", "url": "https://www.pnas.org/doi/10.1073/pnas.1400097111"}
-      ]
+        {
+          "name": "Hodge, Roman Aqueducts and Water Supply (Duckworth)"
+        },
+        {
+          "name": "Delile et al., PNAS 2014 (lead exposure)",
+          "url": "https://www.pnas.org/doi/10.1073/pnas.1400097111"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "paper",
-      "start": 105, "end": 105,
+      "start": 105,
+      "end": 105,
       "name": "Paper invented in Han China",
-      "actors": ["Cai Lun (court records)"],
-      "magnitude_low": 1000000000, "magnitude_high": 5000000000,
+      "actors": [
+        "Cai Lun (court records)"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 5000000000,
       "category": "communication",
-      "description": "Cai Lun is credited with refining the papermaking process at the Han court in 105 CE — pulping mulberry bark, hemp, rags, and water into a thin durable sheet at a fraction of the cost of papyrus or vellum. Paper diffused west along the Silk Road, reaching the Islamic world by the 8th century and Europe by the 12th. Cheap writing material is the precondition for mass literacy.",
+      "description": "Cai Lun is credited with refining the papermaking process at the Han court in 105 CE \u2014 pulping mulberry bark, hemp, rags, and water into a thin durable sheet at a fraction of the cost of papyrus or vellum. Paper diffused west along the Silk Road, reaching the Islamic world by the 8th century and Europe by the 12th. Cheap writing material is the precondition for mass literacy.",
       "costs": "Marginal at the technology level; environmental costs scale much later with industrial pulp/paper.",
       "sources": [
-        {"name": "Tsien, Paper and Printing (Cambridge, vol. 5 of Needham's Science and Civilisation in China)"},
-        {"name": "Bloom, Paper Before Print (Yale, 2001)"}
-      ]
+        {
+          "name": "Tsien, Paper and Printing (Cambridge, vol. 5 of Needham's Science and Civilisation in China)"
+        },
+        {
+          "name": "Bloom, Paper Before Print (Yale, 2001)"
+        }
+      ],
+      "mechanism": "cost_curve_collapse"
     },
     {
       "id": "zero_decimal",
-      "start": 458, "end": 628,
+      "start": 458,
+      "end": 628,
       "name": "Hindu-Arabic numerals and the explicit zero",
-      "actors": ["Indian mathematicians — Aryabhata, Brahmagupta"],
-      "magnitude_low": 1000000000, "magnitude_high": 8000000000,
+      "actors": [
+        "Indian mathematicians \u2014 Aryabhata, Brahmagupta"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 8000000000,
       "category": "scientific",
       "description": "The decimal place-value notation we use globally today, including the symbol for zero treated as a number in its own right, was systematized by Indian mathematicians by the 7th century (Brahmagupta's Brahmasphutasiddhanta, 628 CE, gives rules for arithmetic with zero). Carried into the Islamic mathematical tradition (al-Khwarizmi, 9th c.), then into Europe via Fibonacci (Liber Abaci, 1202). Modern arithmetic, computation, and finance are all built on this representation.",
       "costs": "None known; pure cognitive gain.",
       "sources": [
-        {"name": "Plofker, Mathematics in India (Princeton, 2009)"},
-        {"name": "Joseph, The Crest of the Peacock (Princeton)"}
-      ]
+        {
+          "name": "Plofker, Mathematics in India (Princeton, 2009)"
+        },
+        {
+          "name": "Joseph, The Crest of the Peacock (Princeton)"
+        }
+      ],
+      "mechanism": "open_standard"
     },
     {
       "id": "first_university",
-      "start": 1088, "end": 1088,
-      "name": "First university — Bologna",
-      "actors": ["scholars and law students at Bologna"],
-      "magnitude_low": 100000, "magnitude_high": 1000000,
+      "start": 1088,
+      "end": 1088,
+      "name": "First university \u2014 Bologna",
+      "actors": [
+        "scholars and law students at Bologna"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 1000000,
       "category": "accessibility",
       "description": "The University of Bologna (founded 1088) is the oldest continuously operating institution to call itself a university. It established the model: an autonomous corporate body, degrees granted on examination, formal curriculum, charters protecting student and scholar rights of movement. Paris (~1150), Oxford (~1167), Cambridge (1209) followed. The shape of higher education for the next 900 years is set here.",
       "costs": "Reproduces and entrenches social hierarchy (entrance, tuition, who is taught what); academic forms of credentialism.",
       "sources": [
-        {"name": "Ridder-Symoens (ed.), A History of the University in Europe (Cambridge, 1992)"},
-        {"name": "Rüegg, Universities in the Middle Ages"}
-      ]
+        {
+          "name": "Ridder-Symoens (ed.), A History of the University in Europe (Cambridge, 1992)"
+        },
+        {
+          "name": "R\u00fcegg, Universities in the Middle Ages"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "magna_carta",
-      "start": 1215, "end": 1215,
+      "start": 1215,
+      "end": 1215,
       "name": "Magna Carta",
-      "actors": ["King John of England + English barons"],
-      "magnitude_low": 50000000, "magnitude_high": 500000000,
+      "actors": [
+        "King John of England + English barons"
+      ],
+      "magnitude_low": 50000000,
+      "magnitude_high": 500000000,
       "category": "rights",
-      "description": "Forced from King John at Runnymede, the charter's 63 clauses are mostly feudal grievances. But three clauses — protection from arbitrary imprisonment, requirement of lawful judgment by peers, and limits on royal tax-raising — became foundational. Reprinted, reissued, and selectively cited for 800 years, Magna Carta became the touchstone for habeas corpus, the common law tradition, and the principle that even the sovereign is bound by law.",
+      "description": "Forced from King John at Runnymede, the charter's 63 clauses are mostly feudal grievances. But three clauses \u2014 protection from arbitrary imprisonment, requirement of lawful judgment by peers, and limits on royal tax-raising \u2014 became foundational. Reprinted, reissued, and selectively cited for 800 years, Magna Carta became the touchstone for habeas corpus, the common law tradition, and the principle that even the sovereign is bound by law.",
       "costs": "Originally protected only the barons; its 'universal' reading is a much later interpretive achievement.",
       "sources": [
-        {"name": "Carpenter, Magna Carta (Penguin, 2015)"},
-        {"name": "Holt, Magna Carta (3rd ed., Cambridge)"}
-      ]
+        {
+          "name": "Carpenter, Magna Carta (Penguin, 2015)"
+        },
+        {
+          "name": "Holt, Magna Carta (3rd ed., Cambridge)"
+        }
+      ],
+      "mechanism": "status_authority"
     },
     {
       "id": "gutenberg",
-      "start": 1440, "end": 1455,
+      "start": 1440,
+      "end": 1455,
       "name": "Gutenberg's movable-type printing press",
-      "actors": ["Johannes Gutenberg, Mainz workshop"],
-      "magnitude_low": 200000000, "magnitude_high": 1000000000,
+      "actors": [
+        "Johannes Gutenberg, Mainz workshop"
+      ],
+      "magnitude_low": 200000000,
+      "magnitude_high": 1000000000,
       "category": "communication",
-      "description": "Gutenberg's combination of movable metal type, oil-based ink, and the screw press (~1440, with the 42-line Bible completed by 1455) made book production roughly 200× faster than scribal copying. Within 50 years, an estimated 20 million books were printed in Europe — more than scribes had produced in the previous thousand years. The Reformation, the Scientific Revolution, mass literacy, and the public sphere all become possible from this moment.",
+      "description": "Gutenberg's combination of movable metal type, oil-based ink, and the screw press (~1440, with the 42-line Bible completed by 1455) made book production roughly 200\u00d7 faster than scribal copying. Within 50 years, an estimated 20 million books were printed in Europe \u2014 more than scribes had produced in the previous thousand years. The Reformation, the Scientific Revolution, mass literacy, and the public sphere all become possible from this moment.",
       "costs": "Amplification of disinformation and incitement (anti-Semitic, witch-hunt literature both flourished in early print); concentration of cultural power in those who controlled presses.",
       "sources": [
-        {"name": "Eisenstein, The Printing Revolution in Early Modern Europe (Cambridge, 1983)"},
-        {"name": "Pettegree, The Book in the Renaissance (Yale, 2010)"}
-      ]
+        {
+          "name": "Eisenstein, The Printing Revolution in Early Modern Europe (Cambridge, 1983)"
+        },
+        {
+          "name": "Pettegree, The Book in the Renaissance (Yale, 2010)"
+        }
+      ],
+      "mechanism": "cost_curve_collapse"
     },
     {
       "id": "scientific_revolution",
-      "start": 1543, "end": 1687,
-      "name": "Scientific Revolution — heliocentrism to Principia",
-      "actors": ["Copernicus, Vesalius, Galileo, Kepler, Boyle, Hooke, Newton"],
-      "magnitude_low": 1000000000, "magnitude_high": 8000000000,
+      "start": 1543,
+      "end": 1687,
+      "name": "Scientific Revolution \u2014 heliocentrism to Principia",
+      "actors": [
+        "Copernicus, Vesalius, Galileo, Kepler, Boyle, Hooke, Newton"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 8000000000,
       "category": "scientific",
       "description": "From Copernicus's De Revolutionibus (1543) and Vesalius's De Humani Corporis Fabrica (same year) to Newton's Principia (1687). Across a century and a half, the practice of natural philosophy became the practice of science: experiment, measurement, mathematical formalization, replication, public exchange via journals (Philosophical Transactions, 1665), and the explicit acceptance that theories must be testable. Every later medical, technological, and engineering gain stands on this foundation.",
       "costs": "Period framing excludes contemporaneous achievements in Mughal India, Ming/Qing China, and the Islamic world; the standard 'Revolution' narrative is more Eurocentric than the practice was.",
       "sources": [
-        {"name": "Cohen, The Scientific Revolution (Chicago, 1994)"},
-        {"name": "Wootton, The Invention of Science (HarperCollins, 2015)"}
-      ]
+        {
+          "name": "Cohen, The Scientific Revolution (Chicago, 1994)"
+        },
+        {
+          "name": "Wootton, The Invention of Science (HarperCollins, 2015)"
+        }
+      ],
+      "mechanism": "knowledge_accumulation"
     },
     {
       "id": "first_abolition",
-      "start": 1791, "end": 1804,
-      "name": "First successful slave revolution — Haiti",
-      "actors": ["Toussaint Louverture, Jean-Jacques Dessalines, enslaved Haitians"],
-      "magnitude_low": 500000, "magnitude_high": 1000000,
+      "start": 1791,
+      "end": 1804,
+      "name": "First successful slave revolution \u2014 Haiti",
+      "actors": [
+        "Toussaint Louverture, Jean-Jacques Dessalines, enslaved Haitians"
+      ],
+      "magnitude_low": 500000,
+      "magnitude_high": 1000000,
       "category": "rights",
-      "description": "The Haitian Revolution (1791–1804) is the only slave uprising in history to produce a free state. Beginning with the August 1791 Bois Caïman ceremony, it defeated Spanish, British, and French armies in succession and declared independence in 1804. France only formally recognized Haiti in 1825 — at the price of a crushing indemnity that compromised Haitian development for 120 years. The example accelerated abolition movements throughout the Americas.",
-      "costs": "The 1825 French indemnity (~$21B in modern terms over 122 years of payments) — a foundational injustice still being calculated; massive war casualties.",
+      "description": "The Haitian Revolution (1791\u20131804) is the only slave uprising in history to produce a free state. Beginning with the August 1791 Bois Ca\u00efman ceremony, it defeated Spanish, British, and French armies in succession and declared independence in 1804. France only formally recognized Haiti in 1825 \u2014 at the price of a crushing indemnity that compromised Haitian development for 120 years. The example accelerated abolition movements throughout the Americas.",
+      "costs": "The 1825 French indemnity (~$21B in modern terms over 122 years of payments) \u2014 a foundational injustice still being calculated; massive war casualties.",
       "sources": [
-        {"name": "James, The Black Jacobins (1938; reprint Vintage)"},
-        {"name": "Dubois, Avengers of the New World (Harvard, 2004)"},
-        {"name": "NYT 2022 series on the indemnity", "url": "https://www.nytimes.com/2022/05/20/world/americas/haiti-history-colonized-france.html"}
-      ]
+        {
+          "name": "James, The Black Jacobins (1938; reprint Vintage)"
+        },
+        {
+          "name": "Dubois, Avengers of the New World (Harvard, 2004)"
+        },
+        {
+          "name": "NYT 2022 series on the indemnity",
+          "url": "https://www.nytimes.com/2022/05/20/world/americas/haiti-history-colonized-france.html"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "jenner_smallpox_vaccine",
-      "start": 1796, "end": 1796,
+      "start": 1796,
+      "end": 1796,
       "name": "Jenner's smallpox vaccine",
-      "actors": ["Edward Jenner (building on existing variolation practices in Asia, Africa, the Ottoman Empire)"],
-      "magnitude_low": 300000000, "magnitude_high": 500000000,
+      "actors": [
+        "Edward Jenner (building on existing variolation practices in Asia, Africa, the Ottoman Empire)"
+      ],
+      "magnitude_low": 300000000,
+      "magnitude_high": 500000000,
       "category": "medical",
-      "description": "On 14 May 1796, Edward Jenner inoculated 8-year-old James Phipps with cowpox, then exposed him to smallpox. The boy did not contract the disease. Variolation (using actual smallpox) had been practiced in Asia and Africa for centuries — Lady Mary Wortley Montagu brought the Ottoman practice to England in 1721. Jenner's innovation was the safer cowpox version, which scaled. The result, 184 years later, was the eradication of the only human disease ever erased.",
+      "description": "On 14 May 1796, Edward Jenner inoculated 8-year-old James Phipps with cowpox, then exposed him to smallpox. The boy did not contract the disease. Variolation (using actual smallpox) had been practiced in Asia and Africa for centuries \u2014 Lady Mary Wortley Montagu brought the Ottoman practice to England in 1721. Jenner's innovation was the safer cowpox version, which scaled. The result, 184 years later, was the eradication of the only human disease ever erased.",
       "costs": "Religious and political opposition delayed adoption in some regions; coercive vaccination policies in colonial contexts contributed to mistrust that persists.",
       "sources": [
-        {"name": "Riedel, Proc. Bayl. Univ. Med. Cent. 2005", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1200696/"},
-        {"name": "Fenner et al., Smallpox and Its Eradication (WHO, 1988)"}
-      ]
+        {
+          "name": "Riedel, Proc. Bayl. Univ. Med. Cent. 2005",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1200696/"
+        },
+        {
+          "name": "Fenner et al., Smallpox and Its Eradication (WHO, 1988)"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "wright_flight",
-      "start": 1903, "end": 1903,
+      "start": 1903,
+      "end": 1903,
       "name": "First powered flight",
-      "actors": ["Wilbur and Orville Wright"],
-      "magnitude_low": 4000000000, "magnitude_high": 5000000000,
+      "actors": [
+        "Wilbur and Orville Wright"
+      ],
+      "magnitude_low": 4000000000,
+      "magnitude_high": 5000000000,
       "category": "scientific",
-      "description": "On 17 December 1903 at Kitty Hawk, North Carolina, the Wright brothers' Flyer made four powered, controlled flights. The longest was 59 seconds; the technology behind it — three-axis control via wing warping plus an engine-to-weight ratio achievable — had been the missing piece for a century of attempts. Within 70 years, commercial aviation moved more passengers per year than the entire transatlantic shipping era had moved in 400.",
+      "description": "On 17 December 1903 at Kitty Hawk, North Carolina, the Wright brothers' Flyer made four powered, controlled flights. The longest was 59 seconds; the technology behind it \u2014 three-axis control via wing warping plus an engine-to-weight ratio achievable \u2014 had been the missing piece for a century of attempts. Within 70 years, commercial aviation moved more passengers per year than the entire transatlantic shipping era had moved in 400.",
       "costs": "Aviation emissions (~2.5% of global CO2 in 2020s); noise pollution; civilian-aviation deaths (small in per-passenger-km terms); enabling of strategic bombing.",
       "sources": [
-        {"name": "Crouch, The Bishop's Boys (Norton, 1989)"},
-        {"name": "OWID — Air transport", "url": "https://ourworldindata.org/air-transport"}
-      ]
+        {
+          "name": "Crouch, The Bishop's Boys (Norton, 1989)"
+        },
+        {
+          "name": "OWID \u2014 Air transport",
+          "url": "https://ourworldindata.org/air-transport"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "panama_yellow_fever",
-      "start": 1904, "end": 1906,
+      "start": 1904,
+      "end": 1906,
       "name": "Yellow fever and malaria control on the Canal",
-      "actors": ["William C. Gorgas, US Army Sanitary Department"],
-      "magnitude_low": 100000, "magnitude_high": 200000,
+      "actors": [
+        "William C. Gorgas, US Army Sanitary Department"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 200000,
       "category": "medical",
       "description": "Gorgas adopted Walter Reed's Cuba findings that mosquitoes transmitted yellow fever and malaria. His program drained standing water, oiled puddles, screened buildings, and fumigated systematically across the Canal Zone. Yellow fever in the Zone dropped to zero by 1906; malaria deaths fell from over 16,000 in 1906 to under 100 a decade later. The work pioneered vector control as a public-health discipline used worldwide since.",
       "costs": "Coercive labor and segregated medical care in the Canal Zone; methods later applied (DDT) had ecological consequences not yet understood.",
       "sources": [
-        {"name": "McCullough, The Path Between the Seas (1977)"},
-        {"name": "WHO yellow fever history", "url": "https://www.who.int/news-room/fact-sheets/detail/yellow-fever"}
-      ]
+        {
+          "name": "McCullough, The Path Between the Seas (1977)"
+        },
+        {
+          "name": "WHO yellow fever history",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/yellow-fever"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "women_suffrage_wave",
-      "start": 1893, "end": 1971,
+      "start": 1893,
+      "end": 1971,
       "name": "Women's suffrage wave",
-      "actors": ["national movements across all inhabited continents — NZ 1893, Finland 1906, US 1920, UK 1928, France 1944, India 1950, Switzerland 1971, Saudi Arabia 2015"],
-      "magnitude_low": 1000000000, "magnitude_high": 2000000000,
+      "actors": [
+        "national movements across all inhabited continents \u2014 NZ 1893, Finland 1906, US 1920, UK 1928, France 1944, India 1950, Switzerland 1971, Saudi Arabia 2015"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 2000000000,
       "category": "rights",
-      "description": "New Zealand granted women the franchise on national elections in 1893; Australia followed for white women in 1902. The wave then accelerated after WWI, broadened after WWII, and continued through the 20th century. By 2015, Saudi Arabia held its first municipal elections in which women could vote. The half-of-humanity that had been excluded from political voice gained it — country by country — in roughly 120 years.",
-      "costs": "Implementation gaps remain — voter suppression, intersectional exclusions, gender gaps in legislative representation persist.",
+      "description": "New Zealand granted women the franchise on national elections in 1893; Australia followed for white women in 1902. The wave then accelerated after WWI, broadened after WWII, and continued through the 20th century. By 2015, Saudi Arabia held its first municipal elections in which women could vote. The half-of-humanity that had been excluded from political voice gained it \u2014 country by country \u2014 in roughly 120 years.",
+      "costs": "Implementation gaps remain \u2014 voter suppression, intersectional exclusions, gender gaps in legislative representation persist.",
       "sources": [
-        {"name": "OWID — Women's suffrage", "url": "https://ourworldindata.org/female-suffrage"},
-        {"name": "IPU Plenipotentiaries dataset"}
-      ]
+        {
+          "name": "OWID \u2014 Women's suffrage",
+          "url": "https://ourworldindata.org/female-suffrage"
+        },
+        {
+          "name": "IPU Plenipotentiaries dataset"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "haber_bosch",
-      "start": 1909, "end": 1913,
+      "start": 1909,
+      "end": 1913,
       "name": "Haber-Bosch nitrogen fixation",
-      "actors": ["Fritz Haber, Carl Bosch (BASF)"],
-      "magnitude_low": 2000000000, "magnitude_high": 4000000000,
+      "actors": [
+        "Fritz Haber, Carl Bosch (BASF)"
+      ],
+      "magnitude_low": 2000000000,
+      "magnitude_high": 4000000000,
       "category": "agriculture",
-      "description": "Haber's lab demonstration in 1909, scaled by Bosch into BASF's Oppau plant by 1913, converted atmospheric nitrogen into ammonia under pressure. Synthetic fertilizer derived from it now supports the food supply of roughly half of humanity. The Vaclav Smil estimate — 'about 50% of nitrogen atoms in living human protein originated as Haber-Bosch ammonia' — is widely cited.",
-      "costs": "Eutrophication and dead zones from nitrogen runoff; energy-intensive production (1–2% of global energy use); explosives from the same chemistry enabled WWI munitions and continue in modern warfare; nitrous oxide is a potent greenhouse gas.",
+      "description": "Haber's lab demonstration in 1909, scaled by Bosch into BASF's Oppau plant by 1913, converted atmospheric nitrogen into ammonia under pressure. Synthetic fertilizer derived from it now supports the food supply of roughly half of humanity. The Vaclav Smil estimate \u2014 'about 50% of nitrogen atoms in living human protein originated as Haber-Bosch ammonia' \u2014 is widely cited.",
+      "costs": "Eutrophication and dead zones from nitrogen runoff; energy-intensive production (1\u20132% of global energy use); explosives from the same chemistry enabled WWI munitions and continue in modern warfare; nitrous oxide is a potent greenhouse gas.",
       "sources": [
-        {"name": "Smil, Enriching the Earth (MIT Press, 2001)"},
-        {"name": "Erisman et al., Nature Geoscience 2008", "url": "https://www.nature.com/articles/ngeo325"}
-      ]
+        {
+          "name": "Smil, Enriching the Earth (MIT Press, 2001)"
+        },
+        {
+          "name": "Erisman et al., Nature Geoscience 2008",
+          "url": "https://www.nature.com/articles/ngeo325"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "insulin",
-      "start": 1921, "end": 1922,
+      "start": 1921,
+      "end": 1922,
       "name": "Insulin isolated and used in humans",
-      "actors": ["Frederick Banting, Charles Best, J.B. Collip, J.J.R. Macleod (University of Toronto)"],
-      "magnitude_low": 400000000, "magnitude_high": 500000000,
+      "actors": [
+        "Frederick Banting, Charles Best, J.B. Collip, J.J.R. Macleod (University of Toronto)"
+      ],
+      "magnitude_low": 400000000,
+      "magnitude_high": 500000000,
       "category": "medical",
       "description": "Banting and Best isolated insulin from canine pancreas in summer 1921; Collip purified it for clinical use; Leonard Thompson became the first human patient in January 1922. The Toronto team sold the patent to the university for $1, intending it to be available everywhere. Type 1 diabetes went from near-universally fatal to manageable.",
-      "costs": "The original $1 patent intention has not translated into modern affordable access — US insulin pricing remains a chronic crisis; manufacturer concentration has produced anti-competitive pricing.",
+      "costs": "The original $1 patent intention has not translated into modern affordable access \u2014 US insulin pricing remains a chronic crisis; manufacturer concentration has produced anti-competitive pricing.",
       "sources": [
-        {"name": "Bliss, The Discovery of Insulin (McClelland & Stewart, 1982)"},
-        {"name": "Lewis et al., JAMA 2021 (US pricing)", "url": "https://jamanetwork.com/journals/jama/fullarticle/2779733"}
-      ]
+        {
+          "name": "Bliss, The Discovery of Insulin (McClelland & Stewart, 1982)"
+        },
+        {
+          "name": "Lewis et al., JAMA 2021 (US pricing)",
+          "url": "https://jamanetwork.com/journals/jama/fullarticle/2779733"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "penicillin",
-      "start": 1928, "end": 1945,
+      "start": 1928,
+      "end": 1945,
       "name": "Penicillin discovered and mass-produced",
-      "actors": ["Alexander Fleming (discovery 1928); Howard Florey, Ernst Chain, Norman Heatley (Oxford team, 1939–41); US wartime production scale-up"],
-      "magnitude_low": 200000000, "magnitude_high": 500000000,
+      "actors": [
+        "Alexander Fleming (discovery 1928); Howard Florey, Ernst Chain, Norman Heatley (Oxford team, 1939\u201341); US wartime production scale-up"
+      ],
+      "magnitude_low": 200000000,
+      "magnitude_high": 500000000,
       "category": "medical",
-      "description": "Fleming's 1928 observation of mold-killing bacteria sat unexploited for a decade. The Oxford team's 1939–1941 isolation and clinical work proved its efficacy. Wartime US production scaled it to 650 billion units per month by 1945 — enough to treat all Allied soldiers and then the civilian population. Antibiotic medicine begins here; surgical mortality, childbirth mortality, and pneumonia mortality all transform.",
+      "description": "Fleming's 1928 observation of mold-killing bacteria sat unexploited for a decade. The Oxford team's 1939\u20131941 isolation and clinical work proved its efficacy. Wartime US production scaled it to 650 billion units per month by 1945 \u2014 enough to treat all Allied soldiers and then the civilian population. Antibiotic medicine begins here; surgical mortality, childbirth mortality, and pneumonia mortality all transform.",
       "costs": "Antibiotic resistance has been accumulating since the 1940s and is now estimated at ~1.3M deaths/year directly attributable, projected to grow. Antibiotic overuse in agriculture is a structural driver.",
       "sources": [
-        {"name": "Lax, The Mold in Dr. Florey's Coat (Holt, 2004)"},
-        {"name": "Murray et al., Lancet 2022 (AMR estimate)", "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02724-0/fulltext"}
-      ]
+        {
+          "name": "Lax, The Mold in Dr. Florey's Coat (Holt, 2004)"
+        },
+        {
+          "name": "Murray et al., Lancet 2022 (AMR estimate)",
+          "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02724-0/fulltext"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "geneva_conventions_iv",
-      "start": 1949, "end": 1949,
-      "name": "Geneva Conventions I–IV — universal ratification",
-      "actors": ["196 state parties; ICRC"],
-      "magnitude_low": 5000000000, "magnitude_high": 8000000000,
+      "start": 1949,
+      "end": 1949,
+      "name": "Geneva Conventions I\u2013IV \u2014 universal ratification",
+      "actors": [
+        "196 state parties; ICRC"
+      ],
+      "magnitude_low": 5000000000,
+      "magnitude_high": 8000000000,
       "category": "humanitarian",
-      "description": "The four 1949 Geneva Conventions and their Additional Protocols are the most universally ratified treaties in history — every UN member state is a party. They govern treatment of the wounded, prisoners, and civilians in armed conflict. Compliance is grossly uneven; the standard itself is the most-agreed body of conduct rules ever produced.",
-      "costs": "Universal ratification has not produced universal compliance — the gap between the rules and the conduct is the open accountability problem (and the subject of The Ledger).",
+      "description": "The four 1949 Geneva Conventions and their Additional Protocols are the most universally ratified treaties in history \u2014 every UN member state is a party. They govern treatment of the wounded, prisoners, and civilians in armed conflict. Compliance is grossly uneven; the standard itself is the most-agreed body of conduct rules ever produced.",
+      "costs": "Universal ratification has not produced universal compliance \u2014 the gap between the rules and the conduct is the open accountability problem (and the subject of The Ledger).",
       "sources": [
-        {"name": "ICRC — Treaty database", "url": "https://ihl-databases.icrc.org/applic/ihl/ihl.nsf/vwTreaties1949.xsp"},
-        {"name": "Pictet, Commentary on the Geneva Conventions (ICRC)"}
-      ]
+        {
+          "name": "ICRC \u2014 Treaty database",
+          "url": "https://ihl-databases.icrc.org/applic/ihl/ihl.nsf/vwTreaties1949.xsp"
+        },
+        {
+          "name": "Pictet, Commentary on the Geneva Conventions (ICRC)"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "udhr",
-      "start": 1948, "end": 1948,
+      "start": 1948,
+      "end": 1948,
       "name": "Universal Declaration of Human Rights",
-      "actors": ["UN General Assembly; Eleanor Roosevelt as Drafting Committee chair; René Cassin, Charles Malik, P.C. Chang, John Humphrey"],
-      "magnitude_low": 1000000000, "magnitude_high": 2500000000,
+      "actors": [
+        "UN General Assembly; Eleanor Roosevelt as Drafting Committee chair; Ren\u00e9 Cassin, Charles Malik, P.C. Chang, John Humphrey"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 2500000000,
       "category": "rights",
-      "description": "Adopted by the UN General Assembly on 10 December 1948, 48 in favor, 0 against, 8 abstentions. Not binding by itself, the UDHR is the foundation for the legally-binding treaties that followed (ICCPR, ICESCR, CEDAW, CRC, CAT, CRPD). Its 30 articles articulate civil, political, economic, social, and cultural rights together — a deliberately integrated framing that has been contested in practice but never reversed in text.",
+      "description": "Adopted by the UN General Assembly on 10 December 1948, 48 in favor, 0 against, 8 abstentions. Not binding by itself, the UDHR is the foundation for the legally-binding treaties that followed (ICCPR, ICESCR, CEDAW, CRC, CAT, CRPD). Its 30 articles articulate civil, political, economic, social, and cultural rights together \u2014 a deliberately integrated framing that has been contested in practice but never reversed in text.",
       "costs": "Implementation gap remains the major issue; selectively invoked by powerful states.",
       "sources": [
-        {"name": "Glendon, A World Made New (Random House, 2001)"},
-        {"name": "OHCHR — UDHR history", "url": "https://www.ohchr.org/en/universal-declaration-of-human-rights"}
-      ]
+        {
+          "name": "Glendon, A World Made New (Random House, 2001)"
+        },
+        {
+          "name": "OHCHR \u2014 UDHR history",
+          "url": "https://www.ohchr.org/en/universal-declaration-of-human-rights"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "polio_vaccine",
-      "start": 1955, "end": 1962,
+      "start": 1955,
+      "end": 1962,
       "name": "Polio vaccines (Salk, Sabin)",
-      "actors": ["Jonas Salk (inactivated, 1955); Albert Sabin (oral, 1962); March of Dimes funding"],
-      "magnitude_low": 18000000, "magnitude_high": 20000000,
+      "actors": [
+        "Jonas Salk (inactivated, 1955); Albert Sabin (oral, 1962); March of Dimes funding"
+      ],
+      "magnitude_low": 18000000,
+      "magnitude_high": 20000000,
       "category": "medical",
       "description": "Salk's inactivated vaccine was licensed in April 1955 after the largest clinical trial in history (1.8 million children). Sabin's live-attenuated oral vaccine followed in 1962 and became the workhorse of mass campaigns globally because it was administered as drops. Cases dropped from over 350,000 annual paralytic infections in 1988 to a handful by 2020. Eradication of remaining wild types is ongoing in Pakistan and Afghanistan.",
       "costs": "Vaccine-derived poliovirus from oral campaigns is a real (small) source of new cases; trust gaps after Pakistan health-worker assassinations have set back the endgame.",
       "sources": [
-        {"name": "Oshinsky, Polio: An American Story (Oxford, 2005)"},
-        {"name": "GPEI", "url": "https://polioeradication.org"}
-      ]
+        {
+          "name": "Oshinsky, Polio: An American Story (Oxford, 2005)"
+        },
+        {
+          "name": "GPEI",
+          "url": "https://polioeradication.org"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "decolonization_wave",
-      "start": 1947, "end": 1980,
+      "start": 1947,
+      "end": 1980,
       "name": "Decolonization wave",
-      "actors": ["national independence movements; UN trusteeship system; 80+ states formed"],
-      "magnitude_low": 1500000000, "magnitude_high": 2000000000,
+      "actors": [
+        "national independence movements; UN trusteeship system; 80+ states formed"
+      ],
+      "magnitude_low": 1500000000,
+      "magnitude_high": 2000000000,
       "category": "rights",
-      "description": "India and Pakistan independent August 1947. Africa: 17 states independent in 1960 alone. Caribbean and Pacific waves through the 1960s–80s. By 1980 the formal colonial empires were gone. The political form of self-determination — recognized in UN General Assembly Resolution 1514 (1960) — is the foundation. Whether the substance of self-determination followed is a much more difficult question.",
+      "description": "India and Pakistan independent August 1947. Africa: 17 states independent in 1960 alone. Caribbean and Pacific waves through the 1960s\u201380s. By 1980 the formal colonial empires were gone. The political form of self-determination \u2014 recognized in UN General Assembly Resolution 1514 (1960) \u2014 is the foundation. Whether the substance of self-determination followed is a much more difficult question.",
       "costs": "Partition violence (1947 India/Pakistan ~1M dead, 14M displaced); arbitrary colonial borders preserved; economic dependence (extractive trade patterns, debt) often continued; many post-independence governments failed their citizens.",
       "sources": [
-        {"name": "Westad, The Global Cold War (Cambridge, 2005)"},
-        {"name": "UN — Trusteeship and decolonization", "url": "https://www.un.org/dppa/decolonization/en"}
-      ]
+        {
+          "name": "Westad, The Global Cold War (Cambridge, 2005)"
+        },
+        {
+          "name": "UN \u2014 Trusteeship and decolonization",
+          "url": "https://www.un.org/dppa/decolonization/en"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "civil_rights_act",
-      "start": 1964, "end": 1965,
+      "start": 1964,
+      "end": 1965,
       "name": "Civil Rights Act + Voting Rights Act (US)",
-      "actors": ["civil rights movement — MLK, Ella Baker, Diane Nash, John Lewis, Fannie Lou Hamer; LBJ administration; congressional coalition"],
-      "magnitude_low": 30000000, "magnitude_high": 50000000,
+      "actors": [
+        "civil rights movement \u2014 MLK, Ella Baker, Diane Nash, John Lewis, Fannie Lou Hamer; LBJ administration; congressional coalition"
+      ],
+      "magnitude_low": 30000000,
+      "magnitude_high": 50000000,
       "category": "rights",
-      "description": "The Civil Rights Act (July 1964) banned discrimination in public accommodations, employment, and federally funded programs. The Voting Rights Act (August 1965) imposed federal oversight on jurisdictions with histories of voter suppression. The combination was the legal architecture for de jure dismantling of Jim Crow. The movement that produced it — sit-ins, Freedom Rides, Birmingham, Selma — set the playbook for non-violent rights mobilization globally.",
+      "description": "The Civil Rights Act (July 1964) banned discrimination in public accommodations, employment, and federally funded programs. The Voting Rights Act (August 1965) imposed federal oversight on jurisdictions with histories of voter suppression. The combination was the legal architecture for de jure dismantling of Jim Crow. The movement that produced it \u2014 sit-ins, Freedom Rides, Birmingham, Selma \u2014 set the playbook for non-violent rights mobilization globally.",
       "costs": "Shelby County v. Holder (2013) gutted Section 5 preclearance; voter-suppression litigation continues; structural racism in housing, lending, and policing was not addressed by either Act.",
       "sources": [
-        {"name": "Branch, Parting the Waters / Pillar of Fire / At Canaan's Edge (Simon & Schuster)"},
-        {"name": "Brennan Center — VRA tracker", "url": "https://www.brennancenter.org/our-work/research-reports/voting-rights-act"}
-      ]
+        {
+          "name": "Branch, Parting the Waters / Pillar of Fire / At Canaan's Edge (Simon & Schuster)"
+        },
+        {
+          "name": "Brennan Center \u2014 VRA tracker",
+          "url": "https://www.brennancenter.org/our-work/research-reports/voting-rights-act"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "green_revolution",
-      "start": 1960, "end": 1985,
+      "start": 1960,
+      "end": 1985,
       "name": "Green Revolution agricultural yields",
-      "actors": ["Norman Borlaug; CGIAR centers (IRRI, CIMMYT); national programs in Mexico, India, Pakistan, Philippines"],
-      "magnitude_low": 1000000000, "magnitude_high": 1500000000,
+      "actors": [
+        "Norman Borlaug; CGIAR centers (IRRI, CIMMYT); national programs in Mexico, India, Pakistan, Philippines"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 1500000000,
       "category": "agriculture",
       "description": "High-yield dwarf wheat (Borlaug's CIMMYT lines) and IR8 dwarf rice (IRRI, 1966) combined with fertilizer, irrigation, and pesticides roughly doubled cereal yields in target regions over two decades. India shifted from chronic famine vulnerability to grain self-sufficiency by the 1980s. Population would have outrun food supply on the prior yield curve; it didn't.",
       "costs": "Aquifer depletion (Punjab, North China Plain); pesticide exposure and pollinator decline; loss of crop genetic diversity as varietals consolidated; debt burdens on smallholders who couldn't afford inputs; pesticide-related suicides in some affected regions.",
       "sources": [
-        {"name": "Cullather, The Hungry World (Harvard, 2010)"},
-        {"name": "Pingali, PNAS 2012", "url": "https://www.pnas.org/doi/10.1073/pnas.0912953109"}
-      ]
+        {
+          "name": "Cullather, The Hungry World (Harvard, 2010)"
+        },
+        {
+          "name": "Pingali, PNAS 2012",
+          "url": "https://www.pnas.org/doi/10.1073/pnas.0912953109"
+        }
+      ],
+      "mechanism": "domestication"
     },
     {
       "id": "moon_landing",
-      "start": 1969, "end": 1969,
+      "start": 1969,
+      "end": 1969,
       "name": "Apollo 11 lunar landing",
-      "actors": ["NASA; 400,000 engineers and scientists; Margaret Hamilton's MIT software team; ~600M live TV viewers"],
-      "magnitude_low": 600000000, "magnitude_high": 600000000,
+      "actors": [
+        "NASA; 400,000 engineers and scientists; Margaret Hamilton's MIT software team; ~600M live TV viewers"
+      ],
+      "magnitude_low": 600000000,
+      "magnitude_high": 600000000,
       "category": "scientific",
-      "description": "On 20 July 1969, Neil Armstrong and Buzz Aldrin landed in the Sea of Tranquillity. 24 humans have traveled to lunar distance; 12 walked on the Moon (Apollo 11–17, excluding 13). The cumulative cultural effect of seeing Earth from the Moon (Earthrise photo, 1968) shaped modern environmentalism. The 'we can do extraordinary things together when we choose to' framing remains in active rotation.",
+      "description": "On 20 July 1969, Neil Armstrong and Buzz Aldrin landed in the Sea of Tranquillity. 24 humans have traveled to lunar distance; 12 walked on the Moon (Apollo 11\u201317, excluding 13). The cumulative cultural effect of seeing Earth from the Moon (Earthrise photo, 1968) shaped modern environmentalism. The 'we can do extraordinary things together when we choose to' framing remains in active rotation.",
       "costs": "Apollo's roughly $300B in modern terms went into the program; some of the engineering benefit was real (integrated circuits scaled, computing methods matured); 'we should have spent it elsewhere' is a persistent and partially valid critique.",
       "sources": [
-        {"name": "NASA — Apollo 11 mission report"},
-        {"name": "Mindell, Digital Apollo (MIT, 2008)"}
-      ]
+        {
+          "name": "NASA \u2014 Apollo 11 mission report"
+        },
+        {
+          "name": "Mindell, Digital Apollo (MIT, 2008)"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "arpanet_tcpip",
-      "start": 1969, "end": 1983,
-      "name": "ARPANET → TCP/IP standardized",
-      "actors": ["DARPA (funding); BBN (initial IMP routers); Vint Cerf and Bob Kahn (TCP/IP design, 1973–74); the IETF process"],
-      "magnitude_low": 4000000000, "magnitude_high": 5000000000,
+      "start": 1969,
+      "end": 1983,
+      "name": "ARPANET \u2192 TCP/IP standardized",
+      "actors": [
+        "DARPA (funding); BBN (initial IMP routers); Vint Cerf and Bob Kahn (TCP/IP design, 1973\u201374); the IETF process"
+      ],
+      "magnitude_low": 4000000000,
+      "magnitude_high": 5000000000,
       "category": "communication",
-      "description": "ARPANET — the first wide-area packet-switched computer network — connected its first four nodes in October 1969 (UCLA, Stanford, UCSB, Utah). Over the next decade, Cerf and Kahn designed a protocol stack that could let any network interconnect with any other: TCP/IP. The 'flag day' transition was 1 January 1983, when ARPANET formally cut over to TCP/IP. Because the protocol was open, royalty-free, and designed to be agnostic about the underlying medium, it scaled to encompass every computer network on Earth. The Internet is the protocol stack that took over the world by being more accommodating than its competitors.",
+      "description": "ARPANET \u2014 the first wide-area packet-switched computer network \u2014 connected its first four nodes in October 1969 (UCLA, Stanford, UCSB, Utah). Over the next decade, Cerf and Kahn designed a protocol stack that could let any network interconnect with any other: TCP/IP. The 'flag day' transition was 1 January 1983, when ARPANET formally cut over to TCP/IP. Because the protocol was open, royalty-free, and designed to be agnostic about the underlying medium, it scaled to encompass every computer network on Earth. The Internet is the protocol stack that took over the world by being more accommodating than its competitors.",
       "costs": "Surveillance infrastructure built on open networking is real and growing; attention-capture business models built on the open web have been corrosive; the underlying architecture has security weaknesses that 50 years of patching haven't fully closed.",
       "sources": [
-        {"name": "Hafner & Lyon, Where Wizards Stay Up Late (Simon & Schuster, 1996)"},
-        {"name": "RFC 791 (IP) and RFC 793 (TCP)", "url": "https://www.rfc-editor.org/rfc/rfc793"},
-        {"name": "Cerf, How the Internet Came to Be (Internet Society)"}
-      ]
+        {
+          "name": "Hafner & Lyon, Where Wizards Stay Up Late (Simon & Schuster, 1996)"
+        },
+        {
+          "name": "RFC 791 (IP) and RFC 793 (TCP)",
+          "url": "https://www.rfc-editor.org/rfc/rfc793"
+        },
+        {
+          "name": "Cerf, How the Internet Came to Be (Internet Society)"
+        }
+      ],
+      "mechanism": "open_standard"
     },
     {
       "id": "ors",
-      "start": 1968, "end": 1980,
+      "start": 1968,
+      "end": 1980,
       "name": "Oral rehydration therapy at scale",
-      "actors": ["Dilip Mahalanabis; Richard Cash; Robert Phillips; ICDDR,B; UNICEF Child Survival programs"],
-      "magnitude_low": 40000000, "magnitude_high": 60000000,
+      "actors": [
+        "Dilip Mahalanabis; Richard Cash; Robert Phillips; ICDDR,B; UNICEF Child Survival programs"
+      ],
+      "magnitude_low": 40000000,
+      "magnitude_high": 60000000,
       "category": "medical",
-      "description": "The biochemical insight — sodium absorption is glucose-dependent in the gut — let researchers design a cheap salt-sugar-water mixture that could rehydrate cholera and diarrhea patients orally, with no IV access required. Mahalanabis's deployment at the 1971 Bangladesh refugee crisis demonstrated effectiveness in field conditions. The Lancet later called ORT one of the most important medical advances of the 20th century. Child diarrheal deaths fell from over 5 million per year in 1980 to under 500,000 today.",
-      "costs": "Minimal — the intervention is mechanism-true and cheap; the gap is reach to the last households.",
+      "description": "The biochemical insight \u2014 sodium absorption is glucose-dependent in the gut \u2014 let researchers design a cheap salt-sugar-water mixture that could rehydrate cholera and diarrhea patients orally, with no IV access required. Mahalanabis's deployment at the 1971 Bangladesh refugee crisis demonstrated effectiveness in field conditions. The Lancet later called ORT one of the most important medical advances of the 20th century. Child diarrheal deaths fell from over 5 million per year in 1980 to under 500,000 today.",
+      "costs": "Minimal \u2014 the intervention is mechanism-true and cheap; the gap is reach to the last households.",
       "sources": [
-        {"name": "Mahalanabis et al., Bull. WHO 1973", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2480846/"},
-        {"name": "The Lancet 1978 editorial on ORT"}
-      ]
+        {
+          "name": "Mahalanabis et al., Bull. WHO 1973",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2480846/"
+        },
+        {
+          "name": "The Lancet 1978 editorial on ORT"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "cedaw",
-      "start": 1979, "end": 1981,
+      "start": 1979,
+      "end": 1981,
       "name": "CEDAW adopted and enters into force",
-      "actors": ["UN General Assembly; 189 state parties"],
-      "magnitude_low": 2000000000, "magnitude_high": 2500000000,
+      "actors": [
+        "UN General Assembly; 189 state parties"
+      ],
+      "magnitude_low": 2000000000,
+      "magnitude_high": 2500000000,
       "category": "rights",
-      "description": "The Convention on the Elimination of All Forms of Discrimination Against Women was adopted by the UN GA on 18 December 1979 and entered into force in September 1981. 189 state parties — near-universal — though reservations from several states (esp. on family law and equality in marriage) have limited some protections in practice. CEDAW review cycles are the operational accountability layer.",
+      "description": "The Convention on the Elimination of All Forms of Discrimination Against Women was adopted by the UN GA on 18 December 1979 and entered into force in September 1981. 189 state parties \u2014 near-universal \u2014 though reservations from several states (esp. on family law and equality in marriage) have limited some protections in practice. CEDAW review cycles are the operational accountability layer.",
       "costs": "Implementation gap; deep reservations entered by many states; women's rights backsliding in some signatory states.",
       "sources": [
-        {"name": "UN Treaty Collection — CEDAW", "url": "https://treaties.un.org/Pages/ViewDetails.aspx?src=TREATY&mtdsg_no=IV-8&chapter=4"},
-        {"name": "Chinkin & Freeman, The UN Convention on the Elimination of All Forms of Discrimination Against Women (Oxford, 2012)"}
-      ]
+        {
+          "name": "UN Treaty Collection \u2014 CEDAW",
+          "url": "https://treaties.un.org/Pages/ViewDetails.aspx?src=TREATY&mtdsg_no=IV-8&chapter=4"
+        },
+        {
+          "name": "Chinkin & Freeman, The UN Convention on the Elimination of All Forms of Discrimination Against Women (Oxford, 2012)"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "montreal",
-      "start": 1987, "end": 1989,
+      "start": 1987,
+      "end": 1989,
       "name": "Montreal Protocol on ozone-depleting substances",
-      "actors": ["UNEP; 198 state parties (universal ratification); industry phase-out commitments"],
-      "magnitude_low": 1500000000, "magnitude_high": 2000000000,
+      "actors": [
+        "UNEP; 198 state parties (universal ratification); industry phase-out commitments"
+      ],
+      "magnitude_low": 1500000000,
+      "magnitude_high": 2000000000,
       "category": "environmental",
       "description": "Signed 16 September 1987, in force 1 January 1989. The protocol bound parties to phase out CFCs, halons, methyl bromide, and HCFCs on a calibrated timetable. Universal ratification. The 2016 Kigali Amendment added HFCs (which substituted for CFCs but are themselves potent greenhouse gases). The 2022 WMO/UNEP Scientific Assessment confirmed Antarctic ozone hole is on track to close by ~2066. Most-successful environmental treaty in history.",
       "costs": "Some HFC substitutes have high GWP and are now being phased down by Kigali; initial industry resistance delayed action; original CFC emissions still in the stratosphere with ~100 yr lifetimes.",
       "sources": [
-        {"name": "WMO/UNEP Scientific Assessment of Ozone Depletion: 2022", "url": "https://csl.noaa.gov/assessments/ozone/2022/"},
-        {"name": "Andersen & Sarma, Protecting the Ozone Layer (Earthscan, 2002)"}
-      ]
+        {
+          "name": "WMO/UNEP Scientific Assessment of Ozone Depletion: 2022",
+          "url": "https://csl.noaa.gov/assessments/ozone/2022/"
+        },
+        {
+          "name": "Andersen & Sarma, Protecting the Ozone Layer (Earthscan, 2002)"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "smallpox",
-      "start": 1959, "end": 1980,
+      "start": 1959,
+      "end": 1980,
       "name": "Smallpox eradication",
-      "actors": ["WHO Intensified Programme; D.A. Henderson; thousands of national health workers"],
-      "magnitude_low": 60000000, "magnitude_high": 200000000,
+      "actors": [
+        "WHO Intensified Programme; D.A. Henderson; thousands of national health workers"
+      ],
+      "magnitude_low": 60000000,
+      "magnitude_high": 200000000,
       "category": "medical",
-      "description": "WHO's Intensified Smallpox Eradication Programme (1967–1980) used surveillance-containment rather than mass vaccination, ring-vaccinating contacts around each new case. Last natural case: Ali Maow Maalin, Somalia, 26 October 1977. Declared eradicated by the WHA on 8 May 1980. The only human disease ever eliminated. ~5M deaths/year continuously averted since.",
-      "costs": "Two known post-eradication research-lab outbreaks (UK 1978). Two known stockpiles remain (CDC, VECTOR) — debated bioweapon-risk vs. continued research utility.",
+      "description": "WHO's Intensified Smallpox Eradication Programme (1967\u20131980) used surveillance-containment rather than mass vaccination, ring-vaccinating contacts around each new case. Last natural case: Ali Maow Maalin, Somalia, 26 October 1977. Declared eradicated by the WHA on 8 May 1980. The only human disease ever eliminated. ~5M deaths/year continuously averted since.",
+      "costs": "Two known post-eradication research-lab outbreaks (UK 1978). Two known stockpiles remain (CDC, VECTOR) \u2014 debated bioweapon-risk vs. continued research utility.",
       "sources": [
-        {"name": "Henderson, Smallpox: The Death of a Disease (Prometheus, 2009)"},
-        {"name": "Fenner et al., Smallpox and Its Eradication (WHO, 1988)", "url": "https://apps.who.int/iris/handle/10665/39485"}
-      ]
+        {
+          "name": "Henderson, Smallpox: The Death of a Disease (Prometheus, 2009)"
+        },
+        {
+          "name": "Fenner et al., Smallpox and Its Eradication (WHO, 1988)",
+          "url": "https://apps.who.int/iris/handle/10665/39485"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "icccpr_icescr",
-      "start": 1976, "end": 1976,
+      "start": 1976,
+      "end": 1976,
       "name": "ICCPR + ICESCR enter into force",
-      "actors": ["UN; 173 parties (ICCPR), 171 parties (ICESCR)"],
-      "magnitude_low": 2000000000, "magnitude_high": 3000000000,
+      "actors": [
+        "UN; 173 parties (ICCPR), 171 parties (ICESCR)"
+      ],
+      "magnitude_low": 2000000000,
+      "magnitude_high": 3000000000,
       "category": "rights",
-      "description": "The two binding human-rights treaties that translate the UDHR into law took 10 years to enter into force after adoption (1966 → 1976). Together they cover civil, political, economic, social, and cultural rights. Treaty body review cycles, individual complaint mechanisms (under the optional protocols), and special rapporteurs are the operational layer.",
+      "description": "The two binding human-rights treaties that translate the UDHR into law took 10 years to enter into force after adoption (1966 \u2192 1976). Together they cover civil, political, economic, social, and cultural rights. Treaty body review cycles, individual complaint mechanisms (under the optional protocols), and special rapporteurs are the operational layer.",
       "costs": "US ratified ICCPR with extensive reservations and has not ratified ICESCR; many states have ratified without internal enforcement mechanisms.",
       "sources": [
-        {"name": "Nowak, U.N. Covenant on Civil and Political Rights: CCPR Commentary (2nd ed.)"},
-        {"name": "OHCHR Treaty Body database", "url": "https://www.ohchr.org/en/treaty-bodies"}
-      ]
+        {
+          "name": "Nowak, U.N. Covenant on Civil and Political Rights: CCPR Commentary (2nd ed.)"
+        },
+        {
+          "name": "OHCHR Treaty Body database",
+          "url": "https://www.ohchr.org/en/treaty-bodies"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "www",
-      "start": 1989, "end": 1993,
+      "start": 1989,
+      "end": 1993,
       "name": "World Wide Web invented and released royalty-free",
-      "actors": ["Tim Berners-Lee (proposal 1989, prototype 1990); Robert Cailliau; CERN management decision"],
-      "magnitude_low": 5000000000, "magnitude_high": 5500000000,
+      "actors": [
+        "Tim Berners-Lee (proposal 1989, prototype 1990); Robert Cailliau; CERN management decision"
+      ],
+      "magnitude_low": 5000000000,
+      "magnitude_high": 5500000000,
       "category": "communication",
-      "description": "Berners-Lee's March 1989 memo at CERN ('Information Management: A Proposal') sketched a system combining hypertext with the Internet. By December 1990 the first server, browser, and page were running. CERN's decision in April 1993 to release the W3 patents into the public domain — royalty-free, forever — set the cultural design that made the web universal. A proprietary alternative would have fragmented and rent-extracted; the open release didn't.",
-      "costs": "Surveillance, attention capture, misinformation amplification, platform monopolies — none are inherent to the protocol; all have been enabled by it.",
+      "description": "Berners-Lee's March 1989 memo at CERN ('Information Management: A Proposal') sketched a system combining hypertext with the Internet. By December 1990 the first server, browser, and page were running. CERN's decision in April 1993 to release the W3 patents into the public domain \u2014 royalty-free, forever \u2014 set the cultural design that made the web universal. A proprietary alternative would have fragmented and rent-extracted; the open release didn't.",
+      "costs": "Surveillance, attention capture, misinformation amplification, platform monopolies \u2014 none are inherent to the protocol; all have been enabled by it.",
       "sources": [
-        {"name": "Berners-Lee, Weaving the Web (HarperCollins, 1999)"},
-        {"name": "CERN — open release of W3", "url": "https://home.cern/science/computing/birth-web/short-history-web"}
-      ]
+        {
+          "name": "Berners-Lee, Weaving the Web (HarperCollins, 1999)"
+        },
+        {
+          "name": "CERN \u2014 open release of W3",
+          "url": "https://home.cern/science/computing/birth-web/short-history-web"
+        }
+      ],
+      "mechanism": "open_standard"
     },
     {
       "id": "ozone_recovery",
-      "start": 1996, "end": 2026,
+      "start": 1996,
+      "end": 2026,
       "name": "Ozone layer recovery confirmed on track",
-      "actors": ["UNEP/WMO Scientific Assessment Panel; NASA, NOAA satellite monitoring"],
-      "magnitude_low": 1000000000, "magnitude_high": 1500000000,
+      "actors": [
+        "UNEP/WMO Scientific Assessment Panel; NASA, NOAA satellite monitoring"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 1500000000,
       "category": "environmental",
       "description": "The Antarctic ozone hole stopped growing in the late 1990s. The 2022 Scientific Assessment confirmed it is on track to close by ~2066 over Antarctica, mid-latitudes ~2040. The trajectory is one of the few large-scale climate-adjacent indicators improving on plan. Skin cancer cases prevented and ecosystem damage averted scale into the billions.",
       "costs": "Trajectory dependent on continued enforcement; recent rogue emissions (China CFC-11, ~2018, since stopped) showed how fragile compliance can be.",
       "sources": [
-        {"name": "WMO/UNEP 2022 Scientific Assessment", "url": "https://csl.noaa.gov/assessments/ozone/2022/"}
-      ]
+        {
+          "name": "WMO/UNEP 2022 Scientific Assessment",
+          "url": "https://csl.noaa.gov/assessments/ozone/2022/"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "crc_universal",
-      "start": 1989, "end": 1990,
+      "start": 1989,
+      "end": 1990,
       "name": "Convention on the Rights of the Child",
-      "actors": ["UN; 196 parties — universal ratification minus one state"],
-      "magnitude_low": 2000000000, "magnitude_high": 2500000000,
+      "actors": [
+        "UN; 196 parties \u2014 universal ratification minus one state"
+      ],
+      "magnitude_low": 2000000000,
+      "magnitude_high": 2500000000,
       "category": "rights",
-      "description": "Adopted 20 November 1989, in force 2 September 1990. 196 state parties — every UN member state except the United States. The most widely ratified human-rights treaty in history. Establishes child-rights floor across civil, political, economic, social, cultural domains; periodic state reporting; complaint mechanism (under Third Optional Protocol).",
+      "description": "Adopted 20 November 1989, in force 2 September 1990. 196 state parties \u2014 every UN member state except the United States. The most widely ratified human-rights treaty in history. Establishes child-rights floor across civil, political, economic, social, cultural domains; periodic state reporting; complaint mechanism (under Third Optional Protocol).",
       "costs": "Sharp implementation gap; child labor, child marriage, recruitment of children into armed conflict, and educational exclusion all persist at scale despite the treaty.",
       "sources": [
-        {"name": "UN OHCHR — CRC", "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-child"},
-        {"name": "Doek, Article 41 in Detrick, A Commentary on the UN CRC"}
-      ]
+        {
+          "name": "UN OHCHR \u2014 CRC",
+          "url": "https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-child"
+        },
+        {
+          "name": "Doek, Article 41 in Detrick, A Commentary on the UN CRC"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "apartheid",
-      "start": 1990, "end": 1994,
+      "start": 1990,
+      "end": 1994,
       "name": "End of apartheid; first multiracial elections",
-      "actors": ["African National Congress; Mandela; de Klerk government; SA civil society; international anti-apartheid movement"],
-      "magnitude_low": 40000000, "magnitude_high": 50000000,
+      "actors": [
+        "African National Congress; Mandela; de Klerk government; SA civil society; international anti-apartheid movement"
+      ],
+      "magnitude_low": 40000000,
+      "magnitude_high": 50000000,
       "category": "rights",
-      "description": "Mandela released 11 February 1990 after 27 years. Apartheid statutes repealed 1991. First multiracial elections 27 April 1994; ANC won 62.7%. Truth and Reconciliation Commission (1996–98) attempted accountability through testimony, not retribution — an institutional innovation that has been imitated and debated since.",
+      "description": "Mandela released 11 February 1990 after 27 years. Apartheid statutes repealed 1991. First multiracial elections 27 April 1994; ANC won 62.7%. Truth and Reconciliation Commission (1996\u201398) attempted accountability through testimony, not retribution \u2014 an institutional innovation that has been imitated and debated since.",
       "costs": "Economic apartheid remained largely intact; Black South Africans still earn a fraction of White South Africans; ANC's post-1994 governance has its own failures; the TRC granted amnesty in cases where accountability was warranted.",
       "sources": [
-        {"name": "Sparks, Tomorrow Is Another Country (Hill & Wang, 1995)"},
-        {"name": "TRC final report (1998)", "url": "https://www.justice.gov.za/trc/report/"}
-      ]
+        {
+          "name": "Sparks, Tomorrow Is Another Country (Hill & Wang, 1995)"
+        },
+        {
+          "name": "TRC final report (1998)",
+          "url": "https://www.justice.gov.za/trc/report/"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "child_mortality_halving",
-      "start": 1990, "end": 2020,
+      "start": 1990,
+      "end": 2020,
       "name": "Global under-5 mortality more than halved",
-      "actors": ["UNICEF, WHO, GAVI; national health programs; thousands of community health workers"],
-      "magnitude_low": 50000000, "magnitude_high": 100000000,
+      "actors": [
+        "UNICEF, WHO, GAVI; national health programs; thousands of community health workers"
+      ],
+      "magnitude_low": 50000000,
+      "magnitude_high": 100000000,
       "category": "medical",
       "description": "From 93 deaths per 1,000 live births in 1990 to 37 per 1,000 in 2022. That is roughly 6 million fewer children dying under age 5 every year. Drivers: vaccination, ORT, skilled birth attendance, treatment of neonatal sepsis, rising household incomes, female education. The largest population-scale health gain of the 20th century continues.",
       "costs": "Sub-Saharan Africa still has rates an order of magnitude higher than HICs; recent stalling in some regions; long-term ecological costs of expanded human population.",
       "sources": [
-        {"name": "UN IGME 2023 estimates", "url": "https://childmortality.org/"},
-        {"name": "OWID — Child mortality", "url": "https://ourworldindata.org/child-mortality"}
-      ]
+        {
+          "name": "UN IGME 2023 estimates",
+          "url": "https://childmortality.org/"
+        },
+        {
+          "name": "OWID \u2014 Child mortality",
+          "url": "https://ourworldindata.org/child-mortality"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "hgp",
-      "start": 1990, "end": 2003,
+      "start": 1990,
+      "end": 2003,
       "name": "Human Genome Project completed (open)",
-      "actors": ["NIH/NHGRI; Sanger Institute; international public consortium; the Bermuda Principles (1996) committing to open release"],
-      "magnitude_low": 8000000000, "magnitude_high": 8000000000,
+      "actors": [
+        "NIH/NHGRI; Sanger Institute; international public consortium; the Bermuda Principles (1996) committing to open release"
+      ],
+      "magnitude_low": 8000000000,
+      "magnitude_high": 8000000000,
       "category": "scientific",
       "description": "Public HGP launched 1990. The Bermuda Principles meeting (1996) committed the consortium to releasing sequence data within 24 hours of generation, into the public domain. Celera (Craig Venter) attempted a proprietary parallel project; the public side's open commitment held. Draft genome published February 2001; essentially complete (T2T) 2022. The decision to open the data is one of the great FC cultural designs in modern science.",
       "costs": "Initial concentration of sequencing capacity in HICs; genomic-privacy regulation lagged the technology; some commercial direct-to-consumer testing has not lived up to early access promises.",
       "sources": [
-        {"name": "Collins et al., Nature 2001 (draft genome)", "url": "https://www.nature.com/articles/35057062"},
-        {"name": "Bermuda Principles statement (1996)", "url": "https://www.genome.gov/10001772/"}
-      ]
+        {
+          "name": "Collins et al., Nature 2001 (draft genome)",
+          "url": "https://www.nature.com/articles/35057062"
+        },
+        {
+          "name": "Bermuda Principles statement (1996)",
+          "url": "https://www.genome.gov/10001772/"
+        }
+      ],
+      "mechanism": "open_standard"
     },
     {
       "id": "global_polio_initiative",
-      "start": 1988, "end": 2026,
+      "start": 1988,
+      "end": 2026,
       "name": "Global Polio Eradication Initiative",
-      "actors": ["Rotary International; WHO; CDC; UNICEF; GAVI; national governments"],
-      "magnitude_low": 19000000, "magnitude_high": 20000000,
+      "actors": [
+        "Rotary International; WHO; CDC; UNICEF; GAVI; national governments"
+      ],
+      "magnitude_low": 19000000,
+      "magnitude_high": 20000000,
       "category": "medical",
       "description": "Launched at the 1988 World Health Assembly. Cases reduced from ~350,000/yr in 1988 to fewer than a dozen wild cases in 2024 (Pakistan, Afghanistan). ~20 million people walking who would have been paralyzed. Endgame is the hardest stretch: conflict, vaccine hesitancy, vaccine-derived strains, and last-mile reach.",
       "costs": "Vaccine-derived polio (from oral vaccine reverting) has caused outbreaks even where wild type is gone; trust collapse after the 2011 CIA-staged hep-B campaign in Pakistan has cost vaccinator lives; eradication endgame is harder than projected.",
       "sources": [
-        {"name": "GPEI", "url": "https://polioeradication.org"},
-        {"name": "Polio This Week — weekly updates"}
-      ]
+        {
+          "name": "GPEI",
+          "url": "https://polioeradication.org"
+        },
+        {
+          "name": "Polio This Week \u2014 weekly updates"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "extreme_poverty",
-      "start": 1990, "end": 2020,
+      "start": 1990,
+      "end": 2020,
       "name": "Extreme poverty rate falls from ~36% to under 10%",
-      "actors": ["multiple states — especially China, Vietnam, Bangladesh, Indonesia, India; conditional cash transfer programs (Bolsa Família, Oportunidades); microfinance; remittances"],
-      "magnitude_low": 1100000000, "magnitude_high": 1300000000,
+      "actors": [
+        "multiple states \u2014 especially China, Vietnam, Bangladesh, Indonesia, India; conditional cash transfer programs (Bolsa Fam\u00edlia, Oportunidades); microfinance; remittances"
+      ],
+      "magnitude_low": 1100000000,
+      "magnitude_high": 1300000000,
       "category": "humanitarian",
       "description": "World Bank's $2.15 PPP line. From 36% of global population in 1990 (~1.9B people) to under 10% by 2020 (~700M). >1 billion people no longer in extreme poverty. The methodology is contested (Hickel and others argue the line is too low; pre-1981 baseline is reconstructed). But the direction is unambiguous across every defensible line.",
       "costs": "Inequality within countries often rose even as cross-country gaps narrowed; ecological footprint scaled with consumption; some 'lifting' was statistical rebasing rather than welfare gain; the next $2.15-to-$6.85 stretch is now the harder one and progress has stalled.",
       "sources": [
-        {"name": "World Bank PIP", "url": "https://pip.worldbank.org/"},
-        {"name": "OWID — Extreme poverty", "url": "https://ourworldindata.org/extreme-poverty"},
-        {"name": "Hickel, The Divide (Penguin, 2017) — critique"}
-      ]
+        {
+          "name": "World Bank PIP",
+          "url": "https://pip.worldbank.org/"
+        },
+        {
+          "name": "OWID \u2014 Extreme poverty",
+          "url": "https://ourworldindata.org/extreme-poverty"
+        },
+        {
+          "name": "Hickel, The Divide (Penguin, 2017) \u2014 critique"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "literacy_global",
-      "start": 1950, "end": 2020,
+      "start": 1950,
+      "end": 2020,
       "name": "Global adult literacy reaches ~86%",
-      "actors": ["national education ministries; UNESCO; mass schooling expansion; literacy campaigns (e.g. Cuba 1961, Nicaragua 1980)"],
-      "magnitude_low": 3000000000, "magnitude_high": 3500000000,
+      "actors": [
+        "national education ministries; UNESCO; mass schooling expansion; literacy campaigns (e.g. Cuba 1961, Nicaragua 1980)"
+      ],
+      "magnitude_low": 3000000000,
+      "magnitude_high": 3500000000,
       "category": "accessibility",
-      "description": "From ~36% global adult literacy in 1950 to ~86% by 2022. Female literacy gap narrowed sharply (now ~7 percentage points global average, down from ~22 in 1970). 'Literacy' definitions vary across surveys — the underlying gain is real even if the measurement is fuzzy at the margin.",
-      "costs": "Definitional looseness — functional literacy in complex modern bureaucracies and digital systems remains gapped even where basic literacy is recorded; persistent regional gaps (South Asia, Sub-Saharan Africa).",
+      "description": "From ~36% global adult literacy in 1950 to ~86% by 2022. Female literacy gap narrowed sharply (now ~7 percentage points global average, down from ~22 in 1970). 'Literacy' definitions vary across surveys \u2014 the underlying gain is real even if the measurement is fuzzy at the margin.",
+      "costs": "Definitional looseness \u2014 functional literacy in complex modern bureaucracies and digital systems remains gapped even where basic literacy is recorded; persistent regional gaps (South Asia, Sub-Saharan Africa).",
       "sources": [
-        {"name": "UNESCO Institute for Statistics", "url": "http://data.uis.unesco.org/"},
-        {"name": "OWID — Literacy", "url": "https://ourworldindata.org/literacy"}
-      ]
+        {
+          "name": "UNESCO Institute for Statistics",
+          "url": "http://data.uis.unesco.org/"
+        },
+        {
+          "name": "OWID \u2014 Literacy",
+          "url": "https://ourworldindata.org/literacy"
+        }
+      ],
+      "mechanism": "infrastructure_deployment"
     },
     {
       "id": "haart_aids",
-      "start": 1996, "end": 2010,
+      "start": 1996,
+      "end": 2010,
       "name": "HAART/ART makes HIV a chronic condition",
-      "actors": ["pharma R&D; ACT-UP and other AIDS activism; PEPFAR (2003); Global Fund; Indian generic manufacturers; community treatment programs"],
-      "magnitude_low": 20000000, "magnitude_high": 30000000,
+      "actors": [
+        "pharma R&D; ACT-UP and other AIDS activism; PEPFAR (2003); Global Fund; Indian generic manufacturers; community treatment programs"
+      ],
+      "magnitude_low": 20000000,
+      "magnitude_high": 30000000,
       "category": "medical",
       "description": "Combination antiretroviral therapy ('cocktail') announced at the Vancouver IAS conference, July 1996. AIDS deaths peaked ~2004 at 2.05M/yr and have fallen sharply since (~630K in 2022). PEPFAR scaled access to LMICs from 2003; Indian generic ART manufacturers (Cipla, Hetero) drove the price collapse that made universal access feasible.",
       "costs": "Patent regimes initially blocked low-cost generics in many countries; mortality fell unevenly (highest in East and Southern Africa took longest); current PrEP access still gapped; ART adherence over decades is a real burden.",
       "sources": [
-        {"name": "UNAIDS Fact Sheet 2024", "url": "https://www.unaids.org/en/resources/fact-sheet"},
-        {"name": "Iliffe, The African AIDS Epidemic (Ohio Univ., 2006)"}
-      ]
+        {
+          "name": "UNAIDS Fact Sheet 2024",
+          "url": "https://www.unaids.org/en/resources/fact-sheet"
+        },
+        {
+          "name": "Iliffe, The African AIDS Epidemic (Ohio Univ., 2006)"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "marriage_equality",
-      "start": 2001, "end": 2024,
+      "start": 2001,
+      "end": 2024,
       "name": "Marriage equality wave",
-      "actors": ["Netherlands first (April 2001); ~37 countries by 2025; national supreme courts and parliaments"],
-      "magnitude_low": 200000000, "magnitude_high": 300000000,
+      "actors": [
+        "Netherlands first (April 2001); ~37 countries by 2025; national supreme courts and parliaments"
+      ],
+      "magnitude_low": 200000000,
+      "magnitude_high": 300000000,
       "category": "rights",
       "description": "From the Netherlands' 1 April 2001 first legal same-sex marriages to ~37 jurisdictions today. Includes constitutional decisions (US Obergefell 2015, Taiwan 2017, India under challenge), legislative reforms (Argentina 2010), and referendums (Ireland 2015). Outside this group, ~70 countries still criminalize same-sex relations.",
       "costs": "Backlash against trans rights in some same jurisdictions; selective legal recognition without anti-discrimination protections.",
       "sources": [
-        {"name": "Human Rights Campaign — Marriage equality tracker"},
-        {"name": "ILGA World maps", "url": "https://ilga.org/maps"}
-      ]
+        {
+          "name": "Human Rights Campaign \u2014 Marriage equality tracker"
+        },
+        {
+          "name": "ILGA World maps",
+          "url": "https://ilga.org/maps"
+        }
+      ],
+      "mechanism": "status_authority"
     },
     {
       "id": "rinderpest",
-      "start": 2011, "end": 2011,
+      "start": 2011,
+      "end": 2011,
       "name": "Rinderpest declared eradicated",
-      "actors": ["FAO; OIE; national veterinary services"],
-      "magnitude_low": 100000000, "magnitude_high": 200000000,
+      "actors": [
+        "FAO; OIE; national veterinary services"
+      ],
+      "magnitude_low": 100000000,
+      "magnitude_high": 200000000,
       "category": "medical",
-      "description": "Rinderpest (cattle plague) was the second disease eradicated by humanity. It killed cattle, buffalo, wildebeest in catastrophic outbreaks across Eurasia and Africa for millennia — the 1890s Africa outbreak killed ~90% of cattle in the affected regions and triggered widespread famine. Declared eradicated June 2011. The livestock-economy impact lifts millions of pastoralist households out of vulnerability.",
+      "description": "Rinderpest (cattle plague) was the second disease eradicated by humanity. It killed cattle, buffalo, wildebeest in catastrophic outbreaks across Eurasia and Africa for millennia \u2014 the 1890s Africa outbreak killed ~90% of cattle in the affected regions and triggered widespread famine. Declared eradicated June 2011. The livestock-economy impact lifts millions of pastoralist households out of vulnerability.",
       "costs": "None known.",
       "sources": [
-        {"name": "FAO — Rinderpest eradication", "url": "https://www.fao.org/news/story/en/item/80894/"},
-        {"name": "Roeder & Mariner, Cattle plague: A long-awaited end"}
-      ]
+        {
+          "name": "FAO \u2014 Rinderpest eradication",
+          "url": "https://www.fao.org/news/story/en/item/80894/"
+        },
+        {
+          "name": "Roeder & Mariner, Cattle plague: A long-awaited end"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "covax_vaccines",
-      "start": 2020, "end": 2023,
+      "start": 2020,
+      "end": 2023,
       "name": "COVID-19 vaccines developed and distributed",
-      "actors": ["BioNTech/Pfizer, Moderna, AstraZeneca/Oxford, Serum Institute India, Sinovac, Sinopharm; GAVI/COVAX; national programs; mRNA platform researchers (Karikó, Weissman)"],
-      "magnitude_low": 14000000, "magnitude_high": 20000000,
+      "actors": [
+        "BioNTech/Pfizer, Moderna, AstraZeneca/Oxford, Serum Institute India, Sinovac, Sinopharm; GAVI/COVAX; national programs; mRNA platform researchers (Karik\u00f3, Weissman)"
+      ],
+      "magnitude_low": 14000000,
+      "magnitude_high": 20000000,
       "category": "medical",
-      "description": "First vaccine candidate (BNT162b2) approved December 2020 — under a year from SARS-CoV-2 sequence release. The decisive infrastructure pieces in place beforehand: Chinese genome release within a week; decades of mRNA research from Karikó and Weissman; coronavirus spike-protein work from Graham/Corbett at NIH; rapid clinical trial coordination. The Lancet 2022 modeling estimated 14.4M deaths averted in the first year of rollout; later estimates up to ~20M.",
-      "costs": "Sharp vaccine inequity in 2021–22 — wealthy countries had 2× full coverage before many LMICs had 10%; intellectual-property regimes blocked some technology transfer; vaccine misinformation hardened in unexpected ways; long COVID has not been adequately addressed.",
+      "description": "First vaccine candidate (BNT162b2) approved December 2020 \u2014 under a year from SARS-CoV-2 sequence release. The decisive infrastructure pieces in place beforehand: Chinese genome release within a week; decades of mRNA research from Karik\u00f3 and Weissman; coronavirus spike-protein work from Graham/Corbett at NIH; rapid clinical trial coordination. The Lancet 2022 modeling estimated 14.4M deaths averted in the first year of rollout; later estimates up to ~20M.",
+      "costs": "Sharp vaccine inequity in 2021\u201322 \u2014 wealthy countries had 2\u00d7 full coverage before many LMICs had 10%; intellectual-property regimes blocked some technology transfer; vaccine misinformation hardened in unexpected ways; long COVID has not been adequately addressed.",
       "sources": [
-        {"name": "Watson et al., Lancet ID 2022", "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22)00320-6/fulltext"},
-        {"name": "Drosten et al., NEJM 2020 (rapid sequence sharing)"}
-      ]
+        {
+          "name": "Watson et al., Lancet ID 2022",
+          "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22)00320-6/fulltext"
+        },
+        {
+          "name": "Drosten et al., NEJM 2020 (rapid sequence sharing)"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "guinea_worm",
-      "start": 1986, "end": 2025,
+      "start": 1986,
+      "end": 2025,
       "name": "Guinea worm disease near eradicated",
-      "actors": ["Carter Center; national health programs; village-level health volunteers"],
-      "magnitude_low": 3500000, "magnitude_high": 3500000,
+      "actors": [
+        "Carter Center; national health programs; village-level health volunteers"
+      ],
+      "magnitude_low": 3500000,
+      "magnitude_high": 3500000,
       "category": "medical",
-      "description": "Dracunculiasis ('guinea worm') affected ~3.5M people in 21 countries in 1986. By 2024 there were fewer than 15 cases reported globally, mostly in Chad and South Sudan. No vaccine, no drug — the eradication strategy was filtered water and village-level case containment. The Carter Center has been the convening force. Likely the third human disease to be eradicated when the last cases are reported.",
+      "description": "Dracunculiasis ('guinea worm') affected ~3.5M people in 21 countries in 1986. By 2024 there were fewer than 15 cases reported globally, mostly in Chad and South Sudan. No vaccine, no drug \u2014 the eradication strategy was filtered water and village-level case containment. The Carter Center has been the convening force. Likely the third human disease to be eradicated when the last cases are reported.",
       "costs": "Minimal.",
       "sources": [
-        {"name": "Carter Center — Guinea worm dashboard", "url": "https://www.cartercenter.org/health/guinea_worm/index.html"}
-      ]
+        {
+          "name": "Carter Center \u2014 Guinea worm dashboard",
+          "url": "https://www.cartercenter.org/health/guinea_worm/index.html"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
     },
     {
       "id": "leaded_gasoline",
-      "start": 1986, "end": 2021,
+      "start": 1986,
+      "end": 2021,
       "name": "Leaded gasoline fully phased out worldwide",
-      "actors": ["UNEP Partnership for Clean Fuels and Vehicles; national bans; auto manufacturers"],
-      "magnitude_low": 800000000, "magnitude_high": 1200000000,
+      "actors": [
+        "UNEP Partnership for Clean Fuels and Vehicles; national bans; auto manufacturers"
+      ],
+      "magnitude_low": 800000000,
+      "magnitude_high": 1200000000,
       "category": "environmental",
       "description": "Leaded gasoline phase-out began in 1986 in the US; Algeria was the last country to use it, with final stocks exhausted in July 2021. UNEP estimates ~1.2M premature deaths prevented per year at the global eradication point. Population-scale IQ recovery is also estimated, with imperfect identification (the 'lead and crime' literature is debated).",
       "costs": "None known at the policy level; transition costs absorbed by auto and refining industries.",
       "sources": [
-        {"name": "UNEP — Leaded fuel ended", "url": "https://www.unep.org/news-and-stories/press-release/era-leaded-petrol-over-eliminating-major-threat-human-and-planetary"},
-        {"name": "Reyes, Brookings 2007 (lead exposure and crime)"}
-      ]
+        {
+          "name": "UNEP \u2014 Leaded fuel ended",
+          "url": "https://www.unep.org/news-and-stories/press-release/era-leaded-petrol-over-eliminating-major-threat-human-and-planetary"
+        },
+        {
+          "name": "Reyes, Brookings 2007 (lead exposure and crime)"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "renewable_grid",
-      "start": 2010, "end": 2026,
+      "start": 2010,
+      "end": 2026,
       "name": "Renewables become the cheapest new power",
-      "actors": ["IEA; IRENA; Chinese solar manufacturing scale-up; German Energiewende; Tesla/CATL/BYD battery scaling; policy makers"],
-      "magnitude_low": 1000000000, "magnitude_high": 2000000000,
+      "actors": [
+        "IEA; IRENA; Chinese solar manufacturing scale-up; German Energiewende; Tesla/CATL/BYD battery scaling; policy makers"
+      ],
+      "magnitude_low": 1000000000,
+      "magnitude_high": 2000000000,
       "category": "environmental",
-      "description": "Solar PV cost per watt fell ~90% over the 2010s; wind ~70%; utility-scale battery storage ~80%. By the early 2020s, new solar and wind cost less per MWh than new fossil generation in most markets, and less than the operating cost of existing coal in many. The crossover is in process — coal use peaked globally around 2022 by some measures, and the share of renewables in new generation has been a majority for several years.",
+      "description": "Solar PV cost per watt fell ~90% over the 2010s; wind ~70%; utility-scale battery storage ~80%. By the early 2020s, new solar and wind cost less per MWh than new fossil generation in most markets, and less than the operating cost of existing coal in many. The crossover is in process \u2014 coal use peaked globally around 2022 by some measures, and the share of renewables in new generation has been a majority for several years.",
       "costs": "Lithium, cobalt, rare-earth mining footprints; end-of-life PV recycling not yet built at scale; grid integration challenges (curtailment, capacity firming); some renewable-displaced workers without adequate transitions.",
       "sources": [
-        {"name": "IEA Renewables 2024", "url": "https://www.iea.org/reports/renewables-2024"},
-        {"name": "Ember Global Electricity Review 2025"}
-      ]
+        {
+          "name": "IEA Renewables 2024",
+          "url": "https://www.iea.org/reports/renewables-2024"
+        },
+        {
+          "name": "Ember Global Electricity Review 2025"
+        }
+      ],
+      "mechanism": "cost_curve_collapse"
     },
     {
       "id": "child_marriage_falling",
-      "start": 2000, "end": 2024,
+      "start": 2000,
+      "end": 2024,
       "name": "Child marriage rates falling",
-      "actors": ["UNICEF; Girls Not Brides; national legislative reforms; community-level intervention programs"],
-      "magnitude_low": 60000000, "magnitude_high": 80000000,
+      "actors": [
+        "UNICEF; Girls Not Brides; national legislative reforms; community-level intervention programs"
+      ],
+      "magnitude_low": 60000000,
+      "magnitude_high": 80000000,
       "category": "rights",
-      "description": "Global prevalence of child marriage among women aged 20–24 fell from ~25% in 2000 to ~19% in 2024. UNICEF estimates roughly 25M child marriages averted in the past decade vs. trend. South Asia drove most of the gain; sub-Saharan Africa rate falling more slowly and remains the highest.",
-      "costs": "Pandemic-era reversal — child marriages spiked in several regions 2020–22; legal-age changes haven't always reached customary practice.",
+      "description": "Global prevalence of child marriage among women aged 20\u201324 fell from ~25% in 2000 to ~19% in 2024. UNICEF estimates roughly 25M child marriages averted in the past decade vs. trend. South Asia drove most of the gain; sub-Saharan Africa rate falling more slowly and remains the highest.",
+      "costs": "Pandemic-era reversal \u2014 child marriages spiked in several regions 2020\u201322; legal-age changes haven't always reached customary practice.",
       "sources": [
-        {"name": "UNICEF — Child marriage", "url": "https://www.unicef.org/protection/child-marriage"}
-      ]
+        {
+          "name": "UNICEF \u2014 Child marriage",
+          "url": "https://www.unicef.org/protection/child-marriage"
+        }
+      ],
+      "mechanism": "mass_movement"
     },
     {
       "id": "endangered_recoveries",
-      "start": 1970, "end": 2026,
+      "start": 1970,
+      "end": 2026,
       "name": "Threatened species recoveries",
-      "actors": ["IUCN Red List committees; national wildlife agencies; CITES; conservation NGOs"],
-      "magnitude_low": 1, "magnitude_high": 1,
+      "actors": [
+        "IUCN Red List committees; national wildlife agencies; CITES; conservation NGOs"
+      ],
+      "magnitude_low": 1,
+      "magnitude_high": 1,
       "category": "environmental",
       "description": "Selected recoveries: humpback whales (most populations recovered post-1986 moratorium); bald eagle (delisted 2007); California condor (from 22 in 1987 to 561 in 2024); Iberian lynx (Critically Endangered to Vulnerable, 2024); Mauritius kestrel (4 in 1974 to ~400); giant panda (Endangered to Vulnerable, 2016); American alligator; sea otter (some populations). Recovery is possible when status, protection, and habitat work converge.",
-      "costs": "Many more species declining than recovering — IUCN Red List has 47,000+ threatened species, vs. dozens with confirmed recoveries.",
+      "costs": "Many more species declining than recovering \u2014 IUCN Red List has 47,000+ threatened species, vs. dozens with confirmed recoveries.",
       "sources": [
-        {"name": "IUCN Red List", "url": "https://www.iucnredlist.org/"},
-        {"name": "Akçakaya et al., Conserv. Biol. 2018 (Green Status of Species)"}
-      ]
+        {
+          "name": "IUCN Red List",
+          "url": "https://www.iucnredlist.org/"
+        },
+        {
+          "name": "Ak\u00e7akaya et al., Conserv. Biol. 2018 (Green Status of Species)"
+        }
+      ],
+      "mechanism": "status_authority"
     },
     {
       "id": "gene_therapies",
-      "start": 2017, "end": 2026,
+      "start": 2017,
+      "end": 2026,
       "name": "First gene therapies approved",
-      "actors": ["FDA; EMA; Spark, Novartis, Vertex/CRISPR Therapeutics, bluebird bio"],
-      "magnitude_low": 100000, "magnitude_high": 500000,
+      "actors": [
+        "FDA; EMA; Spark, Novartis, Vertex/CRISPR Therapeutics, bluebird bio"
+      ],
+      "magnitude_low": 100000,
+      "magnitude_high": 500000,
       "category": "medical",
-      "description": "Luxturna (2017, hereditary blindness) — first FDA-approved gene therapy. Zolgensma (2019, SMA). Casgevy (2023, first CRISPR therapy, sickle cell). Lyfgenia (2023, sickle cell). The pipeline is now wide. Curative — sometimes single-dose — for previously progressive or fatal genetic disease.",
-      "costs": "Pricing has been catastrophic — Zolgensma at $2.1M, Casgevy at $2.2M. Access in LMICs essentially nil. Long-term safety still being learned.",
+      "description": "Luxturna (2017, hereditary blindness) \u2014 first FDA-approved gene therapy. Zolgensma (2019, SMA). Casgevy (2023, first CRISPR therapy, sickle cell). Lyfgenia (2023, sickle cell). The pipeline is now wide. Curative \u2014 sometimes single-dose \u2014 for previously progressive or fatal genetic disease.",
+      "costs": "Pricing has been catastrophic \u2014 Zolgensma at $2.1M, Casgevy at $2.2M. Access in LMICs essentially nil. Long-term safety still being learned.",
       "sources": [
-        {"name": "FDA Cellular & Gene Therapy Products", "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products"},
-        {"name": "Frangoul et al., NEJM 2021 (Casgevy)"}
-      ]
+        {
+          "name": "FDA Cellular & Gene Therapy Products",
+          "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products"
+        },
+        {
+          "name": "Frangoul et al., NEJM 2021 (Casgevy)"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "glp1",
-      "start": 2021, "end": 2026,
+      "start": 2021,
+      "end": 2026,
       "name": "GLP-1 agonists scale (semaglutide, tirzepatide)",
-      "actors": ["Novo Nordisk; Eli Lilly; trial researchers"],
-      "magnitude_low": 100000000, "magnitude_high": 200000000,
+      "actors": [
+        "Novo Nordisk; Eli Lilly; trial researchers"
+      ],
+      "magnitude_low": 100000000,
+      "magnitude_high": 200000000,
       "category": "medical",
       "description": "Semaglutide approved for weight management 2021 (Wegovy); tirzepatide 2023 (Zepbound). Cardiovascular endpoints (SELECT trial, NEJM 2023), renal endpoints (FLOW trial), and durable weight loss have all been demonstrated. Likely the largest reshaping of a major risk factor (obesity) in modern history.",
       "costs": "Cost-access disparities sharp; supply-driven scarcity has rationed access to type-2 diabetics who needed semaglutide first; muscle-loss and sarcopenia concerns being studied; psychological dependencies and lost behavioral capacity poorly understood; very long-term outcomes unknown.",
       "sources": [
-        {"name": "Lincoff et al., NEJM 2023 (SELECT)", "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2307563"}
-      ]
+        {
+          "name": "Lincoff et al., NEJM 2023 (SELECT)",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2307563"
+        }
+      ],
+      "mechanism": "scientific_breakthrough"
     },
     {
       "id": "30x30",
-      "start": 2022, "end": 2030,
+      "start": 2022,
+      "end": 2030,
       "name": "Kunming-Montreal 30x30 biodiversity framework",
-      "actors": ["CBD COP15 parties; Indigenous Peoples and Local Communities advocacy"],
-      "magnitude_low": 1, "magnitude_high": 1,
+      "actors": [
+        "CBD COP15 parties; Indigenous Peoples and Local Communities advocacy"
+      ],
+      "magnitude_low": 1,
+      "magnitude_high": 1,
       "category": "environmental",
       "description": "Adopted December 2022 at CBD COP15. Goal: 30% of land, freshwater, coastal, and marine areas under protection or sustained conservation by 2030. Includes the first formal recognition in a CBD framework of Indigenous Peoples' rights and contributions. Implementation is the open question.",
       "costs": "Past 'fortress conservation' models have displaced Indigenous communities; the financing pledged is far below requested; legal protection on paper without enforcement is common.",
       "sources": [
-        {"name": "CBD COP15 outcomes", "url": "https://www.cbd.int/conferences/2021-2022/cop-15/documents"}
-      ]
+        {
+          "name": "CBD COP15 outcomes",
+          "url": "https://www.cbd.int/conferences/2021-2022/cop-15/documents"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "loss_damage_fund",
-      "start": 2022, "end": 2023,
+      "start": 2022,
+      "end": 2023,
       "name": "Loss & Damage Fund agreed",
-      "actors": ["UNFCCC parties; Global South negotiating blocs; AOSIS"],
-      "magnitude_low": 1, "magnitude_high": 1,
+      "actors": [
+        "UNFCCC parties; Global South negotiating blocs; AOSIS"
+      ],
+      "magnitude_low": 1,
+      "magnitude_high": 1,
       "category": "humanitarian",
       "description": "Agreed in principle COP27 (2022); operationalized COP28 (2023). After 30 years of demands from Global South and small island states, wealthy emitters finally agreed in principle to a fund for unavoidable climate damage. The amounts pledged so far are a small fraction of estimated need; the recognition itself was the unblocking move.",
       "costs": "Pledged amounts vastly below estimated need; governance and disbursement mechanisms still being worked out; eligibility criteria contentious.",
       "sources": [
-        {"name": "UNFCCC — Loss and Damage Fund", "url": "https://unfccc.int/loss-and-damage"}
-      ]
+        {
+          "name": "UNFCCC \u2014 Loss and Damage Fund",
+          "url": "https://unfccc.int/loss-and-damage"
+        }
+      ],
+      "mechanism": "treaty_cascade"
     },
     {
       "id": "malaria_vaccine",
-      "start": 2021, "end": 2024,
+      "start": 2021,
+      "end": 2024,
       "name": "Malaria vaccines recommended at scale",
-      "actors": ["WHO; GSK (RTS,S); Serum Institute India + Oxford (R21); GAVI; PATH"],
-      "magnitude_low": 500000, "magnitude_high": 800000,
+      "actors": [
+        "WHO; GSK (RTS,S); Serum Institute India + Oxford (R21); GAVI; PATH"
+      ],
+      "magnitude_low": 500000,
+      "magnitude_high": 800000,
       "category": "medical",
-      "description": "RTS,S/AS01 recommended by WHO October 2021 — the first malaria vaccine for any human disease caused by a parasite. R21/Matrix-M followed in 2023, manufactured at Serum Institute scale (100M doses/yr planned). Combined with bed nets, indoor residual spraying, and seasonal chemoprevention, this completes the toolkit for a disease that still kills ~600,000 children/yr.",
-      "costs": "Efficacy is real but partial (~30–40% reduction in severe malaria for RTS,S, ~75% for R21 in seasonal settings); doesn't replace bed nets; pricing and access negotiations ongoing.",
+      "description": "RTS,S/AS01 recommended by WHO October 2021 \u2014 the first malaria vaccine for any human disease caused by a parasite. R21/Matrix-M followed in 2023, manufactured at Serum Institute scale (100M doses/yr planned). Combined with bed nets, indoor residual spraying, and seasonal chemoprevention, this completes the toolkit for a disease that still kills ~600,000 children/yr.",
+      "costs": "Efficacy is real but partial (~30\u201340% reduction in severe malaria for RTS,S, ~75% for R21 in seasonal settings); doesn't replace bed nets; pricing and access negotiations ongoing.",
       "sources": [
-        {"name": "WHO — Malaria vaccines", "url": "https://www.who.int/teams/global-malaria-programme/malaria-vaccines"},
-        {"name": "Datoo et al., Lancet 2024 (R21)"}
-      ]
+        {
+          "name": "WHO \u2014 Malaria vaccines",
+          "url": "https://www.who.int/teams/global-malaria-programme/malaria-vaccines"
+        },
+        {
+          "name": "Datoo et al., Lancet 2024 (R21)"
+        }
+      ],
+      "mechanism": "vaccine_campaign"
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "treaty_cascade",
+      "label": "Treaty + ratification cascade",
+      "description": "A formal international agreement, signed and then ratified by states one after another, that locks in conduct rules above any single government. The cascade is the key \u2014 the treaty itself is paper until enough states bind themselves, and then continuing ratification is the visible compounding pattern.",
+      "fc_pattern": "Stable interface, extensible by design. The treaty text is the stable spec; the ratification list is the growing capability set."
+    },
+    {
+      "id": "vaccine_campaign",
+      "label": "Vaccine / eradication campaign",
+      "description": "A scientific discovery combined with a coordinated global delivery system, surveillance, and last-mile reach. The vaccine itself is a tool; the campaign is the cultural design that makes the tool universal.",
+      "fc_pattern": "Care compounds with no diminishing returns: every vaccinated cohort is itself a barrier to future transmission for the unvaccinated."
+    },
+    {
+      "id": "open_standard",
+      "label": "Open standard / royalty-free release",
+      "description": "Knowledge or specification released into the commons, deliberately without rent extraction. The decision to release determines whether the gain compounds (as TCP/IP did) or fragments (as proprietary protocols typically do).",
+      "fc_pattern": "Leave room for what doesn't exist yet \u2014 the open release is what makes the standard accommodate every later use case the original designers didn't predict."
+    },
+    {
+      "id": "scientific_breakthrough",
+      "label": "Scientific breakthrough \u2192 diffusion",
+      "description": "A research finding (mechanism, molecule, process) that solves a previously intractable problem, followed by the slower work of clinical / industrial / regulatory diffusion. The diffusion is what scales the gain.",
+      "fc_pattern": "Integrate the unknown \u2014 the breakthrough is the moment when the system encounters new information and reorganizes around it."
+    },
+    {
+      "id": "cost_curve_collapse",
+      "label": "Cost-curve collapse",
+      "description": "A technology that was technically feasible but economically marginal becomes cheap enough to be universal. Solar, sequencing, mobile phones, paper, printing. The cost curve does the political work that policy alone could not.",
+      "fc_pattern": "Degrade in layers rather than fail as a unit \u2014 the cheap technology can serve a base layer of users; richer applications layer on top."
+    },
+    {
+      "id": "status_authority",
+      "label": "Status authority change",
+      "description": "A formal decision by a regulator, court, or status committee (IUCN, FDA, constitutional court, treaty depository) that creates a durable, time-stamped fact. Adjudicated gains by definition.",
+      "fc_pattern": "Negotiate to common ground \u2014 the authority's decision is the protocol handshake at scale."
+    },
+    {
+      "id": "mass_movement",
+      "label": "Mass movement \u2192 political change",
+      "description": "Sustained organizing creates political pressure sufficient to change law or institution. The movement itself is the gain insofar as it builds future capacity for the next change.",
+      "fc_pattern": "Include what the system was designed to exclude \u2014 and the system gets better for everyone."
+    },
+    {
+      "id": "infrastructure_deployment",
+      "label": "Infrastructure deployment",
+      "description": "State-led or state-and-multilateral capital deployed to extend basic services \u2014 sanitation, electricity, water, schools, health systems \u2014 to populations that previously lacked them. Slow, expensive, and the foundation of every later compounding gain.",
+      "fc_pattern": "Ship stewardship alongside the system \u2014 infrastructure that works requires governance and maintenance commensurate with the lift."
+    },
+    {
+      "id": "knowledge_accumulation",
+      "label": "Knowledge accumulation",
+      "description": "Bodies of knowledge \u2014 writing, science, scholarship, archives, encyclopedias \u2014 accumulating across generations. Each generation inherits more than it produces. The substrate of every later mechanism.",
+      "fc_pattern": "Maintain renewal mechanisms \u2014 the institutions that carry knowledge across generations are themselves the gain."
+    },
+    {
+      "id": "domestication",
+      "label": "Domestication / cultivation",
+      "description": "Selective relationship with biological systems \u2014 crops, animals, microbes, soil, nitrogen \u2014 that yields food, fuel, and fiber at population scale. Includes both ancient (Neolithic) and modern (Haber-Bosch, Green Revolution) forms. Always entangled with costs.",
+      "fc_pattern": "Protect co-evolved relationships \u2014 domestication that breaks the relationships between organisms and their context yields fragile gains that need ever more inputs to sustain."
     }
   ]
 }

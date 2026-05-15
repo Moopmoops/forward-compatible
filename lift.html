@@ -957,6 +957,69 @@ a:hover { opacity: 1; }
     margin-top: 2px;
 }
 
+/* ── MECHANISMS ── */
+.mech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+@media (max-width: 720px) { .mech-grid { grid-template-columns: 1fr; } }
+.mech-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 20px 22px;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.mech-card:hover { border-color: var(--rule-bright); transform: translateY(-1px); }
+.mech-card .mech-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+}
+.mech-card h4 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    line-height: 1.3;
+}
+.mech-card .mech-count {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+.mech-card .mech-desc {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+.mech-card .mech-fc {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--accent);
+    line-height: 1.55;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    margin-top: 6px;
+    opacity: 0.85;
+    font-style: italic;
+}
+.mech-card .mech-examples {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    line-height: 1.5;
+    margin-top: auto;
+}
+.mech-card .mech-examples strong { color: var(--text-dim); font-weight: 500; }
+
 /* ── PIPELINE DIAGRAM ── */
 .pipeline {
     display: grid;
@@ -1749,6 +1812,23 @@ footer a:hover { color: var(--text); }
 
 <hr class="rule">
 
+<!-- ── MECHANISMS ── -->
+<div class="section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Mechanisms of compounding</div>
+        <h2 class="reveal">How gains actually happened</h2>
+        <p class="intro reveal">
+            The same gains reorganized by the <em>cultural design</em> that produced them. This is the Forward Compatible question: what kinds of arrangements compound across generations? Treaty cascades are different machines from vaccine campaigns; both differ from open standards. Reading the pattern matters because if we want more of the kind of gain on this page, we want more of the kind of machine that produced it.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="mech-grid reveal" id="mechanisms-grid"></div>
+    </div>
+</div>
+
+<hr class="rule">
+
 <!-- ── EVENTS LEDGER ── -->
 <div class="section">
     <div class="col-wide">
@@ -2220,6 +2300,7 @@ async function renderTimeline() {
     const data = await loadJSON('lift/data/timeline.json');
     gainStore.timeline = data;
     drawTimeline();
+    renderMechanisms();
 }
 
 function drawTimeline() {
@@ -2851,6 +2932,7 @@ function openTimelineDetail(id) {
     const period = ev.start === ev.end ? fmtYear(ev.start) : fmtYear(ev.start) + ' – ' + fmtYear(ev.end);
     const reach = ev.magnitude_low === ev.magnitude_high ? fmt(ev.magnitude_low) : (fmt(ev.magnitude_low) + ' – ' + fmt(ev.magnitude_high));
 
+    const mechObj = (gainStore.timeline?.mechanisms || []).find(m => m.id === ev.mechanism);
     let body = `
         <div class="panel-tag-row">
             <span class="panel-tag cat-${ev.category}">${ev.category}</span>
@@ -2866,6 +2948,14 @@ function openTimelineDetail(id) {
             </div>
         </div>
     `;
+
+    if (mechObj) {
+        body += `<h3>Mechanism</h3>
+            <ul class="panel-list"><li data-mid="${ev.mechanism}" data-jump="mechanism">
+                ${esc(mechObj.label)}
+                <div class="li-meta">${esc(mechObj.description.slice(0, 130))}…</div>
+            </li></ul>`;
+    }
 
     if (ev.description) {
         body += `<h3>What happened</h3><p class="lead">${esc(ev.description).replace(/\n\n/g, '</p><p class="lead">')}</p>`;
@@ -2912,6 +3002,82 @@ function openTimelineDetail(id) {
     }
 
     openPanel('Timeline · ' + ev.category, esc(ev.name), period, body);
+    wirePanelJumps();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Mechanism rendering + detail
+// ─────────────────────────────────────────────────────────────
+function renderMechanisms() {
+    const data = gainStore.timeline;
+    if (!data || !data.mechanisms) return;
+    const grid = document.getElementById('mechanisms-grid');
+    if (!grid) return;
+
+    const counts = {};
+    const examples = {};
+    (data.events || []).forEach(ev => {
+        if (!ev.mechanism) return;
+        counts[ev.mechanism] = (counts[ev.mechanism] || 0) + 1;
+        if (!examples[ev.mechanism]) examples[ev.mechanism] = [];
+        if (examples[ev.mechanism].length < 4) examples[ev.mechanism].push(ev.name.split(' — ')[0].split('(')[0].trim());
+    });
+
+    // Order by count descending
+    const sorted = (data.mechanisms || []).slice().sort((a, b) => (counts[b.id] || 0) - (counts[a.id] || 0));
+
+    grid.innerHTML = sorted.map(m => {
+        const ct = counts[m.id] || 0;
+        const ex = (examples[m.id] || []).map(e => esc(e)).join(' · ');
+        return `
+            <div class="mech-card" data-mid="${m.id}">
+                <div class="mech-head">
+                    <h4>${esc(m.label)}</h4>
+                    <div class="mech-count">${ct} entries</div>
+                </div>
+                <div class="mech-desc">${esc(m.description)}</div>
+                <div class="mech-examples">${ex ? '<strong>e.g.</strong> ' + ex : ''}</div>
+                <div class="mech-fc">${esc(m.fc_pattern || '')}</div>
+            </div>
+        `;
+    }).join('');
+
+    grid.querySelectorAll('.mech-card').forEach(card => {
+        card.addEventListener('click', () => openMechanismDetail(card.dataset.mid));
+    });
+}
+
+function openMechanismDetail(mid) {
+    const data = gainStore.timeline;
+    const m = (data?.mechanisms || []).find(x => x.id === mid);
+    if (!m) return;
+    const events = (data.events || []).filter(e => e.mechanism === mid).sort((a, b) => ((a.start + a.end) / 2) - ((b.start + b.end) / 2));
+    const oldest = events[0];
+    const newest = events[events.length - 1];
+
+    let body = `
+        <p class="lead">${esc(m.description)}</p>
+        <div class="panel-callout"><strong>FC pattern:</strong> ${esc(m.fc_pattern || '')}</div>
+        <div class="panel-stat-grid">
+            <div class="panel-stat">
+                <div class="lbl">Entries on the page</div>
+                <div class="val">${events.length}</div>
+            </div>
+            <div class="panel-stat">
+                <div class="lbl">Span</div>
+                <div class="val" style="font-size:0.9rem;">${oldest ? fmtYear(oldest.start) : '—'} → ${newest ? fmtYear(newest.end) : '—'}</div>
+            </div>
+        </div>
+        <h3>Entries using this mechanism</h3>
+        <ul class="panel-list">${events.map(e => `
+            <li data-id="${e.id}" data-jump="timeline">
+                <span class="li-date">${e.start === e.end ? fmtYear(e.start) : fmtYear(e.start) + '–' + fmtYear(e.end)}</span>${esc(e.name)}
+                <div class="li-meta"><span class="panel-tag cat-${e.category}">${e.category}</span> · people reached ${fmt(e.magnitude_high || e.magnitude_low)}</div>
+            </li>
+        `).join('')}</ul>
+    `;
+
+    openPanel('Mechanism', esc(m.label), '', body);
     wirePanelJumps();
 }
 
@@ -3107,6 +3273,7 @@ function wirePanelJumps() {
             else if (kind === 'timeline') openTimelineDetail(el.dataset.id);
             else if (kind === 'event') openEventDetail(parseInt(el.dataset.idx, 10));
             else if (kind === 'indicator') openIndicatorDetail(el.dataset.pid);
+            else if (kind === 'mechanism') openMechanismDetail(el.dataset.mid);
         });
     });
 }
