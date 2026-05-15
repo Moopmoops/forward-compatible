@@ -241,6 +241,82 @@ a:hover { opacity: 1; }
 }
 
 /* ── HEATMAP ── */
+.scrub-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 6px 0 22px;
+    padding: 14px 20px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    flex-wrap: wrap;
+}
+.scrub-row .scrub-year {
+    font-family: var(--mono);
+    font-size: 1.35rem;
+    color: var(--text-bright);
+    letter-spacing: 1px;
+    min-width: 70px;
+    font-weight: 500;
+}
+.scrub-row .scrub-label {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+.scrub-row .scrub-slider {
+    flex: 1;
+    min-width: 240px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: var(--rule);
+    outline: none;
+    cursor: pointer;
+}
+.scrub-row .scrub-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    cursor: grab;
+    border: 0;
+    border-radius: 0;
+}
+.scrub-row .scrub-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    cursor: grab;
+    border: 0;
+    border-radius: 0;
+}
+.scrub-row .scrub-slider:active::-webkit-slider-thumb { cursor: grabbing; }
+.scrub-row .scrub-ticks {
+    display: flex;
+    gap: 12px;
+}
+.scrub-row .scrub-tick {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    cursor: pointer;
+    padding: 2px 6px;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+}
+.scrub-row .scrub-tick:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+.scrub-row .scrub-tick.active { color: var(--accent); border-color: var(--rule-bright); }
+.scrub-row .scrub-stats {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.3px;
+}
+.scrub-row .scrub-stats strong { color: var(--text-bright); font-weight: 500; }
 .heatmap {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1501,6 +1577,18 @@ footer a:hover { color: var(--text); }
                 </div>
                 <div class="viz-source">SRC: OWID + WB + UNESCO + ITU · ILLUSTRATIVE</div>
             </div>
+            <div class="scrub-row">
+                <span class="scrub-label">Year</span>
+                <div class="scrub-year" id="scrub-year">2025</div>
+                <input type="range" class="scrub-slider" id="scrub-slider" min="2010" max="2025" step="0.25" value="2025">
+                <div class="scrub-ticks" id="scrub-ticks">
+                    <span class="scrub-tick" data-yr="2010">2010</span>
+                    <span class="scrub-tick" data-yr="2015">2015</span>
+                    <span class="scrub-tick" data-yr="2020">2020</span>
+                    <span class="scrub-tick active" data-yr="2025">2025</span>
+                </div>
+                <div class="scrub-stats" id="scrub-stats"></div>
+            </div>
             <div id="heatmap" class="heatmap"></div>
             <div class="heatmap-legend">
                 <span>Stalled</span>
@@ -1509,7 +1597,7 @@ footer a:hover { color: var(--text); }
                 <span style="margin-left:24px; font-style:italic;">Gold border = active armed conflict or institutional collapse</span>
             </div>
             <div class="viz-caption">
-                The composite hides as much as it reveals. A country can have transformative healthspan and access gains while civic indicators remain low — or the reverse. Each cell points to the panel of indicators that built it.
+                <em>Drag the slider</em> to watch the world advance and retreat over 15 years. Pre-2025 scores are approximated from the 5-year trend in the underlying data — directional rather than precise. Each cell points to the panel of indicators that built it; click for the full country page.
             </div>
         </div>
     </div>
@@ -2036,27 +2124,49 @@ async function loadJSON(path) {
 // ─────────────────────────────────────────────────────────────
 // 1. Heatmap
 // ─────────────────────────────────────────────────────────────
+let heatmapYear = 2025;
+
+// Compute country's composite score at any year from current + 5-yr trend.
+// Trend is "change over the last 5 years" — extrapolated linearly backward,
+// clamped to [0, 10]. Honest framing: directional, not precise.
+function countryScoreAt(c, year) {
+    const dt = (year - 2025); // negative for past years
+    const raw = c.score + (c.trend_5y / 5) * dt;
+    return Math.max(0, Math.min(10, raw));
+}
+
 async function renderHeatmap() {
     const data = await loadJSON('lift/data/heatmap.json');
     gainStore.heatmap = data;
+    drawHeatmap();
+}
+
+function drawHeatmap() {
+    const data = gainStore.heatmap;
+    if (!data) return;
     const wrap = document.getElementById('heatmap');
-    const sorted = data.countries.slice().sort((a, b) => b.score - a.score);
+    wrap.innerHTML = '';
+    // Sort by score at the displayed year so the highest float to the top
+    const sorted = data.countries.slice().sort((a, b) => countryScoreAt(b, heatmapYear) - countryScoreAt(a, heatmapYear));
     sorted.forEach(c => {
+        const scoreAt = countryScoreAt(c, heatmapYear);
         const cell = document.createElement('div');
         cell.className = 'country-cell' + (c.note && (c.note.includes('conflict') || c.note.includes('collapse')) ? ' conflict' : '');
-        cell.style.background = gainColor(c.score);
+        cell.style.background = gainColor(scoreAt);
         const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
         cell.innerHTML = `
             <div><div class="iso">${c.iso}</div></div>
-            <div><div class="score">${c.score.toFixed(1)}</div><div class="name">${c.name}</div></div>
+            <div><div class="score">${scoreAt.toFixed(1)}</div><div class="name">${c.name}</div></div>
             <div class="trend">${trendStr}</div>
         `;
         cell.addEventListener('mouseenter', e => {
             const sub = c.sub;
+            const at = scoreAt.toFixed(1);
             showTip(`
                 <strong>${c.name}</strong> · <span style="font-family:var(--mono);">${c.iso}</span>
                 <div class="tip-sub">${c.region}${c.note ? ' · <em>' + c.note + '</em>' : ''}</div>
                 <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem;">
+                    score ${heatmapYear} ≈ ${at}<br>
                     healthspan ${sub.healthspan} &nbsp; access ${sub.access}<br>
                     prosperity ${sub.prosperity}<br>
                     civic ${sub.civic}<br>
@@ -2069,6 +2179,38 @@ async function renderHeatmap() {
         cell.addEventListener('click', () => { hideTip(); openCountryDetail(c.iso); });
         wrap.appendChild(cell);
     });
+    updateScrubStats();
+}
+
+function updateScrubStats() {
+    const el = document.getElementById('scrub-stats');
+    const data = gainStore.heatmap;
+    if (!el || !data) return;
+    const n = data.countries.length;
+    const scores = data.countries.map(c => countryScoreAt(c, heatmapYear));
+    const mean = scores.reduce((a, b) => a + b, 0) / n;
+    const strong = scores.filter(s => s >= 7).length;
+    const stalled = scores.filter(s => s < 4).length;
+    el.innerHTML = `mean <strong>${mean.toFixed(2)}</strong> · soaring <strong>${strong}</strong> · stalled <strong>${stalled}</strong>`;
+}
+
+function initScrub() {
+    const slider = document.getElementById('scrub-slider');
+    const yearEl = document.getElementById('scrub-year');
+    const ticks = document.querySelectorAll('#scrub-ticks .scrub-tick');
+    if (!slider) return;
+
+    function setYear(y) {
+        heatmapYear = Math.round(y * 4) / 4; // snap to quarter year
+        slider.value = heatmapYear;
+        const displayYear = Math.round(heatmapYear);
+        yearEl.textContent = displayYear;
+        ticks.forEach(t => t.classList.toggle('active', parseInt(t.dataset.yr, 10) === displayYear));
+        drawHeatmap();
+    }
+
+    slider.addEventListener('input', e => setYear(parseFloat(e.target.value)));
+    ticks.forEach(t => t.addEventListener('click', () => setYear(parseInt(t.dataset.yr, 10))));
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -2572,6 +2714,10 @@ function openCountryDetail(iso) {
     const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
     const trendClass = c.trend_5y > 0 ? 'delta-pos' : (c.trend_5y < 0 ? 'delta-neg' : '');
 
+    // Build inferred trajectory 2010 → 2025
+    const trajYears = [2010, 2012, 2014, 2016, 2018, 2020, 2022, 2025];
+    const trajSeries = trajYears.map(y => ({ year: y, value: countryScoreAt(c, y) }));
+
     // Find this country among movers
     const mv = gainStore.movers;
     const improving = mv?.improving.find(m => m.iso === iso);
@@ -2593,10 +2739,42 @@ function openCountryDetail(iso) {
         `;
     }).join('');
 
+    // Mini trajectory SVG
+    const tW = 460, tH = 100;
+    const tMargin = { top: 8, right: 10, bottom: 22, left: 30 };
+    const innerW = tW - tMargin.left - tMargin.right;
+    const innerH = tH - tMargin.top - tMargin.bottom;
+    const tXS = y => tMargin.left + ((y - 2010) / (2025 - 2010)) * innerW;
+    const tYS = v => tMargin.top + innerH - (v / 10) * innerH;
+    const tPts = trajSeries.map(p => tXS(p.year) + ',' + tYS(p.value));
+    const tPath = 'M ' + tPts.join(' L ');
+    const tColor = c.trend_5y >= 0 ? 'var(--good)' : 'var(--bad)';
+    let trajSvg = `<svg viewBox="0 0 ${tW} ${tH}" style="width:100%; height:${tH}px; background:var(--surface-2);">`;
+    // Grid at score = 5
+    trajSvg += `<line x1="${tMargin.left}" y1="${tYS(5)}" x2="${tMargin.left + innerW}" y2="${tYS(5)}" stroke="var(--rule)" stroke-dasharray="2 4"/>`;
+    trajSvg += `<line x1="${tMargin.left}" y1="${tMargin.top}" x2="${tMargin.left}" y2="${tMargin.top + innerH}" stroke="var(--rule-bright)"/>`;
+    trajSvg += `<line x1="${tMargin.left}" y1="${tMargin.top + innerH}" x2="${tMargin.left + innerW}" y2="${tMargin.top + innerH}" stroke="var(--rule-bright)"/>`;
+    [0, 5, 10].forEach(v => {
+        trajSvg += `<text x="${tMargin.left - 4}" y="${tYS(v) + 3}" text-anchor="end" font-family="JetBrains Mono" font-size="8.5" fill="var(--text-faint)">${v}</text>`;
+    });
+    [2010, 2015, 2020, 2025].forEach(yr => {
+        trajSvg += `<text x="${tXS(yr)}" y="${tMargin.top + innerH + 14}" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="var(--text-faint)">${yr}</text>`;
+    });
+    trajSvg += `<path d="${tPath}" fill="none" stroke="${tColor}" stroke-width="1.5"/>`;
+    trajSeries.forEach(p => {
+        trajSvg += `<circle cx="${tXS(p.year)}" cy="${tYS(p.value)}" r="2.5" fill="${tColor}"/>`;
+    });
+    // Mark the displayed year
+    if (heatmapYear >= 2010 && heatmapYear <= 2025) {
+        const xMark = tXS(heatmapYear);
+        trajSvg += `<line x1="${xMark}" y1="${tMargin.top}" x2="${xMark}" y2="${tMargin.top + innerH}" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 2"/>`;
+    }
+    trajSvg += `</svg>`;
+
     let body = `
         <div class="panel-stat-grid">
             <div class="panel-stat">
-                <div class="lbl">Progress score</div>
+                <div class="lbl">Progress score 2025</div>
                 <div class="val">${c.score.toFixed(1)} <span style="color:var(--text-faint); font-size:0.7rem;">/ 10</span></div>
             </div>
             <div class="panel-stat">
@@ -2604,6 +2782,9 @@ function openCountryDetail(iso) {
                 <div class="val"><span class="${trendClass}">${trendStr}</span></div>
             </div>
         </div>
+        <h3>Trajectory · inferred 2010–2025</h3>
+        ${trajSvg}
+        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:4px;">Linear extrapolation from the 5-year trend; the dashed gold line marks the year the heatmap is currently showing.</p>
     `;
 
     if (c.note) {
@@ -3035,6 +3216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initReveal();
     initPanel();
     initFilters();
+    initScrub();
     renderHeatmap().catch(console.error);
     renderTimeline().catch(console.error);
     renderMovers().catch(console.error);
