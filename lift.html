@@ -46,6 +46,8 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
+html { scroll-behavior: smooth; }
+[id$="-section"] { scroll-margin-top: 80px; }
 
 a { color: var(--accent); text-decoration: none; opacity: 0.85; }
 a:hover { opacity: 1; }
@@ -67,6 +69,52 @@ a:hover { opacity: 1; }
     border: 1px solid var(--rule);
 }
 .back:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+
+/* ── SECTION NAV ── */
+.section-nav {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    z-index: 90;
+    background: rgba(12, 12, 12, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--rule);
+    padding: 6px 10px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 240px);
+    opacity: 0;
+    transition: transform 0.32s cubic-bezier(0.25, 0.5, 0.25, 1), opacity 0.32s;
+    pointer-events: none;
+}
+.section-nav.visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+.section-nav a {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    padding: 4px 9px;
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    opacity: 1;
+    text-decoration: none;
+}
+.section-nav a:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+.section-nav a.active {
+    color: var(--accent);
+    background: rgba(201, 165, 90, 0.07);
+    border-color: rgba(201, 165, 90, 0.3);
+}
+@media (max-width: 980px) {
+    .section-nav { max-width: calc(100vw - 80px); top: 70px; }
+}
 
 .col { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 .col-narrow { max-width: 640px; margin: 0 auto; padding: 0 24px; }
@@ -1665,6 +1713,17 @@ footer a:hover { color: var(--text); }
 
 <a href="/" class="back">&larr; Forward Compatible</a>
 
+<nav class="section-nav" id="section-nav">
+    <a href="#heatmap-section" data-target="heatmap-section">Heatmap</a>
+    <a href="#timeline-section" data-target="timeline-section">Timeline</a>
+    <a href="#movers-section" data-target="movers-section">Movers</a>
+    <a href="#disputes-section" data-target="disputes-section">Disputes</a>
+    <a href="#mechanisms-section" data-target="mechanisms-section">Mechanisms</a>
+    <a href="#structural-section" data-target="structural-section">Indicators</a>
+    <a href="#events-section" data-target="events-section">Ledger</a>
+    <a href="#treaties-section" data-target="treaties-section">Treaties</a>
+</nav>
+
 <!-- ── HERO ── -->
 <div class="hero col">
     <div class="eyebrow">A Forward Compatible project · in development</div>
@@ -1737,7 +1796,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── HEATMAP ── -->
-<div class="section">
+<div class="section" id="heatmap-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Composite progress score</div>
         <h2 class="reveal">Every state, scored on the same scale</h2>
@@ -1784,7 +1843,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── TIMELINE ── -->
-<div class="section">
+<div class="section" id="timeline-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Historical record</div>
         <h2 class="reveal">Twelve millennia of compounding gains, on a log scale</h2>
@@ -1849,7 +1908,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── MOVERS ── -->
-<div class="section">
+<div class="section" id="movers-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Direction of travel</div>
         <h2 class="reveal">Where conditions changed most over five years</h2>
@@ -1875,7 +1934,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── DISAGREEMENT ── -->
-<div class="section">
+<div class="section" id="disputes-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Where sources disagree</div>
         <h2 class="reveal">Disputed magnitudes, surfaced rather than averaged</h2>
@@ -1900,7 +1959,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── STRUCTURAL ── -->
-<div class="section">
+<div class="section" id="structural-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Structural lifts</div>
         <h2 class="reveal">The slow curves that compound across decades</h2>
@@ -1928,7 +1987,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── MECHANISMS ── -->
-<div class="section">
+<div class="section" id="mechanisms-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Mechanisms of compounding</div>
         <h2 class="reveal">How gains actually happened</h2>
@@ -1945,7 +2004,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── EVENTS LEDGER ── -->
-<div class="section">
+<div class="section" id="events-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Recent gains</div>
         <h2 class="reveal">The live ledger</h2>
@@ -2005,7 +2064,7 @@ footer a:hover { color: var(--text); }
 <hr class="rule">
 
 <!-- ── TREATIES ── -->
-<div class="section">
+<div class="section" id="treaties-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Treaty reach</div>
         <h2 class="reveal">What humanity has formally agreed on</h2>
@@ -3518,6 +3577,34 @@ function initFilters() {
 }
 
 // ─────────────────────────────────────────────────────────────
+// Section nav — show on scroll past hero + active highlighting
+// ─────────────────────────────────────────────────────────────
+function initSectionNav() {
+    const nav = document.getElementById('section-nav');
+    if (!nav) return;
+    const links = nav.querySelectorAll('a');
+    const sections = Array.from(links).map(a => document.getElementById(a.dataset.target)).filter(Boolean);
+
+    // Show nav after scrolling past hero
+    let showAt = 320;
+    function onScroll() {
+        if (window.scrollY > showAt) nav.classList.add('visible');
+        else nav.classList.remove('visible');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Active highlighting via IntersectionObserver
+    const activeMap = {};
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { activeMap[e.target.id] = e.isIntersecting && e.intersectionRatio > 0.05; });
+        const activeId = sections.map(s => s.id).find(id => activeMap[id]) || (sections.find(s => s.getBoundingClientRect().top < 200)?.id);
+        links.forEach(a => a.classList.toggle('active', a.dataset.target === activeId));
+    }, { rootMargin: '-80px 0px -50% 0px', threshold: [0, 0.1, 0.5] });
+    sections.forEach(s => observer.observe(s));
+}
+
+// ─────────────────────────────────────────────────────────────
 // Hero stats — count-up animation + click-through
 // ─────────────────────────────────────────────────────────────
 function initHeroStats() {
@@ -3599,6 +3686,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFilters();
     initScrub();
     initHeroStats();
+    initSectionNav();
     renderHeatmap().catch(console.error);
     renderTimeline().catch(console.error);
     renderMovers().catch(console.error);
