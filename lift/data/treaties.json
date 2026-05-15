@@ -1,18 +1,9 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-05-15",
   "methodology": "Ratification reach for rights-expansion and protection treaties. Number of state parties reflects status from the UN Treaty Collection. The most-ratified treaties show what humanity has formally agreed on, even where compliance falls short. The Ledger tracks who refuses; The Lift tracks what got broadly signed.",
   "data_status": "illustrative — reflects public ratification status as of last verification",
   "treaties": [
-    {
-      "id": "crc",
-      "name": "Convention on the Rights of the Child",
-      "year": 1990,
-      "scope": "Most widely ratified human rights treaty in history",
-      "parties": 196,
-      "near_universal": true,
-      "notes": "Every UN member state except the United States has ratified. Establishes a child-rights floor governments can be measured against."
-    },
     {
       "id": "geneva_conventions",
       "name": "Geneva Conventions (I–IV)",
@@ -20,45 +11,16 @@
       "scope": "Laws of war; protection of wounded, sick, prisoners, civilians",
       "parties": 196,
       "near_universal": true,
-      "notes": "Universal ratification. Compliance is uneven; the standard itself is the most-agreed-upon body of conduct rules in history."
+      "notes": "Universal ratification. Compliance is uneven; the standard itself is the most-agreed-upon body of conduct rules in history. Additional Protocols (1977, 2005) have fewer parties."
     },
     {
-      "id": "cedaw",
-      "name": "Convention on the Elimination of All Forms of Discrimination Against Women",
-      "year": 1981,
-      "parties": 189,
-      "notes": "Near-universal but with substantive reservations from many state parties. Reporting cycle is the active accountability mechanism."
-    },
-    {
-      "id": "icerd",
-      "name": "International Convention on the Elimination of All Forms of Racial Discrimination",
-      "year": 1969,
-      "parties": 182,
-      "notes": "One of the earliest core UN rights treaties; Article 4 hate-speech provisions remain contested in some Western jurisdictions."
-    },
-    {
-      "id": "fctc",
-      "name": "WHO Framework Convention on Tobacco Control",
-      "year": 2005,
-      "parties": 182,
-      "scope": "First treaty negotiated under WHO; tobacco demand- and supply-reduction measures",
-      "notes": "Credited with rapid global declines in adult smoking prevalence; structural rather than behavioral intervention."
-    },
-    {
-      "id": "marrakesh",
-      "name": "Marrakesh Treaty (accessible books)",
-      "year": 2016,
-      "scope": "Mandatory copyright exceptions for blind, visually impaired, and print-disabled readers",
-      "parties": 130,
-      "notes": "Pioneered the principle that copyright cannot block access for the print-disabled. Cross-border exchange of accessible books is now legal."
-    },
-    {
-      "id": "minamata",
-      "name": "Minamata Convention on Mercury",
-      "year": 2017,
-      "parties": 149,
-      "scope": "Protects human health and environment from anthropogenic mercury emissions",
-      "notes": "Phase-out timetable for many mercury products; small-scale gold mining is the harder unfinished file."
+      "id": "crc",
+      "name": "Convention on the Rights of the Child",
+      "year": 1990,
+      "scope": "Most widely ratified human-rights treaty in history",
+      "parties": 196,
+      "near_universal": true,
+      "notes": "Every UN member state except the United States has ratified. Establishes a child-rights floor governments can be measured against."
     },
     {
       "id": "montreal_protocol",
@@ -70,12 +32,126 @@
       "notes": "Ozone layer projected to recover to 1980 levels by 2066 over most of the globe. Kigali Amendment (2016) added HFCs."
     },
     {
+      "id": "cedaw",
+      "name": "Convention on the Elimination of All Forms of Discrimination Against Women",
+      "year": 1981,
+      "parties": 189,
+      "scope": "Comprehensive women's rights framework",
+      "notes": "Near-universal but with substantive reservations from many state parties. Reporting cycle is the active accountability mechanism."
+    },
+    {
+      "id": "icerd",
+      "name": "International Convention on the Elimination of All Forms of Racial Discrimination",
+      "year": 1969,
+      "parties": 182,
+      "scope": "Prohibits racial discrimination in all its forms",
+      "notes": "One of the earliest core UN rights treaties; Article 4 hate-speech provisions remain contested in some Western jurisdictions."
+    },
+    {
+      "id": "fctc",
+      "name": "WHO Framework Convention on Tobacco Control",
+      "year": 2005,
+      "parties": 182,
+      "scope": "First treaty negotiated under WHO; tobacco demand- and supply-reduction measures",
+      "notes": "Credited with rapid global declines in adult smoking prevalence; structural rather than behavioral intervention."
+    },
+    {
+      "id": "cites",
+      "name": "Convention on International Trade in Endangered Species (CITES)",
+      "year": 1975,
+      "parties": 185,
+      "scope": "Regulates international trade in wildlife to prevent overexploitation",
+      "notes": "Three appendix tiers (I, II, III) by threat level. Has measurably reduced commercial trade in many flagship species; enforcement uneven on harder-to-monitor items (timber, marine, parts)."
+    },
+    {
+      "id": "minamata",
+      "name": "Minamata Convention on Mercury",
+      "year": 2017,
+      "parties": 149,
+      "scope": "Protects human health and environment from anthropogenic mercury",
+      "notes": "Phase-out timetable for many mercury products; small-scale gold mining is the harder unfinished file."
+    },
+    {
+      "id": "marrakesh",
+      "name": "Marrakesh Treaty (accessible books)",
+      "year": 2016,
+      "scope": "Mandatory copyright exceptions for blind, visually impaired, and print-disabled readers",
+      "parties": 130,
+      "notes": "Pioneered the principle that copyright cannot block access for the print-disabled. Cross-border exchange of accessible books is now legal."
+    },
+    {
       "id": "biodiversity_30x30",
       "name": "Kunming-Montreal Global Biodiversity Framework",
       "year": 2022,
       "parties": 196,
       "scope": "30% of land and ocean protected by 2030; restoration of degraded ecosystems",
       "notes": "Adopted under the Convention on Biological Diversity (which itself has 196 parties; US is the principal non-party). Implementation is the next test."
+    },
+    {
+      "id": "ramsar",
+      "name": "Ramsar Convention on Wetlands",
+      "year": 1971,
+      "parties": 172,
+      "scope": "Designation and protection of wetlands of international importance",
+      "notes": "Over 2,500 Ramsar sites covering ~2.5M km². The oldest of the modern environmental treaties still in force."
+    },
+    {
+      "id": "unclos",
+      "name": "UN Convention on the Law of the Sea (UNCLOS)",
+      "year": 1994,
+      "parties": 169,
+      "scope": "The constitution of the oceans — sovereignty, EEZs, freedom of navigation, deep-sea mining regime",
+      "notes": "US is the largest non-party (signed but not ratified). The 2023 BBNJ ('high seas') agreement adds a biodiversity protection layer; entry into force pending."
+    },
+    {
+      "id": "outer_space",
+      "name": "Outer Space Treaty",
+      "year": 1967,
+      "parties": 114,
+      "scope": "No national appropriation of celestial bodies; no WMDs in orbit; rescue obligations",
+      "notes": "All major space-faring states are parties. Foundational regime for orbital governance; new commercial actors are testing the edges. Newer space treaties (Moon Agreement) have far fewer parties."
+    },
+    {
+      "id": "antarctic",
+      "name": "Antarctic Treaty",
+      "year": 1961,
+      "parties": 56,
+      "scope": "Continent reserved for peace and science; no military activity; mineral mining banned (Madrid Protocol 1998)",
+      "notes": "One of the most successful arms-control + environmental governance regimes ever signed. Parties include all 12 original signatories plus 44 acceding states; consultative status (decision-making) is more restricted."
+    },
+    {
+      "id": "ihr_2005",
+      "name": "International Health Regulations (2005)",
+      "year": 2007,
+      "parties": 196,
+      "near_universal": true,
+      "scope": "Mandatory reporting of public-health emergencies; core capacity requirements; declaration of PHEIC",
+      "notes": "Near-universal among WHO member states. 2024 amendments tightened reporting timelines and clarified equitable access provisions during pandemics."
+    },
+    {
+      "id": "paris_agreement",
+      "name": "Paris Agreement (UNFCCC)",
+      "year": 2016,
+      "parties": 195,
+      "near_universal": true,
+      "scope": "Hold warming well below 2°C; pursue 1.5°C; nationally determined contributions; transparency framework",
+      "notes": "Near-universal ratification. Implementation gap is the open accountability question (and the subject of much Ledger-side reporting). The Global Stocktake mechanism formalizes 5-yr review cycles."
+    },
+    {
+      "id": "ilo_core",
+      "name": "ILO Core Labour Conventions (8 conventions)",
+      "year": 1998,
+      "parties": 159,
+      "scope": "Freedom of association, collective bargaining, abolition of forced labor, abolition of child labor, non-discrimination",
+      "notes": "Average ratification across the 8 core conventions; some (C087 on freedom of association) are widely ratified, others (C190 on violence and harassment) more slowly. ILO Declaration on Fundamental Principles applies to ILO members regardless of ratification."
+    },
+    {
+      "id": "crpd",
+      "name": "Convention on the Rights of Persons with Disabilities",
+      "year": 2008,
+      "parties": 191,
+      "scope": "First UN human-rights treaty of the 21st century; comprehensive disability-rights framework",
+      "notes": "Near-universal but US signed (2009) without Senate ratification. Optional Protocol (individual communications) has fewer parties."
     }
   ]
 }
