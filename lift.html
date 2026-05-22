@@ -1817,11 +1817,13 @@ footer a:hover { color: var(--text); }
             <div class="scrub-row">
                 <span class="scrub-label">Year</span>
                 <div class="scrub-year" id="scrub-year">2025</div>
-                <input type="range" class="scrub-slider" id="scrub-slider" min="2010" max="2025" step="0.25" value="2025">
+                <input type="range" class="scrub-slider" id="scrub-slider" min="2020" max="2025" step="0.25" value="2025">
                 <div class="scrub-ticks" id="scrub-ticks">
-                    <span class="scrub-tick" data-yr="2010">2010</span>
-                    <span class="scrub-tick" data-yr="2015">2015</span>
                     <span class="scrub-tick" data-yr="2020">2020</span>
+                    <span class="scrub-tick" data-yr="2021">2021</span>
+                    <span class="scrub-tick" data-yr="2022">2022</span>
+                    <span class="scrub-tick" data-yr="2023">2023</span>
+                    <span class="scrub-tick" data-yr="2024">2024</span>
                     <span class="scrub-tick active" data-yr="2025">2025</span>
                 </div>
                 <div class="scrub-stats" id="scrub-stats"></div>
@@ -1834,7 +1836,7 @@ footer a:hover { color: var(--text); }
                 <span style="margin-left:24px; font-style:italic;">Gold border = active armed conflict or institutional collapse</span>
             </div>
             <div class="viz-caption">
-                <em>Drag the slider</em> to watch the world advance and retreat over 15 years. Pre-2025 scores are approximated from the 5-year trend in the underlying data — directional rather than precise. Each cell points to the panel of indicators that built it; click for the full country page.
+                <em>Drag the slider</em> to watch the five-year shift. The 2020 score is the 2025 score minus the measured 5-year trend; in-between years interpolate. The scrubber stops at 2020 on purpose — running a country's recent trend back any further produces nonsense (it would rank states that just collapsed as the world's best a decade ago). Real per-country history before 2020 is a future data lift. Each cell points to the indicators that built it; click for the full country page.
             </div>
         </div>
     </div>
@@ -2969,8 +2971,8 @@ function openCountryDetail(iso) {
     const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
     const trendClass = c.trend_5y > 0 ? 'delta-pos' : (c.trend_5y < 0 ? 'delta-neg' : '');
 
-    // Build inferred trajectory 2010 → 2025
-    const trajYears = [2010, 2012, 2014, 2016, 2018, 2020, 2022, 2025];
+    // Build inferred trajectory 2020 → 2025 (the window the trend actually covers)
+    const trajYears = [2020, 2021, 2022, 2023, 2024, 2025];
     const trajSeries = trajYears.map(y => ({ year: y, value: countryScoreAt(c, y) }));
 
     // Find this country among movers
@@ -3027,7 +3029,7 @@ function openCountryDetail(iso) {
     const tMargin = { top: 8, right: 10, bottom: 22, left: 30 };
     const innerW = tW - tMargin.left - tMargin.right;
     const innerH = tH - tMargin.top - tMargin.bottom;
-    const tXS = y => tMargin.left + ((y - 2010) / (2025 - 2010)) * innerW;
+    const tXS = y => tMargin.left + ((y - 2020) / (2025 - 2020)) * innerW;
     const tYS = v => tMargin.top + innerH - (v / 10) * innerH;
     const tPts = trajSeries.map(p => tXS(p.year) + ',' + tYS(p.value));
     const tPath = 'M ' + tPts.join(' L ');
@@ -3040,7 +3042,7 @@ function openCountryDetail(iso) {
     [0, 5, 10].forEach(v => {
         trajSvg += `<text x="${tMargin.left - 4}" y="${tYS(v) + 3}" text-anchor="end" font-family="JetBrains Mono" font-size="8.5" fill="var(--text-faint)">${v}</text>`;
     });
-    [2010, 2015, 2020, 2025].forEach(yr => {
+    [2020, 2021, 2022, 2023, 2024, 2025].forEach(yr => {
         trajSvg += `<text x="${tXS(yr)}" y="${tMargin.top + innerH + 14}" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="var(--text-faint)">${yr}</text>`;
     });
     trajSvg += `<path d="${tPath}" fill="none" stroke="${tColor}" stroke-width="1.5"/>`;
@@ -3048,7 +3050,7 @@ function openCountryDetail(iso) {
         trajSvg += `<circle cx="${tXS(p.year)}" cy="${tYS(p.value)}" r="2.5" fill="${tColor}"/>`;
     });
     // Mark the displayed year
-    if (heatmapYear >= 2010 && heatmapYear <= 2025) {
+    if (heatmapYear >= 2020 && heatmapYear <= 2025) {
         const xMark = tXS(heatmapYear);
         trajSvg += `<line x1="${xMark}" y1="${tMargin.top}" x2="${xMark}" y2="${tMargin.top + innerH}" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 2"/>`;
     }
@@ -3065,9 +3067,9 @@ function openCountryDetail(iso) {
                 <div class="val"><span class="${trendClass}">${trendStr}</span></div>
             </div>
         </div>
-        <h3>Trajectory · inferred 2010–2025</h3>
+        <h3>Trajectory · inferred 2020–2025</h3>
         ${trajSvg}
-        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:4px;">Linear extrapolation from the 5-year trend; the dashed gold line marks the year the heatmap is currently showing.</p>
+        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:4px;">The 5-year trend mapped across its own window — 2020 is the 2025 score minus the trend, in-between years interpolate. The dashed gold line marks the year the heatmap is currently showing.</p>
     `;
 
     if (c.note) {
@@ -3075,7 +3077,7 @@ function openCountryDetail(iso) {
     }
 
     body += `
-        <h3>Sub-indicators · 2010 → 2025</h3>
+        <h3>Sub-indicators · 2020 → 2025</h3>
         <div class="sub-traj-grid">${subBars}</div>
         <p style="font-size:0.74rem; color:var(--text-faint); margin-top:8px;">
             Healthspan combines life expectancy and under-5 mortality. Access combines literacy, internet, electricity, water.
