@@ -418,6 +418,99 @@ a:hover { opacity: 1; }
     letter-spacing: 0.3px;
 }
 .scrub-row .scrub-stats strong { color: var(--text-bright); font-weight: 500; }
+
+/* ── WEIGHT BUILDER ── */
+.weights-panel {
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+    margin: 6px 0 16px;
+}
+.weights-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+.weights-head .wp-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--text-bright);
+    font-weight: 600;
+}
+.weights-head .wp-title small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-top: 3px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+.weights-presets { display: flex; gap: 6px; flex-wrap: wrap; }
+.weight-preset {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 5px 11px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+}
+.weight-preset:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+.weight-preset.active { color: var(--accent); border-color: rgba(201,165,90,0.45); background: rgba(201,165,90,0.06); }
+.weights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+@media (max-width: 720px) { .weights-grid { grid-template-columns: repeat(2, 1fr); } }
+.weight-ctl .wlabel {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--text-bright);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+}
+.weight-ctl .wlabel .wval {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--accent);
+}
+.weight-ctl .wsrc {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    color: var(--text-faint);
+    margin: 3px 0 9px;
+    line-height: 1.35;
+}
+.weight-ctl input[type=range] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: var(--rule);
+    outline: none;
+    cursor: pointer;
+}
+.weight-ctl input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 14px; height: 14px;
+    background: var(--gain-5); cursor: grab; border: 0; border-radius: 0;
+}
+.weight-ctl input[type=range]::-moz-range-thumb {
+    width: 14px; height: 14px;
+    background: var(--gain-5); cursor: grab; border: 0; border-radius: 0;
+}
+.weight-ctl input[type=range].zeroed::-webkit-slider-thumb { background: var(--text-faint); }
+.weight-ctl input[type=range].zeroed::-moz-range-thumb { background: var(--text-faint); }
 .heatmap {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1804,10 +1897,10 @@ footer a:hover { color: var(--text); }
 <!-- ── HEATMAP ── -->
 <div class="section" id="heatmap-section">
     <div class="col-wide">
-        <div class="eyebrow-sm reveal">View · Composite progress score</div>
-        <h2 class="reveal">Every state, scored on the same scale</h2>
+        <div class="eyebrow-sm reveal">View · Build your own index</div>
+        <h2 class="reveal">There is no single right way to score a country. So we don't.</h2>
         <p class="intro reveal">
-            A composite of healthspan, access, prosperity, and civic indicators — built from UN IGME, World Bank, UNESCO, ITU, and OWID series. 0 is the weakest current attainment; 10 is the strongest. Five-year trend in the corner — most are positive, but a few have retreated sharply.
+            This isn't a ranking. It's four component measures — healthspan, access, prosperity, civic freedoms — each drawn from an established index, with the weighting left entirely to you. Singapore scores high on health, access, and prosperity and low on civic freedoms; whether that nets out as "doing well" depends on what you value. We don't make that call for you — <em>move the sliders and the map is yours.</em>
         </p>
     </div>
 
@@ -1815,10 +1908,43 @@ footer a:hover { color: var(--text); }
         <div class="viz-frame full reveal">
             <div class="viz-title-row">
                 <div>
-                    <h3>Composite progress score · 2025</h3>
-                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Hover any country for sub-indicators.</div>
+                    <h3>Your composite · <span id="heatmap-year-label">2025</span></h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Set the weights, then hover any country for its components.</div>
                 </div>
-                <div class="viz-source">SRC: OWID + WB + UNESCO + ITU · ILLUSTRATIVE</div>
+                <div class="viz-source">COMPONENTS: WB · UN IGME · UNESCO · ITU · V-Dem · FH · ILLUSTRATIVE</div>
+            </div>
+            <div class="weights-panel">
+                <div class="weights-head">
+                    <span class="wp-title">Weight what you value<small>Your composite = the weighted average of the four components below. Set a weight to zero to ignore it.</small></span>
+                    <div class="weights-presets" id="weight-presets">
+                        <span class="weight-preset active" data-preset="equal">Equal</span>
+                        <span class="weight-preset" data-preset="material">Material only</span>
+                        <span class="weight-preset" data-preset="freedom">Freedom-first</span>
+                        <span class="weight-preset" data-preset="health">Health-first</span>
+                    </div>
+                </div>
+                <div class="weights-grid" id="weights-grid">
+                    <div class="weight-ctl">
+                        <div class="wlabel">Healthspan <span class="wval" id="wval-healthspan">50</span></div>
+                        <div class="wsrc">life expectancy, child mortality · UN IGME, WHO</div>
+                        <input type="range" min="0" max="100" value="50" data-dim="healthspan">
+                    </div>
+                    <div class="weight-ctl">
+                        <div class="wlabel">Access <span class="wval" id="wval-access">50</span></div>
+                        <div class="wsrc">literacy, internet, electricity, water · UNESCO, ITU, World Bank</div>
+                        <input type="range" min="0" max="100" value="50" data-dim="access">
+                    </div>
+                    <div class="weight-ctl">
+                        <div class="wlabel">Prosperity <span class="wval" id="wval-prosperity">50</span></div>
+                        <div class="wsrc">poverty rate, food security · World Bank, FAO</div>
+                        <input type="range" min="0" max="100" value="50" data-dim="prosperity">
+                    </div>
+                    <div class="weight-ctl">
+                        <div class="wlabel">Civic <span class="wval" id="wval-civic">50</span></div>
+                        <div class="wsrc">governance, civil &amp; political freedoms · V-Dem, Freedom House</div>
+                        <input type="range" min="0" max="100" value="50" data-dim="civic">
+                    </div>
+                </div>
             </div>
             <div class="scrub-row">
                 <span class="scrub-label">Year</span>
@@ -1841,7 +1967,7 @@ footer a:hover { color: var(--text); }
                 <span style="margin-left:24px; font-style:italic;">Gold border = active armed conflict or institutional collapse</span>
             </div>
             <div class="viz-caption">
-                <em>Drag the slider back to 1990.</em> Countries with a documented arc (57 of them) carry real anchor points and stay populated the whole way back — watch China, Vietnam, Korea, and Rwanda climb, and Venezuela, Myanmar, and Afghanistan turn over. Countries without documented history yet go dark before 2020 and show "—" rather than a fabricated number. The grid thinning out as you scrub back is the honest picture: we have less data the further back we go. Click any cell for the full country page.
+                The composite is yours — built live from the weights you set, never asserted by us. <em>Drag the year slider back to 1990</em> to watch it move through time: countries with a documented arc (57 of them) stay populated the whole way back, while countries without documented history yet go dark before 2020 and show "—" rather than a fabricated number. The historical shape comes from each country's documented composite arc; your weights set today's level and scale the arc with it. Per-component history before 2025 is a future data lift. Click any cell for the full country page.
             </div>
         </div>
     </div>
@@ -2413,6 +2539,40 @@ function countryScoreAt(c, year) {
     return null; // no documented data this far back
 }
 
+// ── User-weighted scoring ──────────────────────────────────────
+// The page asserts no ranking. The composite is the reader's: a
+// weighted average of the four component sub-scores. countryScoreAt
+// above gives the documented composite ARC; we keep its shape and
+// scale it to the reader's present-day composite.
+const DIMS = ['healthspan', 'access', 'prosperity', 'civic'];
+const weights = { healthspan: 50, access: 50, prosperity: 50, civic: 50 };
+const weightPresets = {
+    equal:    { healthspan: 50, access: 50, prosperity: 50, civic: 50 },
+    material: { healthspan: 50, access: 50, prosperity: 50, civic: 0 },
+    freedom:  { healthspan: 30, access: 30, prosperity: 30, civic: 100 },
+    health:   { healthspan: 100, access: 45, prosperity: 45, civic: 45 }
+};
+
+function userComposite(c) {
+    const s = c.sub || {};
+    let num = 0, den = 0;
+    DIMS.forEach(k => { const w = weights[k] || 0; num += w * (s[k] ?? 0); den += w; });
+    if (den === 0) return null; // reader zeroed everything
+    return num / den;
+}
+
+// Displayed score at a given year = reader's composite, scaled by the
+// documented arc's ratio to its 2025 level. Returns null if no data.
+function displayScoreAt(c, year) {
+    const uc = userComposite(c);
+    if (uc === null) return null;
+    const authored = countryScoreAt(c, year);
+    if (authored === null) return null;
+    const base = c.score || authored || 1;
+    const ratio = authored / base;
+    return Math.max(0, Math.min(10, uc * ratio));
+}
+
 async function renderHeatmap() {
     const data = await loadJSON('lift/data/heatmap.json');
     gainStore.heatmap = data;
@@ -2425,7 +2585,7 @@ function drawHeatmap() {
     const wrap = document.getElementById('heatmap');
     wrap.innerHTML = '';
     // Score each country at the displayed year; nulls (no data) sort to the bottom
-    const scored = data.countries.map(c => ({ c, s: countryScoreAt(c, heatmapYear) }));
+    const scored = data.countries.map(c => ({ c, s: displayScoreAt(c, heatmapYear) }));
     scored.sort((a, b) => {
         if (a.s === null && b.s === null) return 0;
         if (a.s === null) return 1;
@@ -2458,11 +2618,11 @@ function drawHeatmap() {
                 <strong>${c.name}</strong> · <span style="font-family:var(--mono);">${c.iso}</span>
                 <div class="tip-sub">${c.region}${c.note ? ' · <em>' + c.note + '</em>' : ''}</div>
                 <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem;">
-                    score ${Math.round(heatmapYear)} ≈ ${s.toFixed(1)}<br>
+                    your composite ${Math.round(heatmapYear)} ≈ ${s.toFixed(1)}<br>
                     healthspan ${sub.healthspan} &nbsp; access ${sub.access}<br>
                     prosperity ${sub.prosperity}<br>
                     civic ${sub.civic}<br>
-                    <span style="color:var(--text-dim)">5-yr trend ${trendStr}${hist} · click for detail</span>
+                    <span style="color:var(--text-dim)">components above · click for detail</span>
                 </div>
             `, e);
         });
@@ -2478,9 +2638,9 @@ function updateScrubStats() {
     const el = document.getElementById('scrub-stats');
     const data = gainStore.heatmap;
     if (!el || !data) return;
-    const scores = data.countries.map(c => countryScoreAt(c, heatmapYear)).filter(s => s !== null);
+    const scores = data.countries.map(c => displayScoreAt(c, heatmapYear)).filter(s => s !== null);
     const n = scores.length;
-    if (!n) { el.innerHTML = 'no data'; return; }
+    if (!n) { el.innerHTML = 'set a weight above zero'; return; }
     const mean = scores.reduce((a, b) => a + b, 0) / n;
     const strong = scores.filter(s => s >= 7).length;
     const stalled = scores.filter(s => s < 4).length;
@@ -2493,17 +2653,64 @@ function initScrub() {
     const ticks = document.querySelectorAll('#scrub-ticks .scrub-tick');
     if (!slider) return;
 
+    const lbl = document.getElementById('heatmap-year-label');
     function setYear(y) {
-        heatmapYear = Math.round(y * 4) / 4; // snap to quarter year
+        heatmapYear = Math.round(y);
         slider.value = heatmapYear;
-        const displayYear = Math.round(heatmapYear);
+        const displayYear = heatmapYear;
         yearEl.textContent = displayYear;
+        if (lbl) lbl.textContent = displayYear;
         ticks.forEach(t => t.classList.toggle('active', parseInt(t.dataset.yr, 10) === displayYear));
         drawHeatmap();
     }
 
     slider.addEventListener('input', e => setYear(parseFloat(e.target.value)));
     ticks.forEach(t => t.addEventListener('click', () => setYear(parseInt(t.dataset.yr, 10))));
+}
+
+// ── Weight builder ─────────────────────────────────────────────
+function initWeights() {
+    const grid = document.getElementById('weights-grid');
+    const presetRow = document.getElementById('weight-presets');
+    if (!grid) return;
+    const sliders = grid.querySelectorAll('input[type=range]');
+
+    function syncUI() {
+        sliders.forEach(sl => {
+            const dim = sl.dataset.dim;
+            sl.value = weights[dim];
+            sl.classList.toggle('zeroed', weights[dim] === 0);
+            const val = document.getElementById('wval-' + dim);
+            if (val) val.textContent = weights[dim];
+        });
+        if (presetRow) {
+            presetRow.querySelectorAll('.weight-preset').forEach(p => {
+                const pr = weightPresets[p.dataset.preset];
+                const match = pr && DIMS.every(k => pr[k] === weights[k]);
+                p.classList.toggle('active', !!match);
+            });
+        }
+    }
+
+    sliders.forEach(sl => {
+        sl.addEventListener('input', e => {
+            weights[e.target.dataset.dim] = parseInt(e.target.value, 10);
+            syncUI();
+            drawHeatmap();
+        });
+    });
+    if (presetRow) {
+        presetRow.querySelectorAll('.weight-preset').forEach(p => {
+            p.addEventListener('click', () => {
+                const pr = weightPresets[p.dataset.preset];
+                if (!pr) return;
+                DIMS.forEach(k => { weights[k] = pr[k]; });
+                syncUI();
+                drawHeatmap();
+            });
+        });
+    }
+    syncUI();
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -3005,20 +3212,20 @@ function openCountryDetail(iso) {
     const c = (gainStore.heatmap?.countries || []).find(x => x.iso === iso);
     if (!c) return;
     const sub = c.sub || {};
+    const ucNow = userComposite(c);
     const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
     const trendClass = c.trend_5y > 0 ? 'delta-pos' : (c.trend_5y < 0 ? 'delta-neg' : '');
 
-    // Trajectory: full documented arc if history exists, else the 2020–2025 trend window
+    // Trajectory: full documented arc if history exists, else the 2020–2025 trend window.
+    // Values are the reader's weighted composite, scaled across the documented arc.
     let trajSeries, trajStart;
     if (c.history) {
-        const anchors = Object.keys(c.history).map(y => ({ year: Number(y), value: c.history[y] }));
-        anchors.push({ year: 2025, value: c.score });
-        anchors.sort((a, b) => a.year - b.year);
-        trajSeries = anchors;
-        trajStart = anchors[0].year;
+        const years = Object.keys(c.history).map(Number).concat([2025]).sort((a, b) => a - b);
+        trajSeries = years.map(y => ({ year: y, value: displayScoreAt(c, y) ?? 0 }));
+        trajStart = years[0];
     } else {
         trajStart = 2020;
-        trajSeries = [2020, 2021, 2022, 2023, 2024, 2025].map(y => ({ year: y, value: countryScoreAt(c, y) }));
+        trajSeries = [2020, 2021, 2022, 2023, 2024, 2025].map(y => ({ year: y, value: displayScoreAt(c, y) ?? 0 }));
     }
     const trajTicks = (() => {
         const t = [trajStart];
@@ -3113,15 +3320,16 @@ function openCountryDetail(iso) {
     let body = `
         <div class="panel-stat-grid">
             <div class="panel-stat">
-                <div class="lbl">Progress score 2025</div>
-                <div class="val">${c.score.toFixed(1)} <span style="color:var(--text-faint); font-size:0.7rem;">/ 10</span></div>
+                <div class="lbl">Your composite 2025</div>
+                <div class="val">${ucNow === null ? '—' : ucNow.toFixed(1)} <span style="color:var(--text-faint); font-size:0.7rem;">/ 10</span></div>
             </div>
             <div class="panel-stat">
                 <div class="lbl">5-yr trend</div>
                 <div class="val"><span class="${trendClass}">${trendStr}</span></div>
             </div>
         </div>
-        <h3>Trajectory · ${c.history ? trajStart + '–2025 · documented anchors' : 'inferred 2020–2025'}</h3>
+        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:-4px;">Reflects your current weighting (healthspan ${weights.healthspan} · access ${weights.access} · prosperity ${weights.prosperity} · civic ${weights.civic}). Change the sliders on the map to recompute.</p>
+        <h3>Trajectory · ${c.history ? trajStart + '–2025 · documented arc, your weighting' : 'inferred 2020–2025, your weighting'}</h3>
         ${trajSvg}
         <p style="font-size:0.74rem; color:var(--text-faint); margin-top:4px;">${c.history ? 'Anchor points are documented composite estimates; the line interpolates between them. The dashed gold line marks the year the heatmap is currently showing.' : 'No documented history before 2020 yet — this is the 5-year trend across its own window. The dashed gold line marks the year the heatmap is currently showing.'}</p>
     `;
@@ -3741,6 +3949,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPanel();
     initFilters();
     initScrub();
+    initWeights();
     initHeroStats();
     initSectionNav();
     renderHeatmap().catch(console.error);
