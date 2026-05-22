@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "updated": "2026-05-15",
-  "methodology": "Composite progress score derived from four dimensions weighted equally: Healthspan (life expectancy + under-5 mortality), Access (literacy, internet, electricity, drinking water), Prosperity (poverty rate below $2.15 PPP + food security), and Civic (governance + civic freedoms, scaled). Scores are 0–10 (10 = strongest gains and current attainment). Five-year trend reflects the direction of travel, not the absolute level. Illustrative values pending live ingestion.",
-  "data_status": "illustrative — pipeline not yet live",
+  "methodology": "Composite progress score derived from four dimensions weighted equally: Healthspan (life expectancy + under-5 mortality), Access (literacy, internet, electricity, drinking water), Prosperity (poverty rate below $2.15 PPP + food security), and Civic (governance + civic freedoms, scaled). Scores are 0\u201310 (10 = strongest gains and current attainment). Five-year trend reflects the direction of travel, not the absolute level. Illustrative values pending live ingestion.",
+  "data_status": "illustrative \u2014 pipeline not yet live",
   "scale": {
     "min": 0,
     "max": 10,
@@ -14,87 +14,1487 @@
     }
   },
   "countries": [
-    {"iso": "USA", "name": "United States", "region": "Americas", "score": 7.8, "sub": {"healthspan": 7.6, "access": 8.8, "prosperity": 8.0, "civic": 6.8}, "trend_5y": 0.1},
-    {"iso": "CAN", "name": "Canada", "region": "Americas", "score": 8.6, "sub": {"healthspan": 8.7, "access": 9.0, "prosperity": 8.5, "civic": 8.2}, "trend_5y": 0.2},
-    {"iso": "MEX", "name": "Mexico", "region": "Americas", "score": 6.4, "sub": {"healthspan": 6.8, "access": 7.0, "prosperity": 6.3, "civic": 5.5}, "trend_5y": 0.3},
-    {"iso": "BRA", "name": "Brazil", "region": "Americas", "score": 6.6, "sub": {"healthspan": 6.7, "access": 7.2, "prosperity": 6.4, "civic": 6.1}, "trend_5y": 0.7},
-    {"iso": "ARG", "name": "Argentina", "region": "Americas", "score": 6.9, "sub": {"healthspan": 7.4, "access": 8.0, "prosperity": 5.8, "civic": 6.4}, "trend_5y": -0.4},
-    {"iso": "VEN", "name": "Venezuela", "region": "Americas", "score": 3.6, "sub": {"healthspan": 4.4, "access": 4.8, "prosperity": 2.6, "civic": 2.6}, "trend_5y": -1.4},
-    {"iso": "COL", "name": "Colombia", "region": "Americas", "score": 6.1, "sub": {"healthspan": 6.6, "access": 6.8, "prosperity": 5.7, "civic": 5.4}, "trend_5y": 0.6},
-    {"iso": "CHL", "name": "Chile", "region": "Americas", "score": 7.8, "sub": {"healthspan": 8.0, "access": 8.2, "prosperity": 7.6, "civic": 7.4}, "trend_5y": 0.4},
-    {"iso": "PER", "name": "Peru", "region": "Americas", "score": 5.9, "sub": {"healthspan": 6.4, "access": 6.0, "prosperity": 5.8, "civic": 5.2}, "trend_5y": 0.3},
-    {"iso": "HTI", "name": "Haiti", "region": "Americas", "score": 2.8, "sub": {"healthspan": 3.5, "access": 3.2, "prosperity": 2.2, "civic": 2.4}, "trend_5y": -1.6, "note": "state collapse"},
-    {"iso": "GBR", "name": "United Kingdom", "region": "Europe", "score": 8.4, "sub": {"healthspan": 8.4, "access": 9.0, "prosperity": 8.2, "civic": 8.0}, "trend_5y": 0.0},
-    {"iso": "DEU", "name": "Germany", "region": "Europe", "score": 8.7, "sub": {"healthspan": 8.6, "access": 9.0, "prosperity": 8.6, "civic": 8.4}, "trend_5y": 0.1},
-    {"iso": "FRA", "name": "France", "region": "Europe", "score": 8.5, "sub": {"healthspan": 8.7, "access": 8.9, "prosperity": 8.4, "civic": 8.0}, "trend_5y": 0.1},
-    {"iso": "ITA", "name": "Italy", "region": "Europe", "score": 8.2, "sub": {"healthspan": 8.8, "access": 8.5, "prosperity": 7.8, "civic": 7.6}, "trend_5y": 0.1},
-    {"iso": "ESP", "name": "Spain", "region": "Europe", "score": 8.3, "sub": {"healthspan": 8.9, "access": 8.7, "prosperity": 7.7, "civic": 7.9}, "trend_5y": 0.2},
-    {"iso": "PRT", "name": "Portugal", "region": "Europe", "score": 8.1, "sub": {"healthspan": 8.6, "access": 8.5, "prosperity": 7.7, "civic": 7.8}, "trend_5y": 0.4},
-    {"iso": "POL", "name": "Poland", "region": "Europe", "score": 7.5, "sub": {"healthspan": 7.8, "access": 8.6, "prosperity": 7.5, "civic": 6.4}, "trend_5y": 0.3},
-    {"iso": "HUN", "name": "Hungary", "region": "Europe", "score": 6.6, "sub": {"healthspan": 7.4, "access": 8.4, "prosperity": 6.6, "civic": 4.4}, "trend_5y": -0.5},
-    {"iso": "RUS", "name": "Russian Federation", "region": "Europe/Asia", "score": 4.2, "sub": {"healthspan": 5.5, "access": 6.8, "prosperity": 5.0, "civic": 1.6}, "trend_5y": -1.3},
-    {"iso": "UKR", "name": "Ukraine", "region": "Europe", "score": 5.8, "sub": {"healthspan": 5.8, "access": 6.6, "prosperity": 5.4, "civic": 6.0}, "trend_5y": -0.5, "note": "active conflict; civic gains under wartime conditions"},
-    {"iso": "BLR", "name": "Belarus", "region": "Europe", "score": 4.3, "sub": {"healthspan": 6.0, "access": 7.0, "prosperity": 5.4, "civic": 1.4}, "trend_5y": -1.8},
-    {"iso": "TUR", "name": "Türkiye", "region": "Europe/Asia", "score": 5.5, "sub": {"healthspan": 7.0, "access": 7.0, "prosperity": 6.0, "civic": 3.6}, "trend_5y": 0.1},
-    {"iso": "ISR", "name": "Israel", "region": "Middle East", "score": 6.4, "sub": {"healthspan": 8.5, "access": 8.6, "prosperity": 7.5, "civic": 5.0}, "trend_5y": -0.7, "note": "score reflects citizens within Israel; OPT not included"},
-    {"iso": "PSE", "name": "Palestinian Territories", "region": "Middle East", "score": 3.6, "sub": {"healthspan": 5.0, "access": 5.2, "prosperity": 3.2, "civic": 3.0}, "trend_5y": -1.6, "note": "active conflict"},
-    {"iso": "SAU", "name": "Saudi Arabia", "region": "Middle East", "score": 5.4, "sub": {"healthspan": 7.5, "access": 7.6, "prosperity": 7.2, "civic": 1.3}, "trend_5y": 0.7, "note": "women's labor force expansion driving recent gains"},
-    {"iso": "ARE", "name": "United Arab Emirates", "region": "Middle East", "score": 6.5, "sub": {"healthspan": 7.8, "access": 8.4, "prosperity": 7.6, "civic": 2.6}, "trend_5y": 0.4},
-    {"iso": "IRN", "name": "Iran", "region": "Middle East", "score": 4.1, "sub": {"healthspan": 6.8, "access": 6.8, "prosperity": 5.0, "civic": 1.5}, "trend_5y": -0.6},
-    {"iso": "EGY", "name": "Egypt", "region": "Middle East/Africa", "score": 4.6, "sub": {"healthspan": 6.0, "access": 6.4, "prosperity": 4.4, "civic": 1.9}, "trend_5y": 0.2},
-    {"iso": "JOR", "name": "Jordan", "region": "Middle East", "score": 5.6, "sub": {"healthspan": 7.0, "access": 7.2, "prosperity": 5.8, "civic": 4.0}, "trend_5y": 0.3},
-    {"iso": "TUN", "name": "Tunisia", "region": "Middle East/Africa", "score": 5.4, "sub": {"healthspan": 7.0, "access": 6.8, "prosperity": 5.4, "civic": 4.0}, "trend_5y": -0.6},
-    {"iso": "YEM", "name": "Yemen", "region": "Middle East", "score": 2.2, "sub": {"healthspan": 3.0, "access": 2.6, "prosperity": 1.8, "civic": 1.4}, "trend_5y": -0.4, "note": "active conflict"},
-    {"iso": "IRQ", "name": "Iraq", "region": "Middle East", "score": 4.4, "sub": {"healthspan": 5.4, "access": 5.6, "prosperity": 4.6, "civic": 3.6}, "trend_5y": 0.5},
-    {"iso": "AFG", "name": "Afghanistan", "region": "Asia", "score": 2.0, "sub": {"healthspan": 3.4, "access": 2.4, "prosperity": 1.4, "civic": 0.8}, "trend_5y": -2.6, "note": "women's freedoms and education collapse since 2021"},
-    {"iso": "PAK", "name": "Pakistan", "region": "Asia", "score": 4.4, "sub": {"healthspan": 5.0, "access": 4.4, "prosperity": 4.6, "civic": 3.6}, "trend_5y": 0.2},
-    {"iso": "IND", "name": "India", "region": "Asia", "score": 5.7, "sub": {"healthspan": 6.4, "access": 7.0, "prosperity": 5.8, "civic": 3.6}, "trend_5y": 0.8, "note": "rapid material gains; civic indicators softer"},
-    {"iso": "BGD", "name": "Bangladesh", "region": "Asia", "score": 5.4, "sub": {"healthspan": 6.4, "access": 6.0, "prosperity": 5.6, "civic": 3.6}, "trend_5y": 1.2, "note": "child mortality and female literacy gains widely cited"},
-    {"iso": "LKA", "name": "Sri Lanka", "region": "Asia", "score": 5.8, "sub": {"healthspan": 7.6, "access": 7.0, "prosperity": 5.0, "civic": 3.6}, "trend_5y": -0.5},
-    {"iso": "NPL", "name": "Nepal", "region": "Asia", "score": 5.4, "sub": {"healthspan": 6.2, "access": 5.8, "prosperity": 5.0, "civic": 4.6}, "trend_5y": 0.9},
-    {"iso": "CHN", "name": "China", "region": "Asia", "score": 6.5, "sub": {"healthspan": 8.2, "access": 8.4, "prosperity": 8.4, "civic": 1.0}, "trend_5y": 0.5, "note": "800M+ lifted from extreme poverty since 1990; civic indicators decline"},
-    {"iso": "JPN", "name": "Japan", "region": "Asia", "score": 8.4, "sub": {"healthspan": 9.5, "access": 9.0, "prosperity": 8.2, "civic": 6.9}, "trend_5y": 0.0},
-    {"iso": "KOR", "name": "South Korea", "region": "Asia", "score": 8.2, "sub": {"healthspan": 9.0, "access": 9.4, "prosperity": 7.6, "civic": 6.8}, "trend_5y": 0.1},
-    {"iso": "PRK", "name": "North Korea", "region": "Asia", "score": 2.4, "sub": {"healthspan": 4.4, "access": 2.6, "prosperity": 2.2, "civic": 0.2}, "trend_5y": 0.1},
-    {"iso": "VNM", "name": "Vietnam", "region": "Asia", "score": 6.6, "sub": {"healthspan": 7.6, "access": 7.6, "prosperity": 7.6, "civic": 3.6}, "trend_5y": 0.9, "note": "poverty rate from 70% in 1990 to under 5%"},
-    {"iso": "PHL", "name": "Philippines", "region": "Asia", "score": 5.8, "sub": {"healthspan": 6.3, "access": 6.4, "prosperity": 5.9, "civic": 4.6}, "trend_5y": 0.5},
-    {"iso": "IDN", "name": "Indonesia", "region": "Asia", "score": 6.1, "sub": {"healthspan": 6.6, "access": 7.0, "prosperity": 6.4, "civic": 4.4}, "trend_5y": 0.5},
-    {"iso": "MMR", "name": "Myanmar", "region": "Asia", "score": 3.0, "sub": {"healthspan": 4.6, "access": 4.0, "prosperity": 3.4, "civic": 0.0}, "trend_5y": -2.4, "note": "active conflict"},
-    {"iso": "THA", "name": "Thailand", "region": "Asia", "score": 6.3, "sub": {"healthspan": 7.4, "access": 7.6, "prosperity": 6.8, "civic": 3.4}, "trend_5y": 0.2},
-    {"iso": "MYS", "name": "Malaysia", "region": "Asia", "score": 6.8, "sub": {"healthspan": 7.6, "access": 8.0, "prosperity": 7.4, "civic": 4.2}, "trend_5y": 0.3},
-    {"iso": "SGP", "name": "Singapore", "region": "Asia", "score": 7.8, "sub": {"healthspan": 9.4, "access": 9.4, "prosperity": 8.4, "civic": 4.0}, "trend_5y": 0.2},
-    {"iso": "AUS", "name": "Australia", "region": "Oceania", "score": 8.6, "sub": {"healthspan": 9.2, "access": 9.0, "prosperity": 8.4, "civic": 7.8}, "trend_5y": 0.1},
-    {"iso": "NZL", "name": "New Zealand", "region": "Oceania", "score": 8.8, "sub": {"healthspan": 9.0, "access": 9.0, "prosperity": 8.6, "civic": 8.6}, "trend_5y": 0.2},
-    {"iso": "ZAF", "name": "South Africa", "region": "Africa", "score": 5.3, "sub": {"healthspan": 5.0, "access": 6.6, "prosperity": 4.4, "civic": 5.2}, "trend_5y": 0.1},
-    {"iso": "NGA", "name": "Nigeria", "region": "Africa", "score": 3.6, "sub": {"healthspan": 3.6, "access": 4.0, "prosperity": 3.2, "civic": 3.6}, "trend_5y": 0.0},
-    {"iso": "KEN", "name": "Kenya", "region": "Africa", "score": 5.1, "sub": {"healthspan": 5.6, "access": 5.4, "prosperity": 4.6, "civic": 4.8}, "trend_5y": 0.6},
-    {"iso": "ETH", "name": "Ethiopia", "region": "Africa", "score": 4.2, "sub": {"healthspan": 5.0, "access": 4.0, "prosperity": 4.4, "civic": 3.4}, "trend_5y": 0.7, "note": "child mortality halved since 2000; Tigray a recent setback"},
-    {"iso": "RWA", "name": "Rwanda", "region": "Africa", "score": 5.6, "sub": {"healthspan": 6.4, "access": 5.8, "prosperity": 5.8, "civic": 4.4}, "trend_5y": 0.6, "note": "post-genocide reconstruction model on health and admin; civic indicators contested"},
-    {"iso": "GHA", "name": "Ghana", "region": "Africa", "score": 5.8, "sub": {"healthspan": 5.8, "access": 6.4, "prosperity": 5.4, "civic": 5.6}, "trend_5y": 0.4},
-    {"iso": "SEN", "name": "Senegal", "region": "Africa", "score": 5.4, "sub": {"healthspan": 5.4, "access": 5.6, "prosperity": 4.8, "civic": 5.8}, "trend_5y": 0.4},
-    {"iso": "MAR", "name": "Morocco", "region": "Africa", "score": 5.8, "sub": {"healthspan": 6.6, "access": 6.6, "prosperity": 5.8, "civic": 4.2}, "trend_5y": 0.5},
-    {"iso": "DZA", "name": "Algeria", "region": "Africa", "score": 5.4, "sub": {"healthspan": 6.6, "access": 6.4, "prosperity": 5.4, "civic": 3.4}, "trend_5y": 0.2},
-    {"iso": "TZA", "name": "Tanzania", "region": "Africa", "score": 4.6, "sub": {"healthspan": 5.0, "access": 4.6, "prosperity": 4.2, "civic": 4.6}, "trend_5y": 0.5},
-    {"iso": "UGA", "name": "Uganda", "region": "Africa", "score": 4.3, "sub": {"healthspan": 4.6, "access": 4.4, "prosperity": 4.0, "civic": 4.0}, "trend_5y": 0.3},
-    {"iso": "COD", "name": "DR Congo", "region": "Africa", "score": 3.2, "sub": {"healthspan": 3.4, "access": 3.2, "prosperity": 2.8, "civic": 3.4}, "trend_5y": 0.2, "note": "active conflict in east"},
-    {"iso": "CIV", "name": "Côte d'Ivoire", "region": "Africa", "score": 4.8, "sub": {"healthspan": 5.0, "access": 5.0, "prosperity": 5.0, "civic": 4.2}, "trend_5y": 0.5},
-    {"iso": "MOZ", "name": "Mozambique", "region": "Africa", "score": 3.6, "sub": {"healthspan": 4.0, "access": 3.6, "prosperity": 3.2, "civic": 3.6}, "trend_5y": 0.0},
-    {"iso": "AGO", "name": "Angola", "region": "Africa", "score": 4.0, "sub": {"healthspan": 4.0, "access": 4.4, "prosperity": 4.0, "civic": 3.6}, "trend_5y": 0.3},
-    {"iso": "BOL", "name": "Bolivia", "region": "Americas", "score": 5.4, "sub": {"healthspan": 5.8, "access": 5.4, "prosperity": 5.0, "civic": 5.4}, "trend_5y": 0.1},
-    {"iso": "ECU", "name": "Ecuador", "region": "Americas", "score": 5.8, "sub": {"healthspan": 6.4, "access": 6.0, "prosperity": 5.4, "civic": 5.4}, "trend_5y": -0.2},
-    {"iso": "CRI", "name": "Costa Rica", "region": "Americas", "score": 7.6, "sub": {"healthspan": 8.4, "access": 7.6, "prosperity": 7.0, "civic": 7.4}, "trend_5y": 0.2},
-    {"iso": "CUB", "name": "Cuba", "region": "Americas", "score": 5.5, "sub": {"healthspan": 8.2, "access": 8.0, "prosperity": 4.0, "civic": 1.8}, "trend_5y": -0.4, "note": "healthspan strong; civic indicators severely constrained"},
-    {"iso": "URY", "name": "Uruguay", "region": "Americas", "score": 8.1, "sub": {"healthspan": 8.2, "access": 8.6, "prosperity": 7.6, "civic": 8.0}, "trend_5y": 0.2},
-    {"iso": "KHM", "name": "Cambodia", "region": "Asia", "score": 5.0, "sub": {"healthspan": 5.6, "access": 5.6, "prosperity": 5.4, "civic": 3.4}, "trend_5y": 0.4},
-    {"iso": "MNG", "name": "Mongolia", "region": "Asia", "score": 6.0, "sub": {"healthspan": 6.0, "access": 6.6, "prosperity": 5.6, "civic": 6.0}, "trend_5y": 0.2},
-    {"iso": "KAZ", "name": "Kazakhstan", "region": "Asia", "score": 5.8, "sub": {"healthspan": 6.6, "access": 7.4, "prosperity": 6.4, "civic": 3.0}, "trend_5y": 0.1},
-    {"iso": "SWE", "name": "Sweden", "region": "Europe", "score": 9.0, "sub": {"healthspan": 9.0, "access": 9.2, "prosperity": 8.8, "civic": 9.0}, "trend_5y": -0.1},
-    {"iso": "NOR", "name": "Norway", "region": "Europe", "score": 9.1, "sub": {"healthspan": 9.0, "access": 9.2, "prosperity": 9.0, "civic": 9.2}, "trend_5y": 0.0},
-    {"iso": "DNK", "name": "Denmark", "region": "Europe", "score": 8.9, "sub": {"healthspan": 8.8, "access": 9.2, "prosperity": 8.6, "civic": 9.0}, "trend_5y": 0.0},
-    {"iso": "FIN", "name": "Finland", "region": "Europe", "score": 9.0, "sub": {"healthspan": 9.0, "access": 9.2, "prosperity": 8.8, "civic": 9.0}, "trend_5y": 0.1},
-    {"iso": "NLD", "name": "Netherlands", "region": "Europe", "score": 8.7, "sub": {"healthspan": 8.6, "access": 9.2, "prosperity": 8.6, "civic": 8.4}, "trend_5y": 0.1},
-    {"iso": "CHE", "name": "Switzerland", "region": "Europe", "score": 8.8, "sub": {"healthspan": 9.4, "access": 9.0, "prosperity": 8.6, "civic": 8.2}, "trend_5y": 0.1},
-    {"iso": "GRC", "name": "Greece", "region": "Europe", "score": 7.6, "sub": {"healthspan": 8.0, "access": 8.2, "prosperity": 7.0, "civic": 7.2}, "trend_5y": 0.2},
-    {"iso": "ROU", "name": "Romania", "region": "Europe", "score": 7.1, "sub": {"healthspan": 7.4, "access": 8.0, "prosperity": 7.0, "civic": 6.0}, "trend_5y": 0.3}
+    {
+      "iso": "USA",
+      "name": "United States",
+      "region": "Americas",
+      "score": 7.8,
+      "sub": {
+        "healthspan": 7.6,
+        "access": 8.8,
+        "prosperity": 8.0,
+        "civic": 6.8
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 7.3,
+        "2000": 7.6,
+        "2010": 7.7,
+        "2015": 7.8,
+        "2020": 7.9
+      }
+    },
+    {
+      "iso": "CAN",
+      "name": "Canada",
+      "region": "Americas",
+      "score": 8.6,
+      "sub": {
+        "healthspan": 8.7,
+        "access": 9.0,
+        "prosperity": 8.5,
+        "civic": 8.2
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 8.2,
+        "2000": 8.4,
+        "2010": 8.5,
+        "2015": 8.6,
+        "2020": 8.6
+      }
+    },
+    {
+      "iso": "MEX",
+      "name": "Mexico",
+      "region": "Americas",
+      "score": 6.4,
+      "sub": {
+        "healthspan": 6.8,
+        "access": 7.0,
+        "prosperity": 6.3,
+        "civic": 5.5
+      },
+      "trend_5y": 0.3,
+      "history": {
+        "1990": 5.4,
+        "2000": 6.0,
+        "2010": 6.2,
+        "2015": 6.2,
+        "2020": 6.2
+      }
+    },
+    {
+      "iso": "BRA",
+      "name": "Brazil",
+      "region": "Americas",
+      "score": 6.6,
+      "sub": {
+        "healthspan": 6.7,
+        "access": 7.2,
+        "prosperity": 6.4,
+        "civic": 6.1
+      },
+      "trend_5y": 0.7,
+      "history": {
+        "1990": 5.4,
+        "2000": 6.0,
+        "2010": 6.6,
+        "2015": 6.6,
+        "2020": 6.2
+      }
+    },
+    {
+      "iso": "ARG",
+      "name": "Argentina",
+      "region": "Americas",
+      "score": 6.9,
+      "sub": {
+        "healthspan": 7.4,
+        "access": 8.0,
+        "prosperity": 5.8,
+        "civic": 6.4
+      },
+      "trend_5y": -0.4,
+      "history": {
+        "1990": 6.0,
+        "2000": 6.6,
+        "2010": 7.0,
+        "2015": 7.2,
+        "2020": 7.3
+      }
+    },
+    {
+      "iso": "VEN",
+      "name": "Venezuela",
+      "region": "Americas",
+      "score": 3.6,
+      "sub": {
+        "healthspan": 4.4,
+        "access": 4.8,
+        "prosperity": 2.6,
+        "civic": 2.6
+      },
+      "trend_5y": -1.4,
+      "history": {
+        "1990": 5.8,
+        "2000": 5.6,
+        "2010": 4.8,
+        "2015": 4.0,
+        "2020": 3.4
+      }
+    },
+    {
+      "iso": "COL",
+      "name": "Colombia",
+      "region": "Americas",
+      "score": 6.1,
+      "sub": {
+        "healthspan": 6.6,
+        "access": 6.8,
+        "prosperity": 5.7,
+        "civic": 5.4
+      },
+      "trend_5y": 0.6,
+      "history": {
+        "1990": 4.8,
+        "2000": 5.0,
+        "2010": 5.4,
+        "2015": 5.6,
+        "2020": 5.5
+      }
+    },
+    {
+      "iso": "CHL",
+      "name": "Chile",
+      "region": "Americas",
+      "score": 7.8,
+      "sub": {
+        "healthspan": 8.0,
+        "access": 8.2,
+        "prosperity": 7.6,
+        "civic": 7.4
+      },
+      "trend_5y": 0.4,
+      "history": {
+        "1990": 6.2,
+        "2000": 7.0,
+        "2010": 7.4,
+        "2015": 7.6,
+        "2020": 7.6
+      }
+    },
+    {
+      "iso": "PER",
+      "name": "Peru",
+      "region": "Americas",
+      "score": 5.9,
+      "sub": {
+        "healthspan": 6.4,
+        "access": 6.0,
+        "prosperity": 5.8,
+        "civic": 5.2
+      },
+      "trend_5y": 0.3
+    },
+    {
+      "iso": "HTI",
+      "name": "Haiti",
+      "region": "Americas",
+      "score": 2.8,
+      "sub": {
+        "healthspan": 3.5,
+        "access": 3.2,
+        "prosperity": 2.2,
+        "civic": 2.4
+      },
+      "trend_5y": -1.6,
+      "note": "state collapse"
+    },
+    {
+      "iso": "GBR",
+      "name": "United Kingdom",
+      "region": "Europe",
+      "score": 8.4,
+      "sub": {
+        "healthspan": 8.4,
+        "access": 9.0,
+        "prosperity": 8.2,
+        "civic": 8.0
+      },
+      "trend_5y": 0.0,
+      "history": {
+        "1990": 8.0,
+        "2000": 8.3,
+        "2010": 8.5,
+        "2015": 8.5,
+        "2020": 8.4
+      }
+    },
+    {
+      "iso": "DEU",
+      "name": "Germany",
+      "region": "Europe",
+      "score": 8.7,
+      "sub": {
+        "healthspan": 8.6,
+        "access": 9.0,
+        "prosperity": 8.6,
+        "civic": 8.4
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 7.9,
+        "2000": 8.3,
+        "2010": 8.5,
+        "2015": 8.6,
+        "2020": 8.7
+      }
+    },
+    {
+      "iso": "FRA",
+      "name": "France",
+      "region": "Europe",
+      "score": 8.5,
+      "sub": {
+        "healthspan": 8.7,
+        "access": 8.9,
+        "prosperity": 8.4,
+        "civic": 8.0
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 8.1,
+        "2000": 8.4,
+        "2010": 8.5,
+        "2015": 8.5,
+        "2020": 8.5
+      }
+    },
+    {
+      "iso": "ITA",
+      "name": "Italy",
+      "region": "Europe",
+      "score": 8.2,
+      "sub": {
+        "healthspan": 8.8,
+        "access": 8.5,
+        "prosperity": 7.8,
+        "civic": 7.6
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 7.6,
+        "2000": 8.0,
+        "2010": 8.1,
+        "2015": 8.1,
+        "2020": 8.2
+      }
+    },
+    {
+      "iso": "ESP",
+      "name": "Spain",
+      "region": "Europe",
+      "score": 8.3,
+      "sub": {
+        "healthspan": 8.9,
+        "access": 8.7,
+        "prosperity": 7.7,
+        "civic": 7.9
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 7.4,
+        "2000": 8.0,
+        "2010": 8.2,
+        "2015": 8.2,
+        "2020": 8.2
+      }
+    },
+    {
+      "iso": "PRT",
+      "name": "Portugal",
+      "region": "Europe",
+      "score": 8.1,
+      "sub": {
+        "healthspan": 8.6,
+        "access": 8.5,
+        "prosperity": 7.7,
+        "civic": 7.8
+      },
+      "trend_5y": 0.4,
+      "history": {
+        "1990": 6.8,
+        "2000": 7.6,
+        "2010": 7.9,
+        "2015": 7.8,
+        "2020": 7.9
+      }
+    },
+    {
+      "iso": "POL",
+      "name": "Poland",
+      "region": "Europe",
+      "score": 7.5,
+      "sub": {
+        "healthspan": 7.8,
+        "access": 8.6,
+        "prosperity": 7.5,
+        "civic": 6.4
+      },
+      "trend_5y": 0.3,
+      "history": {
+        "1990": 5.5,
+        "2000": 6.6,
+        "2010": 7.2,
+        "2015": 7.4,
+        "2020": 7.4
+      }
+    },
+    {
+      "iso": "HUN",
+      "name": "Hungary",
+      "region": "Europe",
+      "score": 6.6,
+      "sub": {
+        "healthspan": 7.4,
+        "access": 8.4,
+        "prosperity": 6.6,
+        "civic": 4.4
+      },
+      "trend_5y": -0.5
+    },
+    {
+      "iso": "RUS",
+      "name": "Russian Federation",
+      "region": "Europe/Asia",
+      "score": 4.2,
+      "sub": {
+        "healthspan": 5.5,
+        "access": 6.8,
+        "prosperity": 5.0,
+        "civic": 1.6
+      },
+      "trend_5y": -1.3,
+      "history": {
+        "1990": 4.4,
+        "2000": 4.6,
+        "2010": 5.0,
+        "2015": 4.8,
+        "2020": 4.8
+      }
+    },
+    {
+      "iso": "UKR",
+      "name": "Ukraine",
+      "region": "Europe",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 5.8,
+        "access": 6.6,
+        "prosperity": 5.4,
+        "civic": 6.0
+      },
+      "trend_5y": -0.5,
+      "note": "active conflict; civic gains under wartime conditions",
+      "history": {
+        "2000": 5.0,
+        "2010": 5.6,
+        "2015": 5.4,
+        "2020": 5.8
+      }
+    },
+    {
+      "iso": "BLR",
+      "name": "Belarus",
+      "region": "Europe",
+      "score": 4.3,
+      "sub": {
+        "healthspan": 6.0,
+        "access": 7.0,
+        "prosperity": 5.4,
+        "civic": 1.4
+      },
+      "trend_5y": -1.8,
+      "history": {
+        "2000": 4.6,
+        "2010": 4.8,
+        "2015": 5.0,
+        "2019": 5.2,
+        "2020": 5.0
+      }
+    },
+    {
+      "iso": "TUR",
+      "name": "T\u00fcrkiye",
+      "region": "Europe/Asia",
+      "score": 5.5,
+      "sub": {
+        "healthspan": 7.0,
+        "access": 7.0,
+        "prosperity": 6.0,
+        "civic": 3.6
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 4.6,
+        "2000": 5.0,
+        "2010": 5.8,
+        "2015": 5.6,
+        "2020": 5.4
+      }
+    },
+    {
+      "iso": "ISR",
+      "name": "Israel",
+      "region": "Middle East",
+      "score": 6.4,
+      "sub": {
+        "healthspan": 8.5,
+        "access": 8.6,
+        "prosperity": 7.5,
+        "civic": 5.0
+      },
+      "trend_5y": -0.7,
+      "note": "score reflects citizens within Israel; OPT not included"
+    },
+    {
+      "iso": "PSE",
+      "name": "Palestinian Territories",
+      "region": "Middle East",
+      "score": 3.6,
+      "sub": {
+        "healthspan": 5.0,
+        "access": 5.2,
+        "prosperity": 3.2,
+        "civic": 3.0
+      },
+      "trend_5y": -1.6,
+      "note": "active conflict"
+    },
+    {
+      "iso": "SAU",
+      "name": "Saudi Arabia",
+      "region": "Middle East",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 7.5,
+        "access": 7.6,
+        "prosperity": 7.2,
+        "civic": 1.3
+      },
+      "trend_5y": 0.7,
+      "note": "women's labor force expansion driving recent gains",
+      "history": {
+        "1990": 3.8,
+        "2000": 4.2,
+        "2010": 4.6,
+        "2015": 4.8,
+        "2020": 5.0
+      }
+    },
+    {
+      "iso": "ARE",
+      "name": "United Arab Emirates",
+      "region": "Middle East",
+      "score": 6.5,
+      "sub": {
+        "healthspan": 7.8,
+        "access": 8.4,
+        "prosperity": 7.6,
+        "civic": 2.6
+      },
+      "trend_5y": 0.4
+    },
+    {
+      "iso": "IRN",
+      "name": "Iran",
+      "region": "Middle East",
+      "score": 4.1,
+      "sub": {
+        "healthspan": 6.8,
+        "access": 6.8,
+        "prosperity": 5.0,
+        "civic": 1.5
+      },
+      "trend_5y": -0.6,
+      "history": {
+        "1990": 3.6,
+        "2000": 4.2,
+        "2010": 4.4,
+        "2015": 4.4,
+        "2020": 4.2
+      }
+    },
+    {
+      "iso": "EGY",
+      "name": "Egypt",
+      "region": "Middle East/Africa",
+      "score": 4.6,
+      "sub": {
+        "healthspan": 6.0,
+        "access": 6.4,
+        "prosperity": 4.4,
+        "civic": 1.9
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 3.6,
+        "2000": 4.0,
+        "2010": 4.4,
+        "2015": 4.2,
+        "2020": 4.4
+      }
+    },
+    {
+      "iso": "JOR",
+      "name": "Jordan",
+      "region": "Middle East",
+      "score": 5.6,
+      "sub": {
+        "healthspan": 7.0,
+        "access": 7.2,
+        "prosperity": 5.8,
+        "civic": 4.0
+      },
+      "trend_5y": 0.3
+    },
+    {
+      "iso": "TUN",
+      "name": "Tunisia",
+      "region": "Middle East/Africa",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 7.0,
+        "access": 6.8,
+        "prosperity": 5.4,
+        "civic": 4.0
+      },
+      "trend_5y": -0.6
+    },
+    {
+      "iso": "YEM",
+      "name": "Yemen",
+      "region": "Middle East",
+      "score": 2.2,
+      "sub": {
+        "healthspan": 3.0,
+        "access": 2.6,
+        "prosperity": 1.8,
+        "civic": 1.4
+      },
+      "trend_5y": -0.4,
+      "note": "active conflict"
+    },
+    {
+      "iso": "IRQ",
+      "name": "Iraq",
+      "region": "Middle East",
+      "score": 4.4,
+      "sub": {
+        "healthspan": 5.4,
+        "access": 5.6,
+        "prosperity": 4.6,
+        "civic": 3.6
+      },
+      "trend_5y": 0.5
+    },
+    {
+      "iso": "AFG",
+      "name": "Afghanistan",
+      "region": "Asia",
+      "score": 2.0,
+      "sub": {
+        "healthspan": 3.4,
+        "access": 2.4,
+        "prosperity": 1.4,
+        "civic": 0.8
+      },
+      "trend_5y": -2.6,
+      "note": "women's freedoms and education collapse since 2021",
+      "history": {
+        "2000": 2.0,
+        "2005": 3.6,
+        "2010": 4.0,
+        "2015": 4.4,
+        "2019": 4.6,
+        "2021": 2.4
+      }
+    },
+    {
+      "iso": "PAK",
+      "name": "Pakistan",
+      "region": "Asia",
+      "score": 4.4,
+      "sub": {
+        "healthspan": 5.0,
+        "access": 4.4,
+        "prosperity": 4.6,
+        "civic": 3.6
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 3.8,
+        "2000": 4.0,
+        "2010": 4.2,
+        "2015": 4.4,
+        "2020": 4.4
+      }
+    },
+    {
+      "iso": "IND",
+      "name": "India",
+      "region": "Asia",
+      "score": 5.7,
+      "sub": {
+        "healthspan": 6.4,
+        "access": 7.0,
+        "prosperity": 5.8,
+        "civic": 3.6
+      },
+      "trend_5y": 0.8,
+      "note": "rapid material gains; civic indicators softer",
+      "history": {
+        "1990": 3.8,
+        "2000": 4.2,
+        "2010": 4.9,
+        "2015": 5.3,
+        "2020": 5.5
+      }
+    },
+    {
+      "iso": "BGD",
+      "name": "Bangladesh",
+      "region": "Asia",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 6.4,
+        "access": 6.0,
+        "prosperity": 5.6,
+        "civic": 3.6
+      },
+      "trend_5y": 1.2,
+      "note": "child mortality and female literacy gains widely cited",
+      "history": {
+        "1990": 2.6,
+        "2000": 3.4,
+        "2010": 4.2,
+        "2015": 4.8,
+        "2020": 5.0
+      }
+    },
+    {
+      "iso": "LKA",
+      "name": "Sri Lanka",
+      "region": "Asia",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 7.6,
+        "access": 7.0,
+        "prosperity": 5.0,
+        "civic": 3.6
+      },
+      "trend_5y": -0.5,
+      "history": {
+        "1990": 5.0,
+        "2000": 5.4,
+        "2010": 5.8,
+        "2015": 6.0,
+        "2020": 6.2
+      }
+    },
+    {
+      "iso": "NPL",
+      "name": "Nepal",
+      "region": "Asia",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 6.2,
+        "access": 5.8,
+        "prosperity": 5.0,
+        "civic": 4.6
+      },
+      "trend_5y": 0.9,
+      "history": {
+        "1990": 3.2,
+        "2000": 3.8,
+        "2010": 4.4,
+        "2015": 4.8,
+        "2020": 5.0
+      }
+    },
+    {
+      "iso": "CHN",
+      "name": "China",
+      "region": "Asia",
+      "score": 6.5,
+      "sub": {
+        "healthspan": 8.2,
+        "access": 8.4,
+        "prosperity": 8.4,
+        "civic": 1.0
+      },
+      "trend_5y": 0.5,
+      "note": "800M+ lifted from extreme poverty since 1990; civic indicators decline",
+      "history": {
+        "1990": 3.4,
+        "2000": 4.3,
+        "2010": 5.4,
+        "2015": 6.0,
+        "2020": 6.2
+      }
+    },
+    {
+      "iso": "JPN",
+      "name": "Japan",
+      "region": "Asia",
+      "score": 8.4,
+      "sub": {
+        "healthspan": 9.5,
+        "access": 9.0,
+        "prosperity": 8.2,
+        "civic": 6.9
+      },
+      "trend_5y": 0.0,
+      "history": {
+        "1990": 8.0,
+        "2000": 8.2,
+        "2010": 8.3,
+        "2015": 8.4,
+        "2020": 8.4
+      }
+    },
+    {
+      "iso": "KOR",
+      "name": "South Korea",
+      "region": "Asia",
+      "score": 8.2,
+      "sub": {
+        "healthspan": 9.0,
+        "access": 9.4,
+        "prosperity": 7.6,
+        "civic": 6.8
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 5.8,
+        "2000": 6.8,
+        "2010": 7.6,
+        "2015": 7.9,
+        "2020": 8.1
+      }
+    },
+    {
+      "iso": "PRK",
+      "name": "North Korea",
+      "region": "Asia",
+      "score": 2.4,
+      "sub": {
+        "healthspan": 4.4,
+        "access": 2.6,
+        "prosperity": 2.2,
+        "civic": 0.2
+      },
+      "trend_5y": 0.1
+    },
+    {
+      "iso": "VNM",
+      "name": "Vietnam",
+      "region": "Asia",
+      "score": 6.6,
+      "sub": {
+        "healthspan": 7.6,
+        "access": 7.6,
+        "prosperity": 7.6,
+        "civic": 3.6
+      },
+      "trend_5y": 0.9,
+      "note": "poverty rate from 70% in 1990 to under 5%",
+      "history": {
+        "1990": 3.0,
+        "2000": 4.2,
+        "2010": 5.4,
+        "2015": 6.0,
+        "2020": 6.2
+      }
+    },
+    {
+      "iso": "PHL",
+      "name": "Philippines",
+      "region": "Asia",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 6.3,
+        "access": 6.4,
+        "prosperity": 5.9,
+        "civic": 4.6
+      },
+      "trend_5y": 0.5,
+      "history": {
+        "1990": 4.6,
+        "2000": 5.0,
+        "2010": 5.4,
+        "2015": 5.6,
+        "2020": 5.6
+      }
+    },
+    {
+      "iso": "IDN",
+      "name": "Indonesia",
+      "region": "Asia",
+      "score": 6.1,
+      "sub": {
+        "healthspan": 6.6,
+        "access": 7.0,
+        "prosperity": 6.4,
+        "civic": 4.4
+      },
+      "trend_5y": 0.5,
+      "history": {
+        "1990": 3.8,
+        "2000": 4.6,
+        "2010": 5.4,
+        "2015": 5.7,
+        "2020": 5.9
+      }
+    },
+    {
+      "iso": "MMR",
+      "name": "Myanmar",
+      "region": "Asia",
+      "score": 3.0,
+      "sub": {
+        "healthspan": 4.6,
+        "access": 4.0,
+        "prosperity": 3.4,
+        "civic": 0.0
+      },
+      "trend_5y": -2.4,
+      "note": "active conflict",
+      "history": {
+        "1990": 2.2,
+        "2000": 2.6,
+        "2010": 3.6,
+        "2015": 5.0,
+        "2020": 5.4,
+        "2021": 3.6
+      }
+    },
+    {
+      "iso": "THA",
+      "name": "Thailand",
+      "region": "Asia",
+      "score": 6.3,
+      "sub": {
+        "healthspan": 7.4,
+        "access": 7.6,
+        "prosperity": 6.8,
+        "civic": 3.4
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 5.0,
+        "2000": 5.6,
+        "2010": 5.8,
+        "2015": 5.8,
+        "2020": 6.1
+      }
+    },
+    {
+      "iso": "MYS",
+      "name": "Malaysia",
+      "region": "Asia",
+      "score": 6.8,
+      "sub": {
+        "healthspan": 7.6,
+        "access": 8.0,
+        "prosperity": 7.4,
+        "civic": 4.2
+      },
+      "trend_5y": 0.3,
+      "history": {
+        "1990": 5.4,
+        "2000": 6.0,
+        "2010": 6.4,
+        "2015": 6.6,
+        "2020": 6.5
+      }
+    },
+    {
+      "iso": "SGP",
+      "name": "Singapore",
+      "region": "Asia",
+      "score": 7.8,
+      "sub": {
+        "healthspan": 9.4,
+        "access": 9.4,
+        "prosperity": 8.4,
+        "civic": 4.0
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 6.4,
+        "2000": 7.0,
+        "2010": 7.4,
+        "2015": 7.6,
+        "2020": 7.6
+      }
+    },
+    {
+      "iso": "AUS",
+      "name": "Australia",
+      "region": "Oceania",
+      "score": 8.6,
+      "sub": {
+        "healthspan": 9.2,
+        "access": 9.0,
+        "prosperity": 8.4,
+        "civic": 7.8
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 8.2,
+        "2000": 8.4,
+        "2010": 8.5,
+        "2015": 8.6,
+        "2020": 8.6
+      }
+    },
+    {
+      "iso": "NZL",
+      "name": "New Zealand",
+      "region": "Oceania",
+      "score": 8.8,
+      "sub": {
+        "healthspan": 9.0,
+        "access": 9.0,
+        "prosperity": 8.6,
+        "civic": 8.6
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 8.3,
+        "2000": 8.5,
+        "2010": 8.6,
+        "2015": 8.6,
+        "2020": 8.6
+      }
+    },
+    {
+      "iso": "ZAF",
+      "name": "South Africa",
+      "region": "Africa",
+      "score": 5.3,
+      "sub": {
+        "healthspan": 5.0,
+        "access": 6.6,
+        "prosperity": 4.4,
+        "civic": 5.2
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 3.6,
+        "1994": 4.4,
+        "2000": 5.6,
+        "2010": 5.6,
+        "2015": 5.4,
+        "2020": 5.3
+      }
+    },
+    {
+      "iso": "NGA",
+      "name": "Nigeria",
+      "region": "Africa",
+      "score": 3.6,
+      "sub": {
+        "healthspan": 3.6,
+        "access": 4.0,
+        "prosperity": 3.2,
+        "civic": 3.6
+      },
+      "trend_5y": 0.0
+    },
+    {
+      "iso": "KEN",
+      "name": "Kenya",
+      "region": "Africa",
+      "score": 5.1,
+      "sub": {
+        "healthspan": 5.6,
+        "access": 5.4,
+        "prosperity": 4.6,
+        "civic": 4.8
+      },
+      "trend_5y": 0.6,
+      "history": {
+        "1990": 3.6,
+        "2000": 4.0,
+        "2010": 4.6,
+        "2015": 4.8,
+        "2020": 4.8
+      }
+    },
+    {
+      "iso": "ETH",
+      "name": "Ethiopia",
+      "region": "Africa",
+      "score": 4.2,
+      "sub": {
+        "healthspan": 5.0,
+        "access": 4.0,
+        "prosperity": 4.4,
+        "civic": 3.4
+      },
+      "trend_5y": 0.7,
+      "note": "child mortality halved since 2000; Tigray a recent setback",
+      "history": {
+        "1990": 2.4,
+        "2000": 3.0,
+        "2010": 3.8,
+        "2015": 4.4,
+        "2020": 4.0
+      }
+    },
+    {
+      "iso": "RWA",
+      "name": "Rwanda",
+      "region": "Africa",
+      "score": 5.6,
+      "sub": {
+        "healthspan": 6.4,
+        "access": 5.8,
+        "prosperity": 5.8,
+        "civic": 4.4
+      },
+      "trend_5y": 0.6,
+      "note": "post-genocide reconstruction model on health and admin; civic indicators contested",
+      "history": {
+        "1995": 1.5,
+        "2000": 3.0,
+        "2010": 4.6,
+        "2015": 5.2,
+        "2020": 5.4
+      }
+    },
+    {
+      "iso": "GHA",
+      "name": "Ghana",
+      "region": "Africa",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 5.8,
+        "access": 6.4,
+        "prosperity": 5.4,
+        "civic": 5.6
+      },
+      "trend_5y": 0.4,
+      "history": {
+        "1990": 4.2,
+        "2000": 4.8,
+        "2010": 5.4,
+        "2015": 5.6,
+        "2020": 5.6
+      }
+    },
+    {
+      "iso": "SEN",
+      "name": "Senegal",
+      "region": "Africa",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 5.4,
+        "access": 5.6,
+        "prosperity": 4.8,
+        "civic": 5.8
+      },
+      "trend_5y": 0.4
+    },
+    {
+      "iso": "MAR",
+      "name": "Morocco",
+      "region": "Africa",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 6.6,
+        "access": 6.6,
+        "prosperity": 5.8,
+        "civic": 4.2
+      },
+      "trend_5y": 0.5,
+      "history": {
+        "1990": 4.2,
+        "2000": 4.8,
+        "2010": 5.4,
+        "2015": 5.6,
+        "2020": 5.6
+      }
+    },
+    {
+      "iso": "DZA",
+      "name": "Algeria",
+      "region": "Africa",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 6.6,
+        "access": 6.4,
+        "prosperity": 5.4,
+        "civic": 3.4
+      },
+      "trend_5y": 0.2
+    },
+    {
+      "iso": "TZA",
+      "name": "Tanzania",
+      "region": "Africa",
+      "score": 4.6,
+      "sub": {
+        "healthspan": 5.0,
+        "access": 4.6,
+        "prosperity": 4.2,
+        "civic": 4.6
+      },
+      "trend_5y": 0.5
+    },
+    {
+      "iso": "UGA",
+      "name": "Uganda",
+      "region": "Africa",
+      "score": 4.3,
+      "sub": {
+        "healthspan": 4.6,
+        "access": 4.4,
+        "prosperity": 4.0,
+        "civic": 4.0
+      },
+      "trend_5y": 0.3
+    },
+    {
+      "iso": "COD",
+      "name": "DR Congo",
+      "region": "Africa",
+      "score": 3.2,
+      "sub": {
+        "healthspan": 3.4,
+        "access": 3.2,
+        "prosperity": 2.8,
+        "civic": 3.4
+      },
+      "trend_5y": 0.2,
+      "note": "active conflict in east"
+    },
+    {
+      "iso": "CIV",
+      "name": "C\u00f4te d'Ivoire",
+      "region": "Africa",
+      "score": 4.8,
+      "sub": {
+        "healthspan": 5.0,
+        "access": 5.0,
+        "prosperity": 5.0,
+        "civic": 4.2
+      },
+      "trend_5y": 0.5
+    },
+    {
+      "iso": "MOZ",
+      "name": "Mozambique",
+      "region": "Africa",
+      "score": 3.6,
+      "sub": {
+        "healthspan": 4.0,
+        "access": 3.6,
+        "prosperity": 3.2,
+        "civic": 3.6
+      },
+      "trend_5y": 0.0
+    },
+    {
+      "iso": "AGO",
+      "name": "Angola",
+      "region": "Africa",
+      "score": 4.0,
+      "sub": {
+        "healthspan": 4.0,
+        "access": 4.4,
+        "prosperity": 4.0,
+        "civic": 3.6
+      },
+      "trend_5y": 0.3
+    },
+    {
+      "iso": "BOL",
+      "name": "Bolivia",
+      "region": "Americas",
+      "score": 5.4,
+      "sub": {
+        "healthspan": 5.8,
+        "access": 5.4,
+        "prosperity": 5.0,
+        "civic": 5.4
+      },
+      "trend_5y": 0.1
+    },
+    {
+      "iso": "ECU",
+      "name": "Ecuador",
+      "region": "Americas",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 6.4,
+        "access": 6.0,
+        "prosperity": 5.4,
+        "civic": 5.4
+      },
+      "trend_5y": -0.2
+    },
+    {
+      "iso": "CRI",
+      "name": "Costa Rica",
+      "region": "Americas",
+      "score": 7.6,
+      "sub": {
+        "healthspan": 8.4,
+        "access": 7.6,
+        "prosperity": 7.0,
+        "civic": 7.4
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 6.6,
+        "2000": 7.0,
+        "2010": 7.4,
+        "2015": 7.5,
+        "2020": 7.5
+      }
+    },
+    {
+      "iso": "CUB",
+      "name": "Cuba",
+      "region": "Americas",
+      "score": 5.5,
+      "sub": {
+        "healthspan": 8.2,
+        "access": 8.0,
+        "prosperity": 4.0,
+        "civic": 1.8
+      },
+      "trend_5y": -0.4,
+      "note": "healthspan strong; civic indicators severely constrained"
+    },
+    {
+      "iso": "URY",
+      "name": "Uruguay",
+      "region": "Americas",
+      "score": 8.1,
+      "sub": {
+        "healthspan": 8.2,
+        "access": 8.6,
+        "prosperity": 7.6,
+        "civic": 8.0
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 6.6,
+        "2000": 7.4,
+        "2010": 7.8,
+        "2015": 8.0,
+        "2020": 8.0
+      }
+    },
+    {
+      "iso": "KHM",
+      "name": "Cambodia",
+      "region": "Asia",
+      "score": 5.0,
+      "sub": {
+        "healthspan": 5.6,
+        "access": 5.6,
+        "prosperity": 5.4,
+        "civic": 3.4
+      },
+      "trend_5y": 0.4
+    },
+    {
+      "iso": "MNG",
+      "name": "Mongolia",
+      "region": "Asia",
+      "score": 6.0,
+      "sub": {
+        "healthspan": 6.0,
+        "access": 6.6,
+        "prosperity": 5.6,
+        "civic": 6.0
+      },
+      "trend_5y": 0.2
+    },
+    {
+      "iso": "KAZ",
+      "name": "Kazakhstan",
+      "region": "Asia",
+      "score": 5.8,
+      "sub": {
+        "healthspan": 6.6,
+        "access": 7.4,
+        "prosperity": 6.4,
+        "civic": 3.0
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "2000": 4.8,
+        "2010": 5.4,
+        "2015": 5.6,
+        "2020": 5.7
+      }
+    },
+    {
+      "iso": "SWE",
+      "name": "Sweden",
+      "region": "Europe",
+      "score": 9.0,
+      "sub": {
+        "healthspan": 9.0,
+        "access": 9.2,
+        "prosperity": 8.8,
+        "civic": 9.0
+      },
+      "trend_5y": -0.1,
+      "history": {
+        "1990": 8.7,
+        "2000": 8.9,
+        "2010": 9.0,
+        "2015": 9.1,
+        "2020": 9.1
+      }
+    },
+    {
+      "iso": "NOR",
+      "name": "Norway",
+      "region": "Europe",
+      "score": 9.1,
+      "sub": {
+        "healthspan": 9.0,
+        "access": 9.2,
+        "prosperity": 9.0,
+        "civic": 9.2
+      },
+      "trend_5y": 0.0,
+      "history": {
+        "1990": 8.8,
+        "2000": 9.0,
+        "2010": 9.1,
+        "2015": 9.2,
+        "2020": 9.1
+      }
+    },
+    {
+      "iso": "DNK",
+      "name": "Denmark",
+      "region": "Europe",
+      "score": 8.9,
+      "sub": {
+        "healthspan": 8.8,
+        "access": 9.2,
+        "prosperity": 8.6,
+        "civic": 9.0
+      },
+      "trend_5y": 0.0,
+      "history": {
+        "1990": 8.6,
+        "2000": 8.8,
+        "2010": 8.9,
+        "2015": 9.0,
+        "2020": 8.9
+      }
+    },
+    {
+      "iso": "FIN",
+      "name": "Finland",
+      "region": "Europe",
+      "score": 9.0,
+      "sub": {
+        "healthspan": 9.0,
+        "access": 9.2,
+        "prosperity": 8.8,
+        "civic": 9.0
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 8.6,
+        "2000": 8.8,
+        "2010": 9.0,
+        "2015": 9.1,
+        "2020": 9.0
+      }
+    },
+    {
+      "iso": "NLD",
+      "name": "Netherlands",
+      "region": "Europe",
+      "score": 8.7,
+      "sub": {
+        "healthspan": 8.6,
+        "access": 9.2,
+        "prosperity": 8.6,
+        "civic": 8.4
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 8.4,
+        "2000": 8.7,
+        "2010": 8.8,
+        "2015": 8.7,
+        "2020": 8.7
+      }
+    },
+    {
+      "iso": "CHE",
+      "name": "Switzerland",
+      "region": "Europe",
+      "score": 8.8,
+      "sub": {
+        "healthspan": 9.4,
+        "access": 9.0,
+        "prosperity": 8.6,
+        "civic": 8.2
+      },
+      "trend_5y": 0.1,
+      "history": {
+        "1990": 8.5,
+        "2000": 8.7,
+        "2010": 8.8,
+        "2015": 8.9,
+        "2020": 8.8
+      }
+    },
+    {
+      "iso": "GRC",
+      "name": "Greece",
+      "region": "Europe",
+      "score": 7.6,
+      "sub": {
+        "healthspan": 8.0,
+        "access": 8.2,
+        "prosperity": 7.0,
+        "civic": 7.2
+      },
+      "trend_5y": 0.2,
+      "history": {
+        "1990": 6.6,
+        "2000": 7.2,
+        "2010": 7.6,
+        "2015": 7.2,
+        "2020": 7.4
+      }
+    },
+    {
+      "iso": "ROU",
+      "name": "Romania",
+      "region": "Europe",
+      "score": 7.1,
+      "sub": {
+        "healthspan": 7.4,
+        "access": 8.0,
+        "prosperity": 7.0,
+        "civic": 6.0
+      },
+      "trend_5y": 0.3,
+      "history": {
+        "1990": 5.0,
+        "2000": 6.0,
+        "2010": 6.6,
+        "2015": 6.8,
+        "2020": 7.0
+      }
+    }
   ]
 }
