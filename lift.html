@@ -3037,15 +3037,15 @@ function openCountryDetail(iso) {
     // Recent events in this country
     const evs = (gainStore.events?.events || []).filter(e => e.country_iso === iso);
 
-    // Sub-indicators as mini-trajectory charts
-    // Each sub-indicator inferred to have moved at the composite trend rate
+    // Sub-indicators as mini-trajectory charts (2020–2025 trend window only —
+    // we have no per-dimension history, just current values + the composite trend)
+    const subYears = [2020, 2021, 2022, 2023, 2024, 2025];
     function subTraj(name, current) {
-        const series = trajYears.map(yr => {
+        return subYears.map(yr => {
             const dt = (yr - 2025);
             const v = Math.max(0, Math.min(10, current + (c.trend_5y / 5) * dt));
             return { year: yr, value: v };
         });
-        return series;
     }
     const subTrajs = Object.entries(sub).map(([k, v]) => ({ key: k, current: v, series: subTraj(k, v) }));
     function miniChart(series, color) {
