@@ -633,6 +633,44 @@ a:hover { opacity: 1; }
 .legend-bar > div:nth-child(5) { background: var(--gain-5); }
 .legend-bar > div:nth-child(6) { background: var(--gain-6); }
 
+/* ── STATE OF HUMANITY ── */
+.humanity-100 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+@media (max-width: 820px) { .humanity-100 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .humanity-100 { grid-template-columns: 1fr; } }
+.hp-card { background: var(--surface); border: 1px solid var(--rule); padding: 18px 20px; }
+.hp-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--text-bright); line-height: 1; }
+.hp-num small { font-family: var(--sans); font-size: 0.78rem; color: var(--text-dim); font-weight: 400; margin-left: 4px; }
+.hp-label { font-family: var(--sans); font-size: 0.86rem; color: var(--text); margin: 4px 0 12px; }
+.dotgrid { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; max-width: 240px; }
+.dotgrid .dot { width: 100%; aspect-ratio: 1; background: var(--rule-bright); border-radius: 1px; }
+.dotgrid .dot.on { background: var(--gain-6); }
+.dotgrid .dot.on.concern { background: var(--bad); }
+.hp-base { font-family: var(--mono); font-size: 0.68rem; color: var(--text-faint); margin-top: 12px; }
+.hp-src { font-family: var(--mono); font-size: 0.6rem; color: var(--text-faint); margin-top: 3px; opacity: 0.7; }
+
+.thennow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 720px) { .thennow-grid { grid-template-columns: 1fr; } }
+.tn-card { background: var(--surface); border: 1px solid var(--rule); padding: 18px 20px; }
+.tn-label { font-family: var(--sans); font-size: 0.8rem; color: var(--text-dim); margin-bottom: 12px; }
+.tn-flow { display: flex; align-items: baseline; gap: 12px; font-family: var(--mono); }
+.tn-then { font-size: 1.3rem; color: var(--text-faint); }
+.tn-arrow { color: var(--accent); font-size: 1rem; }
+.tn-now { font-size: 2rem; color: var(--text-bright); font-weight: 500; }
+.tn-unit { font-family: var(--sans); font-size: 0.72rem; color: var(--text-faint); margin-top: 8px; }
+
+.humanity-charts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 820px) { .humanity-charts { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .humanity-charts { grid-template-columns: 1fr; } }
+.hchart { background: var(--surface); border: 1px solid var(--rule); padding: 16px 18px; }
+.hchart h4 { font-family: var(--serif); font-size: 0.92rem; color: var(--text-bright); font-weight: 500; }
+.hchart .hc-meta { font-family: var(--mono); font-size: 0.66rem; color: var(--text-faint); margin: 2px 0 10px; }
+.hchart svg { width: 100%; height: 70px; display: block; }
+.hchart .hc-src { font-family: var(--mono); font-size: 0.58rem; color: var(--text-faint); margin-top: 8px; opacity: 0.7; }
+
 /* ── TIMELINE ── */
 .timeline-wrap {
     position: relative;
@@ -1848,6 +1886,7 @@ footer a:hover { color: var(--text); }
 <a href="/" class="back">&larr; Home</a>
 
 <nav class="section-nav" id="section-nav">
+    <a href="#humanity-section" data-target="humanity-section">Humanity</a>
     <a href="#heatmap-section" data-target="heatmap-section">Heatmap</a>
     <a href="#timeline-section" data-target="timeline-section">Timeline</a>
     <a href="#movers-section" data-target="movers-section">Movers</a>
@@ -1925,6 +1964,51 @@ footer a:hover { color: var(--text); }
 <div class="pull">
     <p>What was raised, by whom, by how much, and at what cost.</p>
     <div class="attr">The discipline</div>
+</div>
+
+<hr class="rule">
+
+<!-- ── STATE OF HUMANITY ── -->
+<div class="section" id="humanity-section">
+    <div class="col-wide">
+        <div class="eyebrow-sm reveal">View · Humanity as a whole</div>
+        <h2 class="reveal">Before we split it by country — here's how we're doing as one species</h2>
+        <p class="intro reveal">
+            No borders, no comparisons. Just the numbers for everyone alive, from the World Bank's world aggregate. <em>Every figure here is real and sourced</em> — fetched from the World Bank API, not estimated. Where a year has no data, it's left out rather than filled in.
+        </p>
+    </div>
+
+    <div class="col-wide">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div><h3>If the world were 100 people</h3>
+                <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Latest available year, rounded to the nearest person.</div></div>
+                <div class="viz-source">SRC: World Bank · REAL</div>
+            </div>
+            <div class="humanity-100" id="hundred-grid"></div>
+        </div>
+    </div>
+
+    <div class="col-wide" style="margin-top:18px;">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div><h3>The average human — then and now</h3></div>
+                <div class="viz-source">SRC: World Bank · REAL</div>
+            </div>
+            <div class="thennow-grid" id="thennow-grid"></div>
+        </div>
+    </div>
+
+    <div class="col-wide" style="margin-top:18px;">
+        <div class="viz-frame full reveal">
+            <div class="viz-title-row">
+                <div><h3>The long arc</h3>
+                <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Real world-aggregate series. Hover a chart for its source.</div></div>
+                <div class="viz-source">SRC: World Bank · REAL</div>
+            </div>
+            <div class="humanity-charts" id="humanity-charts"></div>
+        </div>
+    </div>
 </div>
 
 <hr class="rule">
@@ -2589,6 +2673,79 @@ async function renderHeatmap() {
     const data = await loadJSON('lift/data/heatmap.json');
     gainStore.heatmap = data;
     drawHeatmap();
+}
+
+// ── State of humanity (real World Bank world-aggregate data) ──
+async function renderHumanity() {
+    const data = await loadJSON('lift/data/humanity.json');
+    gainStore.humanity = data;
+    const ind = data.indicators;
+
+    // 1. If the world were 100 people
+    const hundred = [
+        ['literacy', 'can read', false],
+        ['electricity', 'have electricity', false],
+        ['internet', 'are online', false],
+        ['safe_water', 'have safe drinking water', false],
+        ['extreme_poverty', 'live in extreme poverty', true],
+        ['undernourishment', 'are undernourished', true]
+    ];
+    const hg = document.getElementById('hundred-grid');
+    if (hg) hg.innerHTML = hundred.filter(([k]) => ind[k]).map(([k, label, concern]) => {
+        const i = ind[k];
+        const n = Math.round(i.latest.value);
+        let dots = '';
+        for (let d = 0; d < 100; d++) dots += `<div class="dot${d < n ? ' on' + (concern ? ' concern' : '') : ''}"></div>`;
+        const base = i.baseline;
+        return `<div class="hp-card">
+            <div class="hp-num">${n}<small>of 100</small></div>
+            <div class="hp-label">${label}</div>
+            <div class="dotgrid">${dots}</div>
+            <div class="hp-base">${concern ? 'down' : 'up'} from ${Math.round(base.value)} in ${base.year}</div>
+            <div class="hp-src">World Bank · latest ${i.latest.year}</div>
+        </div>`;
+    }).join('');
+
+    // 2. The average human — then and now
+    const tn = [
+        ['life_expectancy', 'Life expectancy at birth', 'years'],
+        ['under5_mortality', 'Child deaths before age 5', 'per 1,000 births'],
+        ['maternal_mortality', 'Maternal deaths', 'per 100,000 births']
+    ];
+    const tg = document.getElementById('thennow-grid');
+    if (tg) tg.innerHTML = tn.filter(([k]) => ind[k]).map(([k, label, unit]) => {
+        const i = ind[k];
+        return `<div class="tn-card">
+            <div class="tn-label">${label}</div>
+            <div class="tn-flow"><span class="tn-then">${i.baseline.value}</span><span class="tn-arrow">→</span><span class="tn-now">${i.latest.value}</span></div>
+            <div class="tn-unit">${unit} · ${i.baseline.year} → ${i.latest.year} · World Bank</div>
+        </div>`;
+    }).join('');
+
+    // 3. The long arc — real series small multiples
+    const cg = document.getElementById('humanity-charts');
+    if (cg) cg.innerHTML = Object.entries(ind).map(([k, i]) => {
+        const s = i.series;
+        const W = 280, H = 70, mT = 6, mB = 6;
+        const xs = s.map(p => p[0]), ys = s.map(p => p[1]);
+        const xMin = Math.min(...xs), xMax = Math.max(...xs);
+        const yMin = Math.min(...ys), yMax = Math.max(...ys);
+        const xS = x => 2 + ((x - xMin) / (xMax - xMin || 1)) * (W - 4);
+        const yS = y => mT + (H - mT - mB) - ((y - yMin) / (yMax - yMin || 1)) * (H - mT - mB);
+        const pts = s.map(p => xS(p[0]) + ',' + yS(p[1]));
+        const good = i.direction === 'up';
+        const color = good ? 'var(--good)' : 'var(--bad)';
+        const area = 'M ' + pts.join(' L ') + ` L ${xS(xMax)},${H - mB} L ${xS(xMin)},${H - mB} Z`;
+        return `<div class="hchart" title="${i.label} · World Bank ${i.wb_code} · ${xMin}–${xMax}">
+            <h4>${i.label}</h4>
+            <div class="hc-meta">${i.latest.value}${i.unit === 'percent' ? '%' : ''} ${i.unit !== 'percent' ? i.unit : ''} · ${i.latest.year}</div>
+            <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+                <path d="${area}" fill="${color}" fill-opacity="0.12"/>
+                <path d="M ${pts.join(' L ')}" fill="none" stroke="${color}" stroke-width="1.6"/>
+            </svg>
+            <div class="hc-src">World Bank, world aggregate · ${xMin}–${xMax}</div>
+        </div>`;
+    }).join('');
 }
 
 function drawHeatmap() {
@@ -3942,6 +4099,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initWeights();
     initHeroStats();
     initSectionNav();
+    renderHumanity().catch(console.error);
     renderHeatmap().catch(console.error);
     renderTimeline().catch(console.error);
     renderMovers().catch(console.error);
