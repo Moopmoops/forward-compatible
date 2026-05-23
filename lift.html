@@ -2174,7 +2174,7 @@ footer a:hover { color: var(--text); }
         <div class="eyebrow-sm reveal">View · Recent gains</div>
         <h2 class="reveal">The live ledger</h2>
         <p class="intro reveal">
-            Each row is a normalized record from one or more source connectors. Tier badges reflect how well the gain is corroborated: multi-source, single-source (surfaced anyway, tagged), disputed (sources materially disagree), adjudicated (confirmed by a regulator or court of record — FDA, EMA, IUCN status change, treaty deposit, peace accord signed).
+            A running feed of verified recent gains — each a real, dated, sourced milestone. This is the one part of the page that needs a live monitor rather than a downloadable dataset, so it's not built yet.
         </p>
     </div>
 
@@ -2182,46 +2182,16 @@ footer a:hover { color: var(--text); }
         <div class="viz-frame full reveal">
             <div class="viz-title-row">
                 <div>
-                    <h3>Recent ledger entries · last 14 days</h3>
+                    <h3>Recent verified gains</h3>
                 </div>
-                <div class="viz-source">SRC: aggregated · ILLUSTRATIVE</div>
+                <div class="viz-source">NOT YET LIVE</div>
             </div>
-            <div class="filter-row" id="events-filters">
-                <span class="filter-label">Category</span>
-                <span class="filter-chip cat-all active" data-filter="cat" data-val="all">All</span>
-                <span class="filter-chip cat-medical" data-filter="cat" data-val="medical">Medical</span>
-                <span class="filter-chip cat-scientific" data-filter="cat" data-val="scientific">Scientific</span>
-                <span class="filter-chip cat-rights" data-filter="cat" data-val="rights">Rights</span>
-                <span class="filter-chip cat-environmental" data-filter="cat" data-val="environmental">Environmental</span>
-                <span class="filter-chip cat-humanitarian" data-filter="cat" data-val="humanitarian">Humanitarian</span>
-                <span class="filter-chip cat-accessibility" data-filter="cat" data-val="accessibility">Accessibility</span>
-                <span class="filter-chip cat-agriculture" data-filter="cat" data-val="agriculture">Agriculture</span>
-                <span class="filter-chip cat-communication" data-filter="cat" data-val="communication">Communication</span>
-                <span class="filter-chip cat-governance" data-filter="cat" data-val="governance">Governance</span>
-                <span class="filter-chip cat-safety" data-filter="cat" data-val="safety">Safety</span>
+            <div style="padding:40px 8px; text-align:center; font-family:var(--sans); color:var(--text-dim); line-height:1.7;">
+                <div style="font-size:0.95rem; color:var(--text);">Empty on purpose.</div>
+                <div style="font-size:0.84rem; max-width:560px; margin:10px auto 0;">
+                    This feed will list real, dated, sourced wins — a regulator approval, an IUCN status change, a disease elimination certified by the WHO. We won't fill it with invented examples. Until the monitor that finds and cites real milestones is built, it stays empty.
+                </div>
             </div>
-            <div class="filter-row" id="events-tier-filters" style="margin-top:-8px;">
-                <span class="filter-label">Tier</span>
-                <span class="filter-chip tier-all active" data-filter="tier" data-val="all">All</span>
-                <span class="filter-chip tier-multi" data-filter="tier" data-val="multi">Multi-source</span>
-                <span class="filter-chip tier-adjudicated" data-filter="tier" data-val="adjudicated">Adjudicated</span>
-                <span class="filter-chip tier-disputed" data-filter="tier" data-val="disputed">Disputed</span>
-                <span class="filter-chip tier-single" data-filter="tier" data-val="single">Single-source</span>
-                <input type="text" class="search-input" id="events-search" placeholder="Search gains, countries, actors…">
-                <span class="filter-count" id="events-count"></span>
-            </div>
-            <table class="events-table">
-                <thead><tr>
-                    <th class="col-date">Date</th>
-                    <th class="col-country">Where</th>
-                    <th class="col-actor">Actor</th>
-                    <th>Gain</th>
-                    <th class="col-cat">Category</th>
-                    <th class="col-tier">Tier</th>
-                    <th class="col-sources">Sources</th>
-                </tr></thead>
-                <tbody id="events-body"></tbody>
-            </table>
         </div>
     </div>
 </div>
@@ -3977,7 +3947,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMovers().catch(console.error);
     renderDisputes().catch(console.error);
     renderStructural().catch(console.error);
-    renderEvents().catch(console.error);
+    // renderEvents removed — fabricated "recent gains" pulled; real feed pending
     renderTreaties().catch(console.error);
     renderDonut();
     renderMatrix().catch(console.error);
