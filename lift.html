@@ -1940,8 +1940,8 @@ footer a:hover { color: var(--text); }
 <!-- ── STATUS BANNER ── -->
 <div class="status-banner">
     <div class="col-wide">
-        <div><span class="pulse"></span>Status: <strong style="color:var(--text-bright)">design + pipeline scaffolding</strong> · live ingestion not yet running</div>
-        <div>Schema v1 · 15 sources catalogued · <a href="/lift/methodology.html">methodology &rarr;</a></div>
+        <div><span class="pulse"></span>Status: <strong style="color:var(--text-bright)">real data live</strong> for the global + country views · timeline and other sections still illustrative</div>
+        <div>Sources: World Bank · OWID · <a href="/lift/methodology.html">methodology &rarr;</a></div>
     </div>
 </div>
 
@@ -2019,7 +2019,7 @@ footer a:hover { color: var(--text); }
         <div class="eyebrow-sm reveal">View · Build your own index</div>
         <h2 class="reveal">There is no single right way to score a country. So we don't.</h2>
         <p class="intro reveal">
-            This isn't a ranking, and it takes no position on anyone's politics. It's seven measures of how people actually live — grouped into outcomes and lived experience — each from an established index, with the weighting left to you. Singapore, for instance, has long, healthy, safe lives and high prosperity but little free time; whether that nets out as "doing well" depends on what you value. We don't make that call — <em>move the sliders and the map is yours.</em>
+            This isn't a ranking, and it takes no position on anyone's politics. It's five real measures of how people actually live — grouped into outcomes and lived experience — each fetched from an established dataset, with the weighting left to you. Singapore, for instance, has long lives and high prosperity but among the longest working hours on earth; whether that nets out as "doing well" depends on what you value. We don't make that call — <em>move the sliders and the map is yours.</em>
         </p>
     </div>
 
@@ -2027,14 +2027,14 @@ footer a:hover { color: var(--text); }
         <div class="viz-frame full reveal">
             <div class="viz-title-row">
                 <div>
-                    <h3>Your composite · <span id="heatmap-year-label">2025</span></h3>
-                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Set the weights, then hover any country for its components.</div>
+                    <h3>Your composite</h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Real data, latest available year per country. Set the weights; hover any country for its components.</div>
                 </div>
-                <div class="viz-source">COMPONENTS: WB · WHO · UNESCO · ITU · OECD · GALLUP · WHR · ILLUSTRATIVE</div>
+                <div class="viz-source">COMPONENTS: World Bank + OWID · REAL</div>
             </div>
             <div class="weights-panel">
                 <div class="weights-head">
-                    <span class="wp-title">Weight what you value<small>Your composite = the weighted average of the ten components below, grouped into three families. Set any weight to zero to ignore it.</small></span>
+                    <span class="wp-title">Weight what you value<small>Your composite = the weighted average of the five real components below. Set any weight to zero to ignore it.</small></span>
                     <div class="weights-presets" id="weight-presets">
                         <span class="weight-preset active" data-preset="equal">Equal</span>
                         <span class="weight-preset" data-preset="health">Health &amp; longevity</span>
@@ -2046,44 +2046,30 @@ footer a:hover { color: var(--text); }
                     <div class="weight-group">
                         <div class="wg-head">Outcomes <small>objective attainment</small></div>
                         <div class="weights-subgrid">
-                            <div class="weight-ctl"><div class="wlabel">Healthy lifespan <span class="wval" id="wval-healthy_lifespan">50</span></div><div class="wsrc">years in good health · WHO HALE</div><input type="range" min="0" max="100" value="50" data-dim="healthy_lifespan"></div>
-                            <div class="weight-ctl"><div class="wlabel">Access <span class="wval" id="wval-access">50</span></div><div class="wsrc">literacy, internet, power, water · UNESCO, ITU, WB</div><input type="range" min="0" max="100" value="50" data-dim="access"></div>
-                            <div class="weight-ctl"><div class="wlabel">Prosperity <span class="wval" id="wval-prosperity">50</span></div><div class="wsrc">median income, poverty floor · World Bank, LIS</div><input type="range" min="0" max="100" value="50" data-dim="prosperity"></div>
+                            <div class="weight-ctl"><div class="wlabel">Life expectancy <span class="wval" id="wval-life_expectancy">50</span></div><div class="wsrc">years at birth · World Bank</div><input type="range" min="0" max="100" value="50" data-dim="life_expectancy"></div>
+                            <div class="weight-ctl"><div class="wlabel">Access <span class="wval" id="wval-access">50</span></div><div class="wsrc">internet, power, water, literacy · World Bank</div><input type="range" min="0" max="100" value="50" data-dim="access"></div>
+                            <div class="weight-ctl"><div class="wlabel">Prosperity <span class="wval" id="wval-prosperity">50</span></div><div class="wsrc">GNI per capita, PPP · World Bank</div><input type="range" min="0" max="100" value="50" data-dim="prosperity"></div>
                         </div>
                     </div>
                     <div class="weight-group">
                         <div class="wg-head">Lived experience <small>what daily life feels like</small></div>
                         <div class="weights-subgrid">
-                            <div class="weight-ctl"><div class="wlabel">Free time <span class="wval" id="wval-free_time">50</span></div><div class="wsrc">low work hours, paid leave · OECD, ILO</div><input type="range" min="0" max="100" value="50" data-dim="free_time"></div>
-                            <div class="weight-ctl"><div class="wlabel">Social support <span class="wval" id="wval-social_support">50</span></div><div class="wsrc">someone to count on · Gallup World Poll</div><input type="range" min="0" max="100" value="50" data-dim="social_support"></div>
-                            <div class="weight-ctl"><div class="wlabel">Felt safety <span class="wval" id="wval-felt_safety">50</span></div><div class="wsrc">safe walking alone at night · Gallup</div><input type="range" min="0" max="100" value="50" data-dim="felt_safety"></div>
+                            <div class="weight-ctl"><div class="wlabel">Free time <span class="wval" id="wval-free_time">50</span></div><div class="wsrc">fewer annual work hours · OWID</div><input type="range" min="0" max="100" value="50" data-dim="free_time"></div>
                             <div class="weight-ctl"><div class="wlabel">Life satisfaction <span class="wval" id="wval-life_satisfaction">50</span></div><div class="wsrc">Cantril ladder · World Happiness Report</div><input type="range" min="0" max="100" value="50" data-dim="life_satisfaction"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scrub-row">
-                <span class="scrub-label">Year</span>
-                <div class="scrub-year" id="scrub-year">2025</div>
-                <input type="range" class="scrub-slider" id="scrub-slider" min="1990" max="2025" step="1" value="2025">
-                <div class="scrub-ticks" id="scrub-ticks">
-                    <span class="scrub-tick" data-yr="1990">1990</span>
-                    <span class="scrub-tick" data-yr="2000">2000</span>
-                    <span class="scrub-tick" data-yr="2010">2010</span>
-                    <span class="scrub-tick" data-yr="2020">2020</span>
-                    <span class="scrub-tick active" data-yr="2025">2025</span>
-                </div>
-                <div class="scrub-stats" id="scrub-stats"></div>
-            </div>
             <div id="heatmap" class="heatmap"></div>
             <div class="heatmap-legend">
-                <span>Stalled</span>
+                <span>Lower</span>
                 <div class="legend-bar"><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                <span>Soaring</span>
+                <span>Higher</span>
                 <span style="margin-left:24px; font-style:italic;">Gold border = active armed conflict or institutional collapse</span>
             </div>
+            <div class="ranges-note" id="ranges-note"></div>
             <div class="viz-caption">
-                The composite is yours — built live from the weights you set, never asserted by us. <em>Drag the year slider back to 1990</em> to watch it move through time: countries with a documented arc (57 of them) stay populated the whole way back, while countries without documented history yet go dark before 2020 and show "—" rather than a fabricated number. The historical shape comes from each country's documented composite arc; your weights set today's level and scale the arc with it. Per-component history before 2025 is a future data lift. Click any cell for the full country page.
+                Real values per country, fetched from the World Bank and Our World in Data, each normalized to 0–10 by the published ranges above. The composite is yours — the weighted average of the components you care about. A country missing a source shows that component dark and is scored on the rest. <em>Per-country history isn't pulled yet</em>, so this shows the latest available year; the time scrubber returns when the historical series lands. Click any cell for the full country page with raw values.
             </div>
         </div>
     </div>
@@ -2627,52 +2613,76 @@ function countryScoreAt(c, year) {
 
 // ── User-weighted scoring ──────────────────────────────────────
 // The page asserts no ranking. The composite is the reader's: a
-// weighted average of the four component sub-scores. countryScoreAt
-// above gives the documented composite ARC; we keep its shape and
-// scale it to the reader's present-day composite.
-const DIMS = ['healthy_lifespan','access','prosperity','free_time','social_support','felt_safety','life_satisfaction'];
+// weighted average of the real component scores they care about.
+// Missing components are excluded (never counted as zero).
+const DIMS = ['life_expectancy','access','prosperity','free_time','life_satisfaction'];
 const COMP_GROUPS = {
-    outcomes: ['healthy_lifespan','access','prosperity'],
-    lived:    ['free_time','social_support','felt_safety','life_satisfaction']
+    outcomes: ['life_expectancy','access','prosperity'],
+    lived:    ['free_time','life_satisfaction']
 };
 const COMP_LABEL = {
-    healthy_lifespan:'Healthy lifespan', access:'Access', prosperity:'Prosperity',
-    free_time:'Free time', social_support:'Social support', felt_safety:'Felt safety', life_satisfaction:'Life satisfaction'
+    life_expectancy:'Life expectancy', access:'Access', prosperity:'Prosperity',
+    free_time:'Free time', life_satisfaction:'Life satisfaction'
 };
 const weights = {}; DIMS.forEach(k => { weights[k] = 50; });
 function mkPreset() { const w = {}; DIMS.forEach((k, i) => { w[k] = arguments[i]; }); return w; }
 const weightPresets = {
-    // order: healthy_lifespan, access, prosperity | free_time, social_support, felt_safety, life_satisfaction
-    equal:    mkPreset(50,50,50, 50,50,50,50),
-    health:   mkPreset(100,55,55, 45,55,65,55),
-    quality:  mkPreset(55,50,50, 85,85,80,85),
-    material: mkPreset(65,65,75, 40,40,45,45)
+    // order: life_expectancy, access, prosperity | free_time, life_satisfaction
+    equal:    mkPreset(50,50,50, 50,50),
+    health:   mkPreset(100,55,55, 50,55),
+    quality:  mkPreset(50,50,50, 90,85),
+    material: mkPreset(70,65,80, 40,45)
 };
 
 function userComposite(c) {
     const s = c.sub || {};
     let num = 0, den = 0;
-    DIMS.forEach(k => { const w = weights[k] || 0; num += w * (s[k] ?? 0); den += w; });
-    if (den === 0) return null; // reader zeroed everything
+    DIMS.forEach(k => {
+        if (s[k] === undefined) return; // no data → exclude, don't penalize
+        const w = weights[k] || 0;
+        num += w * s[k]; den += w;
+    });
+    if (den === 0) return null; // reader zeroed everything, or no data at all
     return num / den;
 }
 
 // Displayed score at a given year = reader's composite, scaled by the
 // documented arc's ratio to its 2025 level. Returns null if no data.
 function displayScoreAt(c, year) {
-    const uc = userComposite(c);
-    if (uc === null) return null;
-    const authored = countryScoreAt(c, year);
-    if (authored === null) return null;
-    const base = c.score || authored || 1;
-    const ratio = authored / base;
-    return Math.max(0, Math.min(10, uc * ratio));
+    // Present-day real composite. Per-country historical series is the next pull,
+    // so no time-travel scaling yet — every year shows the latest available data.
+    return userComposite(c);
 }
 
 async function renderHeatmap() {
     const data = await loadJSON('lift/data/heatmap.json');
     gainStore.heatmap = data;
     drawHeatmap();
+    renderRanges();
+}
+
+function renderRanges() {
+    const el = document.getElementById('ranges-note');
+    const r = gainStore.heatmap?.ranges;
+    if (!el || !r) return;
+    const rows = Object.entries(r).map(([k, v]) => {
+        const span = v.transform === 'native'
+            ? `${v.unit}`
+            : (v.transform === 'linear inverted'
+                ? `${v.floor} → ${v.ceil} ${v.unit}`
+                : `${v.floor} → ${v.ceil} ${v.unit}`);
+        return `<div style="display:grid;grid-template-columns:130px 1fr;gap:10px;padding:3px 0;border-bottom:1px solid var(--rule);">
+            <div style="color:var(--text);">${COMP_LABEL[k] || k}</div>
+            <div style="color:var(--text-dim);">${span} <span style="color:var(--text-faint);">· ${v.transform} · ${esc(v.source)}</span></div>
+        </div>`;
+    }).join('');
+    el.innerHTML = `<details style="margin-top:14px;">
+        <summary style="font-family:var(--sans);font-size:0.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);cursor:pointer;">How each score is computed — 0 to 10</summary>
+        <div style="font-family:var(--mono);font-size:0.68rem;margin-top:10px;">
+            <div style="color:var(--text-faint);margin-bottom:6px;">Each real value maps linearly into the range below (0 at floor, 10 at ceiling). These endpoints are the one editorial choice — published here so you can see exactly how a number becomes a score.</div>
+            ${rows}
+        </div>
+    </details>`;
 }
 
 // ── State of humanity (real World Bank world-aggregate data) ──
@@ -2766,29 +2776,31 @@ function drawHeatmap() {
         const cell = document.createElement('div');
         cell.className = 'country-cell' + (noData ? ' no-data' : '') + (!noData && c.note && (c.note.includes('conflict') || c.note.includes('collapse')) ? ' conflict' : '');
         cell.style.background = noData ? 'var(--surface)' : gainColor(s);
-        const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
         cell.innerHTML = `
             <div><div class="iso">${c.iso}</div></div>
             <div><div class="score">${noData ? '—' : s.toFixed(1)}</div><div class="name">${c.name}</div></div>
-            <div class="trend">${noData ? '' : trendStr}</div>
         `;
         cell.addEventListener('mouseenter', e => {
             if (noData) {
                 showTip(`
                     <strong>${c.name}</strong> · <span style="font-family:var(--mono);">${c.iso}</span>
                     <div class="tip-sub">${c.region}</div>
-                    <div style="margin-top:8px; color:var(--text-dim); font-size:0.72rem;">No documented composite before 2020 for this country yet. Showing 2020–2025 only.</div>
+                    <div style="margin-top:8px; color:var(--text-dim); font-size:0.72rem;">No data for the components you've selected.</div>
                 `, e);
                 return;
             }
-            const gAvg = g => { const ks = COMP_GROUPS[g]; return ks.reduce((a, k) => a + (c.sub[k] || 0), 0) / ks.length; };
+            const r = c.raw || {};
+            const lines = [];
+            if (r.life_expectancy) lines.push(`life expectancy ${r.life_expectancy.value} yrs`);
+            if (r.prosperity) lines.push(`GNI/capita $${(r.prosperity.value / 1000).toFixed(0)}k PPP`);
+            if (r.life_satisfaction) lines.push(`life satisfaction ${r.life_satisfaction.value}/10`);
             showTip(`
                 <strong>${c.name}</strong> · <span style="font-family:var(--mono);">${c.iso}</span>
                 <div class="tip-sub">${c.region}${c.note ? ' · <em>' + c.note + '</em>' : ''}</div>
                 <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem;">
-                    your composite ${Math.round(heatmapYear)} ≈ ${s.toFixed(1)}<br>
-                    outcomes ${gAvg('outcomes').toFixed(1)} &nbsp; lived ${gAvg('lived').toFixed(1)}<br>
-                    <span style="color:var(--text-dim)">click for all seven components</span>
+                    your composite ≈ ${s.toFixed(1)}<br>
+                    ${lines.join('<br>')}<br>
+                    <span style="color:var(--text-dim)">real data · click for all components</span>
                 </div>
             `, e);
         });
@@ -3383,145 +3395,70 @@ function openCountryDetail(iso) {
     if (!c) return;
     const sub = c.sub || {};
     const ucNow = userComposite(c);
-    const trendStr = c.trend_5y > 0 ? '+' + c.trend_5y.toFixed(1) : c.trend_5y.toFixed(1);
-    const trendClass = c.trend_5y > 0 ? 'delta-pos' : (c.trend_5y < 0 ? 'delta-neg' : '');
-
-    // Trajectory: full documented arc if history exists, else the 2020–2025 trend window.
-    // Values are the reader's weighted composite, scaled across the documented arc.
-    let trajSeries, trajStart;
-    if (c.history) {
-        const years = Object.keys(c.history).map(Number).concat([2025]).sort((a, b) => a - b);
-        trajSeries = years.map(y => ({ year: y, value: displayScoreAt(c, y) ?? 0 }));
-        trajStart = years[0];
-    } else {
-        trajStart = 2020;
-        trajSeries = [2020, 2021, 2022, 2023, 2024, 2025].map(y => ({ year: y, value: displayScoreAt(c, y) ?? 0 }));
+    const raw = c.raw || {};
+    function rawText(k) {
+        const r = raw[k];
+        if (!r) return 'no data';
+        if (k === 'access') return Object.entries(r).map(([sk, sv]) => `${sk.replace('_', ' ')} ${sv.value}%`).join(' · ');
+        const u = r.unit || '';
+        if (u === '$PPP') return '$' + r.value.toLocaleString() + ' GNI/capita PPP · ' + r.year;
+        if (u === 'yrs') return r.value + ' years · ' + r.year;
+        if (u === 'hrs/yr') return r.value + ' work hrs/yr · ' + r.year;
+        if (u === 'ladder') return r.value + ' / 10 ladder · ' + r.year;
+        return r.value + ' ' + u + ' · ' + r.year;
     }
-    const trajTicks = (() => {
-        const t = [trajStart];
-        let y = Math.ceil(trajStart / 10) * 10;
-        while (y < 2025) { if (y > trajStart) t.push(y); y += 10; }
-        t.push(2025);
-        return [...new Set(t)];
-    })();
 
-    // Find this country among movers
-    const mv = gainStore.movers;
-    const improving = mv?.improving.find(m => m.iso === iso);
-    const regressing = mv?.regressing.find(m => m.iso === iso);
-    const mover = improving || regressing;
-
-    // Recent events in this country
-    const evs = (gainStore.events?.events || []).filter(e => e.country_iso === iso);
-
-    // Component snapshot — all ten current values, grouped. Bars dim when the
-    // reader has that component weighted to zero.
+    // Component snapshot — real value + 0–10 bar. Dim rows the reader zeroed.
     function compBar(k) {
-        const v = c.sub[k] ?? 0;
+        if (c.sub[k] === undefined) {
+            return `<div style="display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;padding:5px 0;opacity:0.4;">
+                <div style="font-family:var(--sans);font-size:0.8rem;color:var(--text-dim);">${COMP_LABEL[k]}</div>
+                <div style="font-family:var(--sans);font-size:0.66rem;color:var(--text-faint);">no data</div>
+                <div style="text-align:right;font-family:var(--mono);font-size:0.78rem;color:var(--text-faint);">—</div>
+            </div>`;
+        }
+        const v = c.sub[k];
         const pct = Math.min(100, v * 10);
-        const lc = (k === 'collaborative') ? ' <span style="color:var(--text-faint);font-family:var(--mono);font-size:0.56rem;">low-conf</span>' : '';
-        const muted = (weights[k] === 0) ? 'opacity:0.4;' : '';
-        return `<div style="display:grid;grid-template-columns:132px 1fr 32px;gap:10px;align-items:center;padding:4px 0;${muted}">
-            <div style="font-family:var(--sans);font-size:0.78rem;color:var(--text-dim);">${COMP_LABEL[k]}${lc}</div>
-            <div style="height:6px;background:var(--rule);position:relative;overflow:hidden;"><div style="position:absolute;inset:0 auto 0 0;width:${pct}%;background:${gainColor(v)}"></div></div>
-            <div style="font-family:var(--mono);font-size:0.78rem;color:var(--text-bright);text-align:right;">${v.toFixed(1)}</div>
+        const muted = (weights[k] === 0) ? 'opacity:0.45;' : '';
+        return `<div style="padding:6px 0;${muted}">
+            <div style="display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;">
+                <div style="font-family:var(--sans);font-size:0.82rem;color:var(--text);">${COMP_LABEL[k]}</div>
+                <div style="height:6px;background:var(--rule);position:relative;overflow:hidden;"><div style="position:absolute;inset:0 auto 0 0;width:${pct}%;background:${gainColor(v)}"></div></div>
+                <div style="font-family:var(--mono);font-size:0.8rem;color:var(--text-bright);text-align:right;">${v.toFixed(1)}</div>
+            </div>
+            <div style="font-family:var(--mono);font-size:0.64rem;color:var(--text-faint);margin-top:2px;">${rawText(k)}</div>
         </div>`;
     }
-    const groupTitle = { outcomes: 'Outcomes', lived: 'Lived experience', agency: 'Agency' };
+    const groupTitle = { outcomes: 'Outcomes', lived: 'Lived experience' };
     const subBars = Object.entries(COMP_GROUPS).map(([g, keys]) =>
-        `<div style="font-family:var(--sans);font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-faint);margin:14px 0 6px;">${groupTitle[g]}</div>` +
+        `<div style="font-family:var(--sans);font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-faint);margin:16px 0 6px;">${groupTitle[g] || g}</div>` +
         keys.map(compBar).join('')
     ).join('');
-
-    // Mini trajectory SVG
-    const tW = 460, tH = 100;
-    const tMargin = { top: 8, right: 10, bottom: 22, left: 30 };
-    const innerW = tW - tMargin.left - tMargin.right;
-    const innerH = tH - tMargin.top - tMargin.bottom;
-    const tSpan = (2025 - trajStart) || 1;
-    const tXS = y => tMargin.left + ((y - trajStart) / tSpan) * innerW;
-    const tYS = v => tMargin.top + innerH - (v / 10) * innerH;
-    const tPts = trajSeries.map(p => tXS(p.year) + ',' + tYS(p.value));
-    const tPath = 'M ' + tPts.join(' L ');
-    const tColor = c.trend_5y >= 0 ? 'var(--good)' : 'var(--bad)';
-    let trajSvg = `<svg viewBox="0 0 ${tW} ${tH}" style="width:100%; height:${tH}px; background:var(--surface-2);">`;
-    // Grid at score = 5
-    trajSvg += `<line x1="${tMargin.left}" y1="${tYS(5)}" x2="${tMargin.left + innerW}" y2="${tYS(5)}" stroke="var(--rule)" stroke-dasharray="2 4"/>`;
-    trajSvg += `<line x1="${tMargin.left}" y1="${tMargin.top}" x2="${tMargin.left}" y2="${tMargin.top + innerH}" stroke="var(--rule-bright)"/>`;
-    trajSvg += `<line x1="${tMargin.left}" y1="${tMargin.top + innerH}" x2="${tMargin.left + innerW}" y2="${tMargin.top + innerH}" stroke="var(--rule-bright)"/>`;
-    [0, 5, 10].forEach(v => {
-        trajSvg += `<text x="${tMargin.left - 4}" y="${tYS(v) + 3}" text-anchor="end" font-family="JetBrains Mono" font-size="8.5" fill="var(--text-faint)">${v}</text>`;
-    });
-    trajTicks.forEach(yr => {
-        trajSvg += `<text x="${tXS(yr)}" y="${tMargin.top + innerH + 14}" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="var(--text-faint)">${yr}</text>`;
-    });
-    trajSvg += `<path d="${tPath}" fill="none" stroke="${tColor}" stroke-width="1.5"/>`;
-    trajSeries.forEach(p => {
-        trajSvg += `<circle cx="${tXS(p.year)}" cy="${tYS(p.value)}" r="2.5" fill="${tColor}"/>`;
-    });
-    // Mark the displayed year
-    if (heatmapYear >= trajStart && heatmapYear <= 2025) {
-        const xMark = tXS(heatmapYear);
-        trajSvg += `<line x1="${xMark}" y1="${tMargin.top}" x2="${xMark}" y2="${tMargin.top + innerH}" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 2"/>`;
-    }
-    trajSvg += `</svg>`;
 
     let body = `
         <div class="panel-stat-grid">
             <div class="panel-stat">
-                <div class="lbl">Your composite 2025</div>
+                <div class="lbl">Your composite</div>
                 <div class="val">${ucNow === null ? '—' : ucNow.toFixed(1)} <span style="color:var(--text-faint); font-size:0.7rem;">/ 10</span></div>
             </div>
             <div class="panel-stat">
-                <div class="lbl">5-yr trend</div>
-                <div class="val"><span class="${trendClass}">${trendStr}</span></div>
+                <div class="lbl">Components with data</div>
+                <div class="val">${Object.keys(c.sub).length} <span style="color:var(--text-faint); font-size:0.7rem;">/ ${DIMS.length}</span></div>
             </div>
         </div>
-        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:-4px;">Reflects your current weighting across all ten components. Change the sliders on the map to recompute.</p>
-        <h3>Trajectory · ${c.history ? trajStart + '–2025 · documented arc, your weighting' : 'inferred 2020–2025, your weighting'}</h3>
-        ${trajSvg}
-        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:4px;">${c.history ? 'Anchor points are documented composite estimates; the line interpolates between them. The dashed gold line marks the year the heatmap is currently showing.' : 'No documented history before 2020 yet — this is the 5-year trend across its own window. The dashed gold line marks the year the heatmap is currently showing.'}</p>
+        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:-4px;">Real values, normalized 0–10 by the published ranges. Reflects your current weighting — change the sliders to recompute.</p>
     `;
 
     if (c.note) {
         body += `<div class="panel-callout"><strong>Note:</strong> ${esc(c.note)}</div>`;
     }
 
-    body += `
-        <h3>Components · current snapshot</h3>
-        <div>${subBars}</div>
-        <p style="font-size:0.74rem; color:var(--text-faint); margin-top:8px;">
-            The seven components behind your composite, grouped. Dimmed rows are ones you've weighted to zero.
-        </p>
-    `;
+    body += `<h3>Components</h3><div>${subBars}</div>`;
 
-    if (mover) {
-        body += `
-            <h3>Five-year movement</h3>
-            <p class="lead">${esc(mover.name)} is in the <em>${improving ? 'improving' : 'regressing'}</em> cohort. Drivers cited:</p>
-            <div class="panel-chips">${mover.drivers.map(d => `<span class="chip">${esc(d)}</span>`).join('')}</div>
-        `;
-    }
-
-    body += `<h3>Recent ledger entries</h3>`;
-    if (evs.length === 0) {
-        body += `<ul class="panel-list"><li class="empty">No recent entries — this country's gains arrive via the structural and timeline records.</li></ul>`;
-    } else {
-        body += `<ul class="panel-list">${evs.map((e, i) => {
-            const realIdx = gainStore.events.events.indexOf(e);
-            return `
-                <li data-idx="${realIdx}" data-jump="event">
-                    <span class="li-date">${e.date}</span>${esc(e.summary)}
-                    <div class="li-meta">${esc(e.actor || '')} · <span class="panel-tag cat-${e.category}">${e.category}</span> · <span class="panel-tag tier-${e.tier}">${e.tier}</span></div>
-                </li>
-            `;
-        }).join('')}</ul>`;
-    }
-
-    // Timeline events filtered loosely by country/region (very rough — actors often global)
+    // Timeline events that name this country
     const tlMatches = (gainStore.timeline?.events || []).filter(ev => {
         const txt = ((ev.actors || []).join(' ') + ' ' + (ev.notes || '') + ' ' + ev.name).toLowerCase();
-        return txt.includes(c.name.toLowerCase()) || (c.iso !== 'USA' && txt.includes(c.iso.toLowerCase()));
+        return txt.includes(c.name.toLowerCase());
     }).slice(0, 8);
     if (tlMatches.length) {
         body += `<h3>Historical events referencing ${esc(c.name)}</h3>`;
