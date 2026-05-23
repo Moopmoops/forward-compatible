@@ -519,26 +519,30 @@ a:hover { opacity: 1; }
     font-family: var(--sans);
     font-size: 0.62rem;
     color: var(--text-faint);
-    margin: 3px 0 9px;
+    margin: 3px 0 8px;
     line-height: 1.35;
+    min-height: 2.1em;
 }
 .weight-ctl input[type=range] {
     width: 100%;
     -webkit-appearance: none;
     appearance: none;
-    height: 4px;
+    height: 6px;
     background: var(--rule);
     outline: none;
     cursor: pointer;
+    display: block;
 }
 .weight-ctl input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none; appearance: none;
-    width: 14px; height: 14px;
-    background: var(--gain-5); cursor: grab; border: 0; border-radius: 0;
+    width: 12px; height: 16px;
+    background: var(--text-bright); cursor: grab; border: 0; border-radius: 1px;
+    box-shadow: 0 0 0 1px var(--bg);
 }
 .weight-ctl input[type=range]::-moz-range-thumb {
-    width: 14px; height: 14px;
-    background: var(--gain-5); cursor: grab; border: 0; border-radius: 0;
+    width: 12px; height: 16px;
+    background: var(--text-bright); cursor: grab; border: 0; border-radius: 1px;
+    box-shadow: 0 0 0 1px var(--bg);
 }
 .weight-ctl input[type=range].zeroed::-webkit-slider-thumb { background: var(--text-faint); }
 .weight-ctl input[type=range].zeroed::-moz-range-thumb { background: var(--text-faint); }
@@ -1931,7 +1935,7 @@ footer a:hover { color: var(--text); }
         <div class="eyebrow-sm reveal">View · Build your own index</div>
         <h2 class="reveal">There is no single right way to score a country. So we don't.</h2>
         <p class="intro reveal">
-            This isn't a ranking. It's ten component measures — grouped into outcomes, lived experience, and agency — each drawn from an established index, with the weighting left entirely to you. Singapore scores high on health, safety, and prosperity and low on the freedom to oppose; whether that nets out as "doing well" depends on what you value. We don't make that call for you — <em>move the sliders and the map is yours.</em>
+            This isn't a ranking, and it takes no position on anyone's politics. It's seven measures of how people actually live — grouped into outcomes and lived experience — each from an established index, with the weighting left to you. Singapore, for instance, has long, healthy, safe lives and high prosperity but little free time; whether that nets out as "doing well" depends on what you value. We don't make that call — <em>move the sliders and the map is yours.</em>
         </p>
     </div>
 
@@ -1942,16 +1946,16 @@ footer a:hover { color: var(--text); }
                     <h3>Your composite · <span id="heatmap-year-label">2025</span></h3>
                     <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Set the weights, then hover any country for its components.</div>
                 </div>
-                <div class="viz-source">COMPONENTS: WB · UN IGME · UNESCO · ITU · V-Dem · FH · ILLUSTRATIVE</div>
+                <div class="viz-source">COMPONENTS: WB · WHO · UNESCO · ITU · OECD · GALLUP · WHR · ILLUSTRATIVE</div>
             </div>
             <div class="weights-panel">
                 <div class="weights-head">
                     <span class="wp-title">Weight what you value<small>Your composite = the weighted average of the ten components below, grouped into three families. Set any weight to zero to ignore it.</small></span>
                     <div class="weights-presets" id="weight-presets">
                         <span class="weight-preset active" data-preset="equal">Equal</span>
-                        <span class="weight-preset" data-preset="material">Material only</span>
+                        <span class="weight-preset" data-preset="health">Health &amp; longevity</span>
                         <span class="weight-preset" data-preset="quality">Quality of life</span>
-                        <span class="weight-preset" data-preset="freedom">Freedom-first</span>
+                        <span class="weight-preset" data-preset="material">Material</span>
                     </div>
                 </div>
                 <div class="weights-groups" id="weights-grid">
@@ -1970,14 +1974,6 @@ footer a:hover { color: var(--text); }
                             <div class="weight-ctl"><div class="wlabel">Social support <span class="wval" id="wval-social_support">50</span></div><div class="wsrc">someone to count on · Gallup World Poll</div><input type="range" min="0" max="100" value="50" data-dim="social_support"></div>
                             <div class="weight-ctl"><div class="wlabel">Felt safety <span class="wval" id="wval-felt_safety">50</span></div><div class="wsrc">safe walking alone at night · Gallup</div><input type="range" min="0" max="100" value="50" data-dim="felt_safety"></div>
                             <div class="weight-ctl"><div class="wlabel">Life satisfaction <span class="wval" id="wval-life_satisfaction">50</span></div><div class="wsrc">Cantril ladder · World Happiness Report</div><input type="range" min="0" max="100" value="50" data-dim="life_satisfaction"></div>
-                        </div>
-                    </div>
-                    <div class="weight-group">
-                        <div class="wg-head">Agency <small>can people shape their world</small></div>
-                        <div class="weights-subgrid">
-                            <div class="weight-ctl"><div class="wlabel">Oppositional <span class="wval" id="wval-oppositional">50</span></div><div class="wsrc">vote, protest, press, organize · V-Dem, Freedom House</div><input type="range" min="0" max="100" value="50" data-dim="oppositional"></div>
-                            <div class="weight-ctl"><div class="wlabel">Collaborative <span class="wlowconf">low-confidence</span> <span class="wval" id="wval-collaborative">50</span></div><div class="wsrc">within-system / consensus influence · no clean index yet</div><input type="range" min="0" max="100" value="50" data-dim="collaborative"></div>
-                            <div class="weight-ctl"><div class="wlabel">Economic mobility <span class="wval" id="wval-economic_mobility">50</span></div><div class="wsrc">can you change your station · World Bank GDIM</div><input type="range" min="0" max="100" value="50" data-dim="economic_mobility"></div>
                         </div>
                     </div>
                 </div>
@@ -2580,25 +2576,23 @@ function countryScoreAt(c, year) {
 // weighted average of the four component sub-scores. countryScoreAt
 // above gives the documented composite ARC; we keep its shape and
 // scale it to the reader's present-day composite.
-const DIMS = ['healthy_lifespan','access','prosperity','free_time','social_support','felt_safety','life_satisfaction','oppositional','collaborative','economic_mobility'];
+const DIMS = ['healthy_lifespan','access','prosperity','free_time','social_support','felt_safety','life_satisfaction'];
 const COMP_GROUPS = {
     outcomes: ['healthy_lifespan','access','prosperity'],
-    lived:    ['free_time','social_support','felt_safety','life_satisfaction'],
-    agency:   ['oppositional','collaborative','economic_mobility']
+    lived:    ['free_time','social_support','felt_safety','life_satisfaction']
 };
 const COMP_LABEL = {
     healthy_lifespan:'Healthy lifespan', access:'Access', prosperity:'Prosperity',
-    free_time:'Free time', social_support:'Social support', felt_safety:'Felt safety', life_satisfaction:'Life satisfaction',
-    oppositional:'Oppositional agency', collaborative:'Collaborative agency', economic_mobility:'Economic mobility'
+    free_time:'Free time', social_support:'Social support', felt_safety:'Felt safety', life_satisfaction:'Life satisfaction'
 };
 const weights = {}; DIMS.forEach(k => { weights[k] = 50; });
 function mkPreset() { const w = {}; DIMS.forEach((k, i) => { w[k] = arguments[i]; }); return w; }
 const weightPresets = {
-    // order: healthy_lifespan, access, prosperity | free_time, social_support, felt_safety, life_satisfaction | oppositional, collaborative, economic_mobility
-    equal:    mkPreset(50,50,50, 50,50,50,50, 50,50,50),
-    material: mkPreset(60,55,60, 40,40,45,40, 0,0,55),
-    quality:  mkPreset(50,50,50, 85,85,80,85, 35,40,40),
-    freedom:  mkPreset(30,30,30, 35,35,35,35, 100,55,45)
+    // order: healthy_lifespan, access, prosperity | free_time, social_support, felt_safety, life_satisfaction
+    equal:    mkPreset(50,50,50, 50,50,50,50),
+    health:   mkPreset(100,55,55, 45,55,65,55),
+    quality:  mkPreset(55,50,50, 85,85,80,85),
+    material: mkPreset(65,65,75, 40,40,45,45)
 };
 
 function userComposite(c) {
@@ -2667,8 +2661,7 @@ function drawHeatmap() {
                 <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem;">
                     your composite ${Math.round(heatmapYear)} ≈ ${s.toFixed(1)}<br>
                     outcomes ${gAvg('outcomes').toFixed(1)} &nbsp; lived ${gAvg('lived').toFixed(1)}<br>
-                    agency ${gAvg('agency').toFixed(1)}<br>
-                    <span style="color:var(--text-dim)">click for all ten components</span>
+                    <span style="color:var(--text-dim)">click for all seven components</span>
                 </div>
             `, e);
         });
@@ -2724,10 +2717,14 @@ function initWeights() {
     function syncUI() {
         sliders.forEach(sl => {
             const dim = sl.dataset.dim;
-            sl.value = weights[dim];
-            sl.classList.toggle('zeroed', weights[dim] === 0);
+            const v = weights[dim];
+            sl.value = v;
+            // Filled-track gradient so the slider reads as a meter, not a floating dot
+            const fill = v === 0 ? 'var(--text-faint)' : 'var(--gain-5)';
+            sl.style.background = `linear-gradient(to right, ${fill} 0%, ${fill} ${v}%, var(--rule) ${v}%, var(--rule) 100%)`;
+            sl.classList.toggle('zeroed', v === 0);
             const val = document.getElementById('wval-' + dim);
-            if (val) val.textContent = weights[dim];
+            if (val) val.textContent = v;
         });
         if (presetRow) {
             presetRow.querySelectorAll('.weight-preset').forEach(p => {
@@ -3367,8 +3364,7 @@ function openCountryDetail(iso) {
         <h3>Components · current snapshot</h3>
         <div>${subBars}</div>
         <p style="font-size:0.74rem; color:var(--text-faint); margin-top:8px;">
-            The ten components behind your composite, grouped. Dimmed rows are ones you've weighted to zero.
-            Collaborative agency is flagged low-confidence — there's no clean global index for within-system influence yet.
+            The seven components behind your composite, grouped. Dimmed rows are ones you've weighted to zero.
         </p>
     `;
 
