@@ -2075,7 +2075,7 @@ footer a:hover { color: var(--text); }
                         <div class="weights-subgrid">
                             <div class="weight-ctl"><div class="wlabel">Life expectancy <span class="wval" id="wval-life_expectancy">50</span></div><div class="wsrc">years at birth · World Bank</div><input type="range" min="0" max="100" value="50" data-dim="life_expectancy"></div>
                             <div class="weight-ctl"><div class="wlabel">Access <span class="wval" id="wval-access">50</span></div><div class="wsrc">internet, power, water, literacy · World Bank</div><input type="range" min="0" max="100" value="50" data-dim="access"></div>
-                            <div class="weight-ctl"><div class="wlabel">Prosperity <span class="wval" id="wval-prosperity">50</span></div><div class="wsrc">GNI per capita, PPP · World Bank</div><input type="range" min="0" max="100" value="50" data-dim="prosperity"></div>
+                            <div class="weight-ctl"><div class="wlabel">Prosperity <span class="wval" id="wval-prosperity">50</span></div><div class="wsrc">median income + poverty floor + GNI · OWID, World Bank</div><input type="range" min="0" max="100" value="50" data-dim="prosperity"></div>
                         </div>
                     </div>
                     <div class="weight-group">
@@ -2819,7 +2819,7 @@ function drawHeatmap() {
             const r = c.raw || {};
             const lines = [];
             if (r.life_expectancy) lines.push(`life expectancy ${r.life_expectancy.value} yrs`);
-            if (r.prosperity) lines.push(`GNI/capita $${(r.prosperity.value / 1000).toFixed(0)}k PPP`);
+            if (r.prosperity && r.prosperity.median_income) lines.push(`median income $${r.prosperity.median_income.value}/day`);
             if (r.life_satisfaction) lines.push(`life satisfaction ${r.life_satisfaction.value}/10`);
             showTip(`
                 <strong>${c.name}</strong> · <span style="font-family:var(--mono);">${c.iso}</span>
@@ -3428,8 +3428,14 @@ const METRIC_INFO = {
         real: r => 'Coverage here — ' + Object.entries(r).map(([k, v]) => `${k.replace('_', ' ')} ${v.value}%`).join(', ') + '.'
     },
     prosperity: {
-        def: "GNI per capita at PPP — Gross National Income (everything the country's people earn) divided by population, then adjusted for purchasing power parity. PPP rebases the money to what it actually buys locally, so $1 in one country and $1 in another represent the same real basket of goods.",
-        real: r => `About $${r.value.toLocaleString()} of income per person per year in US-equivalent buying power. Because it's PPP-adjusted, this is a real-living-standards figure — not a market exchange rate. It's an average, so it says nothing about how evenly that income is shared.`
+        def: "How much people actually have, three ways: median income (what the person in the middle lives on — not the rich-skewed average), the share living above the $6.85/day 'decent life' line, and GNI per capita (total national income per person, PPP-adjusted) for context. The three are averaged. The median is the honest answer to 'how much do people make' — a high average can sit on top of a low middle.",
+        real: r => {
+            const bits = [];
+            if (r.median_income) bits.push(`the typical person lives on about $${r.median_income.value} a day (PPP)`);
+            if (r.poverty_floor) bits.push(`${r.poverty_floor.value}% are above the $6.85/day decent-life line`);
+            if (r.gni) bits.push(`income per person averages $${r.gni.value.toLocaleString()}/yr — a mean, so it runs higher than the median`);
+            return bits.join('; ') + '.';
+        }
     },
     free_time: {
         def: "Average hours worked per worker over a year, across the whole workforce. Fewer hours scores higher here — the component is a proxy for time not spent working.",
@@ -3441,8 +3447,13 @@ const METRIC_INFO = {
     }
 };
 const METRIC_NUMERIC = ['life_expectancy', 'prosperity', 'free_time', 'life_satisfaction'];
+function rawNum(k, r) {
+    if (!r) return null;
+    if (k === 'prosperity') return r.median_income ? r.median_income.value : null; // compare on median
+    return typeof r.value === 'number' ? r.value : null;
+}
 function fmtRaw(k, v) {
-    if (k === 'prosperity') return v >= 1000 ? '$' + (v / 1000).toFixed(0) + 'k' : '$' + v;
+    if (k === 'prosperity') return '$' + v + '/day';   // median income
     if (k === 'life_expectancy') return v + ' yrs';
     if (k === 'free_time') return v.toLocaleString() + ' hrs';
     if (k === 'life_satisfaction') return v + '/10';
@@ -3453,8 +3464,8 @@ function metricStats(k) {
     if (!METRIC_NUMERIC.includes(k)) return null;
     if (_statsCache[k]) return _statsCache[k];
     const cs = gainStore.heatmap?.countries || [];
-    const arr = cs.filter(c => c.raw && c.raw[k] && typeof c.raw[k].value === 'number')
-                  .map(c => ({ name: c.name, value: c.raw[k].value }))
+    const arr = cs.map(c => ({ name: c.name, value: rawNum(k, c.raw && c.raw[k]) }))
+                  .filter(x => typeof x.value === 'number')
                   .sort((a, b) => a.value - b.value);
     if (!arr.length) return null;
     const lo = arr[0], hi = arr[arr.length - 1], med = arr[Math.floor(arr.length / 2)].value;
@@ -3469,7 +3480,10 @@ function buildMetricContext(k, c) {
     if (info.def) html += `<p>${info.def}</p>`;
     if (info.real && r) html += `<p style="color:var(--text);">${info.real(r)}</p>`;
     const st = metricStats(k);
-    if (st) html += `<div class="comp-cmp">Across all countries — lowest <strong>${st.min.disp}</strong> (${esc(st.min.name)}) · median <strong>${st.med}</strong> · highest <strong>${st.max.disp}</strong> (${esc(st.max.name)})</div>`;
+    if (st) {
+        const cmpLabel = (k === 'prosperity') ? 'Median income across countries' : 'Across all countries';
+        html += `<div class="comp-cmp">${cmpLabel} — lowest <strong>${st.min.disp}</strong> (${esc(st.min.name)}) · median <strong>${st.med}</strong> · highest <strong>${st.max.disp}</strong> (${esc(st.max.name)})</div>`;
+    }
     const src = (gainStore.heatmap?.ranges || {})[k];
     if (src) html += `<div class="comp-cmp" style="color:var(--text-faint);">Source: ${esc(src.source)} · scored 0–10 over ${src.floor}–${src.ceil} ${esc(src.unit)}</div>`;
     return html;
@@ -3488,6 +3502,13 @@ function openCountryDetail(iso) {
         const r = raw[k];
         if (!r) return 'no data';
         if (k === 'access') return Object.entries(r).map(([sk, sv]) => `${sk.replace('_', ' ')} ${sv.value}%`).join(' · ');
+        if (k === 'prosperity') {
+            const p = [];
+            if (r.median_income) p.push('median $' + r.median_income.value + '/day');
+            if (r.poverty_floor) p.push(r.poverty_floor.value + '% above $6.85');
+            if (r.gni) p.push('GNI $' + (r.gni.value / 1000).toFixed(0) + 'k');
+            return p.join(' · ');
+        }
         const u = r.unit || '';
         if (u === '$PPP') return '$' + r.value.toLocaleString() + ' GNI/capita PPP · ' + r.year;
         if (u === 'yrs') return r.value + ' years · ' + r.year;

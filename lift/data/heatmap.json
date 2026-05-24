@@ -34,9 +34,10 @@
           }
         },
         "prosperity": {
-          "value": 47960,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 47960,
+            "year": 2024
+          }
         }
       },
       "score": 8.59
@@ -76,9 +77,10 @@
           }
         },
         "prosperity": {
-          "value": 2210,
-          "year": 2023,
-          "unit": "$PPP"
+          "gni": {
+            "value": 2210,
+            "year": 2023
+          }
         },
         "life_satisfaction": {
           "value": 1.45,
@@ -95,7 +97,7 @@
       "sub": {
         "life_expectancy": 4.23,
         "access": 5.33,
-        "prosperity": 4.88,
+        "prosperity": 2.89,
         "free_time": 2.85,
         "life_satisfaction": 3.79
       },
@@ -120,9 +122,18 @@
           }
         },
         "prosperity": {
-          "value": 9460,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.9,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 20,
+            "year": 2018
+          },
+          "gni": {
+            "value": 9460,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2114,
@@ -135,7 +146,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.22
+      "score": 3.82
     },
     {
       "iso": "ALB",
@@ -144,7 +155,7 @@
       "sub": {
         "life_expectancy": 8.51,
         "access": 8.86,
-        "prosperity": 7.12,
+        "prosperity": 6.72,
         "free_time": 2.48,
         "life_satisfaction": 5.66
       },
@@ -173,9 +184,18 @@
           }
         },
         "prosperity": {
-          "value": 26500,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 12.8,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 80.1,
+            "year": 2020
+          },
+          "gni": {
+            "value": 26500,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2152,
@@ -188,7 +208,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.53
+      "score": 6.45
     },
     {
       "iso": "AND",
@@ -220,9 +240,10 @@
           }
         },
         "prosperity": {
-          "value": 76090,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 76090,
+            "year": 2024
+          }
         }
       },
       "score": 9.56
@@ -234,7 +255,7 @@
       "sub": {
         "life_expectancy": 9.45,
         "access": 9.94,
-        "prosperity": 9.56,
+        "prosperity": 9.79,
         "free_time": 0,
         "life_satisfaction": 6.82
       },
@@ -263,9 +284,18 @@
           }
         },
         "prosperity": {
-          "value": 81530,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 76.5,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 99.4,
+            "year": 2018
+          },
+          "gni": {
+            "value": 81530,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2514,
@@ -278,7 +308,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.15
+      "score": 7.2
     },
     {
       "iso": "ARG",
@@ -287,7 +317,7 @@
       "sub": {
         "life_expectancy": 7.87,
         "access": 9.63,
-        "prosperity": 7.37,
+        "prosperity": 7.93,
         "free_time": 7.88,
         "life_satisfaction": 6.43
       },
@@ -312,9 +342,14 @@
           }
         },
         "prosperity": {
-          "value": 29800,
-          "year": 2024,
-          "unit": "$PPP"
+          "poverty_floor": {
+            "value": 84.8,
+            "year": 2024
+          },
+          "gni": {
+            "value": 29800,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1612,
@@ -327,7 +362,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.84
+      "score": 7.95
     },
     {
       "iso": "ARM",
@@ -336,7 +371,7 @@
       "sub": {
         "life_expectancy": 8.09,
         "access": 9.08,
-        "prosperity": 6.71,
+        "prosperity": 5.3,
         "free_time": 4.24,
         "life_satisfaction": 5.58
       },
@@ -365,9 +400,18 @@
           }
         },
         "prosperity": {
-          "value": 22020,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.5,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 52.6,
+            "year": 2024
+          },
+          "gni": {
+            "value": 22020,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1976,
@@ -380,7 +424,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.74
+      "score": 6.46
     },
     {
       "iso": "ASM",
@@ -443,9 +487,10 @@
           }
         },
         "prosperity": {
-          "value": 31730,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 31730,
+            "year": 2024
+          }
         }
       },
       "score": 8.17
@@ -457,7 +502,7 @@
       "sub": {
         "life_expectancy": 9.44,
         "access": 9.81,
-        "prosperity": 9.21,
+        "prosperity": 9.42,
         "free_time": 7.89,
         "life_satisfaction": 6.92
       },
@@ -478,9 +523,18 @@
           }
         },
         "prosperity": {
-          "value": 69600,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 59.7,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 98.5,
+            "year": 2020
+          },
+          "gni": {
+            "value": 69600,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1611,
@@ -493,7 +547,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.65
+      "score": 8.7
     },
     {
       "iso": "AUT",
@@ -502,7 +556,7 @@
       "sub": {
         "life_expectancy": 9.14,
         "access": 9.69,
-        "prosperity": 9.35,
+        "prosperity": 9.65,
         "free_time": 9.62,
         "life_satisfaction": 6.84
       },
@@ -527,9 +581,18 @@
           }
         },
         "prosperity": {
-          "value": 74160,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 71.4,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99,
+            "year": 2023
+          },
+          "gni": {
+            "value": 74160,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1438,
@@ -542,7 +605,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.93
+      "score": 8.99
     },
     {
       "iso": "AZE",
@@ -551,7 +614,7 @@
       "sub": {
         "life_expectancy": 7.02,
         "access": 8.71,
-        "prosperity": 6.92,
+        "prosperity": 5.84,
         "free_time": 6.09,
         "life_satisfaction": 4.99
       },
@@ -580,9 +643,18 @@
           }
         },
         "prosperity": {
-          "value": 24220,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 9.3,
+            "year": 2005
+          },
+          "poverty_floor": {
+            "value": 64.1,
+            "year": 2005
+          },
+          "gni": {
+            "value": 24220,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1791,
@@ -595,7 +667,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.75
+      "score": 6.53
     },
     {
       "iso": "BDI",
@@ -604,7 +676,7 @@
       "sub": {
         "life_expectancy": 3.95,
         "access": 3.05,
-        "prosperity": 0.4,
+        "prosperity": 0.22,
         "life_satisfaction": 3.77
       },
       "raw": {
@@ -628,9 +700,18 @@
           }
         },
         "prosperity": {
-          "value": 1200,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 2.0,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 2.6,
+            "year": 2020
+          },
+          "gni": {
+            "value": 1200,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 3.77,
@@ -638,7 +719,7 @@
           "unit": "ladder"
         }
       },
-      "score": 2.79
+      "score": 2.75
     },
     {
       "iso": "BEL",
@@ -647,7 +728,7 @@
       "sub": {
         "life_expectancy": 9.23,
         "access": 9.84,
-        "prosperity": 9.37,
+        "prosperity": 9.56,
         "free_time": 8.07,
         "life_satisfaction": 6.93
       },
@@ -672,9 +753,18 @@
           }
         },
         "prosperity": {
-          "value": 74770,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 62.9,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.7,
+            "year": 2023
+          },
+          "gni": {
+            "value": 74770,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1593,
@@ -687,7 +777,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.69
+      "score": 8.73
     },
     {
       "iso": "BEN",
@@ -696,7 +786,7 @@
       "sub": {
         "life_expectancy": 3.13,
         "access": 4.0,
-        "prosperity": 3.21,
+        "prosperity": 2.19,
         "life_satisfaction": 4.39
       },
       "raw": {
@@ -724,9 +814,18 @@
           }
         },
         "prosperity": {
-          "value": 4390,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.2,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 13.5,
+            "year": 2021
+          },
+          "gni": {
+            "value": 4390,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.39,
@@ -734,7 +833,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.68
+      "score": 3.43
     },
     {
       "iso": "BFA",
@@ -743,7 +842,7 @@
       "sub": {
         "life_expectancy": 3.23,
         "access": 3.05,
-        "prosperity": 2.17,
+        "prosperity": 1.52,
         "free_time": 0.44,
         "life_satisfaction": 4.46
       },
@@ -768,9 +867,18 @@
           }
         },
         "prosperity": {
-          "value": 2720,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.4,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 9.6,
+            "year": 2021
+          },
+          "gni": {
+            "value": 2720,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2356,
@@ -783,7 +891,7 @@
           "unit": "ladder"
         }
       },
-      "score": 2.67
+      "score": 2.54
     },
     {
       "iso": "BGD",
@@ -792,7 +900,7 @@
       "sub": {
         "life_expectancy": 7.12,
         "access": 7.28,
-        "prosperity": 5.01,
+        "prosperity": 3.64,
         "free_time": 0.17,
         "life_satisfaction": 4.32
       },
@@ -821,9 +929,18 @@
           }
         },
         "prosperity": {
-          "value": 10060,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.2,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 28.5,
+            "year": 2022
+          },
+          "gni": {
+            "value": 10060,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2383,
@@ -836,7 +953,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.78
+      "score": 4.51
     },
     {
       "iso": "BGR",
@@ -845,7 +962,7 @@
       "sub": {
         "life_expectancy": 7.36,
         "access": 9.42,
-        "prosperity": 8.0,
+        "prosperity": 8.31,
         "free_time": 7.41,
         "life_satisfaction": 5.7
       },
@@ -874,9 +991,18 @@
           }
         },
         "prosperity": {
-          "value": 39850,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 30.2,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 95.6,
+            "year": 2023
+          },
+          "gni": {
+            "value": 39850,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1659,
@@ -889,7 +1015,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.58
+      "score": 7.64
     },
     {
       "iso": "BHR",
@@ -927,9 +1053,10 @@
           }
         },
         "prosperity": {
-          "value": 62230,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 62230,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2052,
@@ -970,9 +1097,10 @@
           }
         },
         "prosperity": {
-          "value": 39550,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 39550,
+            "year": 2024
+          }
         }
       },
       "score": 8.22
@@ -984,7 +1112,7 @@
       "sub": {
         "life_expectancy": 8.01,
         "access": 9.24,
-        "prosperity": 6.99,
+        "prosperity": 7.14,
         "free_time": 2.78,
         "life_satisfaction": 6.38
       },
@@ -1013,9 +1141,18 @@
           }
         },
         "prosperity": {
-          "value": 24990,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 15.8,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 88.3,
+            "year": 2021
+          },
+          "gni": {
+            "value": 24990,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2122,
@@ -1028,7 +1165,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.68
+      "score": 6.71
     },
     {
       "iso": "BLR",
@@ -1037,7 +1174,7 @@
       "sub": {
         "life_expectancy": 6.96,
         "access": 9.68,
-        "prosperity": 7.55,
+        "prosperity": 7.77,
         "free_time": 5.25,
         "life_satisfaction": 5.82
       },
@@ -1066,9 +1203,18 @@
           }
         },
         "prosperity": {
-          "value": 32300,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 18.4,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 97.4,
+            "year": 2020
+          },
+          "gni": {
+            "value": 32300,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1875,
@@ -1081,7 +1227,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.05
+      "score": 7.1
     },
     {
       "iso": "BLZ",
@@ -1090,7 +1236,7 @@
       "sub": {
         "life_expectancy": 6.78,
         "access": 8.92,
-        "prosperity": 5.69,
+        "prosperity": 6.39,
         "life_satisfaction": 6.71
       },
       "raw": {
@@ -1114,9 +1260,18 @@
           }
         },
         "prosperity": {
-          "value": 13760,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 14.9,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 80.3,
+            "year": 2018
+          },
+          "gni": {
+            "value": 13760,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.71,
@@ -1124,7 +1279,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.03
+      "score": 7.2
     },
     {
       "iso": "BMU",
@@ -1133,7 +1288,7 @@
       "sub": {
         "life_expectancy": 9.28,
         "access": 9.92,
-        "prosperity": 10
+        "prosperity": 10.0
       },
       "raw": {
         "life_expectancy": {
@@ -1152,9 +1307,10 @@
           }
         },
         "prosperity": {
-          "value": 129110,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 129110,
+            "year": 2024
+          }
         }
       },
       "score": 9.73
@@ -1166,7 +1322,7 @@
       "sub": {
         "life_expectancy": 5.35,
         "access": 9.21,
-        "prosperity": 5.51,
+        "prosperity": 6.51,
         "free_time": 4.32,
         "life_satisfaction": 5.83
       },
@@ -1191,9 +1347,18 @@
           }
         },
         "prosperity": {
-          "value": 12620,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 16.8,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 82.6,
+            "year": 2024
+          },
+          "gni": {
+            "value": 12620,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1968,
@@ -1206,7 +1371,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.04
+      "score": 6.24
     },
     {
       "iso": "BRA",
@@ -1215,7 +1380,7 @@
       "sub": {
         "life_expectancy": 7.44,
         "access": 9.19,
-        "prosperity": 6.67,
+        "prosperity": 6.8,
         "free_time": 4.06,
         "life_satisfaction": 6.63
       },
@@ -1244,9 +1409,18 @@
           }
         },
         "prosperity": {
-          "value": 21590,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 16.9,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 79.4,
+            "year": 2024
+          },
+          "gni": {
+            "value": 21590,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1994,
@@ -1259,7 +1433,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.8
+      "score": 6.82
     },
     {
       "iso": "BRB",
@@ -1268,7 +1442,7 @@
       "sub": {
         "life_expectancy": 7.52,
         "access": 8.99,
-        "prosperity": 6.89
+        "prosperity": 6.95
       },
       "raw": {
         "life_expectancy": {
@@ -1291,12 +1465,21 @@
           }
         },
         "prosperity": {
-          "value": 23850,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 15.5,
+            "year": 2016
+          },
+          "poverty_floor": {
+            "value": 84.2,
+            "year": 2016
+          },
+          "gni": {
+            "value": 23850,
+            "year": 2024
+          }
         }
       },
-      "score": 7.8
+      "score": 7.82
     },
     {
       "iso": "BRN",
@@ -1328,9 +1511,10 @@
           }
         },
         "prosperity": {
-          "value": 92750,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 92750,
+            "year": 2024
+          }
         }
       },
       "score": 8.96
@@ -1342,7 +1526,7 @@
       "sub": {
         "life_expectancy": 6.65,
         "access": 8.04,
-        "prosperity": 5.93,
+        "prosperity": 6.92,
         "life_satisfaction": 5.08
       },
       "raw": {
@@ -1370,9 +1554,18 @@
           }
         },
         "prosperity": {
-          "value": 15320,
-          "year": 2023,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 16.5,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 91,
+            "year": 2022
+          },
+          "gni": {
+            "value": 15320,
+            "year": 2023
+          }
         },
         "life_satisfaction": {
           "value": 5.08,
@@ -1380,7 +1573,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.42
+      "score": 6.67
     },
     {
       "iso": "BWA",
@@ -1389,7 +1582,7 @@
       "sub": {
         "life_expectancy": 5.51,
         "access": 6.95,
-        "prosperity": 6.57,
+        "prosperity": 4.38,
         "free_time": 1.42,
         "life_satisfaction": 3.46
       },
@@ -1418,9 +1611,18 @@
           }
         },
         "prosperity": {
-          "value": 20570,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.8,
+            "year": 2015
+          },
+          "poverty_floor": {
+            "value": 36.8,
+            "year": 2015
+          },
+          "gni": {
+            "value": 20570,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2258,
@@ -1433,7 +1635,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.78
+      "score": 4.34
     },
     {
       "iso": "CAF",
@@ -1442,7 +1644,7 @@
       "sub": {
         "life_expectancy": 2.19,
         "access": 2.0,
-        "prosperity": 0.64,
+        "prosperity": 0.34,
         "life_satisfaction": 3.48
       },
       "raw": {
@@ -1470,9 +1672,18 @@
           }
         },
         "prosperity": {
-          "value": 1340,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.9,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 3.9,
+            "year": 2021
+          },
+          "gni": {
+            "value": 1340,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 3.48,
@@ -1480,7 +1691,7 @@
           "unit": "ladder"
         }
       },
-      "score": 2.08
+      "score": 2.0
     },
     {
       "iso": "CAN",
@@ -1489,7 +1700,7 @@
       "sub": {
         "life_expectancy": 9.17,
         "access": 9.71,
-        "prosperity": 9.02,
+        "prosperity": 9.46,
         "free_time": 6.69,
         "life_satisfaction": 6.74
       },
@@ -1514,9 +1725,18 @@
           }
         },
         "prosperity": {
-          "value": 63630,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 64.7,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 99.4,
+            "year": 2022
+          },
+          "gni": {
+            "value": 63630,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1731,
@@ -1529,7 +1749,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.27
+      "score": 8.35
     },
     {
       "iso": "CHE",
@@ -1538,7 +1758,7 @@
       "sub": {
         "life_expectancy": 9.83,
         "access": 9.8,
-        "prosperity": 9.8,
+        "prosperity": 9.83,
         "free_time": 8.71,
         "life_satisfaction": 7.02
       },
@@ -1563,9 +1783,18 @@
           }
         },
         "prosperity": {
-          "value": 91110,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 72.3,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 99.7,
+            "year": 2022
+          },
+          "gni": {
+            "value": 91110,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1529,
@@ -1578,7 +1807,7 @@
           "unit": "ladder"
         }
       },
-      "score": 9.03
+      "score": 9.04
     },
     {
       "iso": "CHI",
@@ -1610,7 +1839,7 @@
       "sub": {
         "life_expectancy": 8.96,
         "access": 9.75,
-        "prosperity": 7.68,
+        "prosperity": 8.01,
         "free_time": 4.5,
         "life_satisfaction": 6.3
       },
@@ -1639,9 +1868,18 @@
           }
         },
         "prosperity": {
-          "value": 34320,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 24.6,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 95.5,
+            "year": 2024
+          },
+          "gni": {
+            "value": 34320,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1950,
@@ -1654,7 +1892,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.44
+      "score": 7.5
     },
     {
       "iso": "CHN",
@@ -1663,7 +1901,7 @@
       "sub": {
         "life_expectancy": 8.0,
         "access": 9.61,
-        "prosperity": 7.15,
+        "prosperity": 6.72,
         "free_time": 0.72,
         "life_satisfaction": 6.07
       },
@@ -1688,9 +1926,18 @@
           }
         },
         "prosperity": {
-          "value": 26920,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.4,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 78.7,
+            "year": 2022
+          },
+          "gni": {
+            "value": 26920,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2328,
@@ -1703,7 +1950,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.31
+      "score": 6.22
     },
     {
       "iso": "CIV",
@@ -1712,7 +1959,7 @@
       "sub": {
         "life_expectancy": 3.46,
         "access": 5.01,
-        "prosperity": 4.33,
+        "prosperity": 2.86,
         "free_time": 2.97,
         "life_satisfaction": 5.15
       },
@@ -1741,9 +1988,18 @@
           }
         },
         "prosperity": {
-          "value": 7360,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.8,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 19.1,
+            "year": 2021
+          },
+          "gni": {
+            "value": 7360,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2103,
@@ -1756,7 +2012,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.18
+      "score": 3.89
     },
     {
       "iso": "CMR",
@@ -1765,7 +2021,7 @@
       "sub": {
         "life_expectancy": 3.99,
         "access": 6.36,
-        "prosperity": 3.7,
+        "prosperity": 2.92,
         "free_time": 2.19,
         "life_satisfaction": 5.08
       },
@@ -1790,9 +2046,18 @@
           }
         },
         "prosperity": {
-          "value": 5490,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.0,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 26,
+            "year": 2021
+          },
+          "gni": {
+            "value": 5490,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2181,
@@ -1805,7 +2070,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.26
+      "score": 4.11
     },
     {
       "iso": "COD",
@@ -1814,7 +2079,7 @@
       "sub": {
         "life_expectancy": 3.45,
         "access": 3.05,
-        "prosperity": 1.23,
+        "prosperity": 0.48,
         "free_time": 5.59,
         "life_satisfaction": 3.76
       },
@@ -1843,9 +2108,18 @@
           }
         },
         "prosperity": {
-          "value": 1760,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.3,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 2,
+            "year": 2020
+          },
+          "gni": {
+            "value": 1760,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1841,
@@ -1858,7 +2132,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.42
+      "score": 3.27
     },
     {
       "iso": "COG",
@@ -1867,7 +2141,7 @@
       "sub": {
         "life_expectancy": 4.57,
         "access": 5.51,
-        "prosperity": 4.01,
+        "prosperity": 2.5,
         "free_time": 0,
         "life_satisfaction": 4.46
       },
@@ -1896,9 +2170,18 @@
           }
         },
         "prosperity": {
-          "value": 6340,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.8,
+            "year": 2011
+          },
+          "poverty_floor": {
+            "value": 17.6,
+            "year": 2011
+          },
+          "gni": {
+            "value": 6340,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2534,
@@ -1911,7 +2194,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.71
+      "score": 3.41
     },
     {
       "iso": "COL",
@@ -1920,7 +2203,7 @@
       "sub": {
         "life_expectancy": 7.98,
         "access": 8.69,
-        "prosperity": 6.7,
+        "prosperity": 5.9,
         "free_time": 0,
         "life_satisfaction": 6.04
       },
@@ -1949,9 +2232,18 @@
           }
         },
         "prosperity": {
-          "value": 21890,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 11.3,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 63,
+            "year": 2024
+          },
+          "gni": {
+            "value": 21890,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2471,
@@ -1964,7 +2256,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.88
+      "score": 5.72
     },
     {
       "iso": "COM",
@@ -1973,7 +2265,7 @@
       "sub": {
         "life_expectancy": 4.86,
         "access": 6.6,
-        "prosperity": 3.0,
+        "prosperity": 3.12,
         "life_satisfaction": 3.92
       },
       "raw": {
@@ -1997,9 +2289,18 @@
           }
         },
         "prosperity": {
-          "value": 3980,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.5,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 31.8,
+            "year": 2024
+          },
+          "gni": {
+            "value": 3980,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 3.92,
@@ -2007,7 +2308,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.59
+      "score": 4.62
     },
     {
       "iso": "CPV",
@@ -2016,7 +2317,7 @@
       "sub": {
         "life_expectancy": 7.49,
         "access": 8.73,
-        "prosperity": 5.21
+        "prosperity": 3.92
       },
       "raw": {
         "life_expectancy": {
@@ -2039,12 +2340,21 @@
           }
         },
         "prosperity": {
-          "value": 11000,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.2,
+            "year": 2015
+          },
+          "poverty_floor": {
+            "value": 35,
+            "year": 2015
+          },
+          "gni": {
+            "value": 11000,
+            "year": 2024
+          }
         }
       },
-      "score": 7.14
+      "score": 6.71
     },
     {
       "iso": "CRI",
@@ -2053,7 +2363,7 @@
       "sub": {
         "life_expectancy": 8.86,
         "access": 9.13,
-        "prosperity": 7.3,
+        "prosperity": 7.67,
         "free_time": 2.23,
         "life_satisfaction": 7.44
       },
@@ -2082,9 +2392,18 @@
           }
         },
         "prosperity": {
-          "value": 28840,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 23.4,
+            "year": 2025
+          },
+          "poverty_floor": {
+            "value": 90.3,
+            "year": 2025
+          },
+          "gni": {
+            "value": 28840,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2177,
@@ -2097,7 +2416,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.99
+      "score": 7.07
     },
     {
       "iso": "CUB",
@@ -2162,9 +2481,10 @@
           }
         },
         "prosperity": {
-          "value": 33300,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 33300,
+            "year": 2024
+          }
         }
       },
       "score": 7.91
@@ -2199,9 +2519,10 @@
           }
         },
         "prosperity": {
-          "value": 68030,
-          "year": 2023,
-          "unit": "$PPP"
+          "gni": {
+            "value": 68030,
+            "year": 2023
+          }
         }
       },
       "score": 9.07
@@ -2213,7 +2534,7 @@
       "sub": {
         "life_expectancy": 9.09,
         "access": 9.7,
-        "prosperity": 8.75,
+        "prosperity": 9.19,
         "free_time": 5.6,
         "life_satisfaction": 6.13
       },
@@ -2242,9 +2563,18 @@
           }
         },
         "prosperity": {
-          "value": 56200,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 52.1,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 56200,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1840,
@@ -2257,7 +2587,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.85
+      "score": 7.94
     },
     {
       "iso": "CZE",
@@ -2266,7 +2596,7 @@
       "sub": {
         "life_expectancy": 8.57,
         "access": 9.53,
-        "prosperity": 8.69,
+        "prosperity": 8.89,
         "free_time": 6.26,
         "life_satisfaction": 6.82
       },
@@ -2291,9 +2621,18 @@
           }
         },
         "prosperity": {
-          "value": 54800,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 39.1,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.2,
+            "year": 2023
+          },
+          "gni": {
+            "value": 54800,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1774,
@@ -2306,7 +2645,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.97
+      "score": 8.01
     },
     {
       "iso": "DEU",
@@ -2315,7 +2654,7 @@
       "sub": {
         "life_expectancy": 8.8,
         "access": 9.78,
-        "prosperity": 9.41,
+        "prosperity": 9.55,
         "free_time": 10,
         "life_satisfaction": 6.88
       },
@@ -2340,9 +2679,18 @@
           }
         },
         "prosperity": {
-          "value": 76180,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 64.2,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 98.4,
+            "year": 2022
+          },
+          "gni": {
+            "value": 76180,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1335,
@@ -2355,7 +2703,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.97
+      "score": 9.0
     },
     {
       "iso": "DJI",
@@ -2364,7 +2712,7 @@
       "sub": {
         "life_expectancy": 4.63,
         "access": 6.52,
-        "prosperity": 4.52,
+        "prosperity": 2.92,
         "life_satisfaction": 4.37
       },
       "raw": {
@@ -2384,9 +2732,18 @@
           }
         },
         "prosperity": {
-          "value": 8030,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.7,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 19.2,
+            "year": 2017
+          },
+          "gni": {
+            "value": 8030,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.37,
@@ -2394,7 +2751,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.01
+      "score": 4.61
     },
     {
       "iso": "DMA",
@@ -2422,9 +2779,10 @@
           }
         },
         "prosperity": {
-          "value": 21410,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 21410,
+            "year": 2024
+          }
         }
       },
       "score": 7.28
@@ -2436,7 +2794,7 @@
       "sub": {
         "life_expectancy": 9.22,
         "access": 9.99,
-        "prosperity": 9.64,
+        "prosperity": 9.61,
         "free_time": 10,
         "life_satisfaction": 7.54
       },
@@ -2461,9 +2819,18 @@
           }
         },
         "prosperity": {
-          "value": 84680,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 60.7,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.4,
+            "year": 2023
+          },
+          "gni": {
+            "value": 84680,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1380,
@@ -2476,7 +2843,7 @@
           "unit": "ladder"
         }
       },
-      "score": 9.28
+      "score": 9.27
     },
     {
       "iso": "DOM",
@@ -2485,7 +2852,7 @@
       "sub": {
         "life_expectancy": 6.82,
         "access": 8.25,
-        "prosperity": 7.08,
+        "prosperity": 7.19,
         "free_time": 3.28,
         "life_satisfaction": 6.09
       },
@@ -2514,9 +2881,18 @@
           }
         },
         "prosperity": {
-          "value": 26050,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 17.5,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 86,
+            "year": 2024
+          },
+          "gni": {
+            "value": 26050,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2072,
@@ -2529,7 +2905,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.3
+      "score": 6.33
     },
     {
       "iso": "DZA",
@@ -2538,7 +2914,7 @@
       "sub": {
         "life_expectancy": 7.56,
         "access": 8.04,
-        "prosperity": 6.19,
+        "prosperity": 5.37,
         "free_time": 1.68,
         "life_satisfaction": 5.71
       },
@@ -2567,9 +2943,18 @@
           }
         },
         "prosperity": {
-          "value": 17290,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 9.1,
+            "year": 2011
+          },
+          "poverty_floor": {
+            "value": 58.2,
+            "year": 2011
+          },
+          "gni": {
+            "value": 17290,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2232,
@@ -2582,7 +2967,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.84
+      "score": 5.67
     },
     {
       "iso": "ECU",
@@ -2591,7 +2976,7 @@
       "sub": {
         "life_expectancy": 7.88,
         "access": 8.48,
-        "prosperity": 5.94,
+        "prosperity": 5.98,
         "free_time": 8.06,
         "life_satisfaction": 6.14
       },
@@ -2620,9 +3005,18 @@
           }
         },
         "prosperity": {
-          "value": 15410,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 12.7,
+            "year": 2025
+          },
+          "poverty_floor": {
+            "value": 69.9,
+            "year": 2025
+          },
+          "gni": {
+            "value": 15410,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1594,
@@ -2635,7 +3029,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.3
+      "score": 7.31
     },
     {
       "iso": "EGY",
@@ -2644,7 +3038,7 @@
       "sub": {
         "life_expectancy": 6.23,
         "access": 8.33,
-        "prosperity": 6.3,
+        "prosperity": 4.69,
         "free_time": 0.31,
         "life_satisfaction": 3.86
       },
@@ -2673,9 +3067,18 @@
           }
         },
         "prosperity": {
-          "value": 18230,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 7.6,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 41.5,
+            "year": 2021
+          },
+          "gni": {
+            "value": 18230,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2369,
@@ -2688,7 +3091,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.01
+      "score": 4.68
     },
     {
       "iso": "ERI",
@@ -2720,9 +3123,10 @@
           }
         },
         "prosperity": {
-          "value": 1720,
-          "year": 2011,
-          "unit": "$PPP"
+          "gni": {
+            "value": 1720,
+            "year": 2011
+          }
         }
       },
       "score": 3.68
@@ -2734,7 +3138,7 @@
       "sub": {
         "life_expectancy": 9.68,
         "access": 9.87,
-        "prosperity": 8.8,
+        "prosperity": 9.05,
         "free_time": 7.62,
         "life_satisfaction": 6.54
       },
@@ -2763,9 +3167,18 @@
           }
         },
         "prosperity": {
-          "value": 57670,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 47.3,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 97.7,
+            "year": 2023
+          },
+          "gni": {
+            "value": 57670,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1638,
@@ -2778,7 +3191,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.5
+      "score": 8.55
     },
     {
       "iso": "EST",
@@ -2787,7 +3200,7 @@
       "sub": {
         "life_expectancy": 8.37,
         "access": 9.78,
-        "prosperity": 8.45,
+        "prosperity": 8.73,
         "free_time": 7.94,
         "life_satisfaction": 6.41
       },
@@ -2816,9 +3229,18 @@
           }
         },
         "prosperity": {
-          "value": 48880,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 36.5,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 98.7,
+            "year": 2023
+          },
+          "gni": {
+            "value": 48880,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1606,
@@ -2831,7 +3253,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.19
+      "score": 8.25
     },
     {
       "iso": "ETH",
@@ -2840,7 +3262,7 @@
       "sub": {
         "life_expectancy": 5.03,
         "access": 3.78,
-        "prosperity": 2.58,
+        "prosperity": 1.58,
         "free_time": 8.01,
         "life_satisfaction": 3.98
       },
@@ -2869,9 +3291,18 @@
           }
         },
         "prosperity": {
-          "value": 3280,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.5,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 6.5,
+            "year": 2021
+          },
+          "gni": {
+            "value": 3280,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1599,
@@ -2884,7 +3315,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.68
+      "score": 4.48
     },
     {
       "iso": "FIN",
@@ -2893,7 +3324,7 @@
       "sub": {
         "life_expectancy": 9.24,
         "access": 9.78,
-        "prosperity": 9.09,
+        "prosperity": 9.37,
         "free_time": 9.03,
         "life_satisfaction": 7.76
       },
@@ -2918,9 +3349,18 @@
           }
         },
         "prosperity": {
-          "value": 65640,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 56.5,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.6,
+            "year": 2023
+          },
+          "gni": {
+            "value": 65640,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1497,
@@ -2933,7 +3373,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.98
+      "score": 9.04
     },
     {
       "iso": "FJI",
@@ -2942,7 +3382,7 @@
       "sub": {
         "life_expectancy": 4.99,
         "access": 7.2,
-        "prosperity": 5.81
+        "prosperity": 4.38
       },
       "raw": {
         "life_expectancy": {
@@ -2965,12 +3405,21 @@
           }
         },
         "prosperity": {
-          "value": 14490,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 7.2,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 38.7,
+            "year": 2019
+          },
+          "gni": {
+            "value": 14490,
+            "year": 2024
+          }
         }
       },
-      "score": 6.0
+      "score": 5.52
     },
     {
       "iso": "FRA",
@@ -2979,7 +3428,7 @@
       "sub": {
         "life_expectancy": 9.42,
         "access": 9.61,
-        "prosperity": 9.03,
+        "prosperity": 9.36,
         "free_time": 9.13,
         "life_satisfaction": 6.59
       },
@@ -3004,9 +3453,18 @@
           }
         },
         "prosperity": {
-          "value": 63880,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 57.2,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.7,
+            "year": 2023
+          },
+          "gni": {
+            "value": 63880,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1487,
@@ -3019,7 +3477,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.76
+      "score": 8.82
     },
     {
       "iso": "FRO",
@@ -3047,9 +3505,10 @@
           }
         },
         "prosperity": {
-          "value": 83290,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 83290,
+            "year": 2024
+          }
         }
       },
       "score": 9.64
@@ -3061,7 +3520,7 @@
       "sub": {
         "life_expectancy": 4.96,
         "access": 6.32,
-        "prosperity": 3.36
+        "prosperity": 2.61
       },
       "raw": {
         "life_expectancy": {
@@ -3080,12 +3539,21 @@
           }
         },
         "prosperity": {
-          "value": 4690,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.7,
+            "year": 2013
+          },
+          "poverty_floor": {
+            "value": 21.9,
+            "year": 2013
+          },
+          "gni": {
+            "value": 4690,
+            "year": 2024
+          }
         }
       },
-      "score": 4.88
+      "score": 4.63
     },
     {
       "iso": "GAB",
@@ -3094,7 +3562,7 @@
       "sub": {
         "life_expectancy": 5.29,
         "access": 8.39,
-        "prosperity": 6.55,
+        "prosperity": 5.98,
         "free_time": 2.26,
         "life_satisfaction": 5.17
       },
@@ -3119,9 +3587,18 @@
           }
         },
         "prosperity": {
-          "value": 20400,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 11.3,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 67.1,
+            "year": 2017
+          },
+          "gni": {
+            "value": 20400,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2174,
@@ -3134,7 +3611,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.53
+      "score": 5.42
     },
     {
       "iso": "GBR",
@@ -3143,7 +3620,7 @@
       "sub": {
         "life_expectancy": 8.97,
         "access": 9.84,
-        "prosperity": 8.94,
+        "prosperity": 9.27,
         "free_time": 8.77,
         "life_satisfaction": 6.69
       },
@@ -3168,9 +3645,18 @@
           }
         },
         "prosperity": {
-          "value": 61460,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 54.6,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 99.1,
+            "year": 2021
+          },
+          "gni": {
+            "value": 61460,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1523,
@@ -3183,7 +3669,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.64
+      "score": 8.71
     },
     {
       "iso": "GEO",
@@ -3192,7 +3678,7 @@
       "sub": {
         "life_expectancy": 7.04,
         "access": 8.85,
-        "prosperity": 7.09,
+        "prosperity": 5.51,
         "free_time": 4.68,
         "life_satisfaction": 5.52
       },
@@ -3221,9 +3707,18 @@
           }
         },
         "prosperity": {
-          "value": 26200,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.8,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 54.4,
+            "year": 2024
+          },
+          "gni": {
+            "value": 26200,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1932,
@@ -3236,7 +3731,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.64
+      "score": 6.32
     },
     {
       "iso": "GHA",
@@ -3245,7 +3740,7 @@
       "sub": {
         "life_expectancy": 4.48,
         "access": 7.03,
-        "prosperity": 4.44,
+        "prosperity": 2.53,
         "free_time": 7.44,
         "life_satisfaction": 4.55
       },
@@ -3274,9 +3769,18 @@
           }
         },
         "prosperity": {
-          "value": 7720,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.7,
+            "year": 2016
+          },
+          "poverty_floor": {
+            "value": 14.6,
+            "year": 2016
+          },
+          "gni": {
+            "value": 7720,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1656,
@@ -3289,7 +3793,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.59
+      "score": 5.21
     },
     {
       "iso": "GIB",
@@ -3329,7 +3833,7 @@
       "sub": {
         "life_expectancy": 3.12,
         "access": 4.13,
-        "prosperity": 3.08,
+        "prosperity": 2.75,
         "life_satisfaction": 4.61
       },
       "raw": {
@@ -3353,9 +3857,18 @@
           }
         },
         "prosperity": {
-          "value": 4130,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.7,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 23.4,
+            "year": 2018
+          },
+          "gni": {
+            "value": 4130,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.61,
@@ -3363,7 +3876,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.74
+      "score": 3.65
     },
     {
       "iso": "GMB",
@@ -3372,7 +3885,7 @@
       "sub": {
         "life_expectancy": 4.59,
         "access": 5.41,
-        "prosperity": 2.68,
+        "prosperity": 2.42,
         "life_satisfaction": 4.31
       },
       "raw": {
@@ -3400,9 +3913,18 @@
           }
         },
         "prosperity": {
-          "value": 3430,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.9,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 21.8,
+            "year": 2020
+          },
+          "gni": {
+            "value": 3430,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.31,
@@ -3410,7 +3932,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.25
+      "score": 4.18
     },
     {
       "iso": "GNB",
@@ -3419,7 +3941,7 @@
       "sub": {
         "life_expectancy": 4.07,
         "access": 3.95,
-        "prosperity": 2.48
+        "prosperity": 1.61
       },
       "raw": {
         "life_expectancy": {
@@ -3446,12 +3968,21 @@
           }
         },
         "prosperity": {
-          "value": 3140,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.4,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 8.6,
+            "year": 2021
+          },
+          "gni": {
+            "value": 3140,
+            "year": 2024
+          }
         }
       },
-      "score": 3.5
+      "score": 3.21
     },
     {
       "iso": "GNQ",
@@ -3460,7 +3991,7 @@
       "sub": {
         "life_expectancy": 3.97,
         "access": 7.28,
-        "prosperity": 5.45
+        "prosperity": 4.36
       },
       "raw": {
         "life_expectancy": {
@@ -3483,12 +4014,21 @@
           }
         },
         "prosperity": {
-          "value": 12330,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 7.1,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 41.9,
+            "year": 2022
+          },
+          "gni": {
+            "value": 12330,
+            "year": 2024
+          }
         }
       },
-      "score": 5.57
+      "score": 5.2
     },
     {
       "iso": "GRC",
@@ -3497,7 +4037,7 @@
       "sub": {
         "life_expectancy": 9.1,
         "access": 9.42,
-        "prosperity": 8.18,
+        "prosperity": 8.37,
         "free_time": 5.07,
         "life_satisfaction": 5.7
       },
@@ -3526,9 +4066,18 @@
           }
         },
         "prosperity": {
-          "value": 43340,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 28.9,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 96.8,
+            "year": 2023
+          },
+          "gni": {
+            "value": 43340,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1893,
@@ -3541,7 +4090,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.49
+      "score": 7.53
     },
     {
       "iso": "GRD",
@@ -3550,7 +4099,7 @@
       "sub": {
         "life_expectancy": 7.25,
         "access": 8.81,
-        "prosperity": 6.3
+        "prosperity": 6.53
       },
       "raw": {
         "life_expectancy": {
@@ -3577,12 +4126,21 @@
           }
         },
         "prosperity": {
-          "value": 18220,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.9,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 80.4,
+            "year": 2018
+          },
+          "gni": {
+            "value": 18220,
+            "year": 2024
+          }
         }
       },
-      "score": 7.45
+      "score": 7.53
     },
     {
       "iso": "GRL",
@@ -3610,9 +4168,10 @@
           }
         },
         "prosperity": {
-          "value": 40270,
-          "year": 2007,
-          "unit": "$PPP"
+          "gni": {
+            "value": 40270,
+            "year": 2007
+          }
         }
       },
       "score": 7.43
@@ -3624,7 +4183,7 @@
       "sub": {
         "life_expectancy": 6.5,
         "access": 7.28,
-        "prosperity": 5.76,
+        "prosperity": 5.01,
         "free_time": 2.49,
         "life_satisfaction": 6.53
       },
@@ -3653,9 +4212,18 @@
           }
         },
         "prosperity": {
-          "value": 14170,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.7,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 52.7,
+            "year": 2023
+          },
+          "gni": {
+            "value": 14170,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2151,
@@ -3668,7 +4236,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.71
+      "score": 5.56
     },
     {
       "iso": "GUM",
@@ -3712,7 +4280,7 @@
       "sub": {
         "life_expectancy": 5.81,
         "access": 8.37,
-        "prosperity": 8.59,
+        "prosperity": 5.61,
         "life_satisfaction": 5.99
       },
       "raw": {
@@ -3740,9 +4308,18 @@
           }
         },
         "prosperity": {
-          "value": 52290,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 7.7,
+            "year": 1998
+          },
+          "poverty_floor": {
+            "value": 45.8,
+            "year": 1998
+          },
+          "gni": {
+            "value": 52290,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 5.99,
@@ -3750,7 +4327,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.19
+      "score": 6.45
     },
     {
       "iso": "HKG",
@@ -3784,9 +4361,10 @@
           }
         },
         "prosperity": {
-          "value": 82320,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 82320,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2240,
@@ -3808,7 +4386,7 @@
       "sub": {
         "life_expectancy": 6.58,
         "access": 7.7,
-        "prosperity": 4.19,
+        "prosperity": 4.36,
         "life_satisfaction": 6.1
       },
       "raw": {
@@ -3836,9 +4414,18 @@
           }
         },
         "prosperity": {
-          "value": 6900,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.4,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 50.2,
+            "year": 2024
+          },
+          "gni": {
+            "value": 6900,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.1,
@@ -3846,7 +4433,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.14
+      "score": 6.19
     },
     {
       "iso": "HRV",
@@ -3855,7 +4442,7 @@
       "sub": {
         "life_expectancy": 8.27,
         "access": 9.23,
-        "prosperity": 8.48,
+        "prosperity": 8.72,
         "free_time": 4.26,
         "life_satisfaction": 6.01
       },
@@ -3884,9 +4471,18 @@
           }
         },
         "prosperity": {
-          "value": 49740,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 36.7,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 98,
+            "year": 2023
+          },
+          "gni": {
+            "value": 49740,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1974,
@@ -3899,7 +4495,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.25
+      "score": 7.3
     },
     {
       "iso": "HTI",
@@ -3908,7 +4504,7 @@
       "sub": {
         "life_expectancy": 4.32,
         "access": 5.57,
-        "prosperity": 2.52,
+        "prosperity": 1.23,
         "life_satisfaction": 3.62
       },
       "raw": {
@@ -3932,9 +4528,18 @@
           }
         },
         "prosperity": {
-          "value": 3190,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.9,
+            "year": 2012
+          },
+          "poverty_floor": {
+            "value": 11.8,
+            "year": 2012
+          },
+          "gni": {
+            "value": 3190,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 3.62,
@@ -3942,7 +4547,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.01,
+      "score": 3.69,
       "note": "state collapse"
     },
     {
@@ -3952,7 +4557,7 @@
       "sub": {
         "life_expectancy": 7.64,
         "access": 9.82,
-        "prosperity": 8.37,
+        "prosperity": 8.13,
         "free_time": 7.32,
         "life_satisfaction": 5.94
       },
@@ -3981,9 +4586,18 @@
           }
         },
         "prosperity": {
-          "value": 47290,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 22.1,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 95.1,
+            "year": 2017
+          },
+          "gni": {
+            "value": 47290,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1668,
@@ -3996,7 +4610,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.82
+      "score": 7.77
     },
     {
       "iso": "IDN",
@@ -4005,7 +4619,7 @@
       "sub": {
         "life_expectancy": 6.08,
         "access": 7.47,
-        "prosperity": 6.02,
+        "prosperity": 4.25,
         "free_time": 4.42,
         "life_satisfaction": 5.62
       },
@@ -4034,9 +4648,18 @@
           }
         },
         "prosperity": {
-          "value": 16010,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.7,
+            "year": 2025
+          },
+          "poverty_floor": {
+            "value": 34.8,
+            "year": 2025
+          },
+          "gni": {
+            "value": 16010,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1958,
@@ -4049,7 +4672,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.92
+      "score": 5.57
     },
     {
       "iso": "IMN",
@@ -4085,7 +4708,7 @@
       "sub": {
         "life_expectancy": 6.35,
         "access": 8.1,
-        "prosperity": 5.21,
+        "prosperity": 3.25,
         "free_time": 0.17,
         "life_satisfaction": 4.54
       },
@@ -4114,9 +4737,18 @@
           }
         },
         "prosperity": {
-          "value": 11000,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.5,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 17.9,
+            "year": 2022
+          },
+          "gni": {
+            "value": 11000,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2383,
@@ -4129,7 +4761,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.87
+      "score": 4.48
     },
     {
       "iso": "IRL",
@@ -4138,7 +4770,7 @@
       "sub": {
         "life_expectancy": 9.43,
         "access": 9.78,
-        "prosperity": 10,
+        "prosperity": 9.57,
         "free_time": 7.46,
         "life_satisfaction": 6.93
       },
@@ -4163,9 +4795,18 @@
           }
         },
         "prosperity": {
-          "value": 101180,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 50.5,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.7,
+            "year": 2023
+          },
+          "gni": {
+            "value": 101180,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1654,
@@ -4178,7 +4819,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.72
+      "score": 8.63
     },
     {
       "iso": "IRN",
@@ -4187,7 +4828,7 @@
       "sub": {
         "life_expectancy": 7.96,
         "access": 9.22,
-        "prosperity": 6.49,
+        "prosperity": 5.77,
         "free_time": 1.54,
         "life_satisfaction": 5.15
       },
@@ -4216,9 +4857,18 @@
           }
         },
         "prosperity": {
-          "value": 19820,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 10.2,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 64,
+            "year": 2023
+          },
+          "gni": {
+            "value": 19820,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2246,
@@ -4231,7 +4881,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.07
+      "score": 5.93
     },
     {
       "iso": "IRQ",
@@ -4240,7 +4890,7 @@
       "sub": {
         "life_expectancy": 6.41,
         "access": 8.13,
-        "prosperity": 5.81,
+        "prosperity": 5.87,
         "free_time": 8.17,
         "life_satisfaction": 5.21
       },
@@ -4269,9 +4919,18 @@
           }
         },
         "prosperity": {
-          "value": 14530,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 10.9,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 72,
+            "year": 2023
+          },
+          "gni": {
+            "value": 14530,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1583,
@@ -4284,7 +4943,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.75
+      "score": 6.76
     },
     {
       "iso": "ISL",
@@ -4293,7 +4952,7 @@
       "sub": {
         "life_expectancy": 9.37,
         "access": 9.94,
-        "prosperity": 9.62,
+        "prosperity": 9.61,
         "free_time": 9.48,
         "life_satisfaction": 7.54
       },
@@ -4318,9 +4977,18 @@
           }
         },
         "prosperity": {
-          "value": 84060,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 60.6,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 99.6,
+            "year": 2019
+          },
+          "gni": {
+            "value": 84060,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1452,
@@ -4342,7 +5010,7 @@
       "sub": {
         "life_expectancy": 9.49,
         "access": 9.48,
-        "prosperity": 8.77,
+        "prosperity": 8.76,
         "free_time": 5.1,
         "life_satisfaction": 7.19
       },
@@ -4371,9 +5039,18 @@
           }
         },
         "prosperity": {
-          "value": 56790,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 37.5,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 95.6,
+            "year": 2022
+          },
+          "gni": {
+            "value": 56790,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1890,
@@ -4386,7 +5063,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.01
+      "score": 8.0
     },
     {
       "iso": "ITA",
@@ -4395,7 +5072,7 @@
       "sub": {
         "life_expectancy": 9.7,
         "access": 9.63,
-        "prosperity": 8.95,
+        "prosperity": 9.14,
         "free_time": 6.99,
         "life_satisfaction": 6.57
       },
@@ -4424,9 +5101,18 @@
           }
         },
         "prosperity": {
-          "value": 61620,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 48.8,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 98.1,
+            "year": 2023
+          },
+          "gni": {
+            "value": 61620,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1701,
@@ -4439,7 +5125,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.37
+      "score": 8.41
     },
     {
       "iso": "JAM",
@@ -4448,7 +5134,7 @@
       "sub": {
         "life_expectancy": 6.17,
         "access": 8.92,
-        "prosperity": 5.52,
+        "prosperity": 6.19,
         "free_time": 4.37,
         "life_satisfaction": 6.3
       },
@@ -4473,9 +5159,18 @@
           }
         },
         "prosperity": {
-          "value": 12690,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 14.3,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 77.1,
+            "year": 2021
+          },
+          "gni": {
+            "value": 12690,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1963,
@@ -4488,7 +5183,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.26
+      "score": 6.39
     },
     {
       "iso": "JOR",
@@ -4497,7 +5192,7 @@
       "sub": {
         "life_expectancy": 7.99,
         "access": 9.48,
-        "prosperity": 5.12,
+        "prosperity": 6.27,
         "free_time": 0,
         "life_satisfaction": 4.48
       },
@@ -4526,9 +5221,18 @@
           }
         },
         "prosperity": {
-          "value": 10570,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.7,
+            "year": 2010
+          },
+          "poverty_floor": {
+            "value": 84.7,
+            "year": 2010
+          },
+          "gni": {
+            "value": 10570,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2483,
@@ -4541,7 +5245,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.41
+      "score": 5.64
     },
     {
       "iso": "JPN",
@@ -4550,7 +5254,7 @@
       "sub": {
         "life_expectancy": 9.72,
         "access": 9.48,
-        "prosperity": 8.72,
+        "prosperity": 8.89,
         "free_time": 7.46,
         "life_satisfaction": 6.13
       },
@@ -4575,9 +5279,18 @@
           }
         },
         "prosperity": {
-          "value": 55490,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 42.2,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 96.7,
+            "year": 2020
+          },
+          "gni": {
+            "value": 55490,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1654,
@@ -4590,7 +5303,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.3
+      "score": 8.34
     },
     {
       "iso": "KAZ",
@@ -4599,7 +5312,7 @@
       "sub": {
         "life_expectancy": 7.01,
         "access": 9.62,
-        "prosperity": 7.88,
+        "prosperity": 7.09,
         "free_time": 4.25,
         "life_satisfaction": 6.63
       },
@@ -4628,9 +5341,18 @@
           }
         },
         "prosperity": {
-          "value": 37590,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 12.2,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 84.8,
+            "year": 2021
+          },
+          "gni": {
+            "value": 37590,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1975,
@@ -4643,7 +5365,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.08
+      "score": 6.92
     },
     {
       "iso": "KEN",
@@ -4652,7 +5374,7 @@
       "sub": {
         "life_expectancy": 3.95,
         "access": 6.45,
-        "prosperity": 4.08,
+        "prosperity": 2.12,
         "free_time": 3.65,
         "life_satisfaction": 4.67
       },
@@ -4677,9 +5399,18 @@
           }
         },
         "prosperity": {
-          "value": 6540,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.2,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 9.9,
+            "year": 2022
+          },
+          "gni": {
+            "value": 6540,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2035,
@@ -4692,7 +5423,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.56
+      "score": 4.17
     },
     {
       "iso": "KGZ",
@@ -4701,7 +5432,7 @@
       "sub": {
         "life_expectancy": 6.4,
         "access": 9.13,
-        "prosperity": 4.49,
+        "prosperity": 3.77,
         "free_time": 5.7,
         "life_satisfaction": 6.05
       },
@@ -4730,9 +5461,18 @@
           }
         },
         "prosperity": {
-          "value": 7900,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.9,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 34.8,
+            "year": 2024
+          },
+          "gni": {
+            "value": 7900,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1830,
@@ -4745,7 +5485,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.35
+      "score": 6.21
     },
     {
       "iso": "KHM",
@@ -4783,9 +5523,10 @@
           }
         },
         "prosperity": {
-          "value": 7910,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 7910,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2389,
@@ -4807,7 +5548,7 @@
       "sub": {
         "life_expectancy": 4.74,
         "access": 7.48,
-        "prosperity": 3.91
+        "prosperity": 4.16
       },
       "raw": {
         "life_expectancy": {
@@ -4834,12 +5575,21 @@
           }
         },
         "prosperity": {
-          "value": 6060,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.1,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 48,
+            "year": 2023
+          },
+          "gni": {
+            "value": 6060,
+            "year": 2024
+          }
         }
       },
-      "score": 5.38
+      "score": 5.46
     },
     {
       "iso": "KNA",
@@ -4867,9 +5617,10 @@
           }
         },
         "prosperity": {
-          "value": 34460,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 34460,
+            "year": 2024
+          }
         }
       },
       "score": 7.63
@@ -4881,7 +5632,7 @@
       "sub": {
         "life_expectancy": 9.61,
         "access": 9.88,
-        "prosperity": 8.96,
+        "prosperity": 9.29,
         "free_time": 4.9,
         "life_satisfaction": 6.04
       },
@@ -4910,9 +5661,18 @@
           }
         },
         "prosperity": {
-          "value": 61930,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 54.3,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 99.5,
+            "year": 2021
+          },
+          "gni": {
+            "value": 61930,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1910,
@@ -4925,7 +5685,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.88
+      "score": 7.94
     },
     {
       "iso": "KWT",
@@ -4963,9 +5723,10 @@
           }
         },
         "prosperity": {
-          "value": 63270,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 63270,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2318,
@@ -4987,7 +5748,7 @@
       "sub": {
         "life_expectancy": 5.49,
         "access": 6.82,
-        "prosperity": 4.81,
+        "prosperity": 3.61,
         "life_satisfaction": 5.51
       },
       "raw": {
@@ -5015,9 +5776,18 @@
           }
         },
         "prosperity": {
-          "value": 9160,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.2,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 29.7,
+            "year": 2024
+          },
+          "gni": {
+            "value": 9160,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 5.51,
@@ -5025,7 +5795,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.66
+      "score": 5.36
     },
     {
       "iso": "LBN",
@@ -5034,7 +5804,7 @@
       "sub": {
         "life_expectancy": 7.98,
         "access": 8.01,
-        "prosperity": 5.47,
+        "prosperity": 4.74,
         "free_time": 0,
         "life_satisfaction": 3.72
       },
@@ -5063,9 +5833,18 @@
           }
         },
         "prosperity": {
-          "value": 12420,
-          "year": 2023,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.2,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 49.3,
+            "year": 2022
+          },
+          "gni": {
+            "value": 12420,
+            "year": 2023
+          }
         },
         "free_time": {
           "value": 2412,
@@ -5078,7 +5857,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.04
+      "score": 4.89
     },
     {
       "iso": "LBR",
@@ -5087,7 +5866,7 @@
       "sub": {
         "life_expectancy": 3.52,
         "access": 4.14,
-        "prosperity": 1.22,
+        "prosperity": 1.39,
         "life_satisfaction": 4.28
       },
       "raw": {
@@ -5111,9 +5890,18 @@
           }
         },
         "prosperity": {
-          "value": 1750,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.9,
+            "year": 2016
+          },
+          "poverty_floor": {
+            "value": 11.7,
+            "year": 2016
+          },
+          "gni": {
+            "value": 1750,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.28,
@@ -5121,7 +5909,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.29
+      "score": 3.33
     },
     {
       "iso": "LBY",
@@ -5154,9 +5942,10 @@
           }
         },
         "prosperity": {
-          "value": 15400,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 15400,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 5.73,
@@ -5173,7 +5962,7 @@
       "sub": {
         "life_expectancy": 6.53,
         "access": 8.41,
-        "prosperity": 6.98
+        "prosperity": 7.33
       },
       "raw": {
         "life_expectancy": {
@@ -5192,12 +5981,21 @@
           }
         },
         "prosperity": {
-          "value": 24840,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 17.0,
+            "year": 2015
+          },
+          "poverty_floor": {
+            "value": 92.2,
+            "year": 2015
+          },
+          "gni": {
+            "value": 24840,
+            "year": 2024
+          }
         }
       },
-      "score": 7.31
+      "score": 7.42
     },
     {
       "iso": "LIE",
@@ -5237,7 +6035,7 @@
       "sub": {
         "life_expectancy": 7.91,
         "access": 7.36,
-        "prosperity": 5.91,
+        "prosperity": 4.77,
         "free_time": 3.47,
         "life_satisfaction": 4.01
       },
@@ -5266,9 +6064,18 @@
           }
         },
         "prosperity": {
-          "value": 15240,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 7.9,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 46.7,
+            "year": 2019
+          },
+          "gni": {
+            "value": 15240,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2053,
@@ -5281,7 +6088,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.73
+      "score": 5.5
     },
     {
       "iso": "LSO",
@@ -5290,7 +6097,7 @@
       "sub": {
         "life_expectancy": 2.23,
         "access": 5.77,
-        "prosperity": 2.77,
+        "prosperity": 1.99,
         "life_satisfaction": 4.38
       },
       "raw": {
@@ -5318,9 +6125,18 @@
           }
         },
         "prosperity": {
-          "value": 3580,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.6,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 16.2,
+            "year": 2017
+          },
+          "gni": {
+            "value": 3580,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.38,
@@ -5328,7 +6144,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.79
+      "score": 3.59
     },
     {
       "iso": "LTU",
@@ -5337,7 +6153,7 @@
       "sub": {
         "life_expectancy": 7.77,
         "access": 9.64,
-        "prosperity": 8.66,
+        "prosperity": 8.76,
         "free_time": 7.6,
         "life_satisfaction": 6.7
       },
@@ -5366,9 +6182,18 @@
           }
         },
         "prosperity": {
-          "value": 53920,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 37.6,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 96.8,
+            "year": 2023
+          },
+          "gni": {
+            "value": 53920,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1640,
@@ -5381,7 +6206,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.07
+      "score": 8.09
     },
     {
       "iso": "LUX",
@@ -5390,7 +6215,7 @@
       "sub": {
         "life_expectancy": 9.48,
         "access": 9.96,
-        "prosperity": 10,
+        "prosperity": 9.99,
         "free_time": 9.48,
         "life_satisfaction": 7.06
       },
@@ -5415,9 +6240,18 @@
           }
         },
         "prosperity": {
-          "value": 110650,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 89.5,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.8,
+            "year": 2023
+          },
+          "gni": {
+            "value": 110650,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1452,
@@ -5430,7 +6264,7 @@
           "unit": "ladder"
         }
       },
-      "score": 9.2
+      "score": 9.19
     },
     {
       "iso": "LVA",
@@ -5439,7 +6273,7 @@
       "sub": {
         "life_expectancy": 7.55,
         "access": 9.74,
-        "prosperity": 8.15,
+        "prosperity": 8.49,
         "free_time": 7.75,
         "life_satisfaction": 6.37
       },
@@ -5468,9 +6302,18 @@
           }
         },
         "prosperity": {
-          "value": 42660,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 33.0,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 97.2,
+            "year": 2023
+          },
+          "gni": {
+            "value": 42660,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1625,
@@ -5483,7 +6326,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.91
+      "score": 7.98
     },
     {
       "iso": "MAC",
@@ -5492,7 +6335,7 @@
       "sub": {
         "life_expectancy": 9.52,
         "access": 9.66,
-        "prosperity": 10
+        "prosperity": 10.0
       },
       "raw": {
         "life_expectancy": {
@@ -5519,9 +6362,10 @@
           }
         },
         "prosperity": {
-          "value": 113320,
-          "year": 2023,
-          "unit": "$PPP"
+          "gni": {
+            "value": 113320,
+            "year": 2023
+          }
         }
       },
       "score": 9.73
@@ -5560,7 +6404,7 @@
       "sub": {
         "life_expectancy": 7.28,
         "access": 8.39,
-        "prosperity": 5.06,
+        "prosperity": 4.69,
         "free_time": 2.26,
         "life_satisfaction": 4.65
       },
@@ -5589,9 +6433,18 @@
           }
         },
         "prosperity": {
-          "value": 10260,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.4,
+            "year": 2013
+          },
+          "poverty_floor": {
+            "value": 51,
+            "year": 2013
+          },
+          "gni": {
+            "value": 10260,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2174,
@@ -5604,7 +6457,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.53
+      "score": 5.45
     },
     {
       "iso": "MCO",
@@ -5644,7 +6497,7 @@
       "sub": {
         "life_expectancy": 6.09,
         "access": 8.81,
-        "prosperity": 6.36,
+        "prosperity": 6.37,
         "free_time": 4.11,
         "life_satisfaction": 5.85
       },
@@ -5673,9 +6526,18 @@
           }
         },
         "prosperity": {
-          "value": 18710,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 11.6,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 79.6,
+            "year": 2023
+          },
+          "gni": {
+            "value": 18710,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1989,
@@ -5688,7 +6550,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.24
+      "score": 6.25
     },
     {
       "iso": "MDG",
@@ -5697,7 +6559,7 @@
       "sub": {
         "life_expectancy": 3.95,
         "access": 3.87,
-        "prosperity": 1.31,
+        "prosperity": 0.65,
         "free_time": 6.01,
         "life_satisfaction": 4.17
       },
@@ -5726,9 +6588,18 @@
           }
         },
         "prosperity": {
-          "value": 1830,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 2.2,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 3.4,
+            "year": 2021
+          },
+          "gni": {
+            "value": 1830,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1799,
@@ -5741,7 +6612,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.86
+      "score": 3.73
     },
     {
       "iso": "MDV",
@@ -5750,7 +6621,7 @@
       "sub": {
         "life_expectancy": 8.94,
         "access": 9.45,
-        "prosperity": 6.85,
+        "prosperity": 7.06,
         "life_satisfaction": 5.2
       },
       "raw": {
@@ -5774,9 +6645,18 @@
           }
         },
         "prosperity": {
-          "value": 23400,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 15.0,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 88.8,
+            "year": 2019
+          },
+          "gni": {
+            "value": 23400,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 5.2,
@@ -5784,7 +6664,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.61
+      "score": 7.66
     },
     {
       "iso": "MEX",
@@ -5793,7 +6673,7 @@
       "sub": {
         "life_expectancy": 7.22,
         "access": 8.03,
-        "prosperity": 7.03,
+        "prosperity": 6.74,
         "free_time": 7.71,
         "life_satisfaction": 6.97
       },
@@ -5822,9 +6702,18 @@
           }
         },
         "prosperity": {
-          "value": 25460,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 14.3,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 78.6,
+            "year": 2024
+          },
+          "gni": {
+            "value": 25460,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1629,
@@ -5837,7 +6726,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.39
+      "score": 7.33
     },
     {
       "iso": "MHL",
@@ -5846,7 +6735,7 @@
       "sub": {
         "life_expectancy": 4.88,
         "access": 8.72,
-        "prosperity": 4.93
+        "prosperity": 5.23
       },
       "raw": {
         "life_expectancy": {
@@ -5869,12 +6758,21 @@
           }
         },
         "prosperity": {
-          "value": 9680,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 10.2,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 63.5,
+            "year": 2019
+          },
+          "gni": {
+            "value": 9680,
+            "year": 2024
+          }
         }
       },
-      "score": 6.18
+      "score": 6.28
     },
     {
       "iso": "MKD",
@@ -5883,7 +6781,7 @@
       "sub": {
         "life_expectancy": 7.6,
         "access": 9.25,
-        "prosperity": 7.04,
+        "prosperity": 6.85,
         "free_time": 4.51,
         "life_satisfaction": 5.72
       },
@@ -5912,9 +6810,18 @@
           }
         },
         "prosperity": {
-          "value": 25610,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 15.5,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 79.5,
+            "year": 2019
+          },
+          "gni": {
+            "value": 25610,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1949,
@@ -5927,7 +6834,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.82
+      "score": 6.79
     },
     {
       "iso": "MLI",
@@ -5936,7 +6843,7 @@
       "sub": {
         "life_expectancy": 3.05,
         "access": 4.23,
-        "prosperity": 2.55,
+        "prosperity": 1.78,
         "free_time": 1.57,
         "life_satisfaction": 4.59
       },
@@ -5961,9 +6868,18 @@
           }
         },
         "prosperity": {
-          "value": 3230,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.7,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 11.4,
+            "year": 2021
+          },
+          "gni": {
+            "value": 3230,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2243,
@@ -5976,7 +6892,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.2
+      "score": 3.04
     },
     {
       "iso": "MLT",
@@ -5985,7 +6901,7 @@
       "sub": {
         "life_expectancy": 9.42,
         "access": 9.67,
-        "prosperity": 8.94,
+        "prosperity": 9.29,
         "free_time": 5.52,
         "life_satisfaction": 6.44
       },
@@ -6014,9 +6930,18 @@
           }
         },
         "prosperity": {
-          "value": 61340,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 56.0,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 98.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 61340,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1848,
@@ -6029,7 +6954,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.0
+      "score": 8.07
     },
     {
       "iso": "MMR",
@@ -6038,7 +6963,7 @@
       "sub": {
         "life_expectancy": 4.88,
         "access": 6.89,
-        "prosperity": 3.85,
+        "prosperity": 2.86,
         "free_time": 2.03,
         "life_satisfaction": 4.29
       },
@@ -6067,9 +6992,18 @@
           }
         },
         "prosperity": {
-          "value": 5890,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.4,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 20.2,
+            "year": 2017
+          },
+          "gni": {
+            "value": 5890,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2197,
@@ -6082,7 +7016,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.39,
+      "score": 4.19,
       "note": "active conflict"
     },
     {
@@ -6092,7 +7026,7 @@
       "sub": {
         "life_expectancy": 7.97,
         "access": 9.32,
-        "prosperity": 7.66,
+        "prosperity": 7.38,
         "life_satisfaction": 6.14
       },
       "raw": {
@@ -6120,9 +7054,18 @@
           }
         },
         "prosperity": {
-          "value": 33970,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 17.8,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 85.5,
+            "year": 2021
+          },
+          "gni": {
+            "value": 33970,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.14,
@@ -6130,7 +7073,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.77
+      "score": 7.7
     },
     {
       "iso": "MNG",
@@ -6139,7 +7082,7 @@
       "sub": {
         "life_expectancy": 6.4,
         "access": 8.18,
-        "prosperity": 6.15,
+        "prosperity": 6.19,
         "life_satisfaction": 5.94
       },
       "raw": {
@@ -6167,9 +7110,18 @@
           }
         },
         "prosperity": {
-          "value": 17000,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 12.0,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 75.6,
+            "year": 2022
+          },
+          "gni": {
+            "value": 17000,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 5.94,
@@ -6177,7 +7129,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.67
+      "score": 6.68
     },
     {
       "iso": "MNP",
@@ -6217,7 +7169,7 @@
       "sub": {
         "life_expectancy": 3.94,
         "access": 3.64,
-        "prosperity": 0.91,
+        "prosperity": 0.43,
         "free_time": 8.93,
         "life_satisfaction": 5.34
       },
@@ -6246,9 +7198,18 @@
           }
         },
         "prosperity": {
-          "value": 1520,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.5,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 3.7,
+            "year": 2022
+          },
+          "gni": {
+            "value": 1520,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1507,
@@ -6261,7 +7222,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.55
+      "score": 4.46
     },
     {
       "iso": "MRT",
@@ -6270,7 +7231,7 @@
       "sub": {
         "life_expectancy": 5.35,
         "access": 5.19,
-        "prosperity": 4.32,
+        "prosperity": 3.4,
         "life_satisfaction": 4.47
       },
       "raw": {
@@ -6294,9 +7255,18 @@
           }
         },
         "prosperity": {
-          "value": 7300,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.1,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 28.8,
+            "year": 2019
+          },
+          "gni": {
+            "value": 7300,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.47,
@@ -6304,7 +7274,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.83
+      "score": 4.6
     },
     {
       "iso": "MUS",
@@ -6313,7 +7283,7 @@
       "sub": {
         "life_expectancy": 6.8,
         "access": 8.92,
-        "prosperity": 7.73,
+        "prosperity": 7.0,
         "free_time": 4.1,
         "life_satisfaction": 5.94
       },
@@ -6338,9 +7308,18 @@
           }
         },
         "prosperity": {
-          "value": 35100,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.5,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 80.9,
+            "year": 2017
+          },
+          "gni": {
+            "value": 35100,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1990,
@@ -6353,7 +7332,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.7
+      "score": 6.55
     },
     {
       "iso": "MWI",
@@ -6362,7 +7341,7 @@
       "sub": {
         "life_expectancy": 5.02,
         "access": 3.07,
-        "prosperity": 1.31,
+        "prosperity": 0.53,
         "free_time": 8.04,
         "life_satisfaction": 3.28
       },
@@ -6391,9 +7370,18 @@
           }
         },
         "prosperity": {
-          "value": 1830,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.9,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 2.9,
+            "year": 2019
+          },
+          "gni": {
+            "value": 1830,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1596,
@@ -6406,7 +7394,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.14
+      "score": 3.99
     },
     {
       "iso": "MYS",
@@ -6415,7 +7403,7 @@
       "sub": {
         "life_expectancy": 7.66,
         "access": 9.71,
-        "prosperity": 7.87,
+        "prosperity": 8.29,
         "free_time": 0.92,
         "life_satisfaction": 6.0
       },
@@ -6444,9 +7432,18 @@
           }
         },
         "prosperity": {
-          "value": 37450,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 29.6,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 97.1,
+            "year": 2021
+          },
+          "gni": {
+            "value": 37450,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2308,
@@ -6459,7 +7456,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.43
+      "score": 6.52
     },
     {
       "iso": "NAM",
@@ -6468,7 +7465,7 @@
       "sub": {
         "life_expectancy": 5.0,
         "access": 6.97,
-        "prosperity": 5.27,
+        "prosperity": 4.07,
         "free_time": 2.16,
         "life_satisfaction": 4.78
       },
@@ -6493,9 +7490,18 @@
           }
         },
         "prosperity": {
-          "value": 11300,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.2,
+            "year": 2015
+          },
+          "poverty_floor": {
+            "value": 38.9,
+            "year": 2015
+          },
+          "gni": {
+            "value": 11300,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2184,
@@ -6508,7 +7514,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.84
+      "score": 4.6
     },
     {
       "iso": "NCL",
@@ -6552,7 +7558,7 @@
       "sub": {
         "life_expectancy": 3.27,
         "access": 2.38,
-        "prosperity": 1.54,
+        "prosperity": 0.9,
         "free_time": 3.31,
         "life_satisfaction": 4.94
       },
@@ -6577,9 +7583,18 @@
           }
         },
         "prosperity": {
-          "value": 2030,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 2.7,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 3.9,
+            "year": 2021
+          },
+          "gni": {
+            "value": 2030,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2069,
@@ -6592,7 +7607,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.09
+      "score": 2.96
     },
     {
       "iso": "NGA",
@@ -6601,7 +7616,7 @@
       "sub": {
         "life_expectancy": 1.32,
         "access": 5.07,
-        "prosperity": 4.73,
+        "prosperity": 2.29,
         "free_time": 3.38,
         "life_satisfaction": 4.79
       },
@@ -6630,9 +7645,18 @@
           }
         },
         "prosperity": {
-          "value": 8850,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.4,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 7.1,
+            "year": 2022
+          },
+          "gni": {
+            "value": 8850,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2062,
@@ -6645,7 +7669,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.86
+      "score": 3.37
     },
     {
       "iso": "NIC",
@@ -6654,7 +7678,7 @@
       "sub": {
         "life_expectancy": 7.17,
         "access": 7.9,
-        "prosperity": 4.59,
+        "prosperity": 4.66,
         "life_satisfaction": 6.3
       },
       "raw": {
@@ -6678,9 +7702,18 @@
           }
         },
         "prosperity": {
-          "value": 8270,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.9,
+            "year": 2014
+          },
+          "poverty_floor": {
+            "value": 53.5,
+            "year": 2014
+          },
+          "gni": {
+            "value": 8270,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.3,
@@ -6688,7 +7721,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.49
+      "score": 6.51
     },
     {
       "iso": "NLD",
@@ -6697,7 +7730,7 @@
       "sub": {
         "life_expectancy": 9.13,
         "access": 9.9,
-        "prosperity": 9.65,
+        "prosperity": 9.74,
         "free_time": 9.61,
         "life_satisfaction": 7.22
       },
@@ -6722,9 +7755,18 @@
           }
         },
         "prosperity": {
-          "value": 84970,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 69.1,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 99.7,
+            "year": 2021
+          },
+          "gni": {
+            "value": 84970,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1439,
@@ -6737,7 +7779,7 @@
           "unit": "ladder"
         }
       },
-      "score": 9.1
+      "score": 9.12
     },
     {
       "iso": "NOR",
@@ -6746,7 +7788,7 @@
       "sub": {
         "life_expectancy": 9.47,
         "access": 9.94,
-        "prosperity": 10,
+        "prosperity": 9.96,
         "free_time": 9.88,
         "life_satisfaction": 7.24
       },
@@ -6771,9 +7813,18 @@
           }
         },
         "prosperity": {
-          "value": 106830,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 77.8,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.6,
+            "year": 2023
+          },
+          "gni": {
+            "value": 106830,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1412,
@@ -6786,7 +7837,7 @@
           "unit": "ladder"
         }
       },
-      "score": 9.31
+      "score": 9.3
     },
     {
       "iso": "NPL",
@@ -6795,7 +7846,7 @@
       "sub": {
         "life_expectancy": 5.9,
         "access": 5.64,
-        "prosperity": 3.83,
+        "prosperity": 4.11,
         "life_satisfaction": 5.15
       },
       "raw": {
@@ -6823,9 +7874,18 @@
           }
         },
         "prosperity": {
-          "value": 5830,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.0,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 47.3,
+            "year": 2022
+          },
+          "gni": {
+            "value": 5830,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 5.15,
@@ -6833,7 +7893,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.13
+      "score": 5.2
     },
     {
       "iso": "NRU",
@@ -6842,7 +7902,7 @@
       "sub": {
         "life_expectancy": 3.51,
         "access": 7.46,
-        "prosperity": 6.71
+        "prosperity": 4.32
       },
       "raw": {
         "life_expectancy": {
@@ -6869,12 +7929,21 @@
           }
         },
         "prosperity": {
-          "value": 21970,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.3,
+            "year": 2012
+          },
+          "poverty_floor": {
+            "value": 31.5,
+            "year": 2012
+          },
+          "gni": {
+            "value": 21970,
+            "year": 2024
+          }
         }
       },
-      "score": 5.89
+      "score": 5.1
     },
     {
       "iso": "NZL",
@@ -6908,9 +7977,10 @@
           }
         },
         "prosperity": {
-          "value": 53600,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 53600,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1708,
@@ -6961,9 +8031,10 @@
           }
         },
         "prosperity": {
-          "value": 39340,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 39340,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2266,
@@ -6985,7 +8056,7 @@
       "sub": {
         "life_expectancy": 5.09,
         "access": 6.42,
-        "prosperity": 3.93,
+        "prosperity": 2.44,
         "free_time": 0,
         "life_satisfaction": 4.87
       },
@@ -7014,9 +8085,18 @@
           }
         },
         "prosperity": {
-          "value": 6100,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.3,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 12.9,
+            "year": 2024
+          },
+          "gni": {
+            "value": 6100,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2471,
@@ -7029,7 +8109,7 @@
           "unit": "ladder"
         }
       },
-      "score": 4.06
+      "score": 3.76
     },
     {
       "iso": "PAN",
@@ -7038,7 +8118,7 @@
       "sub": {
         "life_expectancy": 8.51,
         "access": 8.87,
-        "prosperity": 7.97,
+        "prosperity": 7.34,
         "life_satisfaction": 6.55
       },
       "raw": {
@@ -7062,9 +8142,18 @@
           }
         },
         "prosperity": {
-          "value": 39260,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 18.6,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 80.2,
+            "year": 2024
+          },
+          "gni": {
+            "value": 39260,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.55,
@@ -7072,7 +8161,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.97
+      "score": 7.82
     },
     {
       "iso": "PER",
@@ -7081,7 +8170,7 @@
       "sub": {
         "life_expectancy": 7.98,
         "access": 8.03,
-        "prosperity": 6.12,
+        "prosperity": 5.68,
         "free_time": 2.57,
         "life_satisfaction": 5.97
       },
@@ -7110,9 +8199,18 @@
           }
         },
         "prosperity": {
-          "value": 16780,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 10.7,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 63.8,
+            "year": 2024
+          },
+          "gni": {
+            "value": 16780,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2143,
@@ -7125,7 +8223,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.13
+      "score": 6.05
     },
     {
       "iso": "PHL",
@@ -7134,7 +8232,7 @@
       "sub": {
         "life_expectancy": 5.7,
         "access": 7.81,
-        "prosperity": 5.62,
+        "prosperity": 4.19,
         "free_time": 3.04,
         "life_satisfaction": 6.21
       },
@@ -7163,9 +8261,18 @@
           }
         },
         "prosperity": {
-          "value": 13330,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.7,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 41.3,
+            "year": 2023
+          },
+          "gni": {
+            "value": 13330,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2096,
@@ -7178,7 +8285,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.68
+      "score": 5.39
     },
     {
       "iso": "PLW",
@@ -7214,9 +8321,10 @@
           }
         },
         "prosperity": {
-          "value": 18320,
-          "year": 2023,
-          "unit": "$PPP"
+          "gni": {
+            "value": 18320,
+            "year": 2023
+          }
         }
       },
       "score": 7.07
@@ -7228,7 +8336,7 @@
       "sub": {
         "life_expectancy": 4.64,
         "access": 4.21,
-        "prosperity": 3.3
+        "prosperity": 1.7
       },
       "raw": {
         "life_expectancy": {
@@ -7251,12 +8359,21 @@
           }
         },
         "prosperity": {
-          "value": 4580,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 2.9,
+            "year": 2009
+          },
+          "poverty_floor": {
+            "value": 7.9,
+            "year": 2009
+          },
+          "gni": {
+            "value": 4580,
+            "year": 2024
+          }
         }
       },
-      "score": 4.05
+      "score": 3.52
     },
     {
       "iso": "POL",
@@ -7265,7 +8382,7 @@
       "sub": {
         "life_expectancy": 8.12,
         "access": 9.4,
-        "prosperity": 8.47,
+        "prosperity": 8.8,
         "free_time": 5.93,
         "life_satisfaction": 6.77
       },
@@ -7294,9 +8411,18 @@
           }
         },
         "prosperity": {
-          "value": 49540,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 38.8,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 98.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 49540,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1807,
@@ -7309,7 +8435,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.74
+      "score": 7.8
     },
     {
       "iso": "PRI",
@@ -7346,9 +8472,10 @@
           }
         },
         "prosperity": {
-          "value": 34060,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 34060,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 7.04,
@@ -7400,7 +8527,7 @@
       "sub": {
         "life_expectancy": 9.25,
         "access": 9.45,
-        "prosperity": 8.53,
+        "prosperity": 8.65,
         "free_time": 6.65,
         "life_satisfaction": 6.03
       },
@@ -7429,9 +8556,18 @@
           }
         },
         "prosperity": {
-          "value": 50730,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 33.7,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 97.8,
+            "year": 2023
+          },
+          "gni": {
+            "value": 50730,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1735,
@@ -7444,7 +8580,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.98
+      "score": 8.01
     },
     {
       "iso": "PRY",
@@ -7453,7 +8589,7 @@
       "sub": {
         "life_expectancy": 6.85,
         "access": 8.52,
-        "prosperity": 6.27,
+        "prosperity": 6.56,
         "free_time": 2.77,
         "life_satisfaction": 6.2
       },
@@ -7482,9 +8618,18 @@
           }
         },
         "prosperity": {
-          "value": 17930,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 14.9,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 79.5,
+            "year": 2024
+          },
+          "gni": {
+            "value": 17930,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2123,
@@ -7497,7 +8642,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.12
+      "score": 6.18
     },
     {
       "iso": "PSE",
@@ -7506,7 +8651,7 @@
       "sub": {
         "life_expectancy": 5.49,
         "access": 9.13,
-        "prosperity": 3.34,
+        "prosperity": 5.12,
         "life_satisfaction": 4.69
       },
       "raw": {
@@ -7534,9 +8679,18 @@
           }
         },
         "prosperity": {
-          "value": 4660,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 12.0,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 71.4,
+            "year": 2023
+          },
+          "gni": {
+            "value": 4660,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.69,
@@ -7544,7 +8698,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.66,
+      "score": 6.11,
       "note": "active conflict"
     },
     {
@@ -7585,7 +8739,7 @@
       "sub": {
         "life_expectancy": 9.29,
         "access": 9.78,
-        "prosperity": 10,
+        "prosperity": 9.92,
         "free_time": 0,
         "life_satisfaction": 6.37
       },
@@ -7614,9 +8768,18 @@
           }
         },
         "prosperity": {
-          "value": 121900,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 73.4,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 100,
+            "year": 2017
+          },
+          "gni": {
+            "value": 121900,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2435,
@@ -7629,7 +8792,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.09
+      "score": 7.07
     },
     {
       "iso": "ROU",
@@ -7638,7 +8801,7 @@
       "sub": {
         "life_expectancy": 7.56,
         "access": 9.32,
-        "prosperity": 8.4,
+        "prosperity": 8.41,
         "free_time": 5.74,
         "life_satisfaction": 6.63
       },
@@ -7667,9 +8830,18 @@
           }
         },
         "prosperity": {
-          "value": 47920,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 29.9,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 94.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 47920,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1826,
@@ -7691,7 +8863,7 @@
       "sub": {
         "life_expectancy": 6.7,
         "access": 9.26,
-        "prosperity": 8.35,
+        "prosperity": 8.18,
         "free_time": 3.13,
         "life_satisfaction": 5.83
       },
@@ -7720,9 +8892,18 @@
           }
         },
         "prosperity": {
-          "value": 46780,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 20.3,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 99.1,
+            "year": 2023
+          },
+          "gni": {
+            "value": 46780,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2087,
@@ -7735,7 +8916,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.65
+      "score": 6.62
     },
     {
       "iso": "RWA",
@@ -7744,7 +8925,7 @@
       "sub": {
         "life_expectancy": 5.15,
         "access": 5.81,
-        "prosperity": 2.79,
+        "prosperity": 1.78,
         "free_time": 8.16,
         "life_satisfaction": 3.27
       },
@@ -7769,9 +8950,18 @@
           }
         },
         "prosperity": {
-          "value": 3620,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.5,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 10.2,
+            "year": 2023
+          },
+          "gni": {
+            "value": 3620,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1584,
@@ -7784,7 +8974,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.04
+      "score": 4.83
     },
     {
       "iso": "SAU",
@@ -7818,9 +9008,10 @@
           }
         },
         "prosperity": {
-          "value": 71730,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 71730,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2125,
@@ -7842,7 +9033,7 @@
       "sub": {
         "life_expectancy": 4.72,
         "access": 4.6,
-        "prosperity": 1.56,
+        "prosperity": 2.39,
         "free_time": 0,
         "life_satisfaction": 4.14
       },
@@ -7867,9 +9058,18 @@
           }
         },
         "prosperity": {
-          "value": 2050,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.9,
+            "year": 2014
+          },
+          "poverty_floor": {
+            "value": 26.8,
+            "year": 2014
+          },
+          "gni": {
+            "value": 2050,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2658,
@@ -7882,7 +9082,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.0,
+      "score": 3.17,
       "note": "active conflict"
     },
     {
@@ -7892,7 +9092,7 @@
       "sub": {
         "life_expectancy": 5.41,
         "access": 5.3,
-        "prosperity": 3.46,
+        "prosperity": 2.7,
         "free_time": 0.65,
         "life_satisfaction": 4.79
       },
@@ -7921,9 +9121,18 @@
           }
         },
         "prosperity": {
-          "value": 4920,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.0,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 21.4,
+            "year": 2021
+          },
+          "gni": {
+            "value": 4920,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2335,
@@ -7936,7 +9145,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.92
+      "score": 3.77
     },
     {
       "iso": "SGP",
@@ -7945,7 +9154,7 @@
       "sub": {
         "life_expectancy": 9.53,
         "access": 9.8,
-        "prosperity": 10,
+        "prosperity": 10.0,
         "free_time": 1.17,
         "life_satisfaction": 6.58
       },
@@ -7974,9 +9183,10 @@
           }
         },
         "prosperity": {
-          "value": 126190,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 126190,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2283,
@@ -7998,7 +9208,7 @@
       "sub": {
         "life_expectancy": 5.91,
         "access": 6.23,
-        "prosperity": 2.14
+        "prosperity": 1.51
       },
       "raw": {
         "life_expectancy": {
@@ -8021,12 +9231,21 @@
           }
         },
         "prosperity": {
-          "value": 2680,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.4,
+            "year": 2012
+          },
+          "poverty_floor": {
+            "value": 9.3,
+            "year": 2012
+          },
+          "gni": {
+            "value": 2680,
+            "year": 2024
+          }
         }
       },
-      "score": 4.76
+      "score": 4.55
     },
     {
       "iso": "SLE",
@@ -8035,7 +9254,7 @@
       "sub": {
         "life_expectancy": 3.42,
         "access": 2.88,
-        "prosperity": 2.71,
+        "prosperity": 1.66,
         "life_satisfaction": 3.25
       },
       "raw": {
@@ -8063,9 +9282,18 @@
           }
         },
         "prosperity": {
-          "value": 3490,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.4,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 8.5,
+            "year": 2018
+          },
+          "gni": {
+            "value": 3490,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 3.25,
@@ -8073,7 +9301,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.06
+      "score": 2.8
     },
     {
       "iso": "SLV",
@@ -8082,7 +9310,7 @@
       "sub": {
         "life_expectancy": 6.37,
         "access": 8.48,
-        "prosperity": 5.47,
+        "prosperity": 5.77,
         "life_satisfaction": 6.58
       },
       "raw": {
@@ -8106,9 +9334,18 @@
           }
         },
         "prosperity": {
-          "value": 12420,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 11.9,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 70.1,
+            "year": 2023
+          },
+          "gni": {
+            "value": 12420,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.58,
@@ -8116,7 +9353,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.72
+      "score": 6.8
     },
     {
       "iso": "SMR",
@@ -8152,9 +9389,10 @@
           }
         },
         "prosperity": {
-          "value": 71860,
-          "year": 2023,
-          "unit": "$PPP"
+          "gni": {
+            "value": 71860,
+            "year": 2023
+          }
         }
       },
       "score": 9.74
@@ -8190,9 +9428,10 @@
           }
         },
         "prosperity": {
-          "value": 1630,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 1630,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.51,
@@ -8209,7 +9448,7 @@
       "sub": {
         "life_expectancy": 7.42,
         "access": 9.05,
-        "prosperity": 7.44,
+        "prosperity": 7.64,
         "free_time": 4.05,
         "life_satisfaction": 6.69
       },
@@ -8238,9 +9477,18 @@
           }
         },
         "prosperity": {
-          "value": 30770,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 21.1,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 91,
+            "year": 2023
+          },
+          "gni": {
+            "value": 30770,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1995,
@@ -8253,7 +9501,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.93
+      "score": 6.97
     },
     {
       "iso": "SSD",
@@ -8262,7 +9510,7 @@
       "sub": {
         "life_expectancy": 2.21,
         "access": 1.3,
-        "prosperity": 0.02,
+        "prosperity": 0.09,
         "life_satisfaction": 2.82
       },
       "raw": {
@@ -8286,9 +9534,18 @@
           }
         },
         "prosperity": {
-          "value": 1010,
-          "year": 2015,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.7,
+            "year": 2016
+          },
+          "poverty_floor": {
+            "value": 2.4,
+            "year": 2016
+          },
+          "gni": {
+            "value": 1010,
+            "year": 2015
+          }
         },
         "life_satisfaction": {
           "value": 2.82,
@@ -8296,7 +9553,7 @@
           "unit": "ladder"
         }
       },
-      "score": 1.59
+      "score": 1.6
     },
     {
       "iso": "STP",
@@ -8305,7 +9562,7 @@
       "sub": {
         "life_expectancy": 5.69,
         "access": 6.61,
-        "prosperity": 3.98
+        "prosperity": 3.31
       },
       "raw": {
         "life_expectancy": {
@@ -8332,12 +9589,21 @@
           }
         },
         "prosperity": {
-          "value": 6240,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.0,
+            "year": 2017
+          },
+          "poverty_floor": {
+            "value": 30,
+            "year": 2017
+          },
+          "gni": {
+            "value": 6240,
+            "year": 2024
+          }
         }
       },
-      "score": 5.43
+      "score": 5.2
     },
     {
       "iso": "SUR",
@@ -8346,7 +9612,7 @@
       "sub": {
         "life_expectancy": 6.79,
         "access": 8.39,
-        "prosperity": 6.51,
+        "prosperity": 6.59,
         "life_satisfaction": 6.27
       },
       "raw": {
@@ -8374,9 +9640,18 @@
           }
         },
         "prosperity": {
-          "value": 20000,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 14.4,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 79.1,
+            "year": 2022
+          },
+          "gni": {
+            "value": 20000,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 6.27,
@@ -8384,7 +9659,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.99
+      "score": 7.01
     },
     {
       "iso": "SVK",
@@ -8393,7 +9668,7 @@
       "sub": {
         "life_expectancy": 8.11,
         "access": 9.65,
-        "prosperity": 8.36,
+        "prosperity": 8.25,
         "free_time": 7.79,
         "life_satisfaction": 6.25
       },
@@ -8418,9 +9693,18 @@
           }
         },
         "prosperity": {
-          "value": 47040,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 24.5,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 95.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 47040,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1621,
@@ -8433,7 +9717,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.03
+      "score": 8.01
     },
     {
       "iso": "SVN",
@@ -8442,7 +9726,7 @@
       "sub": {
         "life_expectancy": 9.22,
         "access": 9.75,
-        "prosperity": 8.76,
+        "prosperity": 9.15,
         "free_time": 8.12,
         "life_satisfaction": 6.87
       },
@@ -8471,9 +9755,18 @@
           }
         },
         "prosperity": {
-          "value": 56520,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 49.2,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 99.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 56520,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1588,
@@ -8486,7 +9779,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.54
+      "score": 8.62
     },
     {
       "iso": "SWE",
@@ -8495,7 +9788,7 @@
       "sub": {
         "life_expectancy": 9.73,
         "access": 9.85,
-        "prosperity": 9.38,
+        "prosperity": 9.41,
         "free_time": 9.69,
         "life_satisfaction": 7.25
       },
@@ -8520,9 +9813,18 @@
           }
         },
         "prosperity": {
-          "value": 75000,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 55.6,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 98.5,
+            "year": 2023
+          },
+          "gni": {
+            "value": 75000,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1432,
@@ -8535,7 +9837,7 @@
           "unit": "ladder"
         }
       },
-      "score": 9.18
+      "score": 9.19
     },
     {
       "iso": "SWZ",
@@ -8544,7 +9846,7 @@
       "sub": {
         "life_expectancy": 4.08,
         "access": 6.97,
-        "prosperity": 5.16,
+        "prosperity": 2.88,
         "life_satisfaction": 3.91
       },
       "raw": {
@@ -8572,9 +9874,18 @@
           }
         },
         "prosperity": {
-          "value": 10760,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.4,
+            "year": 2016
+          },
+          "poverty_floor": {
+            "value": 20.7,
+            "year": 2016
+          },
+          "gni": {
+            "value": 10760,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 3.91,
@@ -8582,7 +9893,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.03
+      "score": 4.46
     },
     {
       "iso": "SXM",
@@ -8606,9 +9917,10 @@
           }
         },
         "prosperity": {
-          "value": 51990,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 51990,
+            "year": 2024
+          }
         }
       },
       "score": 8.72
@@ -8620,7 +9932,7 @@
       "sub": {
         "life_expectancy": 7.51,
         "access": 8.66,
-        "prosperity": 7.54
+        "prosperity": 7.69
       },
       "raw": {
         "life_expectancy": {
@@ -8647,12 +9959,21 @@
           }
         },
         "prosperity": {
-          "value": 32180,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 21.0,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 91.6,
+            "year": 2018
+          },
+          "gni": {
+            "value": 32180,
+            "year": 2024
+          }
         }
       },
-      "score": 7.9
+      "score": 7.95
     },
     {
       "iso": "SYR",
@@ -8661,7 +9982,7 @@
       "sub": {
         "life_expectancy": 6.45,
         "access": 7.22,
-        "prosperity": 3.32,
+        "prosperity": 2.22,
         "free_time": 7.79,
         "life_satisfaction": 3.46
       },
@@ -8686,9 +10007,18 @@
           }
         },
         "prosperity": {
-          "value": 4610,
-          "year": 2022,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 4.6,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 10.7,
+            "year": 2022
+          },
+          "gni": {
+            "value": 4610,
+            "year": 2022
+          }
         },
         "free_time": {
           "value": 1621,
@@ -8701,7 +10031,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.65,
+      "score": 5.43,
       "note": "active conflict"
     },
     {
@@ -8734,9 +10064,10 @@
           }
         },
         "prosperity": {
-          "value": 37440,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 37440,
+            "year": 2024
+          }
         }
       },
       "score": 6.94
@@ -8748,7 +10079,7 @@
       "sub": {
         "life_expectancy": 1.5,
         "access": 1.54,
-        "prosperity": 2.16,
+        "prosperity": 1.62,
         "free_time": 8.15,
         "life_satisfaction": 4.38
       },
@@ -8777,9 +10108,18 @@
           }
         },
         "prosperity": {
-          "value": 2710,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.7,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 10.5,
+            "year": 2022
+          },
+          "gni": {
+            "value": 2710,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1585,
@@ -8792,7 +10132,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.55
+      "score": 3.44
     },
     {
       "iso": "TGO",
@@ -8801,7 +10141,7 @@
       "sub": {
         "life_expectancy": 3.7,
         "access": 4.8,
-        "prosperity": 2.64,
+        "prosperity": 1.91,
         "life_satisfaction": 4.28
       },
       "raw": {
@@ -8829,9 +10169,18 @@
           }
         },
         "prosperity": {
-          "value": 3380,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.9,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 13,
+            "year": 2021
+          },
+          "gni": {
+            "value": 3380,
+            "year": 2024
+          }
         },
         "life_satisfaction": {
           "value": 4.28,
@@ -8839,7 +10188,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.85
+      "score": 3.67
     },
     {
       "iso": "THA",
@@ -8848,7 +10197,7 @@
       "sub": {
         "life_expectancy": 7.59,
         "access": 9.4,
-        "prosperity": 6.9,
+        "prosperity": 7.11,
         "free_time": 2.23,
         "life_satisfaction": 6.3
       },
@@ -8873,9 +10222,18 @@
           }
         },
         "prosperity": {
-          "value": 23960,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 15.7,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 88.3,
+            "year": 2024
+          },
+          "gni": {
+            "value": 23960,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2177,
@@ -8888,7 +10246,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.48
+      "score": 6.53
     },
     {
       "iso": "TJK",
@@ -8897,7 +10255,7 @@
       "sub": {
         "life_expectancy": 6.26,
         "access": 8.02,
-        "prosperity": 4.26,
+        "prosperity": 4.11,
         "free_time": 2.66,
         "life_satisfaction": 5.59
       },
@@ -8926,9 +10284,18 @@
           }
         },
         "prosperity": {
-          "value": 7100,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 7.6,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 44.6,
+            "year": 2024
+          },
+          "gni": {
+            "value": 7100,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2134,
@@ -8941,7 +10308,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.36
+      "score": 5.33
     },
     {
       "iso": "TKM",
@@ -8950,7 +10317,7 @@
       "sub": {
         "life_expectancy": 5.77,
         "access": 7.82,
-        "prosperity": 6.61,
+        "prosperity": 3.3,
         "free_time": 2.21,
         "life_satisfaction": 5.47
       },
@@ -8979,9 +10346,18 @@
           }
         },
         "prosperity": {
-          "value": 21020,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.8,
+            "year": 1998
+          },
+          "poverty_floor": {
+            "value": 15.4,
+            "year": 1998
+          },
+          "gni": {
+            "value": 21020,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2179,
@@ -8994,7 +10370,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.58
+      "score": 4.91
     },
     {
       "iso": "TLS",
@@ -9003,7 +10379,7 @@
       "sub": {
         "life_expectancy": 5.12,
         "access": 6.81,
-        "prosperity": 3.51
+        "prosperity": 1.73
       },
       "raw": {
         "life_expectancy": {
@@ -9026,12 +10402,21 @@
           }
         },
         "prosperity": {
-          "value": 5040,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.2,
+            "year": 2014
+          },
+          "poverty_floor": {
+            "value": 4,
+            "year": 2014
+          },
+          "gni": {
+            "value": 5040,
+            "year": 2024
+          }
         }
       },
-      "score": 5.15
+      "score": 4.55
     },
     {
       "iso": "TON",
@@ -9040,7 +10425,7 @@
       "sub": {
         "life_expectancy": 6.59,
         "access": 7.41,
-        "prosperity": 4.62
+        "prosperity": 5.52
       },
       "raw": {
         "life_expectancy": {
@@ -9067,12 +10452,21 @@
           }
         },
         "prosperity": {
-          "value": 8400,
-          "year": 2023,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 11.0,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 73.3,
+            "year": 2021
+          },
+          "gni": {
+            "value": 8400,
+            "year": 2023
+          }
         }
       },
-      "score": 6.21
+      "score": 6.51
     },
     {
       "iso": "TTO",
@@ -9081,7 +10475,7 @@
       "sub": {
         "life_expectancy": 6.75,
         "access": 8.68,
-        "prosperity": 7.82,
+        "prosperity": 6.55,
         "free_time": 7.9,
         "life_satisfaction": 5.91
       },
@@ -9110,9 +10504,18 @@
           }
         },
         "prosperity": {
-          "value": 36580,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 12.2,
+            "year": 1992
+          },
+          "poverty_floor": {
+            "value": 69.5,
+            "year": 1992
+          },
+          "gni": {
+            "value": 36580,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1610,
@@ -9125,7 +10528,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.41
+      "score": 7.16
     },
     {
       "iso": "TUN",
@@ -9134,7 +10537,7 @@
       "sub": {
         "life_expectancy": 7.63,
         "access": 8.19,
-        "prosperity": 5.77,
+        "prosperity": 6.26,
         "free_time": 1.12,
         "life_satisfaction": 4.8
       },
@@ -9163,9 +10566,18 @@
           }
         },
         "prosperity": {
-          "value": 14230,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.0,
+            "year": 2021
+          },
+          "poverty_floor": {
+            "value": 79.3,
+            "year": 2021
+          },
+          "gni": {
+            "value": 14230,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2288,
@@ -9178,7 +10590,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.5
+      "score": 5.6
     },
     {
       "iso": "TUR",
@@ -9187,7 +10599,7 @@
       "sub": {
         "life_expectancy": 7.83,
         "access": 9.57,
-        "prosperity": 8.25,
+        "prosperity": 8.32,
         "free_time": 6.53,
         "life_satisfaction": 5.3
       },
@@ -9212,9 +10624,18 @@
           }
         },
         "prosperity": {
-          "value": 44600,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 27.7,
+            "year": 2023
+          },
+          "poverty_floor": {
+            "value": 95.9,
+            "year": 2023
+          },
+          "gni": {
+            "value": 44600,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1747,
@@ -9227,7 +10648,7 @@
           "unit": "ladder"
         }
       },
-      "score": 7.5
+      "score": 7.51
     },
     {
       "iso": "TUV",
@@ -9236,7 +10657,7 @@
       "sub": {
         "life_expectancy": 4.93,
         "access": 6.1,
-        "prosperity": 4.6
+        "prosperity": 3.97
       },
       "raw": {
         "life_expectancy": {
@@ -9263,12 +10684,21 @@
           }
         },
         "prosperity": {
-          "value": 8320,
-          "year": 2023,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.9,
+            "year": 2010
+          },
+          "poverty_floor": {
+            "value": 39.4,
+            "year": 2010
+          },
+          "gni": {
+            "value": 8320,
+            "year": 2023
+          }
         }
       },
-      "score": 5.21
+      "score": 5.0
     },
     {
       "iso": "TZA",
@@ -9277,7 +10707,7 @@
       "sub": {
         "life_expectancy": 4.92,
         "access": 4.72,
-        "prosperity": 3.08,
+        "prosperity": 1.66,
         "free_time": 2.71,
         "life_satisfaction": 3.9
       },
@@ -9306,9 +10736,18 @@
           }
         },
         "prosperity": {
-          "value": 4130,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.0,
+            "year": 2018
+          },
+          "poverty_floor": {
+            "value": 8.5,
+            "year": 2018
+          },
+          "gni": {
+            "value": 4130,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2129,
@@ -9321,7 +10760,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.87
+      "score": 3.58
     },
     {
       "iso": "UGA",
@@ -9330,7 +10769,7 @@
       "sub": {
         "life_expectancy": 5.28,
         "access": 3.89,
-        "prosperity": 2.52,
+        "prosperity": 1.28,
         "free_time": 2.72,
         "life_satisfaction": 4.49
       },
@@ -9359,9 +10798,18 @@
           }
         },
         "prosperity": {
-          "value": 3190,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 2.6,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 6.4,
+            "year": 2019
+          },
+          "gni": {
+            "value": 3190,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2128,
@@ -9374,7 +10822,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.78
+      "score": 3.53
     },
     {
       "iso": "UKR",
@@ -9383,7 +10831,7 @@
       "sub": {
         "life_expectancy": 7.05,
         "access": 9.24,
-        "prosperity": 6.34,
+        "prosperity": 6.81,
         "free_time": 3.55,
         "life_satisfaction": 4.66
       },
@@ -9412,9 +10860,18 @@
           }
         },
         "prosperity": {
-          "value": 18560,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.7,
+            "year": 2020
+          },
+          "poverty_floor": {
+            "value": 88.7,
+            "year": 2020
+          },
+          "gni": {
+            "value": 18560,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2045,
@@ -9427,7 +10884,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.17,
+      "score": 6.26,
       "note": "active conflict"
     },
     {
@@ -9437,7 +10894,7 @@
       "sub": {
         "life_expectancy": 8.08,
         "access": 9.7,
-        "prosperity": 7.67,
+        "prosperity": 8.04,
         "free_time": 9.19,
         "life_satisfaction": 6.63
       },
@@ -9462,9 +10919,18 @@
           }
         },
         "prosperity": {
-          "value": 34170,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 26.8,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 94.1,
+            "year": 2024
+          },
+          "gni": {
+            "value": 34170,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1481,
@@ -9477,7 +10943,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.25
+      "score": 8.33
     },
     {
       "iso": "USA",
@@ -9486,7 +10952,7 @@
       "sub": {
         "life_expectancy": 8.25,
         "access": 9.74,
-        "prosperity": 9.67,
+        "prosperity": 9.74,
         "free_time": 6.11,
         "life_satisfaction": 6.82
       },
@@ -9511,9 +10977,18 @@
           }
         },
         "prosperity": {
-          "value": 85980,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 72.1,
+            "year": 2024
+          },
+          "poverty_floor": {
+            "value": 98.2,
+            "year": 2024
+          },
+          "gni": {
+            "value": 85980,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 1789,
@@ -9526,7 +11001,7 @@
           "unit": "ladder"
         }
       },
-      "score": 8.12
+      "score": 8.13
     },
     {
       "iso": "UZB",
@@ -9535,7 +11010,7 @@
       "sub": {
         "life_expectancy": 6.44,
         "access": 9.29,
-        "prosperity": 5.4,
+        "prosperity": 6.63,
         "free_time": 3.01,
         "life_satisfaction": 6.28
       },
@@ -9564,9 +11039,18 @@
           }
         },
         "prosperity": {
-          "value": 12000,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 16.5,
+            "year": 2025
+          },
+          "poverty_floor": {
+            "value": 87.6,
+            "year": 2025
+          },
+          "gni": {
+            "value": 12000,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2099,
@@ -9579,7 +11063,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.08
+      "score": 6.33
     },
     {
       "iso": "VCT",
@@ -9611,9 +11095,10 @@
           }
         },
         "prosperity": {
-          "value": 21150,
-          "year": 2024,
-          "unit": "$PPP"
+          "gni": {
+            "value": 21150,
+            "year": 2024
+          }
         }
       },
       "score": 7.27
@@ -9625,7 +11110,7 @@
       "sub": {
         "life_expectancy": 6.48,
         "access": 9.13,
-        "prosperity": 6.59,
+        "prosperity": 5.48,
         "free_time": 5.71,
         "life_satisfaction": 5.76
       },
@@ -9650,9 +11135,18 @@
           }
         },
         "prosperity": {
-          "value": 20800,
-          "year": 2011,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 9.4,
+            "year": 2006
+          },
+          "poverty_floor": {
+            "value": 56.7,
+            "year": 2006
+          },
+          "gni": {
+            "value": 20800,
+            "year": 2011
+          }
         },
         "free_time": {
           "value": 1829,
@@ -9665,7 +11159,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.73
+      "score": 6.51
     },
     {
       "iso": "VGB",
@@ -9732,7 +11226,7 @@
       "sub": {
         "life_expectancy": 7.07,
         "access": 8.47,
-        "prosperity": 6.0,
+        "prosperity": 6.33,
         "free_time": 2.4,
         "life_satisfaction": 6.43
       },
@@ -9761,9 +11255,18 @@
           }
         },
         "prosperity": {
-          "value": 15850,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 13.3,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 78.5,
+            "year": 2022
+          },
+          "gni": {
+            "value": 15850,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2160,
@@ -9776,7 +11279,7 @@
           "unit": "ladder"
         }
       },
-      "score": 6.07
+      "score": 6.14
     },
     {
       "iso": "VUT",
@@ -9785,7 +11288,7 @@
       "sub": {
         "life_expectancy": 6.19,
         "access": 4.78,
-        "prosperity": 3.09
+        "prosperity": 2.51
       },
       "raw": {
         "life_expectancy": {
@@ -9812,12 +11315,21 @@
           }
         },
         "prosperity": {
-          "value": 4140,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 5.2,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 18.7,
+            "year": 2019
+          },
+          "gni": {
+            "value": 4140,
+            "year": 2024
+          }
         }
       },
-      "score": 4.69
+      "score": 4.49
     },
     {
       "iso": "WSM",
@@ -9826,7 +11338,7 @@
       "sub": {
         "life_expectancy": 6.24,
         "access": 7.04,
-        "prosperity": 4.68
+        "prosperity": 4.54
       },
       "raw": {
         "life_expectancy": {
@@ -9853,12 +11365,21 @@
           }
         },
         "prosperity": {
-          "value": 8620,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 8.4,
+            "year": 2013
+          },
+          "poverty_floor": {
+            "value": 50.6,
+            "year": 2013
+          },
+          "gni": {
+            "value": 8620,
+            "year": 2024
+          }
         }
       },
-      "score": 5.99
+      "score": 5.94
     },
     {
       "iso": "XKX",
@@ -9867,7 +11388,7 @@
       "sub": {
         "life_expectancy": 8.06,
         "access": 9.47,
-        "prosperity": 6.31
+        "prosperity": 6.25
       },
       "raw": {
         "life_expectancy": {
@@ -9886,12 +11407,17 @@
           }
         },
         "prosperity": {
-          "value": 18290,
-          "year": 2024,
-          "unit": "$PPP"
+          "poverty_floor": {
+            "value": 61.8,
+            "year": 2022
+          },
+          "gni": {
+            "value": 18290,
+            "year": 2024
+          }
         }
       },
-      "score": 7.95
+      "score": 7.93
     },
     {
       "iso": "YEM",
@@ -9900,7 +11426,7 @@
       "sub": {
         "life_expectancy": 5.55,
         "access": 4.61,
-        "prosperity": 2.4,
+        "prosperity": 1.78,
         "free_time": 10,
         "life_satisfaction": 3.53
       },
@@ -9925,9 +11451,18 @@
           }
         },
         "prosperity": {
-          "value": 3020,
-          "year": 2013,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.8,
+            "year": 2014
+          },
+          "poverty_floor": {
+            "value": 12,
+            "year": 2014
+          },
+          "gni": {
+            "value": 3020,
+            "year": 2013
+          }
         },
         "free_time": {
           "value": 1382,
@@ -9940,7 +11475,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.22,
+      "score": 5.09,
       "note": "active conflict"
     },
     {
@@ -9950,7 +11485,7 @@
       "sub": {
         "life_expectancy": 4.66,
         "access": 8.13,
-        "prosperity": 5.9,
+        "prosperity": 4.39,
         "free_time": 2.19,
         "life_satisfaction": 5.01
       },
@@ -9979,9 +11514,18 @@
           }
         },
         "prosperity": {
-          "value": 15150,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 6.6,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 40.4,
+            "year": 2022
+          },
+          "gni": {
+            "value": 15150,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2181,
@@ -9994,7 +11538,7 @@
           "unit": "ladder"
         }
       },
-      "score": 5.18
+      "score": 4.88
     },
     {
       "iso": "ZMB",
@@ -10003,7 +11547,7 @@
       "sub": {
         "life_expectancy": 4.72,
         "access": 4.67,
-        "prosperity": 2.93,
+        "prosperity": 1.18,
         "free_time": 2.0,
         "life_satisfaction": 4.11
       },
@@ -10028,9 +11572,18 @@
           }
         },
         "prosperity": {
-          "value": 3850,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 1.7,
+            "year": 2022
+          },
+          "poverty_floor": {
+            "value": 6,
+            "year": 2022
+          },
+          "gni": {
+            "value": 3850,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2200,
@@ -10043,7 +11596,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.69
+      "score": 3.34
     },
     {
       "iso": "ZWE",
@@ -10052,7 +11605,7 @@
       "sub": {
         "life_expectancy": 3.73,
         "access": 5.56,
-        "prosperity": 3.84,
+        "prosperity": 2.12,
         "free_time": 0.89,
         "life_satisfaction": 3.35
       },
@@ -10081,9 +11634,18 @@
           }
         },
         "prosperity": {
-          "value": 5870,
-          "year": 2024,
-          "unit": "$PPP"
+          "median_income": {
+            "value": 3.0,
+            "year": 2019
+          },
+          "poverty_floor": {
+            "value": 13.8,
+            "year": 2019
+          },
+          "gni": {
+            "value": 5870,
+            "year": 2024
+          }
         },
         "free_time": {
           "value": 2311,
@@ -10096,7 +11658,7 @@
           "unit": "ladder"
         }
       },
-      "score": 3.47
+      "score": 3.13
     }
   ],
   "component_groups": {
@@ -10126,11 +11688,11 @@
       "source": "World Bank"
     },
     "prosperity": {
-      "floor": 1000,
-      "ceil": 100000,
-      "unit": "GNI per capita, PPP $",
-      "transform": "log10",
-      "source": "World Bank \u00b7 NY.GNP.PCAP.PP.CD"
+      "floor": 0,
+      "ceil": 10,
+      "unit": "composite: median income (log $2\u201380/day), share above $6.85/day, GNI/capita (log $1k\u2013100k)",
+      "transform": "avg of normalized parts",
+      "source": "OWID median income \u00b7 World Bank poverty + GNI"
     },
     "free_time": {
       "floor": 2400,
