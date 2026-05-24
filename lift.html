@@ -2110,7 +2110,7 @@ footer a:hover { color: var(--text); }
         <div class="eyebrow-sm reveal">View · Historical record</div>
         <h2 class="reveal">Twelve millennia of compounding gains, on a log scale</h2>
         <p class="intro reveal">
-            Selection drawn from peer-reviewed scholarship — Cambridge Histories, Bellwood's <em>First Farmers</em>, Mokyr's economic history, WHO official histories, UNESCO archives, OWID, Nobel records, IUCN, and discipline-specific reference works. The vertical axis is logarithmic because population reach spans many orders of magnitude. Where scholarship disagrees on attribution or even on whether a development counts as a gain at all (e.g. agriculture, the Columbian Exchange), we publish the range, surface the dispute, and list the costs alongside.
+            A curated selection of real, cited historical gains — each entry carries its sources, its costs, and (where scholarship disagrees on whether something even counts as a gain, e.g. agriculture or the Columbian Exchange) the dispute. The one estimated quantity is the dot size: "reach" is a deliberately coarse order-of-magnitude figure used only to scale the dots — not a measurement. The events and citations are the grounded part; the sizing is a reading aid.
         </p>
     </div>
 
@@ -2119,7 +2119,7 @@ footer a:hover { color: var(--text); }
             <div class="viz-title-row">
                 <div>
                     <h3>Civilizational gains · across recorded history</h3>
-                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Dot size = population reached (log) · switch the era chips to zoom in or out.</div>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Dot size = estimated reach, order of magnitude · switch the era chips to zoom in or out.</div>
                 </div>
                 <div class="viz-source">SRC: scholarly aggregation · ILLUSTRATIVE</div>
             </div>
@@ -3034,7 +3034,7 @@ function drawTimeline() {
             showTip(`
                 <strong>${ev.name}</strong>
                 <div class="tip-sub">${ev.start === ev.end ? ev.start : ev.start + '–' + ev.end} · ${(ev.actors || []).join(', ')}</div>
-                <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem; color:var(--text-bright)">people reached: ${range}</div>
+                <div style="margin-top:8px; font-family:var(--mono); font-size:0.72rem; color:var(--text-bright)">est. reach (order of magnitude): ${range}</div>
                 <div class="tip-sub" style="margin-top:6px;">click for full detail</div>
             `, e);
         });
@@ -3585,10 +3585,11 @@ function openTimelineDetail(id) {
                 <div class="val" style="font-size:0.95rem;">${period}</div>
             </div>
             <div class="panel-stat">
-                <div class="lbl">People reached</div>
+                <div class="lbl">Estimated reach</div>
                 <div class="val" style="font-size:0.95rem;">${reach}</div>
             </div>
         </div>
+        <p style="font-size:0.7rem; color:var(--text-faint); margin-top:-2px;">Reach is an order-of-magnitude estimate used only to size the dot — not a measurement. The event and its sources below are the grounded part.</p>
     `;
 
     if (mechObj) {
