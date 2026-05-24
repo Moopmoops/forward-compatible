@@ -2146,9 +2146,9 @@ footer a:hover { color: var(--text); }
 <div class="section" id="movers-section">
     <div class="col-wide">
         <div class="eyebrow-sm reveal">View · Direction of travel</div>
-        <h2 class="reveal">Where conditions changed most over five years</h2>
+        <h2 class="reveal">Where life expectancy changed most</h2>
         <p class="intro reveal">
-            Largest deltas in the composite progress score, 2020 → 2025. Most of the world's median country edged up. A smaller cohort retreated sharply — and the magnitude of those reversals is larger than the magnitude of typical advance. Both halves are part of the honest record.
+            Real change in life expectancy at birth, 2005 → latest, by country (World Bank). The biggest gains are concentrated in sub-Saharan Africa — Uganda, Ethiopia, South Africa — as the toll of the AIDS crisis receded and child mortality fell. The few declines come from war and economic collapse. Click any country for its full profile.
         </p>
     </div>
 
@@ -2156,10 +2156,10 @@ footer a:hover { color: var(--text); }
         <div class="viz-frame full reveal">
             <div class="viz-title-row">
                 <div>
-                    <h3>Composite progress score · 5-year delta</h3>
-                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Positive = gains. Negative = erosion.</div>
+                    <h3>Life expectancy · change since 2005</h3>
+                    <div style="font-family:var(--sans); font-size:0.78rem; color:var(--text-dim); margin-top:3px;">Years gained or lost · from → to shown per country.</div>
                 </div>
-                <div class="viz-source">SRC: composite indicators · ILLUSTRATIVE</div>
+                <div class="viz-source">SRC: World Bank · REAL</div>
             </div>
             <div class="movers-wrap" id="movers"></div>
         </div>
@@ -2199,7 +2199,7 @@ footer a:hover { color: var(--text); }
         <div class="eyebrow-sm reveal">View · Structural lifts</div>
         <h2 class="reveal">The slow curves that compound across decades</h2>
         <p class="intro reveal">
-            Seventeen indicators grouped into six domains. Each panel is the slowest-moving signal in its domain — the kind of curve that rewards patient measurement. <em>Click any panel</em> for the full record: methodology, sources, costs alongside, and the disagreements that exist around it.
+            Fifteen real world-aggregate series, grouped into six domains — every one fetched live from the World Bank, not estimated. Each is the slowest-moving signal in its domain, the kind of curve that rewards patient measurement. <em>Click any panel</em> for the full series and its source.
         </p>
     </div>
 
@@ -2207,10 +2207,10 @@ footer a:hover { color: var(--text); }
         <div class="filter-row" id="structural-filters">
             <span class="filter-label">Domain</span>
             <span class="filter-chip active" data-domain="all">All</span>
-            <span class="filter-chip" data-domain="healthspan">Healthspan</span>
+            <span class="filter-chip" data-domain="health">Health</span>
             <span class="filter-chip" data-domain="access">Access</span>
             <span class="filter-chip" data-domain="prosperity">Prosperity</span>
-            <span class="filter-chip" data-domain="civic">Civic</span>
+            <span class="filter-chip" data-domain="inclusion">Inclusion</span>
             <span class="filter-chip" data-domain="environment">Environment</span>
             <span class="filter-chip" data-domain="safety">Safety</span>
             <span class="filter-count" id="structural-count"></span>
@@ -3033,12 +3033,13 @@ async function renderMovers() {
         ...data.regressing.map(d => Math.abs(d.delta))
     );
 
+    const unit = data.unit || '';
     function side(title, items, klass) {
         const html = items.map(m => `
             <div class="mover-row ${klass}" data-iso="${m.iso}">
                 <div class="label">
                     ${m.name} <span style="color:var(--text-faint); font-family:var(--mono); font-size:0.72rem;">${m.iso}</span>
-                    <div class="drivers">${m.drivers.join(' · ')}</div>
+                    <div class="drivers">${m.from} → ${m.to} ${unit} · ${m.from_year}–${m.to_year}</div>
                 </div>
                 <div class="delta">${m.delta > 0 ? '+' : ''}${m.delta.toFixed(1)}</div>
                 <div class="mover-bar-wrap"><div class="fill" style="width: ${(Math.abs(m.delta) / maxAbs * 100).toFixed(1)}%"></div></div>

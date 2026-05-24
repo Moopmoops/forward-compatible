@@ -1,428 +1,2298 @@
 {
-  "schema_version": 2,
-  "updated": "2026-05-15",
-  "methodology": "Structural lifts are slow, longer-arc gains that compound across decades. Each panel pulls from the authoritative custodian agency (UN IGME, WHO GHO, World Bank, UNESCO UIS, ITU, IEA, IPU, V-Dem, FAO, UNODC, Amnesty, World Database on Protected Areas) and is presented at the same time scale. Direction is encoded — 'up_is_good' for things we want to grow (literacy, electrification) and 'down_is_good' for things we want to shrink (mortality, undernourishment). The grouping by domain (Healthspan / Access / Prosperity / Civic / Environment / Safety) mirrors the composite heatmap dimensions plus two domains the heatmap omits.",
-  "data_status": "illustrative — pipeline not yet live; values approximate published figures",
+  "schema_version": 3,
+  "updated": "2026-05-22",
+  "source": "World Bank Open Data \u2014 world aggregate (country=WLD)",
+  "data_status": "real \u2014 fetched from World Bank API; gaps omitted",
   "domains": [
-    {"id": "healthspan", "label": "Healthspan", "framing": "How long, healthy, and protected lives are."},
-    {"id": "access", "label": "Access", "framing": "Whether the basic substrate of modern life — knowledge, power, water, connectivity — is reachable."},
-    {"id": "prosperity", "label": "Prosperity", "framing": "Whether material conditions meet a floor."},
-    {"id": "civic", "label": "Civic", "framing": "Whether voice and accountable government are extended."},
-    {"id": "environment", "label": "Environment", "framing": "Whether the systems we depend on are being protected and restored."},
-    {"id": "safety", "label": "Safety", "framing": "Whether everyday and political violence is being reduced."}
+    {
+      "id": "health",
+      "label": "Health",
+      "framing": "How long and well people live."
+    },
+    {
+      "id": "access",
+      "label": "Access",
+      "framing": "Reach of the basics \u2014 knowledge, power, water, connection."
+    },
+    {
+      "id": "prosperity",
+      "label": "Prosperity",
+      "framing": "Whether material conditions meet a floor."
+    },
+    {
+      "id": "inclusion",
+      "label": "Inclusion",
+      "framing": "Who gets a seat at the table."
+    },
+    {
+      "id": "environment",
+      "label": "Environment",
+      "framing": "The systems we depend on \u2014 some rising, some not."
+    },
+    {
+      "id": "safety",
+      "label": "Safety",
+      "framing": "Everyday violence."
+    }
   ],
   "panels": [
     {
       "id": "life_expectancy",
-      "domain": "healthspan",
-      "title": "Global life expectancy at birth",
-      "subtitle": "Years lived on average; world population-weighted",
+      "domain": "health",
+      "title": "Life expectancy at birth",
+      "subtitle": "World \u00b7 years",
       "y_label": "Years",
-      "source": "UN World Population Prospects / OWID",
-      "series": [
-        {"year": 1900, "value": 32},
-        {"year": 1950, "value": 47},
-        {"year": 1970, "value": 56},
-        {"year": 1990, "value": 64},
-        {"year": 2000, "value": 67},
-        {"year": 2010, "value": 70},
-        {"year": 2019, "value": 73},
-        {"year": 2021, "value": 71},
-        {"year": 2024, "value": 73}
-      ],
       "direction": "up_is_good",
-      "framing": "Roughly doubled in a century. The COVID dip in 2020–2021 was the first global decline since WWII; the rebound is underway. Country variation remains large.",
-      "description": "Average years lived from birth, calculated from age-specific mortality rates. This is the single most aggregated health-system output: it integrates child mortality, infectious disease control, maternal health, treatment of chronic disease, road safety, and access to clean food and water into one number. The 73-year global average masks a 25-year spread between the strongest and weakest national figures.",
-      "costs": "Longer lives also mean more years lived with disability and age-related disease — healthspan and lifespan have not grown at the same rate. Pension and care-economy systems were not designed for the current age profile.",
+      "series": [
+        {
+          "year": 1960,
+          "value": 50.94
+        },
+        {
+          "year": 1961,
+          "value": 52.8
+        },
+        {
+          "year": 1962,
+          "value": 55.29
+        },
+        {
+          "year": 1963,
+          "value": 55.65
+        },
+        {
+          "year": 1964,
+          "value": 56.1
+        },
+        {
+          "year": 1965,
+          "value": 55.93
+        },
+        {
+          "year": 1966,
+          "value": 56.45
+        },
+        {
+          "year": 1967,
+          "value": 56.9
+        },
+        {
+          "year": 1968,
+          "value": 57.34
+        },
+        {
+          "year": 1969,
+          "value": 57.68
+        },
+        {
+          "year": 1970,
+          "value": 57.94
+        },
+        {
+          "year": 1971,
+          "value": 58.02
+        },
+        {
+          "year": 1972,
+          "value": 58.84
+        },
+        {
+          "year": 1973,
+          "value": 59.3
+        },
+        {
+          "year": 1974,
+          "value": 59.7
+        },
+        {
+          "year": 1975,
+          "value": 60.13
+        },
+        {
+          "year": 1976,
+          "value": 60.45
+        },
+        {
+          "year": 1977,
+          "value": 61.04
+        },
+        {
+          "year": 1978,
+          "value": 61.39
+        },
+        {
+          "year": 1979,
+          "value": 61.84
+        },
+        {
+          "year": 1980,
+          "value": 62.15
+        },
+        {
+          "year": 1981,
+          "value": 62.52
+        },
+        {
+          "year": 1982,
+          "value": 62.87
+        },
+        {
+          "year": 1983,
+          "value": 63.13
+        },
+        {
+          "year": 1984,
+          "value": 63.44
+        },
+        {
+          "year": 1985,
+          "value": 63.72
+        },
+        {
+          "year": 1986,
+          "value": 64.12
+        },
+        {
+          "year": 1987,
+          "value": 64.46
+        },
+        {
+          "year": 1988,
+          "value": 64.67
+        },
+        {
+          "year": 1989,
+          "value": 64.96
+        },
+        {
+          "year": 1990,
+          "value": 65.11
+        },
+        {
+          "year": 1991,
+          "value": 65.3
+        },
+        {
+          "year": 1992,
+          "value": 65.55
+        },
+        {
+          "year": 1993,
+          "value": 65.74
+        },
+        {
+          "year": 1994,
+          "value": 65.96
+        },
+        {
+          "year": 1995,
+          "value": 66.2
+        },
+        {
+          "year": 1996,
+          "value": 66.51
+        },
+        {
+          "year": 1997,
+          "value": 66.83
+        },
+        {
+          "year": 1998,
+          "value": 67.07
+        },
+        {
+          "year": 1999,
+          "value": 67.31
+        },
+        {
+          "year": 2000,
+          "value": 67.65
+        },
+        {
+          "year": 2001,
+          "value": 67.94
+        },
+        {
+          "year": 2002,
+          "value": 68.23
+        },
+        {
+          "year": 2003,
+          "value": 68.51
+        },
+        {
+          "year": 2004,
+          "value": 68.77
+        },
+        {
+          "year": 2005,
+          "value": 69.11
+        },
+        {
+          "year": 2006,
+          "value": 69.47
+        },
+        {
+          "year": 2007,
+          "value": 69.8
+        },
+        {
+          "year": 2008,
+          "value": 70.0
+        },
+        {
+          "year": 2009,
+          "value": 70.38
+        },
+        {
+          "year": 2010,
+          "value": 70.68
+        },
+        {
+          "year": 2011,
+          "value": 70.97
+        },
+        {
+          "year": 2012,
+          "value": 71.26
+        },
+        {
+          "year": 2013,
+          "value": 71.53
+        },
+        {
+          "year": 2014,
+          "value": 71.78
+        },
+        {
+          "year": 2015,
+          "value": 71.96
+        },
+        {
+          "year": 2016,
+          "value": 72.18
+        },
+        {
+          "year": 2017,
+          "value": 72.37
+        },
+        {
+          "year": 2018,
+          "value": 72.64
+        },
+        {
+          "year": 2019,
+          "value": 72.87
+        },
+        {
+          "year": 2020,
+          "value": 72.18
+        },
+        {
+          "year": 2021,
+          "value": 71.21
+        },
+        {
+          "year": 2022,
+          "value": 72.97
+        },
+        {
+          "year": 2023,
+          "value": 73.33
+        },
+        {
+          "year": 2024,
+          "value": 73.48
+        }
+      ],
+      "framing": "Global average life expectancy at birth.",
       "sources": [
-        {"name": "UN World Population Prospects 2024", "url": "https://population.un.org/wpp/"},
-        {"name": "OWID — Life expectancy", "url": "https://ourworldindata.org/life-expectancy"}
+        {
+          "name": "World Bank \u00b7 SP.DYN.LE00.IN",
+          "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=1W"
+        }
       ]
     },
     {
       "id": "child_mortality",
-      "domain": "healthspan",
-      "title": "Global under-5 mortality rate",
-      "subtitle": "Deaths per 1,000 live births",
-      "y_label": "Deaths per 1,000",
-      "source": "UN IGME / Our World in Data",
-      "series": [
-        {"year": 1990, "value": 93},
-        {"year": 1995, "value": 86},
-        {"year": 2000, "value": 76},
-        {"year": 2005, "value": 65},
-        {"year": 2010, "value": 53},
-        {"year": 2015, "value": 44},
-        {"year": 2020, "value": 39},
-        {"year": 2022, "value": 37}
-      ],
+      "domain": "health",
+      "title": "Under-5 mortality",
+      "subtitle": "World \u00b7 deaths per 1,000 births",
+      "y_label": "per 1,000",
       "direction": "down_is_good",
-      "framing": "Roughly 7 million fewer children under five die each year compared to 1990. Drivers: vaccines, ORT, skilled birth attendance, rising household incomes.",
-      "description": "Probability that a child born in a given year dies before reaching age 5, expressed per 1,000 live births. Falling from 93 to 37 over three decades is the single largest population-scale health gain in the modern era. Sub-Saharan Africa still has rates an order of magnitude higher than the global average; the global figure is dragged down by a small number of countries with the slowest declines.",
-      "costs": "Recent stalling in some regions; ecological cost of expanded human population is real and not addressed in this metric alone.",
+      "series": [
+        {
+          "year": 1990,
+          "value": 93.5
+        },
+        {
+          "year": 1991,
+          "value": 92.9
+        },
+        {
+          "year": 1992,
+          "value": 92.3
+        },
+        {
+          "year": 1993,
+          "value": 91.1
+        },
+        {
+          "year": 1994,
+          "value": 89.4
+        },
+        {
+          "year": 1995,
+          "value": 87.5
+        },
+        {
+          "year": 1996,
+          "value": 86.4
+        },
+        {
+          "year": 1997,
+          "value": 84.3
+        },
+        {
+          "year": 1998,
+          "value": 82.8
+        },
+        {
+          "year": 1999,
+          "value": 79.4
+        },
+        {
+          "year": 2000,
+          "value": 76.7
+        },
+        {
+          "year": 2001,
+          "value": 74.3
+        },
+        {
+          "year": 2002,
+          "value": 71.3
+        },
+        {
+          "year": 2003,
+          "value": 68.3
+        },
+        {
+          "year": 2004,
+          "value": 65.8
+        },
+        {
+          "year": 2005,
+          "value": 62.3
+        },
+        {
+          "year": 2006,
+          "value": 59.6
+        },
+        {
+          "year": 2007,
+          "value": 57
+        },
+        {
+          "year": 2008,
+          "value": 54.7
+        },
+        {
+          "year": 2009,
+          "value": 52.9
+        },
+        {
+          "year": 2010,
+          "value": 50.6
+        },
+        {
+          "year": 2011,
+          "value": 49.5
+        },
+        {
+          "year": 2012,
+          "value": 46.7
+        },
+        {
+          "year": 2013,
+          "value": 45.1
+        },
+        {
+          "year": 2014,
+          "value": 43.9
+        },
+        {
+          "year": 2015,
+          "value": 42.9
+        },
+        {
+          "year": 2016,
+          "value": 41.7
+        },
+        {
+          "year": 2017,
+          "value": 40.9
+        },
+        {
+          "year": 2018,
+          "value": 40
+        },
+        {
+          "year": 2019,
+          "value": 39.6
+        },
+        {
+          "year": 2020,
+          "value": 39.2
+        },
+        {
+          "year": 2021,
+          "value": 39.6
+        },
+        {
+          "year": 2022,
+          "value": 40
+        },
+        {
+          "year": 2023,
+          "value": 38.3
+        },
+        {
+          "year": 2024,
+          "value": 37.4
+        }
+      ],
+      "framing": "Children dying before age five, per 1,000 live births.",
       "sources": [
-        {"name": "UN IGME 2023 estimates", "url": "https://childmortality.org/"},
-        {"name": "OWID — Child mortality", "url": "https://ourworldindata.org/child-mortality"}
+        {
+          "name": "World Bank \u00b7 SH.DYN.MORT",
+          "url": "https://data.worldbank.org/indicator/SH.DYN.MORT?locations=1W"
+        }
       ]
     },
     {
       "id": "maternal_mortality",
-      "domain": "healthspan",
-      "title": "Global maternal mortality ratio",
-      "subtitle": "Maternal deaths per 100,000 live births",
-      "y_label": "Deaths per 100,000",
-      "source": "WHO / UN Maternal Mortality Estimation Group",
-      "series": [
-        {"year": 1990, "value": 385},
-        {"year": 2000, "value": 339},
-        {"year": 2010, "value": 257},
-        {"year": 2015, "value": 220},
-        {"year": 2020, "value": 223},
-        {"year": 2023, "value": 197}
-      ],
+      "domain": "health",
+      "title": "Maternal mortality",
+      "subtitle": "World \u00b7 per 100,000 births",
+      "y_label": "per 100,000",
       "direction": "down_is_good",
-      "framing": "Roughly halved since 1990. Antenatal care, skilled birth attendance, blood transfusion availability, and emergency obstetric capacity are the workhorses.",
-      "description": "Number of women dying from pregnancy-related causes per 100,000 live births. The MMR is the most direct measure of a health system's care for women. WHO's target was a two-thirds reduction from 1990–2015; the world achieved roughly 44%. Sub-Saharan Africa still has rates more than 30× those in high-income countries.",
-      "costs": "Some recent backsliding in middle-income contexts; US is the only HIC with rising MMR — uneven access to care explains most of it.",
-      "sources": [
-        {"name": "WHO — Maternal mortality", "url": "https://www.who.int/news-room/fact-sheets/detail/maternal-mortality"},
-        {"name": "Trends in maternal mortality 2000–2023 (WHO/UNICEF/UNFPA/WB/UNDESA)"}
-      ]
-    },
-    {
-      "id": "vaccine_coverage",
-      "domain": "healthspan",
-      "title": "DTP3 immunization coverage",
-      "subtitle": "Percent of one-year-olds, global average",
-      "y_label": "Percent coverage",
-      "source": "WHO/UNICEF Estimates of National Immunization Coverage",
       "series": [
-        {"year": 1980, "value": 21},
-        {"year": 1990, "value": 75},
-        {"year": 2000, "value": 73},
-        {"year": 2010, "value": 84},
-        {"year": 2015, "value": 86},
-        {"year": 2019, "value": 86},
-        {"year": 2021, "value": 81},
-        {"year": 2023, "value": 84}
+        {
+          "year": 1985,
+          "value": 460
+        },
+        {
+          "year": 1986,
+          "value": 438
+        },
+        {
+          "year": 1987,
+          "value": 429
+        },
+        {
+          "year": 1988,
+          "value": 414
+        },
+        {
+          "year": 1989,
+          "value": 401
+        },
+        {
+          "year": 1990,
+          "value": 391
+        },
+        {
+          "year": 1991,
+          "value": 395
+        },
+        {
+          "year": 1992,
+          "value": 395
+        },
+        {
+          "year": 1993,
+          "value": 389
+        },
+        {
+          "year": 1994,
+          "value": 382
+        },
+        {
+          "year": 1995,
+          "value": 371
+        },
+        {
+          "year": 1996,
+          "value": 366
+        },
+        {
+          "year": 1997,
+          "value": 358
+        },
+        {
+          "year": 1998,
+          "value": 360
+        },
+        {
+          "year": 1999,
+          "value": 340
+        },
+        {
+          "year": 2000,
+          "value": 328
+        },
+        {
+          "year": 2001,
+          "value": 321
+        },
+        {
+          "year": 2002,
+          "value": 311
+        },
+        {
+          "year": 2003,
+          "value": 301
+        },
+        {
+          "year": 2004,
+          "value": 291
+        },
+        {
+          "year": 2005,
+          "value": 283
+        },
+        {
+          "year": 2006,
+          "value": 276
+        },
+        {
+          "year": 2007,
+          "value": 269
+        },
+        {
+          "year": 2008,
+          "value": 264
+        },
+        {
+          "year": 2009,
+          "value": 258
+        },
+        {
+          "year": 2010,
+          "value": 253
+        },
+        {
+          "year": 2011,
+          "value": 247
+        },
+        {
+          "year": 2012,
+          "value": 239
+        },
+        {
+          "year": 2013,
+          "value": 235
+        },
+        {
+          "year": 2014,
+          "value": 231
+        },
+        {
+          "year": 2015,
+          "value": 228
+        },
+        {
+          "year": 2016,
+          "value": 220
+        },
+        {
+          "year": 2017,
+          "value": 215
+        },
+        {
+          "year": 2018,
+          "value": 211
+        },
+        {
+          "year": 2019,
+          "value": 207
+        },
+        {
+          "year": 2020,
+          "value": 211
+        },
+        {
+          "year": 2021,
+          "value": 242
+        },
+        {
+          "year": 2022,
+          "value": 203
+        },
+        {
+          "year": 2023,
+          "value": 197
+        }
       ],
-      "direction": "up_is_good",
-      "framing": "From a fifth of infants in 1980 to over four-fifths now. DTP3 (third dose) is the standard benchmark for routine-immunization system performance.",
-      "description": "Coverage of the third dose of diphtheria-tetanus-pertussis vaccine, the benchmark indicator for routine immunization system function because it requires three contacts with the health system. Pandemic disruption in 2021 was the largest single-year drop in 30 years; recovery is underway. Zero-dose children (no vaccines at all) remain concentrated in fragile and conflict-affected states.",
-      "costs": "Vaccine hesitancy in some HICs and conflict-zone access remain the persistent obstacles to closure.",
+      "framing": "Women dying from pregnancy-related causes, per 100,000 live births.",
       "sources": [
-        {"name": "WHO/UNICEF WUENIC 2024", "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/immunization-analysis-and-insights/global-monitoring/immunization-coverage/who-unicef-estimates-of-national-immunization-coverage"}
+        {
+          "name": "World Bank \u00b7 SH.STA.MMRT",
+          "url": "https://data.worldbank.org/indicator/SH.STA.MMRT?locations=1W"
+        }
       ]
     },
     {
-      "id": "internet_access",
-      "domain": "access",
-      "title": "Global internet usage",
-      "subtitle": "Percent of population online",
+      "id": "vaccine_dtp3",
+      "domain": "health",
+      "title": "DTP3 immunization",
+      "subtitle": "World \u00b7 % of one-year-olds",
       "y_label": "Percent",
-      "source": "ITU / Our World in Data",
-      "series": [
-        {"year": 2000, "value": 6.8},
-        {"year": 2005, "value": 16.0},
-        {"year": 2010, "value": 28.7},
-        {"year": 2015, "value": 41.0},
-        {"year": 2018, "value": 51.0},
-        {"year": 2020, "value": 60.0},
-        {"year": 2022, "value": 66.0},
-        {"year": 2024, "value": 71.0}
-      ],
       "direction": "up_is_good",
-      "framing": "From under 7% to over 70% in 24 years. Mobile-first access has been the lever in the developing world. Quality and freedom of access are not measured here.",
-      "description": "Share of the world population reporting any internet use in the past three months. The fastest-spreading information technology in human history. The remaining ~29% are concentrated in low-income, rural, and elderly cohorts; affordability rather than coverage is now often the binding constraint.",
-      "costs": "Surveillance capacity, misinformation amplification, attention-capture business models, and screen-time effects on developmental cohorts are real and unmeasured in this metric.",
+      "series": [
+        {
+          "year": 1980,
+          "value": 16.74
+        },
+        {
+          "year": 1981,
+          "value": 20.09
+        },
+        {
+          "year": 1982,
+          "value": 22.37
+        },
+        {
+          "year": 1983,
+          "value": 35.9
+        },
+        {
+          "year": 1984,
+          "value": 42.24
+        },
+        {
+          "year": 1985,
+          "value": 46.66
+        },
+        {
+          "year": 1986,
+          "value": 49.88
+        },
+        {
+          "year": 1987,
+          "value": 54.26
+        },
+        {
+          "year": 1988,
+          "value": 63.26
+        },
+        {
+          "year": 1989,
+          "value": 68.37
+        },
+        {
+          "year": 1990,
+          "value": 76.03
+        },
+        {
+          "year": 1991,
+          "value": 71.91
+        },
+        {
+          "year": 1992,
+          "value": 70.5
+        },
+        {
+          "year": 1993,
+          "value": 70.39
+        },
+        {
+          "year": 1994,
+          "value": 72.78
+        },
+        {
+          "year": 1995,
+          "value": 73.16
+        },
+        {
+          "year": 1996,
+          "value": 72.33
+        },
+        {
+          "year": 1997,
+          "value": 71.45
+        },
+        {
+          "year": 1998,
+          "value": 71.35
+        },
+        {
+          "year": 1999,
+          "value": 71.79
+        },
+        {
+          "year": 2000,
+          "value": 72.3
+        },
+        {
+          "year": 2001,
+          "value": 73.0
+        },
+        {
+          "year": 2002,
+          "value": 72.71
+        },
+        {
+          "year": 2003,
+          "value": 74.37
+        },
+        {
+          "year": 2004,
+          "value": 76.39
+        },
+        {
+          "year": 2005,
+          "value": 77.27
+        },
+        {
+          "year": 2006,
+          "value": 78.45
+        },
+        {
+          "year": 2007,
+          "value": 78.44
+        },
+        {
+          "year": 2008,
+          "value": 81.06
+        },
+        {
+          "year": 2009,
+          "value": 83.11
+        },
+        {
+          "year": 2010,
+          "value": 83.66
+        },
+        {
+          "year": 2011,
+          "value": 84.76
+        },
+        {
+          "year": 2012,
+          "value": 84.03
+        },
+        {
+          "year": 2013,
+          "value": 83.66
+        },
+        {
+          "year": 2014,
+          "value": 84.66
+        },
+        {
+          "year": 2015,
+          "value": 84.83
+        },
+        {
+          "year": 2016,
+          "value": 85.91
+        },
+        {
+          "year": 2017,
+          "value": 85.92
+        },
+        {
+          "year": 2018,
+          "value": 86.57
+        },
+        {
+          "year": 2019,
+          "value": 86.76
+        },
+        {
+          "year": 2020,
+          "value": 83.55
+        },
+        {
+          "year": 2021,
+          "value": 82.07
+        },
+        {
+          "year": 2022,
+          "value": 85.08
+        },
+        {
+          "year": 2023,
+          "value": 84.49
+        },
+        {
+          "year": 2024,
+          "value": 84.78
+        }
+      ],
+      "framing": "Infants receiving three doses of diphtheria-tetanus-pertussis vaccine.",
       "sources": [
-        {"name": "ITU Facts and Figures 2024", "url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-internet-use/"}
+        {
+          "name": "World Bank \u00b7 SH.IMM.IDPT",
+          "url": "https://data.worldbank.org/indicator/SH.IMM.IDPT?locations=1W"
+        }
       ]
     },
     {
-      "id": "adult_literacy",
+      "id": "internet",
       "domain": "access",
-      "title": "Global adult literacy rate",
-      "subtitle": "Percent of adults able to read and write",
+      "title": "Internet use",
+      "subtitle": "World \u00b7 % of population",
       "y_label": "Percent",
-      "source": "UNESCO Institute for Statistics / OWID",
-      "series": [
-        {"year": 1820, "value": 12},
-        {"year": 1900, "value": 21},
-        {"year": 1950, "value": 36},
-        {"year": 1970, "value": 51},
-        {"year": 1990, "value": 67},
-        {"year": 2000, "value": 82},
-        {"year": 2010, "value": 84},
-        {"year": 2022, "value": 87}
-      ],
       "direction": "up_is_good",
-      "framing": "From ~12% literate adults in 1820 to ~87% today. The gender gap has narrowed sharply over the last 50 years.",
-      "description": "Share of adults aged 15+ who can read and write a simple sentence about everyday life. Functional literacy (in modern bureaucracies, finance, online forms) remains far less universal than basic literacy. Definitions vary across national surveys; the trend is robust, the level is imprecise at the margins.",
-      "costs": "Definitional looseness — functional and digital literacy lag basic literacy in most cohorts; remaining gaps are concentrated in older female cohorts in South Asia and sub-Saharan Africa.",
+      "series": [
+        {
+          "year": 2005,
+          "value": 15.6
+        },
+        {
+          "year": 2006,
+          "value": 17.2
+        },
+        {
+          "year": 2007,
+          "value": 20.2
+        },
+        {
+          "year": 2008,
+          "value": 22.8
+        },
+        {
+          "year": 2009,
+          "value": 25.3
+        },
+        {
+          "year": 2010,
+          "value": 28.4
+        },
+        {
+          "year": 2011,
+          "value": 30.9
+        },
+        {
+          "year": 2012,
+          "value": 33.3
+        },
+        {
+          "year": 2013,
+          "value": 35.3
+        },
+        {
+          "year": 2014,
+          "value": 37.4
+        },
+        {
+          "year": 2015,
+          "value": 39.9
+        },
+        {
+          "year": 2016,
+          "value": 43.6
+        },
+        {
+          "year": 2017,
+          "value": 46.3
+        },
+        {
+          "year": 2018,
+          "value": 49.4
+        },
+        {
+          "year": 2019,
+          "value": 53.9
+        },
+        {
+          "year": 2020,
+          "value": 60.1
+        },
+        {
+          "year": 2021,
+          "value": 63.8
+        },
+        {
+          "year": 2022,
+          "value": 67
+        },
+        {
+          "year": 2023,
+          "value": 69.2
+        },
+        {
+          "year": 2024,
+          "value": 71.2
+        },
+        {
+          "year": 2025,
+          "value": 73.6
+        }
+      ],
+      "framing": "Share of people using the internet.",
       "sources": [
-        {"name": "UIS Statistics", "url": "http://data.uis.unesco.org/"},
-        {"name": "OWID — Literacy", "url": "https://ourworldindata.org/literacy"}
+        {
+          "name": "World Bank \u00b7 IT.NET.USER.ZS",
+          "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=1W"
+        }
       ]
     },
     {
-      "id": "electricity_access",
+      "id": "electricity",
       "domain": "access",
-      "title": "Access to electricity",
-      "subtitle": "Percent of population with electricity",
+      "title": "Electricity access",
+      "subtitle": "World \u00b7 % of population",
       "y_label": "Percent",
-      "source": "World Bank / IEA SDG 7 tracking",
-      "series": [
-        {"year": 1990, "value": 71},
-        {"year": 2000, "value": 78},
-        {"year": 2010, "value": 83},
-        {"year": 2015, "value": 87},
-        {"year": 2020, "value": 91},
-        {"year": 2022, "value": 91.4}
-      ],
       "direction": "up_is_good",
-      "framing": "From 71% in 1990 to over 91% now. Off-grid solar and mini-grid deployments accelerated the last-mile push.",
-      "description": "Share of the population with access to electricity at home. The remaining ~700 million unconnected people are concentrated in sub-Saharan Africa; pace of progress there has slowed and may need to accelerate to close the gap before 2030. Access in this metric does not specify quality (hours per day, reliability) or affordability.",
-      "costs": "Quality (hours/day, voltage stability) and affordability gaps remain even where access is technically present; some grid expansions have been fossil-fuel powered.",
+      "series": [
+        {
+          "year": 1998,
+          "value": 73.2
+        },
+        {
+          "year": 1999,
+          "value": 74.5
+        },
+        {
+          "year": 2000,
+          "value": 78.22
+        },
+        {
+          "year": 2001,
+          "value": 78.72
+        },
+        {
+          "year": 2002,
+          "value": 79.1
+        },
+        {
+          "year": 2003,
+          "value": 79.96
+        },
+        {
+          "year": 2004,
+          "value": 79.95
+        },
+        {
+          "year": 2005,
+          "value": 80.7
+        },
+        {
+          "year": 2006,
+          "value": 81.35
+        },
+        {
+          "year": 2007,
+          "value": 81.97
+        },
+        {
+          "year": 2008,
+          "value": 82.67
+        },
+        {
+          "year": 2009,
+          "value": 82.87
+        },
+        {
+          "year": 2010,
+          "value": 83.45
+        },
+        {
+          "year": 2011,
+          "value": 84.51
+        },
+        {
+          "year": 2012,
+          "value": 84.94
+        },
+        {
+          "year": 2013,
+          "value": 85.71
+        },
+        {
+          "year": 2014,
+          "value": 86.2
+        },
+        {
+          "year": 2015,
+          "value": 86.92
+        },
+        {
+          "year": 2016,
+          "value": 88.1
+        },
+        {
+          "year": 2017,
+          "value": 88.93
+        },
+        {
+          "year": 2018,
+          "value": 89.8
+        },
+        {
+          "year": 2019,
+          "value": 90.11
+        },
+        {
+          "year": 2020,
+          "value": 90.4
+        },
+        {
+          "year": 2021,
+          "value": 91.33
+        },
+        {
+          "year": 2022,
+          "value": 91.29
+        },
+        {
+          "year": 2023,
+          "value": 91.6
+        }
+      ],
+      "framing": "Share of people with access to electricity.",
       "sources": [
-        {"name": "World Bank — Access to electricity (% of population)", "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS"},
-        {"name": "Tracking SDG 7 Report 2024"}
+        {
+          "name": "World Bank \u00b7 EG.ELC.ACCS.ZS",
+          "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=1W"
+        }
       ]
     },
     {
-      "id": "drinking_water",
+      "id": "safe_water",
       "domain": "access",
-      "title": "Safely managed drinking water at home",
-      "subtitle": "Percent with safely managed service",
+      "title": "Safely managed drinking water",
+      "subtitle": "World \u00b7 % of population",
       "y_label": "Percent",
-      "source": "WHO/UNICEF Joint Monitoring Programme",
-      "series": [
-        {"year": 2000, "value": 61},
-        {"year": 2005, "value": 64},
-        {"year": 2010, "value": 67},
-        {"year": 2015, "value": 71},
-        {"year": 2020, "value": 74},
-        {"year": 2022, "value": 73}
-      ],
       "direction": "up_is_good",
-      "framing": "From 61% in 2000 to 73% in 2022. 'Safely managed' is the strictest definition — improved source, accessible at home, available when needed, free from contamination.",
-      "description": "The JMP definition has four tiers: surface water, unimproved, basic, safely managed. The series above tracks the highest tier — water that is improved at the source, accessible at home, available on demand, and free from contamination. Roughly 2.2 billion people still lack this. About 700 million rely on water sources that meet none of the four JMP criteria.",
-      "costs": "Climate-driven water stress (rainfall variability, glacial melt) is raising risk in regions that have improved access.",
+      "series": [
+        {
+          "year": 2000,
+          "value": 61.25
+        },
+        {
+          "year": 2001,
+          "value": 61.48
+        },
+        {
+          "year": 2002,
+          "value": 61.8
+        },
+        {
+          "year": 2003,
+          "value": 62.13
+        },
+        {
+          "year": 2004,
+          "value": 62.46
+        },
+        {
+          "year": 2005,
+          "value": 62.81
+        },
+        {
+          "year": 2006,
+          "value": 63.13
+        },
+        {
+          "year": 2007,
+          "value": 63.45
+        },
+        {
+          "year": 2008,
+          "value": 63.76
+        },
+        {
+          "year": 2009,
+          "value": 64.29
+        },
+        {
+          "year": 2010,
+          "value": 64.82
+        },
+        {
+          "year": 2011,
+          "value": 65.32
+        },
+        {
+          "year": 2012,
+          "value": 65.89
+        },
+        {
+          "year": 2013,
+          "value": 66.47
+        },
+        {
+          "year": 2014,
+          "value": 67.06
+        },
+        {
+          "year": 2015,
+          "value": 67.65
+        },
+        {
+          "year": 2016,
+          "value": 68.24
+        },
+        {
+          "year": 2017,
+          "value": 68.82
+        },
+        {
+          "year": 2018,
+          "value": 69.39
+        },
+        {
+          "year": 2019,
+          "value": 69.95
+        },
+        {
+          "year": 2020,
+          "value": 70.48
+        },
+        {
+          "year": 2021,
+          "value": 71.0
+        },
+        {
+          "year": 2022,
+          "value": 71.51
+        },
+        {
+          "year": 2023,
+          "value": 71.99
+        },
+        {
+          "year": 2024,
+          "value": 73.67
+        }
+      ],
+      "framing": "Share with safely managed drinking water at home.",
       "sources": [
-        {"name": "WHO/UNICEF JMP 2023", "url": "https://washdata.org/"}
+        {
+          "name": "World Bank \u00b7 SH.H2O.SMDW.ZS",
+          "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=1W"
+        }
+      ]
+    },
+    {
+      "id": "literacy",
+      "domain": "access",
+      "title": "Adult literacy",
+      "subtitle": "World \u00b7 % of adults",
+      "y_label": "Percent",
+      "direction": "up_is_good",
+      "series": [
+        {
+          "year": 1975,
+          "value": 65.42
+        },
+        {
+          "year": 1976,
+          "value": 65.57
+        },
+        {
+          "year": 1977,
+          "value": 65.88
+        },
+        {
+          "year": 1978,
+          "value": 66.5
+        },
+        {
+          "year": 1979,
+          "value": 67.15
+        },
+        {
+          "year": 1980,
+          "value": 67.75
+        },
+        {
+          "year": 1981,
+          "value": 68.35
+        },
+        {
+          "year": 1982,
+          "value": 68.93
+        },
+        {
+          "year": 1983,
+          "value": 69.49
+        },
+        {
+          "year": 1984,
+          "value": 70.15
+        },
+        {
+          "year": 1985,
+          "value": 70.73
+        },
+        {
+          "year": 1986,
+          "value": 71.27
+        },
+        {
+          "year": 1987,
+          "value": 71.94
+        },
+        {
+          "year": 1988,
+          "value": 73.55
+        },
+        {
+          "year": 1989,
+          "value": 74.07
+        },
+        {
+          "year": 1990,
+          "value": 74.63
+        },
+        {
+          "year": 1991,
+          "value": 75.06
+        },
+        {
+          "year": 1992,
+          "value": 75.51
+        },
+        {
+          "year": 1993,
+          "value": 75.97
+        },
+        {
+          "year": 1994,
+          "value": 76.42
+        },
+        {
+          "year": 1995,
+          "value": 76.87
+        },
+        {
+          "year": 1996,
+          "value": 77.3
+        },
+        {
+          "year": 1997,
+          "value": 79.3
+        },
+        {
+          "year": 1998,
+          "value": 80.52
+        },
+        {
+          "year": 1999,
+          "value": 80.9
+        },
+        {
+          "year": 2000,
+          "value": 81.12
+        },
+        {
+          "year": 2001,
+          "value": 81.37
+        },
+        {
+          "year": 2002,
+          "value": 81.74
+        },
+        {
+          "year": 2003,
+          "value": 82.22
+        },
+        {
+          "year": 2004,
+          "value": 82.56
+        },
+        {
+          "year": 2005,
+          "value": 82.57
+        },
+        {
+          "year": 2006,
+          "value": 82.53
+        },
+        {
+          "year": 2007,
+          "value": 83.12
+        },
+        {
+          "year": 2008,
+          "value": 83.48
+        },
+        {
+          "year": 2009,
+          "value": 83.8
+        },
+        {
+          "year": 2010,
+          "value": 84.37
+        },
+        {
+          "year": 2011,
+          "value": 84.71
+        },
+        {
+          "year": 2012,
+          "value": 84.91
+        },
+        {
+          "year": 2013,
+          "value": 85.21
+        },
+        {
+          "year": 2014,
+          "value": 85.56
+        },
+        {
+          "year": 2015,
+          "value": 85.96
+        },
+        {
+          "year": 2016,
+          "value": 86.28
+        },
+        {
+          "year": 2017,
+          "value": 86.47
+        },
+        {
+          "year": 2018,
+          "value": 86.76
+        },
+        {
+          "year": 2019,
+          "value": 86.79
+        },
+        {
+          "year": 2020,
+          "value": 86.98
+        },
+        {
+          "year": 2021,
+          "value": 87.17
+        },
+        {
+          "year": 2022,
+          "value": 87.39
+        },
+        {
+          "year": 2023,
+          "value": 87.58
+        },
+        {
+          "year": 2024,
+          "value": 87.74
+        }
+      ],
+      "framing": "Share of adults who can read and write.",
+      "sources": [
+        {
+          "name": "World Bank \u00b7 SE.ADT.LITR.ZS",
+          "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=1W"
+        }
       ]
     },
     {
       "id": "extreme_poverty",
       "domain": "prosperity",
-      "title": "Extreme poverty rate",
-      "subtitle": "Share below the $2.15/day PPP poverty line",
+      "title": "Extreme poverty",
+      "subtitle": "World \u00b7 % below $2.15/day",
       "y_label": "Percent",
-      "source": "World Bank PIP / Our World in Data",
-      "series": [
-        {"year": 1990, "value": 36.2},
-        {"year": 2000, "value": 28.0},
-        {"year": 2010, "value": 15.6},
-        {"year": 2015, "value": 10.1},
-        {"year": 2019, "value": 8.5},
-        {"year": 2020, "value": 9.3},
-        {"year": 2022, "value": 9.1}
-      ],
       "direction": "down_is_good",
-      "framing": "From over a third of humanity to under a tenth in a generation. China and Vietnam drove most of the early gains; the remaining stretch is concentrated in fragile states.",
-      "description": "Share of the world population living on less than $2.15 per day (2017 PPP). The line is contested — critics including Jason Hickel argue it is too low to capture meaningful poverty; alternative lines ($3.65, $6.85) show much slower and more uneven progress. The direction is robust across every defensible line; the magnitude depends on which line is chosen.",
-      "costs": "Inequality within many countries rose even as cross-country gaps narrowed; ecological footprint scaled with consumption; progress on the $2.15-to-$6.85 range is stalling.",
+      "series": [
+        {
+          "year": 1981,
+          "value": 47.1
+        },
+        {
+          "year": 1982,
+          "value": 46.7
+        },
+        {
+          "year": 1983,
+          "value": 46.1
+        },
+        {
+          "year": 1984,
+          "value": 45.5
+        },
+        {
+          "year": 1985,
+          "value": 44.7
+        },
+        {
+          "year": 1986,
+          "value": 43.8
+        },
+        {
+          "year": 1987,
+          "value": 43.3
+        },
+        {
+          "year": 1988,
+          "value": 42.1
+        },
+        {
+          "year": 1989,
+          "value": 43.6
+        },
+        {
+          "year": 1990,
+          "value": 43.4
+        },
+        {
+          "year": 1991,
+          "value": 43.1
+        },
+        {
+          "year": 1992,
+          "value": 42.5
+        },
+        {
+          "year": 1993,
+          "value": 42.1
+        },
+        {
+          "year": 1994,
+          "value": 40.7
+        },
+        {
+          "year": 1995,
+          "value": 39.4
+        },
+        {
+          "year": 1996,
+          "value": 38.1
+        },
+        {
+          "year": 1997,
+          "value": 37.7
+        },
+        {
+          "year": 1998,
+          "value": 37.9
+        },
+        {
+          "year": 1999,
+          "value": 37.3
+        },
+        {
+          "year": 2000,
+          "value": 36.2
+        },
+        {
+          "year": 2001,
+          "value": 35.3
+        },
+        {
+          "year": 2002,
+          "value": 33.7
+        },
+        {
+          "year": 2003,
+          "value": 32.2
+        },
+        {
+          "year": 2004,
+          "value": 30.3
+        },
+        {
+          "year": 2005,
+          "value": 28.3
+        },
+        {
+          "year": 2006,
+          "value": 27
+        },
+        {
+          "year": 2007,
+          "value": 25.3
+        },
+        {
+          "year": 2008,
+          "value": 24.1
+        },
+        {
+          "year": 2009,
+          "value": 23.1
+        },
+        {
+          "year": 2010,
+          "value": 21
+        },
+        {
+          "year": 2011,
+          "value": 19.1
+        },
+        {
+          "year": 2012,
+          "value": 17.8
+        },
+        {
+          "year": 2013,
+          "value": 15.5
+        },
+        {
+          "year": 2014,
+          "value": 14.5
+        },
+        {
+          "year": 2015,
+          "value": 13.4
+        },
+        {
+          "year": 2016,
+          "value": 12.6
+        },
+        {
+          "year": 2017,
+          "value": 11.8
+        },
+        {
+          "year": 2018,
+          "value": 11.1
+        },
+        {
+          "year": 2020,
+          "value": 11.4
+        },
+        {
+          "year": 2021,
+          "value": 11.3
+        },
+        {
+          "year": 2022,
+          "value": 10.9
+        },
+        {
+          "year": 2023,
+          "value": 10.6
+        },
+        {
+          "year": 2024,
+          "value": 10.4
+        }
+      ],
+      "framing": "Share living below the $2.15/day international poverty line.",
       "sources": [
-        {"name": "World Bank PIP", "url": "https://pip.worldbank.org/"},
-        {"name": "OWID — Extreme poverty", "url": "https://ourworldindata.org/extreme-poverty"}
+        {
+          "name": "World Bank \u00b7 SI.POV.DDAY",
+          "url": "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=1W"
+        }
       ]
     },
     {
       "id": "undernourishment",
       "domain": "prosperity",
-      "title": "Prevalence of undernourishment",
-      "subtitle": "Percent of population, FAO definition",
+      "title": "Undernourishment",
+      "subtitle": "World \u00b7 % of population",
       "y_label": "Percent",
-      "source": "FAO State of Food Security and Nutrition",
-      "series": [
-        {"year": 2000, "value": 13.1},
-        {"year": 2010, "value": 8.3},
-        {"year": 2014, "value": 7.6},
-        {"year": 2019, "value": 7.9},
-        {"year": 2021, "value": 9.3},
-        {"year": 2023, "value": 9.2}
-      ],
       "direction": "down_is_good",
-      "framing": "Falling steadily until ~2014, then a pandemic-and-war-driven reversal. The 2030 SDG zero-hunger target is now out of reach.",
-      "description": "FAO's prevalence of undernourishment (POU) measures the share of the population whose habitual food consumption is insufficient to provide the dietary energy levels required to maintain a normal, active, healthy life. The 2020s reversal is driven by the pandemic, conflict (Ukraine grain disruption, Tigray, Sudan, Gaza), and climate shocks to agricultural systems.",
-      "costs": "The metric does not capture quality (micronutrient deficiency, obesity-malnutrition double burden) which has not improved on the same trajectory.",
+      "series": [
+        {
+          "year": 2001,
+          "value": 12.8
+        },
+        {
+          "year": 2002,
+          "value": 12.9
+        },
+        {
+          "year": 2003,
+          "value": 12.8
+        },
+        {
+          "year": 2004,
+          "value": 12.4
+        },
+        {
+          "year": 2005,
+          "value": 11.9
+        },
+        {
+          "year": 2006,
+          "value": 11
+        },
+        {
+          "year": 2007,
+          "value": 10.1
+        },
+        {
+          "year": 2008,
+          "value": 9.5
+        },
+        {
+          "year": 2009,
+          "value": 9.1
+        },
+        {
+          "year": 2010,
+          "value": 8.7
+        },
+        {
+          "year": 2011,
+          "value": 8.4
+        },
+        {
+          "year": 2012,
+          "value": 8.1
+        },
+        {
+          "year": 2013,
+          "value": 7.8
+        },
+        {
+          "year": 2014,
+          "value": 7.7
+        },
+        {
+          "year": 2015,
+          "value": 7.6
+        },
+        {
+          "year": 2016,
+          "value": 7.5
+        },
+        {
+          "year": 2017,
+          "value": 7.4
+        },
+        {
+          "year": 2018,
+          "value": 7.3
+        },
+        {
+          "year": 2019,
+          "value": 7.8
+        },
+        {
+          "year": 2020,
+          "value": 8.2
+        },
+        {
+          "year": 2021,
+          "value": 8.6
+        },
+        {
+          "year": 2022,
+          "value": 8.6
+        },
+        {
+          "year": 2023,
+          "value": 8.5
+        }
+      ],
+      "framing": "Share whose food intake is insufficient for an active healthy life.",
       "sources": [
-        {"name": "FAO SOFI 2024", "url": "https://www.fao.org/publications/sofi/2024/"}
+        {
+          "name": "World Bank \u00b7 SN.ITK.DEFC.ZS",
+          "url": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=1W"
+        }
       ]
     },
     {
-      "id": "women_in_parliament",
-      "domain": "civic",
+      "id": "women_parliament",
+      "domain": "inclusion",
       "title": "Women in national parliaments",
-      "subtitle": "Percent of seats, world average",
+      "subtitle": "World \u00b7 % of seats",
       "y_label": "Percent",
-      "source": "Inter-Parliamentary Union (IPU)",
-      "series": [
-        {"year": 1995, "value": 11.3},
-        {"year": 2000, "value": 13.1},
-        {"year": 2005, "value": 16.0},
-        {"year": 2010, "value": 19.0},
-        {"year": 2015, "value": 22.2},
-        {"year": 2020, "value": 24.9},
-        {"year": 2024, "value": 26.9}
-      ],
       "direction": "up_is_good",
-      "framing": "More than doubled since 1995. Rwanda, Cuba, Nicaragua, and Mexico are now over 50%; many parliaments remain below 20%.",
-      "description": "Share of seats in lower or single chambers of national parliaments held by women, aggregated by the IPU. Includes the effect of quota systems where they apply (about 80 countries have some form of legislative gender quota). The 26.9% figure is global average; the median country is in the low-20s; a handful of parliaments remain below 10%.",
-      "costs": "Representation is not the same as substantive equality — women parliamentarians face documented harassment and time-imbalance; some 'quotas' don't translate into committee leadership or executive office.",
-      "sources": [
-        {"name": "IPU Women in parliament: 1995–2024", "url": "https://data.ipu.org/women-ranking/"}
-      ]
-    },
-    {
-      "id": "liberal_democracy",
-      "domain": "civic",
-      "title": "Liberal democracy index",
-      "subtitle": "V-Dem global mean, 0–1 scale",
-      "y_label": "Index 0–1",
-      "source": "V-Dem Institute",
       "series": [
-        {"year": 1990, "value": 0.35},
-        {"year": 2000, "value": 0.42},
-        {"year": 2010, "value": 0.43},
-        {"year": 2015, "value": 0.40},
-        {"year": 2020, "value": 0.35},
-        {"year": 2023, "value": 0.32}
+        {
+          "year": 1997,
+          "value": 11.69
+        },
+        {
+          "year": 1998,
+          "value": 13.07
+        },
+        {
+          "year": 1999,
+          "value": 13.52
+        },
+        {
+          "year": 2000,
+          "value": 13.9
+        },
+        {
+          "year": 2001,
+          "value": 14.09
+        },
+        {
+          "year": 2002,
+          "value": 15.2
+        },
+        {
+          "year": 2003,
+          "value": 15.18
+        },
+        {
+          "year": 2004,
+          "value": 15.9
+        },
+        {
+          "year": 2005,
+          "value": 16.47
+        },
+        {
+          "year": 2006,
+          "value": 16.97
+        },
+        {
+          "year": 2007,
+          "value": 17.87
+        },
+        {
+          "year": 2008,
+          "value": 18.44
+        },
+        {
+          "year": 2009,
+          "value": 19.03
+        },
+        {
+          "year": 2010,
+          "value": 19.16
+        },
+        {
+          "year": 2011,
+          "value": 19.83
+        },
+        {
+          "year": 2012,
+          "value": 20.76
+        },
+        {
+          "year": 2013,
+          "value": 21.78
+        },
+        {
+          "year": 2014,
+          "value": 22.19
+        },
+        {
+          "year": 2015,
+          "value": 22.85
+        },
+        {
+          "year": 2016,
+          "value": 23.09
+        },
+        {
+          "year": 2017,
+          "value": 23.59
+        },
+        {
+          "year": 2018,
+          "value": 24.1
+        },
+        {
+          "year": 2019,
+          "value": 24.64
+        },
+        {
+          "year": 2020,
+          "value": 25.58
+        },
+        {
+          "year": 2021,
+          "value": 26.13
+        },
+        {
+          "year": 2022,
+          "value": 26.47
+        },
+        {
+          "year": 2023,
+          "value": 26.74
+        },
+        {
+          "year": 2024,
+          "value": 27.03
+        },
+        {
+          "year": 2025,
+          "value": 27.25
+        }
       ],
-      "direction": "up_is_good",
-      "framing": "Rose through the 1990s and 2000s; declined since the mid-2010s. The 'autocratization wave' is real and ongoing. This is the indicator most plausibly trending the wrong way in this entire ledger.",
-      "description": "V-Dem's Liberal Democracy Index combines free-and-fair-elections measures with rule of law, individual liberties, and judicial constraints on the executive. The 2010s onward trajectory has been negative for the first sustained period since V-Dem's series begins. This panel is included to be honest about the directional reversal even as other indicators continue rising.",
-      "costs": "Some critics argue V-Dem's expert-rating methodology embeds Western liberal assumptions; the direction of travel is consistent across alternative measures (Freedom House, EIU, BTI).",
+      "framing": "Share of parliamentary seats held by women.",
       "sources": [
-        {"name": "V-Dem Democracy Report 2024", "url": "https://www.v-dem.net/publications/democracy-reports/"}
-      ]
-    },
-    {
-      "id": "marriage_equality_count",
-      "domain": "civic",
-      "title": "Countries with marriage equality",
-      "subtitle": "Number of jurisdictions where same-sex marriage is legal",
-      "y_label": "Countries",
-      "source": "Human Rights Campaign / ILGA",
-      "series": [
-        {"year": 2001, "value": 1},
-        {"year": 2005, "value": 4},
-        {"year": 2010, "value": 9},
-        {"year": 2015, "value": 20},
-        {"year": 2020, "value": 29},
-        {"year": 2024, "value": 37}
-      ],
-      "direction": "up_is_good",
-      "framing": "From the Netherlands in 2001 to 37 jurisdictions by 2025. Includes constitutional decisions, parliamentary acts, and referendums.",
-      "description": "Number of jurisdictions where same-sex marriage is legally recognized. Includes constitutional rulings (US Obergefell 2015, Taiwan 2017, India under challenge), parliamentary acts (Argentina 2010), and referendums (Ireland 2015). Outside this group, ~70 countries still criminalize same-sex relations.",
-      "costs": "Backlash against trans rights in some same jurisdictions; selective legal recognition without anti-discrimination protections; reversal risk under shifting political coalitions.",
-      "sources": [
-        {"name": "ILGA World maps", "url": "https://ilga.org/maps"}
+        {
+          "name": "World Bank \u00b7 SG.GEN.PARL.ZS",
+          "url": "https://data.worldbank.org/indicator/SG.GEN.PARL.ZS?locations=1W"
+        }
       ]
     },
     {
       "id": "renewables",
       "domain": "environment",
-      "title": "Renewable share of electricity",
-      "subtitle": "Percent of generation; hydro + wind + solar + bioenergy",
+      "title": "Renewable electricity output",
+      "subtitle": "World \u00b7 % of total",
       "y_label": "Percent",
-      "source": "IEA / Ember",
-      "series": [
-        {"year": 2010, "value": 19.5},
-        {"year": 2014, "value": 22.0},
-        {"year": 2018, "value": 25.4},
-        {"year": 2020, "value": 27.9},
-        {"year": 2022, "value": 29.4},
-        {"year": 2024, "value": 30.6}
-      ],
       "direction": "up_is_good",
-      "framing": "Past 30%. In 2023 more new generating capacity added globally was renewable than fossil. Solar and wind costs fell ~90% and ~70% respectively over the decade.",
-      "description": "Combined share of hydro, wind, solar PV, solar thermal, bioenergy and geothermal in global electricity generation. The mix has shifted: solar + wind grew from 1.8% in 2010 to over 15% in 2024, displacing both fossil generation and the relative share of hydro. Including nuclear, the low-carbon share is over 40%.",
-      "costs": "Lithium, cobalt, rare-earth mining footprints; end-of-life PV recycling not yet built at scale; grid integration challenges (curtailment, capacity firming); affected-worker transitions uneven.",
+      "series": [
+        {
+          "year": 1990,
+          "value": 19.29
+        },
+        {
+          "year": 1991,
+          "value": 19.15
+        },
+        {
+          "year": 1992,
+          "value": 19.08
+        },
+        {
+          "year": 1993,
+          "value": 19.71
+        },
+        {
+          "year": 1994,
+          "value": 19.46
+        },
+        {
+          "year": 1995,
+          "value": 19.76
+        },
+        {
+          "year": 1996,
+          "value": 19.43
+        },
+        {
+          "year": 1997,
+          "value": 19.31
+        },
+        {
+          "year": 1998,
+          "value": 18.97
+        },
+        {
+          "year": 1999,
+          "value": 18.6
+        },
+        {
+          "year": 2000,
+          "value": 18.89
+        },
+        {
+          "year": 2001,
+          "value": 18.39
+        },
+        {
+          "year": 2002,
+          "value": 18.32
+        },
+        {
+          "year": 2003,
+          "value": 17.81
+        },
+        {
+          "year": 2004,
+          "value": 18.26
+        },
+        {
+          "year": 2005,
+          "value": 18.41
+        },
+        {
+          "year": 2006,
+          "value": 18.51
+        },
+        {
+          "year": 2007,
+          "value": 18.29
+        },
+        {
+          "year": 2008,
+          "value": 19.01
+        },
+        {
+          "year": 2009,
+          "value": 19.73
+        },
+        {
+          "year": 2010,
+          "value": 19.86
+        },
+        {
+          "year": 2011,
+          "value": 20.12
+        },
+        {
+          "year": 2012,
+          "value": 21.19
+        },
+        {
+          "year": 2013,
+          "value": 21.78
+        },
+        {
+          "year": 2014,
+          "value": 22.42
+        },
+        {
+          "year": 2015,
+          "value": 22.98
+        },
+        {
+          "year": 2016,
+          "value": 23.88
+        },
+        {
+          "year": 2017,
+          "value": 24.49
+        },
+        {
+          "year": 2018,
+          "value": 25.15
+        },
+        {
+          "year": 2019,
+          "value": 26.15
+        },
+        {
+          "year": 2020,
+          "value": 28.01
+        },
+        {
+          "year": 2021,
+          "value": 27.84
+        }
+      ],
+      "framing": "Share of electricity generated from renewable sources.",
       "sources": [
-        {"name": "IEA Renewables 2024", "url": "https://www.iea.org/reports/renewables-2024"},
-        {"name": "Ember Global Electricity Review 2025"}
+        {
+          "name": "World Bank \u00b7 EG.ELC.RNEW.ZS",
+          "url": "https://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?locations=1W"
+        }
       ]
     },
     {
-      "id": "protected_area",
+      "id": "protected_land",
       "domain": "environment",
       "title": "Protected land area",
-      "subtitle": "Percent of global land surface under protection",
+      "subtitle": "World \u00b7 % of land",
       "y_label": "Percent",
-      "source": "World Database on Protected Areas (WDPA)",
-      "series": [
-        {"year": 1990, "value": 8.5},
-        {"year": 2000, "value": 12.5},
-        {"year": 2010, "value": 14.5},
-        {"year": 2015, "value": 15.0},
-        {"year": 2020, "value": 16.5},
-        {"year": 2023, "value": 17.2}
-      ],
       "direction": "up_is_good",
-      "framing": "Doubled since 1990. The 30x30 framework adopted at CBD COP15 (2022) commits parties to 30% protection by 2030 — meaning this curve has to nearly double again in seven years.",
-      "description": "Share of terrestrial area covered by protected areas as defined in the WDPA. Includes IUCN management categories I–VI. 'Paper parks' — designated but not managed — count in the total; effective management is the open question that the 30x30 framework aims to address.",
-      "costs": "Past 'fortress conservation' models displaced Indigenous communities; some protected areas exist on paper without enforcement; financing pledges far below requested levels.",
+      "series": [
+        {
+          "year": 2013,
+          "value": 14.95
+        },
+        {
+          "year": 2014,
+          "value": 15.21
+        },
+        {
+          "year": 2015,
+          "value": 15.0
+        },
+        {
+          "year": 2016,
+          "value": 14.9
+        },
+        {
+          "year": 2017,
+          "value": 15.13
+        },
+        {
+          "year": 2018,
+          "value": 14.97
+        },
+        {
+          "year": 2019,
+          "value": 15.11
+        },
+        {
+          "year": 2020,
+          "value": 15.38
+        },
+        {
+          "year": 2021,
+          "value": 15.79
+        },
+        {
+          "year": 2022,
+          "value": 15.87
+        },
+        {
+          "year": 2023,
+          "value": 16.08
+        },
+        {
+          "year": 2024,
+          "value": 16.44
+        },
+        {
+          "year": 2025,
+          "value": 16.51
+        }
+      ],
+      "framing": "Share of terrestrial area under legal protection.",
       "sources": [
-        {"name": "Protected Planet — WDPA", "url": "https://www.protectedplanet.net/en"},
-        {"name": "CBD COP15 — 30x30 framework"}
+        {
+          "name": "World Bank \u00b7 ER.LND.PTLD.ZS",
+          "url": "https://data.worldbank.org/indicator/ER.LND.PTLD.ZS?locations=1W"
+        }
       ]
     },
     {
-      "id": "homicide_rate",
-      "domain": "safety",
-      "title": "Global homicide rate",
-      "subtitle": "Intentional homicides per 100,000",
-      "y_label": "Per 100,000",
-      "source": "UNODC Global Study on Homicide",
+      "id": "forest",
+      "domain": "environment",
+      "title": "Forest area",
+      "subtitle": "World \u00b7 % of land",
+      "y_label": "Percent",
+      "direction": "up_is_good",
       "series": [
-        {"year": 2000, "value": 7.1},
-        {"year": 2005, "value": 6.9},
-        {"year": 2010, "value": 7.0},
-        {"year": 2015, "value": 6.3},
-        {"year": 2020, "value": 5.8},
-        {"year": 2022, "value": 5.9}
+        {
+          "year": 1992,
+          "value": 33.01
+        },
+        {
+          "year": 1993,
+          "value": 32.82
+        },
+        {
+          "year": 1994,
+          "value": 32.77
+        },
+        {
+          "year": 1995,
+          "value": 32.71
+        },
+        {
+          "year": 1996,
+          "value": 32.65
+        },
+        {
+          "year": 1997,
+          "value": 32.57
+        },
+        {
+          "year": 1998,
+          "value": 32.51
+        },
+        {
+          "year": 1999,
+          "value": 32.45
+        },
+        {
+          "year": 2000,
+          "value": 32.37
+        },
+        {
+          "year": 2001,
+          "value": 32.33
+        },
+        {
+          "year": 2002,
+          "value": 32.3
+        },
+        {
+          "year": 2003,
+          "value": 32.25
+        },
+        {
+          "year": 2004,
+          "value": 32.18
+        },
+        {
+          "year": 2005,
+          "value": 32.14
+        },
+        {
+          "year": 2006,
+          "value": 32.1
+        },
+        {
+          "year": 2007,
+          "value": 32.06
+        },
+        {
+          "year": 2008,
+          "value": 32.02
+        },
+        {
+          "year": 2009,
+          "value": 31.99
+        },
+        {
+          "year": 2010,
+          "value": 31.95
+        },
+        {
+          "year": 2011,
+          "value": 31.91
+        },
+        {
+          "year": 2012,
+          "value": 31.47
+        },
+        {
+          "year": 2013,
+          "value": 31.44
+        },
+        {
+          "year": 2014,
+          "value": 31.4
+        },
+        {
+          "year": 2015,
+          "value": 31.37
+        },
+        {
+          "year": 2016,
+          "value": 31.34
+        },
+        {
+          "year": 2017,
+          "value": 31.29
+        },
+        {
+          "year": 2018,
+          "value": 31.25
+        },
+        {
+          "year": 2019,
+          "value": 31.21
+        },
+        {
+          "year": 2020,
+          "value": 31.18
+        },
+        {
+          "year": 2021,
+          "value": 31.18
+        },
+        {
+          "year": 2022,
+          "value": 31.14
+        }
       ],
+      "framing": "Share of land covered by forest (a measure trending the wrong way).",
+      "sources": [
+        {
+          "name": "World Bank \u00b7 AG.LND.FRST.ZS",
+          "url": "https://data.worldbank.org/indicator/AG.LND.FRST.ZS?locations=1W"
+        }
+      ]
+    },
+    {
+      "id": "homicide",
+      "domain": "safety",
+      "title": "Homicide rate",
+      "subtitle": "World \u00b7 per 100,000",
+      "y_label": "per 100,000",
       "direction": "down_is_good",
-      "framing": "Roughly flat-to-falling globally. Sharp regional differences: Latin America and the Caribbean remain far above the global mean; East Asia and Western Europe far below.",
-      "description": "Intentional homicide victims per 100,000 population, as collected by UNODC from national criminal justice statistics. Globally, roughly 460,000 people are murdered each year. Latin America accounts for ~30% of that total despite holding under 10% of world population.",
-      "costs": "Data quality varies widely; under-reporting in some jurisdictions; femicides and political killings sometimes mis-categorized.",
-      "sources": [
-        {"name": "UNODC Global Study on Homicide 2023", "url": "https://www.unodc.org/unodc/en/data-and-analysis/global-study-on-homicide.html"}
-      ]
-    },
-    {
-      "id": "death_penalty_abolition",
-      "domain": "safety",
-      "title": "Countries that have abolished the death penalty",
-      "subtitle": "In law or in practice (10+ years no execution)",
-      "y_label": "Countries",
-      "source": "Amnesty International / Cornell Death Penalty Worldwide",
       "series": [
-        {"year": 1977, "value": 16},
-        {"year": 1990, "value": 48},
-        {"year": 2000, "value": 75},
-        {"year": 2010, "value": 96},
-        {"year": 2020, "value": 108},
-        {"year": 2024, "value": 113}
+        {
+          "year": 2000,
+          "value": 6.85
+        },
+        {
+          "year": 2001,
+          "value": 6.94
+        },
+        {
+          "year": 2002,
+          "value": 6.91
+        },
+        {
+          "year": 2003,
+          "value": 6.73
+        },
+        {
+          "year": 2004,
+          "value": 6.5
+        },
+        {
+          "year": 2005,
+          "value": 6.29
+        },
+        {
+          "year": 2006,
+          "value": 6.18
+        },
+        {
+          "year": 2007,
+          "value": 6.01
+        },
+        {
+          "year": 2008,
+          "value": 6.01
+        },
+        {
+          "year": 2009,
+          "value": 6.07
+        },
+        {
+          "year": 2010,
+          "value": 6.1
+        },
+        {
+          "year": 2011,
+          "value": 6.2
+        },
+        {
+          "year": 2012,
+          "value": 6.2
+        },
+        {
+          "year": 2013,
+          "value": 6.1
+        },
+        {
+          "year": 2014,
+          "value": 6.1
+        },
+        {
+          "year": 2015,
+          "value": 5.9
+        },
+        {
+          "year": 2016,
+          "value": 6
+        },
+        {
+          "year": 2017,
+          "value": 5.9
+        },
+        {
+          "year": 2018,
+          "value": 5.7
+        },
+        {
+          "year": 2019,
+          "value": 5.4
+        },
+        {
+          "year": 2020,
+          "value": 5.3
+        },
+        {
+          "year": 2021,
+          "value": 5.5
+        },
+        {
+          "year": 2022,
+          "value": 5.3
+        },
+        {
+          "year": 2023,
+          "value": 5.2
+        }
       ],
-      "direction": "up_is_good",
-      "framing": "From 16 abolitionist countries in 1977 to 113 today. The remaining retentionist states are a shrinking group; recent abolitions include Zambia (2022), Equatorial Guinea (2022), Ghana (2023, parliamentary), Malaysia (2023, mandatory only).",
-      "description": "Number of countries that have abolished the death penalty for all crimes in law, or that are abolitionist in practice (have not carried out an execution in at least 10 years and are believed to have a policy not to). Retentionist countries account for a shrinking minority of the world; the trend is one of the more robustly directional civic indicators.",
-      "costs": "Five countries account for the overwhelming majority of executions globally (China, Iran, Saudi Arabia, Iraq, USA among democracies); recent expansion of capital crimes in some retentionist states is a backsliding pattern.",
+      "framing": "Intentional homicides per 100,000 people.",
       "sources": [
-        {"name": "Amnesty Death Sentences and Executions 2023", "url": "https://www.amnesty.org/en/documents/act50/7952/2024/en/"},
-        {"name": "Cornell Death Penalty Worldwide", "url": "https://deathpenaltyworldwide.org/"}
+        {
+          "name": "World Bank \u00b7 VC.IHR.PSRC.P5",
+          "url": "https://data.worldbank.org/indicator/VC.IHR.PSRC.P5?locations=1W"
+        }
       ]
     }
   ]

@@ -1,33 +1,139 @@
 {
-  "schema_version": 1,
-  "updated": "2026-05-15",
-  "methodology": "Five-year delta on the composite progress score. Positive values mean gains; negative means erosion. Drivers identified by indicator contribution analysis. The asymmetry tells the story: median country moved up over five years, but the slowest cohort retreated faster than the fastest cohort advanced.",
-  "data_status": "illustrative — pipeline not yet live",
+  "schema_version": 2,
+  "updated": "2026-05-22",
+  "metric": "Life expectancy at birth",
+  "unit": "years",
+  "source": "World Bank \u00b7 SP.DYN.LE00.IN",
+  "window": "2005 \u2192 latest available",
+  "data_status": "real \u2014 World Bank per-country; gaps omitted",
   "improving": [
-    {"iso": "BGD", "name": "Bangladesh", "delta": 1.2, "drivers": ["child mortality halved", "female literacy", "garment-sector employment"]},
-    {"iso": "NPL", "name": "Nepal", "delta": 0.9, "drivers": ["maternal health", "electrification", "post-2015 constitution"]},
-    {"iso": "VNM", "name": "Vietnam", "delta": 0.9, "drivers": ["poverty rate to under 5%", "universal primary education", "internet penetration"]},
-    {"iso": "IND", "name": "India", "delta": 0.8, "drivers": ["electrification near-universal", "extreme poverty reduction", "Aadhaar-linked welfare delivery"]},
-    {"iso": "BRA", "name": "Brazil", "delta": 0.7, "drivers": ["Bolsa Familia expansion", "Amazon deforestation reversal", "indigenous land demarcation"]},
-    {"iso": "SAU", "name": "Saudi Arabia", "delta": 0.7, "drivers": ["women's labor participation", "tourism opening", "civic indicators still weak"]},
-    {"iso": "ETH", "name": "Ethiopia", "delta": 0.7, "drivers": ["child mortality halved 2000–2024", "primary enrollment", "Tigray a recent setback"]},
-    {"iso": "RWA", "name": "Rwanda", "delta": 0.6, "drivers": ["near-universal health insurance", "maternal mortality drop", "post-genocide institutional rebuild"]},
-    {"iso": "COL", "name": "Colombia", "delta": 0.6, "drivers": ["peace accord implementation", "rural broadband", "indigenous land protection"]},
-    {"iso": "KEN", "name": "Kenya", "delta": 0.6, "drivers": ["M-Pesa financial inclusion", "primary enrollment", "renewable grid"]},
-    {"iso": "MAR", "name": "Morocco", "delta": 0.5, "drivers": ["girls' secondary enrollment", "solar grid", "family code reforms"]},
-    {"iso": "IDN", "name": "Indonesia", "delta": 0.5, "drivers": ["universal health coverage expansion", "extreme poverty under 3%", "renewable grid"]},
-    {"iso": "PHL", "name": "Philippines", "delta": 0.5, "drivers": ["maternal mortality", "internet access", "ICC investigation cooperation"]},
-    {"iso": "CHN", "name": "China", "delta": 0.5, "drivers": ["last extreme-poverty cohort lifted", "EV-led decarbonization", "civic indicators flat-to-falling"]},
-    {"iso": "IRQ", "name": "Iraq", "delta": 0.5, "drivers": ["electrification rebuild", "schooling recovery", "security stabilization post-ISIS"]}
+    {
+      "iso": "UGA",
+      "name": "Uganda",
+      "delta": 13.6,
+      "from": 54.9,
+      "to": 68.5,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "ETH",
+      "name": "Ethiopia",
+      "delta": 13.2,
+      "from": 54.4,
+      "to": 67.6,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "AGO",
+      "name": "Angola",
+      "delta": 12.7,
+      "from": 52.1,
+      "to": 64.8,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "ZAF",
+      "name": "South Africa",
+      "delta": 12.4,
+      "from": 53.9,
+      "to": 66.3,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "MOZ",
+      "name": "Mozambique",
+      "delta": 11.5,
+      "from": 52.3,
+      "to": 63.8,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "RWA",
+      "name": "Rwanda",
+      "delta": 11.0,
+      "from": 57.0,
+      "to": 68.0,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "CIV",
+      "name": "C\u00f4te d'Ivoire",
+      "delta": 9.7,
+      "from": 52.4,
+      "to": 62.1,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "TZA",
+      "name": "Tanzania",
+      "delta": 9.5,
+      "from": 57.7,
+      "to": 67.2,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "BGD",
+      "name": "Bangladesh",
+      "delta": 9.4,
+      "from": 65.5,
+      "to": 74.9,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "KAZ",
+      "name": "Kazakhstan",
+      "delta": 9.2,
+      "from": 65.4,
+      "to": 74.5,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "COD",
+      "name": "DR Congo",
+      "delta": 8.1,
+      "from": 54.0,
+      "to": 62.1,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "AFG",
+      "name": "Afghanistan",
+      "delta": 8.0,
+      "from": 58.2,
+      "to": 66.3,
+      "from_year": 2005,
+      "to_year": 2024
+    }
   ],
   "regressing": [
-    {"iso": "AFG", "name": "Afghanistan", "delta": -2.6, "drivers": ["girls' secondary schooling banned", "women's labor force collapse", "judicial system replaced"]},
-    {"iso": "MMR", "name": "Myanmar", "delta": -2.4, "drivers": ["military coup", "civil war", "ethnic cleansing in Sagaing/Rakhine"]},
-    {"iso": "BLR", "name": "Belarus", "delta": -1.8, "drivers": ["political imprisonment", "press shutdown", "civic-society liquidation"]},
-    {"iso": "PSE", "name": "Palestinian Territories", "delta": -1.6, "drivers": ["war", "displacement", "health-system collapse in Gaza"]},
-    {"iso": "HTI", "name": "Haiti", "delta": -1.6, "drivers": ["state collapse", "gang control of capital", "schooling and health disruption"]},
-    {"iso": "VEN", "name": "Venezuela", "delta": -1.4, "drivers": ["currency collapse aftershock", "emigration of professionals", "health-system erosion"]},
-    {"iso": "RUS", "name": "Russian Federation", "delta": -1.3, "drivers": ["war mobilization", "professional emigration", "political imprisonment"]}
-  ],
-  "note": "Net direction across countries is positive on most lift indicators (healthspan, access, prosperity, education). The countries below the line are where war or institutional collapse has reversed gains — and the magnitude of those reversals is larger than the magnitude of the typical advance. Honest reading: humanity is rising, unevenly, and the falls are sharp."
+    {
+      "iso": "PSE",
+      "name": "Palestinian Territories",
+      "delta": -2.8,
+      "from": 72.0,
+      "to": 69.2,
+      "from_year": 2005,
+      "to_year": 2024
+    },
+    {
+      "iso": "VEN",
+      "name": "Venezuela",
+      "delta": -0.4,
+      "from": 73.1,
+      "to": 72.7,
+      "from_year": 2005,
+      "to_year": 2024
+    }
+  ]
 }
