@@ -3,360 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peal — alarms that actually wake you up</title>
-<meta name="description" content="An iPhone alarm app that rings through Silent mode, Do Not Disturb, and Focus. Calendar-aware suggestions. Recurrence beyond Apple Clock. Free, private, and on-device.">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Peal: the alarm that reads your day</title>
+<meta name="description" content="An iPhone alarm that reads your calendar and knows a flight isn't a video call, so it sets the right reminder for each kind of event. Free, private, on-device. iOS 26.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+@view-transition { navigation: auto; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg: #0c0c0c;
-    --text: #c8c8c8;
-    --text-bright: #e8e8e8;
-    --text-dim: #777;
-    --text-faint: #444;
-    --accent: #c9a55a;
-    --rule: #1a1a1a;
-    --rule-bright: #2a2a2a;
+    /* Warm near-black + off-white (never #000/#fff), one muted gold. */
+    --bg: #0E0D0B;
+    --bg-elev: #15140F;
+    --text: #E7E3D8;        /* warm off-white body */
+    --text-bright: #F4F1E8; /* headings */
+    --text-dim: #9A9384;    /* warm gray */
+    --text-faint: #5C564A;
+    --accent: #C9A55A;      /* muted gold */
+    --accent-deep: #A8863E;
+    --rule: #221F18;        /* hairline */
+    --rule-bright: #322D22;
+    --display: 'Fraunces', Georgia, serif;
     --serif: 'Source Serif 4', Georgia, serif;
     --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'Space Mono', ui-monospace, monospace;
+
+    /* Restrained fluid type scale (~1.25), rem-anchored for a11y resize. */
+    --step--1: clamp(0.84rem, 0.81rem + 0.13vw, 0.92rem);
+    --step-0:  clamp(1.1rem, 1.06rem + 0.18vw, 1.22rem);
+    --step-1:  clamp(1.3rem, 1.22rem + 0.4vw, 1.6rem);
+    --step-2:  clamp(1.6rem, 1.45rem + 0.75vw, 2.15rem);
+    --step-3:  clamp(2.6rem, 2.0rem + 3vw, 4.6rem);
 }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
     background: var(--bg);
     color: var(--text);
     font-family: var(--serif);
-    font-size: 19px;
-    line-height: 1.85;
+    font-size: var(--step-0);
+    line-height: 1.72;
+    font-optical-sizing: auto;
+    font-variant-numeric: oldstyle-nums proportional-nums;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-a { color: var(--accent); text-decoration: none; opacity: 0.85; }
-a:hover { opacity: 1; }
-
-/* ── BACK NAV ── */
-.back {
-    position: fixed;
-    top: 24px;
-    left: 24px;
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    color: var(--text-dim);
-    z-index: 100;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    background: rgba(12,12,12,0.85);
-    padding: 8px 14px;
-    border: 1px solid var(--rule);
+/* Faint paper grain — no asset, a whisper (~4%). */
+body::before {
+    content: ""; position: fixed; inset: 0; z-index: 1;
+    pointer-events: none; opacity: 0.05; mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.back:hover { color: var(--text-bright); border-color: var(--rule-bright); }
+body > * { position: relative; z-index: 2; }
+
+::selection { background: rgba(201,165,90,0.26); color: var(--text-bright); }
+
+/* Links: underline grows from the baseline, animating only background-size. */
+a {
+    color: var(--accent); text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 1px; background-position: 0 1.15em; background-repeat: no-repeat;
+    transition: background-size 220ms ease;
+}
+a:hover, a:focus-visible { background-size: 100% 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
 
 /* ── SCROLL REVEAL ── */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-slow { transition-duration: 1.3s; }
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero-reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
 }
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.reveal-slow { transition-duration: 1.2s; }
+.hero-reveal { opacity: 0; transform: translateY(18px); animation: heroIn 1s ease forwards; }
+.hero-reveal:nth-child(2) { animation-delay: 0.22s; }
+.hero-reveal:nth-child(3) { animation-delay: 0.42s; }
+@keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
 
-.hero-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: heroIn 1s ease forwards;
-}
-.hero-reveal:nth-child(2) { animation-delay: 0.25s; }
-.hero-reveal:nth-child(3) { animation-delay: 0.45s; }
-@keyframes heroIn {
-    to { opacity: 1; transform: translateY(0); }
-}
+.col { max-width: 660px; margin: 0 auto; padding: 0 28px; }
 
-.col {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 24px;
+/* ── BACK NAV — hairline, not a box ── */
+.back {
+    position: fixed; top: 26px; left: 28px; z-index: 100;
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.5px;
+    color: var(--text-dim); background: none;
+    background-image: linear-gradient(var(--text-dim), var(--text-dim));
+    background-size: 0% 1px; background-position: 0 1.25em; background-repeat: no-repeat;
+    transition: color 200ms ease, background-size 220ms ease;
+    backdrop-filter: blur(3px);
 }
+.back:hover { color: var(--text-bright); background-size: 100% 1px; }
 
 /* ── HERO ── */
-.hero {
-    min-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.ripple {
+    position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+    width: min(120vw, 1100px); height: min(120vw, 1100px);
+    pointer-events: none; z-index: -1; opacity: 0.5;
+    -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent 78%);
+            mask-image: radial-gradient(closest-side, #000 30%, transparent 78%);
 }
+.ripple circle { fill: none; stroke: var(--accent); stroke-width: 0.6; opacity: 0.16; }
+.ripple .pulse { transform-origin: center; transform-box: fill-box; animation: peal 7s ease-out infinite; }
+@keyframes peal {
+    0%   { transform: scale(0.25); opacity: 0; }
+    18%  { opacity: 0.22; }
+    100% { transform: scale(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .ripple .pulse { animation: none; opacity: 0.12; } }
+
 .hero .eyebrow {
-    font-family: var(--sans);
-    font-size: 0.65rem;
-    color: var(--text-faint);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 28px;
+    font-family: var(--mono); font-size: 0.72rem; color: var(--accent);
+    letter-spacing: 1px; margin-bottom: 30px; opacity: 0.85;
 }
 .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 4rem);
-    font-weight: 700;
-    color: var(--text-bright);
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 28px;
+    font-family: var(--display); font-optical-sizing: auto;
+    font-weight: 360; font-size: clamp(4.5rem, 18vw, 11rem);
+    font-variation-settings: 'SOFT' 28, 'WONK' 1;
+    color: var(--text-bright); letter-spacing: -0.025em; line-height: 0.92;
+    margin-bottom: 34px;
 }
 .hero .subtitle {
-    font-size: 1.15rem;
-    color: var(--text-dim);
-    line-height: 1.9;
-    max-width: 560px;
+    font-size: var(--step-1); color: var(--text-dim); line-height: 1.62;
+    max-width: 33ch; text-wrap: pretty; font-weight: 300;
 }
+.hero .subtitle b { color: var(--text); font-weight: 400; }
 
 /* ── PULL QUOTE ── */
-.pull {
-    padding: 100px 24px;
-    text-align: center;
-}
+.pull { padding: 130px 28px; text-align: center; }
 .pull p {
-    font-family: var(--serif);
-    font-size: clamp(1.3rem, 3vw, 1.7rem);
-    font-style: italic;
-    font-weight: 300;
-    color: var(--text-bright);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+    font-family: var(--display); font-size: var(--step-2); font-style: italic;
+    font-weight: 360; font-variation-settings: 'SOFT' 40;
+    color: var(--text-bright); max-width: 22ch; margin: 0 auto;
+    line-height: 1.28; text-wrap: balance; hanging-punctuation: first;
 }
 
 /* ── SECTIONS ── */
-.section {
-    padding: 80px 0;
+.section { padding: 86px 0; }
+.section > h2 {
+    font-family: var(--display); font-weight: 420; font-size: var(--step-2);
+    font-variation-settings: 'SOFT' 20; color: var(--text-bright);
+    margin-bottom: 22px; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance;
 }
-.section h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--text-bright);
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-.section .intro {
-    color: var(--text-dim);
-    margin-bottom: 40px;
-    font-size: 1.05rem;
-}
-.section p { margin-bottom: 20px; }
-.section p:last-child { margin-bottom: 0; }
+.section .intro { color: var(--text-dim); margin-bottom: 56px; font-size: var(--step-0); text-wrap: pretty; }
+.section > p { margin-bottom: 22px; text-wrap: pretty; }
+.section > p:last-child { margin-bottom: 0; }
 
-.rule {
-    border: none;
-    border-top: 1px solid var(--rule);
-    max-width: 640px;
-    margin: 0 auto;
-}
+.rule { border: none; border-top: 1px solid var(--rule); max-width: 660px; margin: 0 auto; }
 
-/* ── FEATURES ── */
-.feature {
-    margin-bottom: 48px;
-}
+/* ── FEATURES — numbered, catalogued ── */
+.feature { padding: 34px 0; border-top: 1px solid var(--rule); }
+.feature:first-of-type { border-top: none; }
+.feature .num { display: none; }   /* numbers removed — Benjamin wasn't sold on them */
 .feature .label {
-    font-family: var(--sans);
-    font-size: 0.6rem;
-    font-weight: 500;
-    color: var(--text-faint);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+    font-family: var(--sans); font-size: 0.62rem; font-weight: 600;
+    color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.18em;
+    margin-bottom: 9px;
 }
 .feature h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-bright);
-    margin-bottom: 12px;
-    line-height: 1.3;
+    font-family: var(--display); font-weight: 460; font-size: var(--step-1);
+    font-variation-settings: 'SOFT' 30; color: var(--text-bright);
+    margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance;
 }
-.feature p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    line-height: 1.75;
+.feature p { color: var(--text-dim); font-size: var(--step--1); line-height: 1.72; text-wrap: pretty; }
+@media (max-width: 560px) {
+    .feature { grid-template-columns: 1fr; gap: 0; }
+    .feature .num { padding: 0 0 6px; }
 }
 
-/* ── STATUS BADGE ── */
-.status-badge {
-    display: inline-block;
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 6px 14px;
-    border: 1px solid var(--accent);
-    border-radius: 100px;
-    opacity: 0.75;
-    margin-bottom: 28px;
-}
+/* ── STATUS ── */
+.status { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; }
+.status .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(201,165,90,0.5); animation: beat 2.6s ease-out infinite; }
+@keyframes beat { 0% { box-shadow: 0 0 0 0 rgba(201,165,90,0.45); } 70%,100% { box-shadow: 0 0 0 9px rgba(201,165,90,0); } }
+@media (prefers-reduced-motion: reduce) { .status .dot { animation: none; } }
+.status .label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 1px; color: var(--accent); text-transform: lowercase; }
 
 /* ── PRIVACY LIST ── */
-.privacy-list {
-    list-style: none;
-    padding: 0;
-}
-.privacy-list li {
-    font-family: var(--sans);
-    font-size: 0.9rem;
-    color: var(--text-dim);
-    padding: 14px 0;
-    border-bottom: 1px solid var(--rule);
-    line-height: 1.7;
-}
-.privacy-list li:last-child { border-bottom: none; }
-.privacy-list strong {
-    font-weight: 500;
-    color: var(--text);
-}
+.privacy-list { list-style: none; padding: 0; }
+.privacy-list li { font-size: var(--step--1); color: var(--text-dim); padding: 16px 0; border-top: 1px solid var(--rule); line-height: 1.7; text-wrap: pretty; }
+.privacy-list li:first-child { border-top: none; }
+.privacy-list strong { font-weight: 600; color: var(--text); font-family: var(--sans); font-size: 0.92em; }
 
 /* ── FOOTER ── */
-footer {
-    padding: 80px 0 60px;
-    font-family: var(--sans);
-    font-size: 0.75rem;
-    color: var(--text-faint);
-}
-footer a { color: var(--text-faint); }
-footer a:hover { color: var(--text-dim); }
+footer { padding: 96px 0 64px; font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); letter-spacing: 0.3px; }
+footer .sep { opacity: 0.4; padding: 0 8px; }
 </style>
 </head>
 <body>
 
-<a class="back" href="/">← Forward Compatible</a>
+<a class="back" href="/">← forward compatible</a>
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ HERO -->
 <div class="hero col">
-    <div class="eyebrow hero-reveal">A Forward Compatible project</div>
+    <svg class="ripple" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="30"/>
+        <circle cx="100" cy="100" r="50"/>
+        <circle cx="100" cy="100" r="72"/>
+        <circle cx="100" cy="100" r="96"/>
+        <circle class="pulse" cx="100" cy="100" r="96"/>
+    </svg>
+    <div class="eyebrow hero-reveal">a forward compatible project</div>
     <h1 class="hero-reveal">Peal</h1>
     <p class="subtitle hero-reveal">
-        An iPhone alarm app that rings through Silent mode, Do Not Disturb, and Focus —
-        with recurrence patterns the built-in Clock app can't handle, and helpful
-        suggestions drawn from your calendar.
+        Most alarm apps buzz before every event the same way. Peal reads your calendar
+        and <b>sizes each alarm to the kind of event it is</b>. A flight gets you moving
+        early, earlier still if it's international. A lunch across town becomes a leave-by
+        timed to the driving traffic. A video call just gets a quiet heads-up, since
+        you're not going anywhere.
     </p>
 </div>
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ PULL -->
 <div class="pull reveal reveal-slow">
-    <p>Alarms that actually wake you up — even on silent.</p>
+    <p>The best alarm is the one you never had to remember to set.</p>
 </div>
 
 <hr class="rule">
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ WHAT IT DOES -->
 <div class="section col">
     <h2 class="reveal">What it does</h2>
     <p class="intro reveal">
-        Apple's Clock app is fine until you sleep with your phone on silent, work
-        across time zones, need a monthly reminder, or rely on alarms to keep your
-        day stitched together. Peal fills the gap.
+        Apple's Clock is a fine alarm. It just waits for you to decide everything: what
+        to set, when, and to remember to do it at all. Peal starts from your calendar
+        instead. It looks at what's coming, works out what kind of event each one is, and
+        offers an alarm that fits. Some of these are suggestions you tap to accept; some,
+        like leave-by reminders, you switch on once and let run. Either way, nothing
+        happens until you choose it.
     </p>
 
-    <div class="feature reveal">
-        <div class="label">Feature 1</div>
-        <h3>Cuts through silence</h3>
-        <p>Alarms ring at speaker volume even when the phone is on Silent, in Do Not Disturb, or in any Focus mode. The same delivery semantics as Apple's built-in Clock app — implemented on Apple's AlarmKit framework, not a workaround.</p>
-    </div>
+    <div class="feature reveal"><div class="num">01</div><div class="body">
+        <div class="label">The engine</div>
+        <h3>It knows what kind of event it's looking at</h3>
+        <p>This is the part other alarm apps skip. Peal tells a flight from an in-person meeting from a video call from a birthday from a weekly standup, and treats each one differently. A flight gets a bigger head start, bigger still if it's international. An in-person meeting gets a leave-by alarm; a video call doesn't, because you aren't going anywhere. A birthday turns into a friendly morning nudge instead of a midnight buzz. A daily standup collapses to one alarm, not fourteen.</p>
+    </div></div>
 
-    <div class="feature reveal">
-        <div class="label">Feature 2</div>
-        <h3>Real recurrence</h3>
-        <p>Daily, weekdays, weekends, every-other-Tuesday, the 15th of every month, the third Thursday, every three months, yearly birthday reminders. Patterns the stock Clock app doesn't support, picked from a single editor with a plain-English summary line ("Fires on the 15th of every month at 9:00 AM") so you can sanity-check before saving.</p>
-    </div>
+    <div class="feature reveal"><div class="num">02</div><div class="body">
+        <div class="label">Leave-by</div>
+        <h3>Out the door on time, traffic included</h3>
+        <p>For anywhere you actually have to travel, Peal sets a leave-by alarm from the driving time when you'll be on the road, using current and predicted traffic from Apple Maps. Flights add an arrive-early buffer. You choose how you're getting there; driving is where the live traffic applies.</p>
+    </div></div>
 
-    <div class="feature reveal">
-        <div class="label">Feature 3</div>
-        <h3>Calendar-aware suggestions</h3>
-        <p>Connect your calendar and Peal proposes useful alarms — a wake-up before tomorrow's early meeting, a leave-by reminder before a flight, a check-in for a medication you take daily. Every suggestion waits for your confirmation. The app never schedules alarms on its own.</p>
-    </div>
+    <div class="feature reveal"><div class="num">03</div><div class="body">
+        <div class="label">No pile-ups</div>
+        <h3>It won't bury you in alarms</h3>
+        <p>Because Peal understands how your reminders relate, it keeps them in check. Set a leave-by and it drops the redundant "starting now" buzz. A weekly meeting is one alarm, not a fresh one every week. Two things at once get staggered a minute apart instead of firing on top of each other.</p>
+    </div></div>
 
-    <div class="feature reveal">
-        <div class="label">Feature 4</div>
-        <h3>Pre-event reminders</h3>
-        <p>Every alarm can carry an optional travel-time reminder ("time to leave for the airport") and a get-ready reminder ("time to get ready for your meeting"). Five, ten, fifteen, twenty, thirty minutes, or anything you'd like. They fire as separate alarms before the main one, with the same Silent-cutting reliability.</p>
-    </div>
+    <div class="feature reveal"><div class="num">04</div><div class="body">
+        <div class="label">Voice</div>
+        <h3>Say it, check it, done</h3>
+        <p>Tap the mic and say the alarm out loud, recurrence and all: "every third Thursday, team lunch." Peal works it out on your phone, with the on-device model on an iPhone that has Apple Intelligence, and hands you a filled-in alarm to confirm. Nothing is sent off your device.</p>
+    </div></div>
 
-    <div class="feature reveal">
-        <div class="label">Feature 5</div>
-        <h3>Privacy by design</h3>
-        <p>No accounts. No sign-in. No servers — we don't run any. Your alarms live on your iPhone, encrypted by Apple, and optionally sync across your devices through your own iCloud account. We never see them. Privacy nutrition labels will read "Data Not Collected" across the board.</p>
-    </div>
+    <div class="feature reveal"><div class="num">05</div><div class="body">
+        <div class="label">Place</div>
+        <h3>Alarms tied to a place, not a time</h3>
+        <p>Some reminders aren't about the clock. Peal can ring when you reach somewhere or leave it: grab the dry cleaning on the way home, send a text when you land. The place is watched on your phone, never on a server, and you can keep up to twenty of them.</p>
+    </div></div>
 
-    <div class="feature reveal">
-        <div class="label">Feature 6</div>
-        <h3>Free, forever</h3>
-        <p>No in-app purchases. No advertising. No paid tier coming later. Peal is a gift to the people in our lives who need alarms that don't fail them.</p>
-    </div>
+    <div class="feature reveal"><div class="num">06</div><div class="body">
+        <div class="label">Recurrence</div>
+        <h3>Repeats the Clock can't do</h3>
+        <p>Every other Tuesday. The fifteenth of the month. The third Thursday. The last day of the month. Every three months. Yearly. Peal schedules the patterns the built-in Clock leaves out, and shows you the plan in plain words before you save it.</p>
+    </div></div>
+
+    <div class="feature reveal"><div class="num">07</div><div class="body">
+        <div class="label">Reliability</div>
+        <h3>Rings like the system clock</h3>
+        <p>Peal runs on Apple's AlarmKit, the same machinery behind the built-in Clock, so an alarm sounds at full volume through Silent, Do Not Disturb, and Focus, with a full-screen alert and Apple Watch support. On iOS 26 that isn't special anymore; it's just what a real alarm should do. The floor, not the pitch.</p>
+    </div></div>
+
+    <div class="feature reveal"><div class="num">08</div><div class="body">
+        <div class="label">Free &amp; private</div>
+        <h3>No account, no servers, no catch</h3>
+        <p>Peal has no login and no backend; there's nothing on a server because there is no server. Your alarms live on your iPhone and sync through your own iCloud if you want them to. Every feature is free, with no ads, no data collected, and no alarm locked behind a paywall.</p>
+    </div></div>
 </div>
 
 <hr class="rule">
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ WHY FC -->
 <div class="section col">
     <h2 class="reveal">Why this lives on Forward Compatible</h2>
     <p class="reveal">
-        The stock alarm assumes you'll hear it. That assumption excludes a lot of people: someone in Sleep Focus, a parent who silences their phone overnight, anyone working a shift schedule, anyone with ADHD relying on alarms to externalize executive function.
+        The built-in alarm assumes you already know what to set, and that you'll remember to set it. For a lot of people that assumption fails: someone running on too little sleep, someone whose week never looks the same twice, someone with ADHD who leans on alarms to hold the things working memory keeps dropping.
     </p>
     <p class="reveal">
-        Peal is small in scope — one app, one delivery mode, no settings to misconfigure — but it follows the same pattern as the rest of this site. Build the thing that includes the people the default was designed to exclude, and watch it turn out to help everyone.
+        Peal does some of that remembering for you. It looks at the day you actually have and offers the alarms it implies, so keeping your life on the rails doesn't depend on perfectly planning it the night before. Build for the people the default leaves out, and it usually turns out better for everyone too.
     </p>
 </div>
 
 <hr class="rule">
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ STATUS -->
 <div class="section col">
     <h2 class="reveal">Status</h2>
-    <span class="status-badge reveal">In development</span>
+    <div class="status reveal"><span class="dot"></span><span class="label">on the app store</span></div>
     <p class="reveal">
-        Peal is being built for iOS 26 and above. It is not yet on the App Store. We're heads-down on the build now; TestFlight and App Store submission will follow.
-    </p>
-    <p class="reveal" style="color:var(--text-dim);font-size:0.95rem;">
-        Want to be notified when TestFlight or the App Store launch open? Email <a href="mailto:benjaminarcher@gmail.com?subject=Peal%20updates">benjaminarcher@gmail.com</a>. No mailing list, no analytics — just an email when there's news.
+        Peal is live on the App Store, built for iOS 26 and above. <a href="https://apps.apple.com/us/app/peal-reminder-alarms/id6774731159">Get it on the App Store.</a>
     </p>
 </div>
 
 <hr class="rule">
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ PRIVACY -->
 <div class="section col">
     <h2 class="reveal">Privacy</h2>
     <p class="intro reveal">
-        Peal collects nothing. Here is the full inventory of where data goes.
+        Peal has no servers, so nothing it uses ever leaves your phone or reaches us. Here is the full inventory of the data Peal can work with—each piece something you choose whether to grant—and where it goes.
     </p>
     <ul class="privacy-list">
         <li class="reveal"><strong>Your alarms.</strong> Stored on your iPhone using SwiftData. If you have iCloud enabled, they sync across your own devices through your private CloudKit database, encrypted by Apple. We have no servers and never see them.</li>
         <li class="reveal"><strong>Your calendar.</strong> Read on-device only, when you grant permission, and only to surface alarm suggestions. Events stay on your phone. We do not transmit or store them anywhere.</li>
         <li class="reveal"><strong>Analytics, tracking, advertising.</strong> None. No third-party SDKs. No identifiers shared.</li>
-        <li class="reveal"><strong>Crash reports.</strong> Only the standard, anonymous reports Apple collects from TestFlight and the App Store if you opt in via iOS Settings. We see no personal data in these.</li>
+        <li class="reveal"><strong>Crash reports.</strong> If you've turned on "Share with App Developers" in iOS Settings, Apple collects standard crash logs and shares de-identified versions with us—stack traces only, no personal data and nothing tied to you. Turn it off in Settings any time.</li>
     </ul>
 </div>
 
 <hr class="rule">
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ CONTACT -->
 <div class="section col">
     <h2 class="reveal">Contact</h2>
     <p class="reveal">
-        Support, feedback, and feature requests — <a href="mailto:benjaminarcher@gmail.com?subject=Peal">benjaminarcher@gmail.com</a>. A human reads every message.
+        Support, feedback, and feature requests—<a href="mailto:benjamin@forwardcompatible.org?subject=Peal">benjamin@forwardcompatible.org</a>. A human reads every message.
     </p>
 </div>
 
-<!-- ═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════ FOOTER -->
 <footer class="col">
-    Peal &nbsp;·&nbsp; Benjamin Archer &nbsp;·&nbsp;
+    Peal <span class="sep">·</span> Benjamin Archer <span class="sep">·</span>
     <a href="/">Forward Compatible</a>
-    &nbsp;·&nbsp;
+    <span class="sep">·</span>
     <a href="/lift.html">The Lift</a>
 </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var reveals = document.querySelectorAll('.reveal');
-
+    if (reduce || !('IntersectionObserver' in window)) {
+        reveals.forEach(function(el) { el.classList.add('visible'); });
+        return;
+    }
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -364,14 +359,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -60px 0px'
-    });
-
-    reveals.forEach(function(el) {
-        observer.observe(el);
-    });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
 });
 </script>
 </body>
