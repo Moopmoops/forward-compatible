@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forward Compatible</title>
-<meta name="description" content="A framework for how systems—biological, cultural, technological, institutional—meet a future they were never built to handle.">
+<meta name="description" content="A framework for how systems—biological, cultural, technological, institutional—meet the future.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -110,8 +110,20 @@ a:hover, a:focus-visible { background-size: 100% 1px; }
 
 .col { max-width: 660px; margin: 0 auto; padding: 0 28px; }
 
+/* ── MENU: the way to the other pages, one quiet line ── */
+.topnav { padding-top: 30px; padding-bottom: 22px; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.3px; }
+.topnav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.topnav a { background-position: 0 1.3em; }
+.topnav .what { color: var(--text-dim); }
+.topnav .what::before { content: "\00b7"; padding: 0 9px; opacity: 0.45; }
+@media (max-width: 560px) {
+    .topnav ul { gap: 14px; }
+    .topnav .what { display: block; margin-top: 2px; }
+    .topnav .what::before { content: none; }
+}
+
 /* ── HERO — type as manifesto, no illustration ── */
-.hero { min-height: 86vh; display: flex; flex-direction: column; justify-content: center; }
+.hero { min-height: calc(86vh - 72px); display: flex; flex-direction: column; justify-content: center; }
 .hero h1 {
     font-family: var(--display); font-optical-sizing: auto;
     font-weight: 380; font-size: clamp(2.8rem, 11vw, 6.4rem);
@@ -140,6 +152,9 @@ a:hover, a:focus-visible { background-size: 100% 1px; }
 
 /* ── SECTIONS ── */
 .section { padding: 88px 0; }
+/* .section's padding above cancels .col's side gutters; on a narrow screen the text ran to the
+   glass. Put the gutters back below the column's full width; desktop is unchanged. */
+@media (max-width: 716px) { .section { padding-left: 28px; padding-right: 28px; } }
 .section > h2 {
     font-family: var(--display); font-weight: 420; font-size: var(--step-2);
     font-variation-settings: 'SOFT' 20; color: var(--text-bright);
@@ -247,11 +262,41 @@ footer { padding: 96px 0 64px; font-family: var(--mono); font-size: 0.72rem; col
 footer a { color: var(--text-faint); background-image: linear-gradient(var(--text-dim), var(--text-dim)); }
 footer a:hover, footer a:focus-visible { color: var(--text-dim); }
 footer .sep { opacity: 0.4; padding: 0 8px; }
+
+/* ── DOMAINS (culture-as-technology) ── */
+.domains { margin: 4px 0 6px; }
+.domain-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0 1.5rem; padding: 18px 0; border-top: 1px solid var(--rule); }
+.domains > .domain-row:first-child { border-top: none; }
+.domain-row .field {
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-dim); padding-top: 0.4rem;
+}
+.domain-row .test { color: var(--text); font-size: var(--step--1); line-height: 1.62; text-wrap: pretty; }
+.more-fields {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.5px; text-transform: lowercase;
+    color: var(--accent); background: transparent; border: 0; cursor: pointer; padding: 6px 0; margin-top: 4px;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 1px; background-position: 0 1.35em; background-repeat: no-repeat;
+    transition: background-size 220ms ease;
+}
+.more-fields:hover, .more-fields:focus-visible { background-size: 100% 1px; }
+@media (max-width: 560px) {
+    .domain-row { grid-template-columns: 1fr; gap: 4px 0; }
+    .domain-row .field { padding: 0 0 2px; }
+}
 </style>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
+
+<!-- ═══════════════════════════════════════ MENU -->
+<nav class="topnav col" aria-label="Site">
+    <ul>
+        <li><a class="navlink" href="/peal.html">Peal</a><span class="what">a free alarm app that reads your calendar</span></li>
+        <li><a class="navlink" href="/vocabulary.html">Vocabulary</a><span class="what">the words this framework uses</span></li>
+    </ul>
+</nav>
 
 <main id="main">
 
@@ -264,30 +309,91 @@ footer .sep { opacity: 0.4; padding: 0 8px; }
     </p>
 </header>
 
-<!-- ═══════════════════════════════════════ META-PATTERN -->
-<div class="pull reveal reveal-slow">
-    <p>The future arrives as the thing you were built to exclude&mdash;the edge you break on, or the one you grow past.</p>
-    <div class="attr">the meta-pattern</div>
-</div>
-
 <hr class="rule">
 
 <!-- ═══════════════════════════════════════ WHY THIS MATTERS -->
 <section class="section col">
     <h2 class="reveal">Why This Matters</h2>
     <p class="intro reveal">
-        No one mind can hold all the context some hard decisions need. The future
-        always carries information we don&rsquo;t have yet.
+        The future carries information we don&rsquo;t have yet. No one mind can hold all
+        the context some decisions need.
     </p>
     <p class="reveal">
-        Every system eventually meets something it wasn&rsquo;t built for. The
-        only question is whether it breaks or grows.
+        Every system eventually meets something it wasn&rsquo;t built for. One question
+        is whether it breaks, stagnates, or grows.
     </p>
     <p class="reveal" style="color:var(--text-dim);">
-        Forward Compatible is a way of seeing what makes a worldview hold&mdash;and
-        how it can hold for more people. When communities share ways of taking in
-        what&rsquo;s foreign to them, together they hold more context than any one
-        member could alone. And it keeps asking what else might be true.
+        Forward Compatible is a way of seeing what makes a worldview work&mdash;and how
+        it can change to work for more people. When communities share new-to-them
+        information (foreign details, new discoveries, recent developments), those
+        communities hold more context than any one member could alone. We can go farther
+        and keep asking what else might be true.
+    </p>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════════════════════════════════ CULTURE AS TECHNOLOGY -->
+<section class="section col">
+    <h2 class="reveal">Culture Is a Technology</h2>
+    <p class="intro reveal">
+        We rarely treat culture as something we can design and which can get better over
+        time. It looks like the air we live in&mdash;the output of history, geography,
+        and accident. When we do try to shape it, we may reach for authority or
+        enforcement. The word culture itself comes from the Latin colere, to till and to
+        tend. Culture is closer to cultivated soil than hardware. And anything you can
+        design, you can design well or badly. Forward compatibility is a standard for
+        doing it well.
+    </p>
+    <p class="reveal">
+        What makes it a standard and not one more idea is that it speaks in each
+        field&rsquo;s own language. Every discipline keeps its own test for
+        truth&mdash;coherent, predicts, works, right&mdash;and they usually talk past one
+        another. Forward compatibility is a question each can ask in its own terms.
+    </p>
+
+    <div class="domains reveal">
+        <div class="domain-row"><div class="field">Engineering</div><div class="test">Will tomorrow&rsquo;s systems still build on what we ship today, or have to tear it out?</div></div>
+        <div class="domain-row"><div class="field">Science</div><div class="test">Does the model extend when new evidence arrives, or break?</div></div>
+        <div class="domain-row"><div class="field">Philosophy</div><div class="test">Does the idea survive the next thousand years of learning, or must the future unlearn it first?</div></div>
+        <div class="domain-row"><div class="field">Morality</div><div class="test">Does the standard hold as our circle of concern widens, or rest on excluding someone we&rsquo;ll wish we hadn&rsquo;t?</div></div>
+        <div class="domains-extra">
+            <div class="domain-row"><div class="field">Mathematics</div><div class="test">Do the definitions still hold as the objects they describe multiply, or does each new structure force a fresh start?</div></div>
+            <div class="domain-row"><div class="field">Language</div><div class="test">The hidden sled we carry meaning on: does it stretch to name what we haven&rsquo;t named yet, or force us to keep patching it?</div></div>
+            <div class="domain-row"><div class="field">Art</div><div class="test">Does the work keep opening to new readings as its world changes, or close once its moment has passed?</div></div>
+            <div class="domain-row"><div class="field">Politics</div><div class="test">Each arrangement an experiment in living together: does it stay legitimate as its people and problems change, or hold only under the conditions it was born in?</div></div>
+        </div>
+    </div>
+    <button class="more-fields" type="button" hidden>more fields &rarr;</button>
+
+    <p class="reveal" style="margin-top:44px;">
+        One question, asked in every field&rsquo;s own voice. Where the answers agree, a
+        culture can be philosophically serious, scientifically grounded, and morally awake
+        at once&mdash;instead of trading one against the others.
+    </p>
+    <p class="reveal">
+        It changes the register of cultural criticism, too. &ldquo;This pattern is poorly
+        built for the future we&rsquo;re heading into&rdquo; is an engineering claim, not
+        an insult&mdash;the way you&rsquo;d say an interface will buckle under load, not
+        that the people who wrote it were fools.
+    </p>
+    <p class="reveal">
+        And it answers the hardest cultural question&mdash;what to keep, what to let
+        go&mdash;without arbitrariness. Not old against new: whatever keeps the future from
+        building on us is a candidate for retirement. Deep listening, hospitality to
+        strangers, honest attention to the natural world are extraordinarily forward
+        compatible, and worth amplifying. Plenty of modern habits are not. The line runs
+        across time, not along it.
+    </p>
+    <p class="reveal">
+        The standard has to survive its own test&mdash;and it does. Forward compatibility
+        must itself be forward compatible: it is what keeps holding as we expose it to more
+        science, more engineering, more art and language and math and lived culture. Where
+        two fields seem to pull apart, that isn&rsquo;t the principle breaking; it&rsquo;s
+        the frontier where it has to deepen. It asks for continual sharpening of its inner
+        consistency, and continual widening of where it reaches. That recursion is what
+        lets it stand as a design standard, rather than harden into one more well-meaning
+        framework.
     </p>
 </section>
 
@@ -497,20 +603,13 @@ footer .sep { opacity: 0.4; padding: 0 8px; }
     <h2 class="reveal">In Practice</h2>
     <p class="intro reveal">
         Forward compatibility isn&rsquo;t only a lens for understanding what already
-        exists. It&rsquo;s also a way to design what comes next&mdash;a few projects
-        built with these principles in view.
+        exists. It&rsquo;s also a way to design what comes next.
     </p>
 
     <div class="project reveal">
         <div class="status live">on the app store</div>
         <h3><a href="/peal.html">Peal &rarr;</a></h3>
-        <p>An iPhone alarm that reads your calendar and sizes each alarm to the kind of event it is&mdash;a flight gets you moving early, a meeting across town becomes a leave-by, a video call only needs short notice. Built to free up your capacity. Free, private, on-device.</p>
-    </div>
-
-    <div class="project reveal">
-        <div class="status">in development</div>
-        <h3>The Lift</h3>
-        <p>A civilizational gains record: what humanity is building&mdash;disease eliminated, rights extended, ecosystems restored, knowledge made common&mdash;kept with disciplined, transparent sourcing.</p>
+        <p>A free app for people with executive dysfunction, ADHD, and those who would prefer tools to help them with the administration of their goals, events, and calendars. The app reads your calendar and uses custom logic for each alarm based on the kind of event you have&mdash;a flight gets you to the airport on time to check a bag, a meeting across town becomes a leave-by alarm, a video call only needs short notice. Built to free up your capacity. Always free and private.</p>
     </div>
 </section>
 
@@ -527,6 +626,24 @@ footer .sep { opacity: 0.4; padding: 0 8px; }
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    var moreBtn = document.querySelector('.more-fields');
+    var extra = document.querySelector('.domains-extra');
+    if (moreBtn && extra) {
+        extra.hidden = true;
+        moreBtn.hidden = false;
+        moreBtn.setAttribute('aria-expanded', 'false');
+        moreBtn.addEventListener('click', function() {
+            if (extra.hidden) {
+                extra.hidden = false;
+                moreBtn.setAttribute('aria-expanded', 'true');
+                moreBtn.textContent = 'fewer fields';
+            } else {
+                extra.hidden = true;
+                moreBtn.setAttribute('aria-expanded', 'false');
+                moreBtn.textContent = 'more fields →';
+            }
+        });
+    }
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var reveals = document.querySelectorAll('.reveal');
     if (reduce || !('IntersectionObserver' in window)) {
