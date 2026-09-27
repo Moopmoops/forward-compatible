@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peal — Privacy Policy</title>
-<meta name="description" content="Peal collects nothing. Your alarms, calendar, location, and health data stay on your device and your own iCloud — never our servers.">
+<title>Peal: privacy policy</title>
+<meta name="description" content="Peal collects nothing. Your alarms, calendar, location and health data stay on your iPhone and in your own iCloud. Nothing goes to a server run by us.">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -70,7 +70,7 @@ h2 {
 
     <p class="lede">Peal doesn't collect, sell, or share your data. We never will.</p>
 
-    <p>Your alarms, calendar, location, and any health data on your device always stays fully on your device. Turn on iCloud sync and it syncs through your own private Apple iCloud — we never see it, and we run no servers, so we can't receive it.</p>
+    <p>Peal has no account and no server of ours behind it. Your alarms and settings are stored on your iPhone. Some things are also kept in your own private Apple iCloud, and a few requests go to Apple. Both are listed below. None of it comes to us.</p>
 
     <ul>
         <li>No account.</li>
@@ -79,16 +79,31 @@ h2 {
         <li>No third-party data SDKs.</li>
     </ul>
 
+    <h2>What is kept in your iCloud</h2>
+    <p class="perm"><b>Location alarms.</b> If you're signed in to iCloud, your location alarms are saved in your private iCloud key-value storage: the alarm's title, the place name, its coordinates and the size of the area. This is how they survive a reinstall and reach your other devices. It doesn't depend on the sync setting.</p>
+    <p class="perm"><b>Alarms and settings.</b> If you turn on "iCloud sync &amp; backup" in Settings, your alarms, Peal's suggestions and your settings sync through your own private iCloud database. An alarm made from a calendar event carries that event's title, time and calendar name. Sync is off until you turn it on.</p>
+    <p class="perm"><b>Device list.</b> If you turn on "Choose which devices ring", each device saves a small entry in your private iCloud key-value storage: the device type and model, a name if you give it one, the app version, when it last checked in, whether sync and permissions are working there, and the names of the calendar accounts it can see. Turn the feature off and the device removes its entry.</p>
+    <p>This is your iCloud account, run by Apple. We have no access to it.</p>
+
+    <h2>What goes to Apple</h2>
+    <p class="perm"><b>Travel time and addresses.</b> To time a leave-by alarm, Peal asks Apple Maps for the travel time between two points: where you're leaving from and where the event is. The starting point is a place you saved, the event before, or your current location if you've allowed it. When you search for a place, type an address, or say one in a voice alarm, Apple Maps looks it up.</p>
+    <p class="perm"><b>Voice.</b> When you dictate an alarm, the speech is turned into text on your iPhone if your iPhone and language support it. If they don't, Apple's speech recognition does it and the audio goes to Apple. Working out the time and the repeat from that text happens on your iPhone, with the on-device Apple Intelligence model where it's available.</p>
+    <p class="perm"><b>Crash reports.</b> If you've turned on "Share with App Developers" in iOS Settings, Apple collects crash logs and shares them with us without your name or Apple Account. You can turn it off any time.</p>
+    <p class="perm"><b>Feedback.</b> The feedback button opens an email to us with the app version filled in. Nothing is sent unless you send it. If you use a TestFlight beta and send feedback there, Apple passes along what you write, any screenshot you attach, and basic device details.</p>
+
     <h2>Permissions, and why</h2>
-    <p class="perm"><b>Alarms</b> — to ring.</p>
-    <p class="perm"><b>Calendar</b> — read-only, to build reminders.</p>
-    <p class="perm"><b>Location</b> — location alarms and travel time.</p>
-    <p class="perm"><b>Health / Sleep</b> — optional, to learn your wake time.</p>
-    <p>Each is used only on-device, only for the feature you turn on.</p>
+    <p class="perm"><b>Alarms.</b> Lets Peal ring, including when your iPhone is on Silent, Do Not Disturb or a Focus.</p>
+    <p class="perm"><b>Calendar.</b> Peal reads your events to time alarms around them. It writes to your calendar only in three cases you set up yourself: Clone &amp; manage copies, follow-up events from an automation, and, when you turn on "Also change my calendar" in Event sequence planning, shortening or moving one occurrence of an event you organize, after you confirm each change, with Undo. Otherwise it only changes or removes events it made itself.</p>
+    <p class="perm"><b>Location.</b> Used for location alarms, so Peal knows when you arrive at or leave a place you chose, and as the starting point for travel time. Location alarms ask for "Always" so they can ring when Peal isn't open. The places are watched by iOS on your iPhone.</p>
+    <p class="perm"><b>Health.</b> Optional and read-only. Peal reads your sleep data to suggest your usual wake time, and today's step count if you set a task to wait for steps. Peal never writes to Health.</p>
+    <p class="perm"><b>Microphone and speech recognition.</b> Used only when you tap the microphone to dictate an alarm.</p>
+    <p class="perm"><b>Notifications.</b> Used for location alarms, for the "time to leave" reminder that opens directions, and to remind you if Peal hasn't been able to run for two days.</p>
+    <p class="perm"><b>Contacts.</b> Peal doesn't ask for this. If you pick an address from Contacts, iOS shows its own picker and gives Peal only the address you choose.</p>
+    <p>Each is used only for the feature that needs it. You can turn any of them off in iOS Settings.</p>
 
     <div class="foot">
         Questions: <a href="mailto:benjamin@forwardcompatible.org">benjamin@forwardcompatible.org</a><br>
-        Last updated June 9, 2026 · <a href="https://forwardcompatible.org/peal.html">Peal</a> · <a href="https://forwardcompatible.org">Forward Compatible</a>
+        Last updated September 26, 2026 · <a href="https://forwardcompatible.org/peal.html">Peal</a> · <a href="https://forwardcompatible.org">Forward Compatible</a>
     </div>
 </div>
 </body>
