@@ -70,7 +70,7 @@ h2 {
 
     <p class="lede">Peal doesn't collect, sell, or share your data. We never will.</p>
 
-    <p>Peal has no account and no server of ours behind it. Your alarms and settings are stored on your iPhone. Some things are also kept in your own private Apple iCloud, and a few requests go to Apple. Both are listed below. None of it comes to us.</p>
+    <p>Peal has no account and no server of ours behind it. Your alarms and settings are stored on your iPhone. Some things are also kept in your own private Apple iCloud, and a few requests go to Apple. A few features you turn on ask another service directly from your phone. All of it is listed below. None of it comes to us.</p>
 
     <ul>
         <li>No account.</li>
@@ -87,24 +87,31 @@ h2 {
 
     <h2>What goes to Apple</h2>
     <p class="perm"><b>Travel time and addresses.</b> To time a leave-by alarm, Peal asks Apple Maps for the travel time between two points: where you're leaving from and where the event is. The starting point is a place you saved, the event before, or your current location if you've allowed it. When you search for a place, type an address, or say one in a voice alarm, Apple Maps looks it up.</p>
+    <p class="perm"><b>Picking someone up? (Beta).</b> For a flight on your calendar, Peal may look the airport's three-letter code up on Apple Maps to know where the airport is. It sends only the code.</p>
     <p class="perm"><b>Voice.</b> When you dictate an alarm, the speech is turned into text on your iPhone if your iPhone and language support it. If they don't, Apple's speech recognition does it and the audio goes to Apple. Working out the time and the repeat from that text happens on your iPhone, with the on-device Apple Intelligence model where it's available.</p>
     <p class="perm"><b>Crash reports.</b> If you've turned on "Share with App Developers" in iOS Settings, Apple collects crash logs and shares them with us without your name or Apple Account. You can turn it off any time.</p>
     <p class="perm"><b>Feedback.</b> The feedback button opens an email to us with the app version filled in. Nothing is sent unless you send it. If you use a TestFlight beta and send feedback there, Apple passes along what you write, any screenshot you attach, and basic device details.</p>
 
+    <h2>What goes elsewhere, only if you turn it on</h2>
+    <p class="perm"><b>Bookings with me (Beta).</b> If you paste the link to your own Microsoft Bookings with me page, Peal asks Microsoft, from your phone, for the busy times that page shows (times only: no titles, places or people) and keeps them on a calendar it adds for you. The link stays on your phone. Nothing is sent to us. Stop using this page removes the calendar and its entries.</p>
+    <p class="perm"><b>Flight pickup (Beta).</b> If you add your own FlightAware key, Peal sends the flight number and the day to FlightAware to read the landing time. It sends no name and no location. The key stays in this iPhone's Keychain. Without a key nothing is sent, and you type the landing time.</p>
+    <p class="perm"><b>Parking (Beta).</b> A city's public parking map, only after you choose that city by name. See Parking under Permissions.</p>
     <h2>Permissions, and why</h2>
     <p class="perm"><b>Alarms.</b> Lets Peal ring, including when your iPhone is on Silent, Do Not Disturb or a Focus.</p>
-    <p class="perm"><b>Calendar.</b> Peal reads your events to time alarms around them. It writes to your calendar only in four cases you set up yourself: Clone &amp; manage copies, follow-up events from an automation, prep and debrief time you add before or after an event (placed in your free time, moved with the event and removed with it), and, when you turn on "Also change my calendar" in Event sequence planning, shortening or moving one occurrence of an event you organize, after you confirm each change, with Undo. Otherwise it only changes or removes events it made itself.</p>
-    <p class="perm"><b>Location.</b> Used for location alarms, so Peal knows when you arrive at or leave a place you chose; as the starting point for travel time; to tell when you've been out, for a task you set to ring only if you haven't been; and for the forecast where you are, in What to wear. Location alarms ask for "Always" so they can ring when Peal isn't open. The places are watched by iOS on your iPhone. Travel times go to Apple Maps and the forecast to Apple Weather; nothing else leaves your phone.</p>
+    <p class="perm"><b>Calendar.</b> Peal reads your events to time alarms around them. It writes to your calendar only in five cases you set up yourself: Clone &amp; manage copies, event plans (blocks of time around every event of a kind you choose, and their follow-up events), prep and debrief time you add before or after an event (placed in your free time, moved with the event and removed with it), a work calendar kept from your Bookings with me page, and, when you turn on "Also change my calendar" in Event sequence planning, shortening or moving one occurrence of an event you organize, after you confirm each change, with Undo. Otherwise it only changes or removes events it made itself.</p>
+    <p class="perm"><b>Location.</b> Used for location alarms, so Peal knows when you arrive at or leave a place you chose; as the starting point for travel time; to tell when you've been out, for a task you set to ring only if you haven't been; and for the forecast where you are, in What to wear. Location alarms ask for "Always" so they can ring when Peal isn't open. The places are watched by iOS on your iPhone. Travel times go to Apple Maps and the forecast to Apple Weather, and Parking asks a city's map about the area around the car, as described next; nothing else leaves your phone.</p>
+    <p class="perm"><b>Parking (Beta).</b> When you tell Peal you parked, or it notices that a drive ended, the spot stays on your iPhone. To read the parking signs near the car, Peal asks a city's public parking map for a fixed square of the map about 3 km across, never the car's spot, with no account, identifier or cookie, and only after you choose that city's server by name in Peal. For one city, Peal also asks its street-cleaning calendar about today and tomorrow, with nothing about the car. Like any web page, each request carries your phone's internet address. Saved map squares are deleted after 7 days (a city's short street lists after 30), or as soon as you turn that city off.</p>
+    <p class="perm"><b>Motion &amp; Fitness.</b> Optional, for Parking. Peal reads your recent activity on your iPhone to tell when a drive ended. It never leaves your phone.</p>
     <p class="perm"><b>Health.</b> Optional and read-only. Peal reads your sleep data to suggest your usual wake time, and your step count and walking workouts if you set a task to wait for steps or to ring only if it isn't done. Peal never writes to Health.</p>
     <p class="perm"><b>Weather.</b> For What to wear, Peal asks Apple Weather for the forecast at your phone's location or where you're based, rounded to about a kilometer. It goes to Apple only. The people you add stay on your device.</p>
     <p class="perm"><b>Microphone and speech recognition.</b> Used only when you tap the microphone to dictate an alarm.</p>
-    <p class="perm"><b>Notifications.</b> Used for location alarms, for the "time to leave" reminder that opens directions, and to remind you if Peal hasn't been able to run for two days.</p>
+    <p class="perm"><b>Notifications.</b> Used for location alarms, for the "time to leave" reminder that opens directions, to remind you if Peal hasn't been able to run for two days, for a flight pickup you set up, and, each morning while your Bookings with me page isn't answering, to say so.</p>
     <p class="perm"><b>Contacts.</b> Peal doesn't ask for this. If you pick an address from Contacts, iOS shows its own picker and gives Peal only the address you choose.</p>
     <p>Each is used only for the feature that needs it. You can turn any of them off in iOS Settings.</p>
 
     <div class="foot">
         Questions: <a href="mailto:benjamin@forwardcompatible.org">benjamin@forwardcompatible.org</a><br>
-        Last updated October 8, 2026 · <a href="https://forwardcompatible.org/peal.html">Peal</a> · <a href="https://forwardcompatible.org">Forward Compatible</a>
+        Last updated November 23, 2026 · <a href="https://forwardcompatible.org/peal.html">Peal</a> · <a href="https://forwardcompatible.org">Forward Compatible</a>
     </div>
 </div>
 </body>
